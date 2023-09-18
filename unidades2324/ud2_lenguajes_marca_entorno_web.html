@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="ca-ES">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UD2.-Llenguatges de marques en entorns web</title>
+  <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../styles/prism.css">
+  <link rel="stylesheet" href="../styles/styles.css">
+  <script src="../script/script.js"></script>
+</head>
+<body class="line-numbers">
+  <div class="logos">
+    <div></div><div></div><div></div>
+</div>
+
+  <nav id="menu-lateral" class="main-menu-lateral oculto">
+    <div class="fila">
+        <a href="#sElllenguatgeHTML">1.- El llenguatge HTML</a><a
+         href="#sFuncionamentdelesaplicacionsweb">2.- Funcionament de les aplicacions web</a><a
+         href="#sEinespercrearaplicacionsenHTML">3.- Eines per crear aplicacions en HTML</a>
+      </div>
+      <div class="fila">
+        <a href="#sVersionsdHTML">4.- Versions d'HTML</a><a
+        href="#sCol·leccions" class="oculto">5.- Col·leccions</a><a
+        href="#sFuncions"class="oculto">6.- Funcions</a>
+      </div>
+    
+</nav>
+
+  <h1>UD2.-Llenguatges de marques en entorns web</h1>
+  
+  <div class="main-menu">
+    <div class="fila">
+      <a href="#sElllenguatgeHTML">1.- El llenguatge HTML</a><a 
+       href="#sFuncionamentdelesaplicacionsweb">2.- Funcionament de les aplicacions web</a><a 
+       href="#sEinespercrearaplicacionsenHTML">3.- Eines per crear aplicacions en HTML</a>
+    </div>
+    <div class="fila">
+      <a href="#sVersionsdHTML">4.- Versions d'HTML</a><a 
+      href="#sColecciones" class="relleno">5.- Colecciones</a><a 
+      href="#sFunciones"class="relleno">6.- Funciones</a>
+    </div>
+  </div>
+
+<!--*********************************************************El llenguatge HTML***********************************************************-->
+<section class="apartado">
+<a name="sElllenguatgeHTML"></a>
+<h2>El llenguatge HTML</h2>
+
+<h3>Introducció</h3>
+
+<p>A finals dels anys 80 es va desenvolupar el llenguatge de marques SGML. 
+    Al final d'aquesta dècada <span class="negrita">Tim Bernes Lee</span>, científic britànic que treballava al <span class="negrita">CERN</span>, 
+    va utilitzar SGML per definir un nou llenguatge d'etiquetes que va anomenar <span class="d-word">Hypertext Markup Language</span> (llenguatge de marcat d'hipertext) 
+    per crear documents transportables a través d'Internet on fos possible l'<span class="negrita">hipertext</span>.
+
+</p>
+<p>
+S'anomena hipertext a la possibilitat que en un document determinades paraules marcades de manera especial permetin obrir un document relacionat amb elles; 
+alguna cosa a què ara estem molt acostumats, però que abans era molt innovador.
+</p>
+<p>
+A més d'HTML, l'equip de Tim Bernes Lee va definir les bases del protocol http d'Internet, 
+encarregat de transportar els documents HTML i els recursos associats. 
+La versió definitiva d'http es va fer l'any 1999 per part de l'organisme <span class="negrita">World Wide Web Consortium</span> (W3C).
+</p>
+<p>
+Tot i tardar a ser acceptat, HTML va ser un èxit rotund i la causa indubtable de l'èxit dInternet. 
+Avui dia, quasi tot a Internet es veu a través de documents HTML que, popularment, s'anomenen pàgines web.
+</p>
+<p>
+Inicialment aquests documents es veien amb ajuda d'intèrprets de text (com l'antigament famós Lynx d'Unix) 
+que reconeixien el codi HTML però que tenien capacitat només de pintar el text especial (com les negretes i cursives per exemple) i remarcaven l'hipertext, 
+sobre el qual la tecla tabulador permetia accedir de forma seqüencial a tots els hipervincles del document.
+</p>
+<p>
+Després el programari va millorar i van aparèixer ja els anomenats navegadors amb capacitat d'interpretar el codi HTML de manera més visual i 
+canviar el tipus de lletra, colors, incorporar imatges, so, etc. És a dir, realment els documents HTML es van convertir en pàgines web.
+</p>
+<p>
+Lògicament des del 1989 fins als nostres dies HTML ha millorat. Entre els seus avanços fonamentals:
+<ul>
+    <li>El llenguatge cada cop ha anat incorporant noves etiquetes més potents, que permeten
+        incloure als documents HTML, taules, capes, marcs, imatges,…
+    </li>
+    <li>S'han afegit llenguatges de <span class="negrita">script</span> (especialment <span class="negrita">JavaScript</span>) amb codi incrustat a les pròpies pàgines HTML que
+        permeten afegir funcionalitats extra i dinamisme a les pàgines web
+    </li>
+    <li>Has aparegut llenguatges i tecnologies que permeten executar accions avançades al
+        servidor que allotja les pàgines web. Entre elles <span class="negrita">CGI, PHP, ASP o JSP</span>.
+    </li>
+    <li>S'han incorporat llenguatges d'estil (com CSS) per a generar un format de document més avançat i fàcil de mantenir.
+    </li>
+    <li>S'han afegit utilitats per a gestió avançada de <span class="negrita">JavaScript</span> amb <span class="negrita">XML (AJAX)</span> per donar encara més
+        interactivitat i dinamisme a les pàgines.
+    </li>
+    <li>S'ha permès la inclusió d'elements avançats a les pàgines com <span class="negrita">Flash</span> (obsolet) o els <span class="negrita">applets de Java</span> per donar
+        més funcionalitat.
+    </li>
+    <li>Es permeten elements semàntics per donar significat al contingut.</li>
+    <li>S'afegeixen cada cop més plugins als navegadors que així són capaços de mostrar imatges,
+        so, vídeo i altres elements multimèdia a les pròpies pàgines.
+    </li>
+    <li>Els llenguatges relacionats amb les pàgines web segueixen creixent i possibiliten afegir-ho tot
+        tipus d'elements a les pàgines web, dibuixos, animacions, ús de localització mitjançant GPS,…
+    </li>
+</ul>
+</p>
+
+<h3>Història de HTML</h3>
+
+<p>Es ressalten a continuació alguns dels esdeveniments més importants a la història d'HTML. S'indica l'any i el que va passar
+    <ul>
+        <li><span class="negrita"><span class="negrita">1989</span>. </span>
+            <ul>
+                <li>Tim Bernes Lee</a></span></span>,
+                    científic britànic que treballava al CERN centre de
+                    desenvolupament nuclear ubicat a Suïssa. Intenta traslladar l'hipertext als documents
+                    científics, mitjançant el qual és possible avançar d'un document a un altre mitjançant enllaços
+                    existents al propi text. Va teoritzar la manera de transportar aquest tipus de documents (el
+                    actual protocol http) i sobre el llenguatge de marques a utilitzar.
+                </li>
+            </ul>
+        </li>
+        <li><span class="negrita">1990</span>
+            <ul>
+                <li>
+                    Apareix el primer navegador web anomenat
+                        <span class="negrita">WorldWideWeb</span> (més tard <span class="negrita">Nexus</span>) per realitzar proves creat a
+                    un ordinador <span class="negrita">Next</span>.
+                </li>
+            </ul>
+        </li>
+        <li><span class="negrita">1991 </span>
+            <ul>
+                <li>
+                    <span class="negrita">Tim Bernes Lee</span> acudeix a un grup de discussió a
+                    Internet per discutir sobre com implementar l'hipertext de manera més convenient. Amb això
+                    no pretén privatitzar el seu invent sinó fer-ho públic des del primer moment.
+                </li>
+            </ul>
+        </li>
+        <li><span class="negrita">1992</span>
+            <ul>
+                <li>
+                    <span class="negrita">Pei-Yuan Wei</span> crea <span class="negrita">ViolaWWW</span>,
+                    considerat el veritable primer navegador, usava un llenguatge de script a més d'HTML, era doncs
+                    molt innovador.
+                </li>
+            </ul>
+        </li>
+        <li><span class="negrita">1993.</span>
+            <ul>
+                <li>
+                    El CERN anuncia que la web serà lliure per a tots, renuncia als possibles
+                    patents.
+                </li>
+                <li>La <span class="negrita">NCSA</span> s'interessa per la ja anomenada
+                    web de Bernes Lee i crea el
+                    primer navegador realment reeixit: <span class="negrita">Mosaic</span>. Entre els seus
+                    creadors està Eric Bina i Marc Adreessen i va participar la
+                    universitat d'<span class="negrita">Urbana-Champaign</span> futurs milionaris gràcies a
+                    la web.
+                </li>
+                <li><span class="negrita">Lou Montulli</span> desenvolupa <span class="negrita">Lynx</span> per als sistemes Unix, el primer navegador de text a la
+                    web. Serà àmpliament utilitzat en els anys següents, encara que després quedarà ràpidament
+                    superat per les capacitats dels navegadors gràfics
+                </li>
+                <li>Es comença a fer popular l'etiqueta <span class="r-word">img</span>  (gràcies
+                    a Mosaic), les imatges comencen a poblar la web.
+                </li>
+                <li>
+                    Apareix el primer esborrany d'HTML (Tim
+                        Bernes-Lee i Dan Conely)
+                </li>
+            </ul>
+        </li>
+        <li><span class="negrita">1994</span>
+            <ul>
+                <li>Conferència global sobre la web.</li>
+                <li>
+                    La <span class="negrita">IETF</span>
+                    assigna un grup de treball per estandarditzar HTML.
+                </li>
+                <li>
+                    El llenguatge HTML comença a ser caòtic perquè apareixen nombroses etiquetes
+                    posades per cada entitat privada. Dan Connolly recopila les
+                    etiquetes HTML de l'època més utilitzada i es crea l'esborrany <span class="negrita">HTML 2</span>.
+                </li>
+                <li>
+                    Marc Adreessen i Jim
+                        Clark abandona la <span class="negrita">NCSA</span> i funden <span class="negrita">Mosaic
+                        Communications </span> (futura <span class="negrita">Netscape</span>). Deixen també
+                    els estàndards i creen elements nous en el llenguatge HTML per crear pàgines més vistoses per
+                    al seu navegador.
+                </li>
+                <li>A finales del año se crea la <span class="negrita">World Wide
+                    Consortium</span> (W3C) fichando a algunos de los principales impulsores de la web
+                (incluido Tim Bernes-Lee). Se convertirá en el principal
+                organismo de estandarización de las tecnologías relacionadas con la web en general y de HTML en
+                particular
+                </li>
+                <li>
+                    L'empresa <span class="negrita">Mosaic Communications</span> es converteix
+                    a <span class="negrita">Netscape Communications</span> i llança el navegador <span class="d-word">Netscape Navigator</span>. 
+                    Es convertirà en els següents anys al navegador més utilitzat.
+                </li>
+                <li>
+                    En diciembre aparece la versión 1.0 del <span class="negrita">Netscape
+                        Navigator</span>. En poco tiempo pasa a ser el navegador más popular.
+                </li>
+                <li>A finales de año hay 10000 servidores web</li>
+            </ul>
+        </li>
+        <li><span class="negrita">1995</span>
+            <ul>
+                <li>Continuen apareixent nous elements en HTML que impulsen les possibilitats de les
+                    pàgines web. Es crea l'esborrany <span class="negrita">HTML 3</span>, que inclou tipus de
+                    lletra i altres millores.
+                </li>
+                <li>Microsoft crea <span class="negrita">Internet
+                        Explorer</span> i ho incorpora ràpidament com a part del sistema operatiu <span class="negrita">Windows 95</span>.
+                    Comença la primera guerra dels navegadors. Els contendents són Explorer i Navigator.
+                </li>
+                <li>
+                    El grup de treball de la <span class="negrita">IETF</span> per a HTML es desmantella per la seva escassa influència.
+                    El <span class="negrita">World Wide Consortium</span> queda com a principal organisme de
+                    estandardització d'HTML.
+                </li>
+                <li>
+                    El navegador Opera es comença a comercialitzar.
+                    El desenvolupa Telenor, una empresa noruega.
+                </li>
+                <li>
+                    A finals d'any apareixen els primers elements de creació de <span class="negrita">fulls d'estil</span>,
+                    arrel del <span class="negrita">llenguatge CSS</span> que permet donar format avançat a les
+                    pàgines web i que segueix sent una de les tecnologies imprescindibles actualment per
+                    crear pàgines web.
+                </li>
+                <li><span class="negrita">Sun Microsystems crea el llenguatge Java</span>, que tindrà una enorme influència en el desenvolupament de
+                    Internet.
+                </li>
+                <li>Els germans <span class="negrita">Allaire</span>, creen <span class="negrita">ColdFussion</span>, un llenguatge basat en HTML que s'executa al
+                    servidor que allotja les pàgines web (servidors compatibles amb aquesta tecnologia) de manera que el
+                    client no necessita tenir un programari especial que reconegui aquesta tecnologia. Al client li
+                    arriben pàgines web normals que ha preparat el servidor després de traduir aquest llenguatge.
+                </li>
+            </ul>
+            <p>Va ser la primera tecnologia de script al costat del
+                servidor.</p>
+            <ul>
+                <li>Netscape desarrolla <span class="negrita">JavaScript</span>, un llenguatge
+                    basat en C i Java que s'incrusta dins del codi HTML de les pàgines per donar-los una major
+                    potència. Encara continua sent un dels llenguatges més influents en el desenvolupament de pàgines
+                    i aplicacions per a la web. <span class="negrita">Netscape Navigator 2.0</span> és el
+                    primer navegador a utilitzar aquest llenguatge
+                </li>
+            </ul>
+            <p>En definitiva és una tecnologia de script al costat del
+                client. Els navegadors, a causa del seu èxit, van haver d'anar a poc a poc incorporant plugins
+                (programari afegit) que permetessin executar codi JavaScript.</p></li>
+        <li><span class="negrita">1996</span>
+            <ul>
+                <li>Es crea l'HTML ERB (<span class="cursiva">Editorial
+                        Review Board</span>), en què participen empreses com IBM,
+                        Microsoft, Netscape, Novell,… i el mateix W3C. És
+                    una reunió trimestral per ajudar a l'estàndard.
+                </li>
+                <li>Es crea Yahoo! la primera pàgina reeixida que
+                    permet organitzar la web per facilitar la cerca d'altres pàgines. L'empresa serà una de les
+                    de més valor a la borsa durant diversos anys.
+                </li>
+                <li><span class="negrita">Rasmus Lerdorf</span> crea el llenguatge <span class="negrita">PHP</span>. Encara continua sent la tecnologia del costat del servidor més
+                    popular.
+                </li>
+                <li>L'empresa <span class="negrita">Macromedia</span> crea el programari <span class="negrita">Flash</span>. És una tecnologia del costat del client (requereix
+                    un plugin al navegador) que va permetre que les pàgines incloguessin tot tipus d'elements
+                    multimèdia i interactius que feien de les pàgines aplicacions riques semblants a les
+                    aplicacions dun escriptori dordinador personal.
+                </li>
+                <li><span class="negrita">Hakom Wum Lie</span> crea el navegador <span class="negrita">Opera</span>. Mai no ha aconseguit una gran quota de públic però segueix
+                    present després de tots aquests anys.
+                </li>
+                <li>La W3C estandarditza CSS1 la seva popularitat augmenta ràpidament.
+                </li>
+            </ul>
+        </li>
+        <li><span class="negrita">1997</span>
+            <ul>
+                <li>Apareix l'especificació estàndard <span class="negreta">HTML 3.2</span>, la
+                    primera a ser àmpliament acceptada. Inclou taules, applets (pensades per afegir elements
+                    Java a les pàgines) i altres formats avançats de format.
+                </li>
+                <li><span class="negreta">Sun Microsystems crea Java
+                        Servlets</span> i <span class="negreta">Microsoft crea el llenguatge ASP</span>. Són dues de les tecnologies del costat del servidor que tindran
+                    una gran influència en els anys següents.
+                </li>
+                <li><span class="negreta">Versió 4 d'Internet Explorer i Netscape Navigator</span>. Comença entre aquests dos productes la primera
+                    guerra entre navegadors.
+                </li>
+            </ul>
+        </li>
+        <li><span class="negrita">1998</span>
+            <ul>
+                <li>La <span class="negrita">W3C</span> llança com a estàndards a <span class="negrita">HTML 4.0</span> i
+                    a <span class="negrita">CSS2</span>. Els estàndards de la W3C cada vegada es tenen més a
+                    compte i tots dos aconsegueixen un gran èxit.
+                </li>
+                <li>La combinació <span class="negrita">HTML+JavaScript+CSS</span> és coneix
+                    aquest any com a <span class="negrita">DHTML</span> (HTML dinàmic). Arribarà a una enorme
+                    notorietat i serà la combinació habitual per fer pàgines web atractives.
+                </li>
+                <li>Apareix <span class="negrita">XML 1.0</span> per part de la W3C, com el
+                    llenguatge que devia ser HTML (en paraules del mateix Tim Bernes
+                        Lee). No ha arribat a suplantar HTML però segueix tenint una enorme influència en
+                    tota mena de tecnologies.
+                </li>
+                <li>
+                    Netscape crea la fundació <span class="negrita">Mozilla</span> per millorar el codi de Netscape Navigator que passarà a ser programari de codi obert. És crea el
+                    <span class="negrita">motor Gecko</span> nucli futur de diversos navegadors (especialment
+                    del Firefox)
+                </li>
+                <li>És funda la Web Standards Project fundació
+                    encarregada de promocionar lús dels estàndards HTML. És famosa per la creació dels tests
+                    Àcid que validin el respecte dels estàndards per part dels
+                    navegadors.
+                </li>
+            </ul>
+        </li>
+        <li><span class="negrita">1999</span>
+            <ul>
+                <li>Sun crea <span class="negrita">JSP</span>
+                    (pàgines de servidor en llenguatge Java) i la plataforma de treball J2EE (Java Enterprise) amb el
+                    que pretén crear un entorn poderós de treball per crear aplicacions i serveis de
+                    Internet als servidors.
+                </li>
+                <li>El navegador Internet Explorer de Microsoft domina el mercat posant fi a la primera guerra de
+                    navegadors.
+                </li>
+                <li>Es crea el test Acid 1 (CSS Acid Test) per testejar el funcionament d'HTML 4 i CSS 1
+                </li>
+                <li>Apareix <span class="subrayado">RSS</span> un format de contingut basat en
+                    XML que permet sindicar-se i obtenir informació de forma veloç.
+                </li>
+                <li>La W3C presenta HTML
+                        4.01, indicant que serà la darrera versió de l'HTML clàssic.
+                </li>
+                <li>Microsoft crea per a Explorer
+                        5 un objecte XML anomenat <span class="negrita">XMLHttpRequest</span> que serà
+                    copiat als altres navegadors en els anys successius. L'accés a aquest objecte des de JavaScript
+                    permet crear pàgines molt dinàmiques i potents (com Google Mapsper exemple). A aquest
+                    forma de programar s'anomenarà (el 2005) <span class="negrita">AJAX</span>, acrònim <em class="cursiva">asynchronous JavaScript and
+                        XML</em></li>
+            </ul>
+        </li>
+        <li><span class="negrita">2000</span>
+            <ul>
+                <li>Apareix l'estàndard W3C <span class="negrita">XHTML 1.0</span>, versió de
+                    HTML basat en XML que pretén enderrocar HTML. A dia d'avui continua sent l'estàndard més
+                    respectat per crear pàgines web.
+                </li>
+                <li><span class="negrita">ISO</span> (organisme internacional d'estàndards)
+                    publica la <span class="negrita">norma ISO 15445</span> amb què normalitza HTML. Aquesta
+                    norma és pràcticament la mateixa que la corresponent a l'HTML 4.01 de la W3C.
+                </li>
+                <li>Roy T. Fielding publica la seva tesi doctoral de la
+                    que apareix la idea de les web de tipus <span class="negrita">REST</span> (o RESTful), que a la URL representen la funció de la web.
+                </li>
+                <li>Es llança <span class="negrita">Konqueror 2.0</span> per al sistema Linux amb finestres KDE navegador
+                    basat en el motor KHTML arrel del <span class="negrita">motor Webkit</span> en què es basaran els navegadors Safari i Chrome entre
+                    altres.
+                </li>
+            </ul>
+        </li>
+        <li><span class="negrita">2001</span>
+            <ul>
+                <li>Apareix <span class="negrita"> Explorer 6</span> integrat al popularíssim
+                    sistema Windows XP. Amb això Microsoft guanya la primera guerra
+                    de navegadors.
+                </li>
+                <li>La W3C estàndard XHTML 1.1 últim XHTML
+                    considerat per la indústria.
+                </li>
+                <li><span class="negrita">PHP</span> com a tecnologia al costat del servidor i
+                    Flash al costat del client, són les tecnologies dominants per crear aplicacions web
+                    enriquides (anomenades RIA, <em class="cursiva">Rich Internet
+                        Applications</em>).
+                </li>
+                <li><span class="negrita">Douglas Crowford</span> popularitza i especifica les
+                    bases del format JSON, actualment el principal format de
+                    intercanvi de dades entre aplicacions web.
+                </li>
+                <li>Es crea el format SVG (basat en XML) d'imatge vectorial. A partir de l'any 2014 comença a
+                    popularitzar-se de forma massiva a les pàgines web.
+                </li>
+            </ul>
+        </li>
+        <li><span class="negrita">2002</span>
+            <ul>
+                <li>La fundació Mozilla recull el testimoni de
+                    Netscape i crea el seu propi navegador <span class="negrita">Firebird</span> (futur Firefox<span class="carPunto">)</span>.
+                </li>
+                <li>Microsoft crea la plataforma d'aplicacions <span class="negrita">.NET</span> amb vocació de competir amb <span class="negrita">J2EE</span>.
+                </li>
+                <li><span class="negrita">Apple</span> crea una bifurcació del projecte <span class="negrita">KHTML i en diu Webkit</span>. Aquest serà el motor del futur <span class="negrita">Safari</span>
+                    i de Chrome.
+                </li>
+            </ul>
+        </li>
+        <li><span class="negrita">2003</span>
+            <ul>
+                <li>Apple llança al mercat el navegador Safari.
+                </li>
+                <li>Es crea <span class="negrita">WordPress</span> el primer gestor de
+                    continguts web (CMS). Permet crear pàgines web (especialment
+                    blocs) fàcilment i gestionar diferents usuaris que podran editar continguts de la web
+                    fàcilment. Actualment una de cada quatre pàgines es crea amb WordPress.
+                </li>
+                <li><span class="negrita">Chris Pederik</span> crea la
+                        <span class="negrita">Web Developer Toolbar</span> per a Firefox, barra d'eines per a desenvolupadors que
+                    permet inspeccionar cada element duna pàgina web.
+                </li>
+            </ul>
+        </li>
+        <li><span class="negrita">2004</span>
+            <ul>
+                <li>Es comercialitza el navegador <span class="negrita">Firefox</span>, comença
+                    la segona guerra de navegadors.
+                </li>
+                <li>Es forma el WHATWG per aconseguir un HTML
+                    versió 5 que es converteixi en nou estàndard. L'impulsen Opera i Mozilla principalment i
+                    és ràpidament recolzat per Apple i Google
+                    per contrarestar el domini de Microsoft.
+                </li>
+            </ul>
+        </li>
+        <li><span class="negrita">2005</span>
+            <ul>
+                <li><span class="d-word">AJAX</span>, tecnologia que combina JavaScript, HTML,
+                    CSS i XML es popularitza passant a ser una de les tecnologies fonamentals per crear pàgines
+                    web dinàmiques. Gràcies a aquesta tecnologia comença l'anomenada tercera
+                        era de la web.
+                </li>
+                <li><span class="negrita">Es creen patrons MVC</span> (Model-Vista-Controlador) que faciliten als programadors la
+                    creació de serveis web.
+                </li>
+                <li>Es llança el framework Ruby on Rails dissenyat
+                    per David Heinemeier que ràpidament es popularitza com
+                    tecnologia facilitadora per crear llocs web basats en patrons MVC (Model-Vista-Controlador).
+                    Els patrons MVC per part seva cada vegada s'utilitzen més.
+                </li>
+                <li>Apareix el test Acid2 amb què s'intenta verificar el compliment de CSS2 per
+                    part dels navegadors. Safari 2 és el primer navegador que
+                    ho passa al 100%.
+                </li>
+            </ul>
+        </li>
+        <li><span class="negrita">2006</span>
+            <ul>
+                <li>Joe Hewitt llança Firebug,
+                    l'extensió per al Firefox que permet depurar el codi de qualsevol lloc web. La seva forma de
+                    treballar és copiat en els anys següents per totes les eines per a desenvolupadors web
+                    a la resta de navegadors.
+                </li>
+                <li>John Resig crea
+                        jQuery, framework per a JavaScript que impulsa de
+                    forma molt notable aquest llenguatge. És la tecnologia més influent en els anys següents.
+                </li>
+                <li>Microsoft llança <span class="negrita">Internet Explorer 7</span>, deixant molts anys entre la versió 6 i la 7; obligada pel
+                    èxit de Firefox.
+                </li>
+                <li>Es crea <span class="negrita">SASS</span>, llenguatge per facilitar la
+                    creació i manteniment dels fulls CSS. Es va popularitzar primer per a aplicacions
+                    creades a Ruby i, posteriorment, per a la creació de tot
+                    tipus d'aplicacions web.
+                </li>
+            </ul>
+        </li>
+        <li><span class="negrita">2007</span>
+            <ul>
+                <li>Apple comercialitza el primer <span class="negrita">iPhone</span>, comença
+                    l'èxit dels smartphones que de mica en mica passen a ser un dels dispositius que més pàgines
+                    web visiten.
+                </li>
+                <li><span class="negrita">Google</span> presenta el sistema <span class="negrita">Android</span> que en poc
+                    temps estarà present a la majoria de smartphones.
+                </li>
+            </ul>
+        </li>
+        <li><span class="negreta">2008</span>
+            <ul>
+                <li>La guerra dels navegadors s'agreuja amb l'arribada de Google Chrome. Actualment és el navegador més popular.
+                </li>
+                <li>Apareix el primer esborrany d'HTML 5.</li>
+                <li>Apareix el test Acid3 amb què es verifica el
+                    compliment dels estàndards CSS 2.1, DOM i JavaScript estàndard
+                    (ECMAScript). Els primers a passar-lo al 100% són els
+                    navegadors webkit (Safari i
+                    Chrome) i Opera.
+                </li>
+            </ul>
+        </li>
+        <li><span class="negreta">2009</span>
+            <ul>
+                <li>L'empresa <span class="negrita">Palm</span> crea <span class="negrita">WebOS</span> una plataforma per a
+                    mòbils que permet crear aplicacions usant només HTML, CSS i JavaScript.
+                </li>
+                <li><span class="negrita">Ryan Dahl</span> crea Node.js, servidor JavaScript que permet crear aplicacions web
+                    on tant la programació front com back-end es crea a JavaScript
+                    (es parla de programació <em class="cursiva">Full Stack JavaScript</em>). Utilitza el motor
+                    V8, intèrpret JavaScript de Google Chrome.
+                </li>
+                <li>Es crea CoffeeScript, llenguatge que facilita la
+                    escriptura de JavaScript.
+                </li>
+            </ul>
+        </li>
+        <li><span class="negrita">2010</span>
+            <ul>
+                <li>Apple crea l'iPad, les tauletes comencen a ser
+                    una altra opció mòbil que potencia que cada cop més usuaris vegin pàgines web des de dispositius
+                    tàctils i de pantalla petita.
+                </li>
+                <li>Explosió mòbil. El creixement desorbitat del
+                    ús de smartphones fa que cada cop més gent accedeixi a la web
+                    des de dispositius mòbils. A la Xina gairebé un 70% dels usuaris utilitza un mòbil per accedir a
+                    Internet.
+                </li>
+                <li>Xina té 460 milions d'usuaris a Internet. És el país amb més nombre de
+                    usuaris desbancant per primera vegada els Estats Units.
+                </li>
+                <li>Google llança Angular framework MVC de creació
+                    d'aplicacions web de tipus <span class="negrita">single-page</span> (de pàgina única)
+                </li>
+            </ul>
+        </li>
+        <li><span class="negrita">2011</span>
+            <ul>
+                <li>La W3C presenta la norma CSS 2.1, que arregla
+                    fallades de CSS2. És insuficient perquè està ja acceptat el no oficial CSS3.
+                </li>
+                <li>S'accepta HTML 5 i Flash comença a deixar de
+                    utilitzar-se (encara que segueix sent molt influent)
+                </li>
+                <li>La W3C accepta HTML5 i acorda amb la WHATWG el
+                    futur estàndard.
+                </li>
+                <li>A la Xina ja es navega més des de dispositius mòbils que des d'ordinadors de
+                    sobretaula o portàtils.
+                </li>
+                <li><span class="negrita">Twitter</span> llança <span class="negrita">Bootstrap</span>
+                    framework que facilita la creació de pàgines adaptables.
+                </li>
+                <li>Es crea el framework <span class="negrita">PhoneGap</span> que permet crear
+                    aplicacions HTML5 que després es converteixen en aplicacions natives dels principals sistemes
+                    operatius de dispositius mòbils.
+                </li>
+            </ul>
+        </li>
+        <li><span class="negrita">2013</span>
+            <ul>
+                <li><span class="negreta">Mozilla</span> llança el sistema operatiu mòbil <span class="negreta">FirefoxOS</span> orientat a aplicacions al núvol i al codi obert.
+                </li>
+                <li>Google llança les <span class="negrita">Google Glasses</span> ulleres
+                    permanentment connectades. Amb aquest i altres petits aparells connectats es diu que comença
+                    la Internet of Things (l'Internet de les coses) la revolució
+                    digital següent a la dels dispositius mòbils: durant tot l'any es llancen polseres de
+                    seguiment d'activitat, rellotges intel·ligents, sensors biomètrics,…
+                </li>
+                <li>Facebook llança React framework que facilita la creació d'interfícies d'usuari
+                    a HTML5.
+                </li>
+            </ul>
+        </li>
+        <li><span class="negreta">2014</span>
+            <ul>
+                <li>La W3C publica com a recomanació oficial, la
+                    norma HTML 5.
+                </li>
+            </ul>
+        </li>
+        <li><span class="negreta">2015</span>
+            <ul>
+                <li>Google crea AMP (Accelerated
+                        Mobile Pages) format de creació de pàgines web ràpides i adaptades als dispositius
+                    mòbils.
+                </li>
+                <li>Per primera vegada les vendes de telèfons mòbils baixen.</li>
+                <li>L'ECMA publica l'estàndard JavaScript
+                    (ECMAScript) versió 6 (també anomenat ES2015), marcant una
+                    revolució en la programació en aquest llenguatge.
+                </li>
+            </ul>
+        </li>
+        <li><span class="negrita">2016</span>
+            <ul>
+                <li>Google llança <span class="negrita">Angular 2</span>.</li>
+                <li>Apareix ECMAScript 2016 (versió 6) aportant
+                    noves millores a la línia de la versió anterior.
+                </li>
+                <li><span class="negrita">Google Chrome</span> és el navegador dominant a tot el planeta.</li>
+                <li>Es comença a utilitzar el terme Progressive Web
+                        Applications (PWA) per definir un model de
+                    creació d'aplicacions web que en facilita la conversió com a aplicacions natives de mòbil.
+                </li>
+            </ul>
+        </li>
+        <li><span class="negrita">2017</span>
+            <ul>
+                <li>La W3C publica la norma <span class="negrita">HTML 5.1</span> com a proposta
+                    de recomanació.
+                </li>
+                <li>El dinamisme del llenguatge <span class="negrita">JavaScript</span> provoca l'aparició d'un nou estàndard:
+                    <span class="negrita">ECMAScript 2017 (versió 8)</span> amb noves estructures al
+                    llenguatge.
+                </li>
+            </ul>
+        </li>
+    </ul>
+</p>
+
+
+
+</section><!-- End section El llenguatge HTML-->
+
+<!--*********************************************************Funcionament de les aplicacions web***********************************************************-->
+<section class="apartado">
+<a name="sFuncionamientodelasaplicacionesweb"></a>
+<h2>Funcionament de les aplicacions web</h2>
+
+<h3>HTML, CSS i JavaScript</h3>
+<p>Una aplicació web, és una aplicació creada usant com a base el llenguatge HTML. Per tant, és una aplicació que s'executa en un navegador d'Internet.
+
+</p>
+<p>
+Les aplicacions web utilitzen llenguatges que donen suport a la tasca d'HTML i que són traduïbles per part dels navegadors. Essencialment les aplicacions web actuals utilitzen:
+
+<ul>
+    <li><span class="negrita">HTML</span>. Per donar significat als continguts de laplicació web. Permet indicar quins textos són títols, 
+        quins són paràgrafs normals, quines són cel·les duna taula, quines són imatges, etc.</li>
+    <li><span class="negrita">CSS</span>. Llenguatge que permet donar format i maquetació als continguts. Color, mida de lletra, posició, etc.</li>
+    <li><span class="negrita">JavaScript</span>. Permet dissenyar la interactivitat de la pàgina. 
+        Permet que les accions de l'usuari es puguin capturar i que la pàgina hi reaccione. 
+        Exemples de les possibilitats que quan l'usuari agafi el ratolí a una imatge aquesta s'il·lumine, 
+        o que quan l'usuari faci clic en un títol es mostre el contingut relacionat si estava ocult o que l'usuari puga augmentar la mida de la lletra de la pàgina fent clic a una icona.</li>
+</ul>
+
+</p>
+
+<h3>Protocol http</h3>
+<p>La transmissió de pàgines web (que en definitiva són documents HTML) es fa mitjançant el protocol <span class="negrita">http</span>, 
+    que és part de la pila de protocols <span class="negrita">TCP/IP</span>. 
+    És un protocol basat en una comunicació petició-resposta; de manera que un <span class="negrita">client</span> (també anomenat <span class="negrita">user agent</span>,
+     agent d'usuari) fa una petició de recurs indicant la seva adreça a Internet. 
+     La petició arribarà a un <span class="negrita">servidor http</span> (també anomenat servidor web), el qual respon a aquesta petició, 
+     bé transmetent al client el recurs sol·licitat o bé indicant un missatge derror si el recurs no està disponible.
+   <figure><img src="UD2/images/ud2-2023-09-18-13-00-19.png" /><br><figcaption>Esquema simple de funcionament del protocol http</figcaption></figure>
+   <br>
+     
+    </p>
+
+<p>Els paquets http que s'intercanvien entre el client i el servidor contenen una capçalera amb informació de control 
+    i després el cos. Aquest cos és el codi HTML en el cas duna pàgina web, o la imatge, àudio, etc. que s'està transmetent.
+<figure><img src="UD2/images/ud2-2023-09-18-13-02-11.png" /><br><figcaption>Capçalera que retorna el paquet de resposta http amb la pagina de portada del lloc web jorgesanchez.net</figcaption></figure>
+<br>
+
+</p>
+
+<p>A l'imatge anterior, s'observa el paquet retornat pel servidor web quan rep una petició http (de tipus GET) a la URL http://jorgesanchez.net. 
+    S'indica que la resposta va ser correcta (codi 200, OK), la IP del servidor que respon, la mida del paquet, la data en què expira, etc.
+     A més s'annexa la capçalera de la petició original (request headers) on es veu el navegador de l'usuari que va fer la petició, el llenguatge del seu equip, etc.</p>
+
+<p>A més de la capçalera, el contingut dels paquets http té un cos amb el contingut del recurs que se sol·licitava. 
+    Per exemple, en cas d'haver sol·licitat una pàgina web, el cos conté codi HTML que el navegador podrà traduir.</p>
+
+<p>El protocol http serveix per transportar tota mena de continguts. 
+    De fet, el codi HTML d'una pàgina web fa referència a altres fitxers (imatges, fitxers CSS, etc.). 
+    Quan el navegador detecta aquestes referències, sol·licita al servidor web aquests recursos. 
+    El navegador respondrà amb nous paquets que contindran (si està a la mà) el contingut sol·licitat.</p>
+
+<p>El client (normalment un navegador) serà l'encarregat de mostrar el recurs sempre que el navegador tinga la capacitat de fer-ho, 
+    ja que els navegadors poden mostrar molts formats de contingut, però per descomptat no tots.</p>
+
+<p>Entre els recursos transmesos per http que un navegador és capaç de reconèixer estan:
+    <ul>
+        <li>Codi HTML, CSS i JavaScript</li>
+        <li>Imatges JPEG, PNG, SVG i GIF</li>
+        <li>Vídeos MP4 i altres formats</li>
+        <li>Àudio MP3 i altres formats</li>
+        <li>Fitxers XML (encara que no la validació ni el codi XSL associat)</li>
+    </ul>
+</p>
+
+
+<h3>Front-end i back-end</h3>
+<p>En aquest apartat s'explica breument el funcionament d'una aplicació web complexa. L'únic propòsit és indicar que les aplicacions web utilitzen nombroses tecnologies.
+</p><p>
+A la majoria d'aplicacions web complexes, quan un navegador requereix aquesta aplicació, el servidor necessita executar accions com: 
+interpretar codi del costat del servidor (per exemple en <span class="negrita">PHP</span> o <span class="negrita">ASP.Net</span>), 
+demanar recursos a altres servidors (bases de dades, mapes, streaming de vídeo, etc.) o emmagatzemar dades de sessió.
+</p><p>
+Aquestes accions són totalment opaques a l'usuari. Després de la seva execució, el navegador de l'usuari rep codi que sí que és capaç d'interpretar (normalment HTML, CSS i JavaScript).
+</p><p>
+Això implica que una aplicació web pot realitzar tasques a l'anomenat <span class="negrita">costat del servidor</span>. 
+És a dir, tasques que s'executen al servidor i el codi del qual no podem obtenir. 
+Per tant, quan es crea una aplicació web hi ha persones dedicades a programar en codi traduïble al costat del servidor i codi al costat del client,
+</p><p>
+El costat del servidor s'associa al desenvolupament <span class="negrita">back-end</span>, els seus programadors són anomenats programadors back-end. Mentre que els professionals encarregats de l'aparença al navegador, són anomenats programadors front-end.</p>
+<figure><img src="UD2/images/ud2-2023-09-18-13-09-25.png" /><br><figcaption>Fullstack development</figcaption></figure>
+<br>
+
+<p>HTML és la tecnologia dominant per programar el <span class="negrita">front-end</span>. Per tant, aquest és un "manual" dedicat al front-end.</p>
+
+
+</section><!-- End section Funcionament de les aplicacions web-->
+
+
+<!--*********************************************************eines per crear aplicacions en HTML***********************************************************-->
+<section class="apartado">
+<a name="sEinespercrearaplicacionsenHTML"></a>
+<h2>Eines per crear aplicacions en HTML</h2>
+
+<p>Per escriure codi HTML n'hi hauria prou amb un <span class="negrita">editor de text pla</span> com el <span class="negrita">bloc de notes de Windows</span>
+     o <span class="negrita">vi</span> veure de Linux/Unix. No obstant això, l'escriptura d'HTML en aquest tipus d'editors és incòmoda ja que no proporcionen ajuda
+      ni acceleren l'escriptura.
+</p><p>
+A més, els resultats s'han de mostrar en un navegador o, encara millor, provar en diversos navegadors per comprovar problemes de compatibilitat 
+(ja que hi ha elements HTML que no són compatibles amb tots els navegadors).
+</p><p>
+Així, la llista de navegadors a instal·lar per provar el nostre codi seria: <span class="negrita">Microsoft Internet Explorer, Google Chrome, Mozilla Firefox, Apple Safari i Opera</span>.
+D'altra banda, és interessant provar en <span class="negrita">dispositius mòbils</span> o bé afegir plugins als nostres navegadors que simulin la visualització d'un mòbil.
+</p><p>
+Per escriure el codi l'ideal és treballar mitjançant editors de codi capaços d'entendre el llenguatge 
+i pintar de manera diferent les etiquetes HTML per distingir-les del text normal i així treballar millor i que a més incorporin eines que facilitin l'edició.
+</p><p>
+Així tenim les opcions següents:</p>
+<p>
+<ul>
+    <li><span class="negrita">Editors de text multipropòsit</span> (editors de codi). 
+        Són programes que permeten editar text, però que estan pensats per escriure codi a qualsevol llenguatge de programació. 
+        El seu avantatge és que acoloreixen la sintaxi depenent del llenguatge en què estem escrivint, perquè són editors políglotes.
+        <br>
+        Quan escrivim en HTML, acoloreixen el text ressaltant el codi de manera que sigui més llegible. 
+        A més ens ajuden a escriure codi HTML de forma més eficaç, perquè fins i tot detecten les fallades. 
+        Entre els més coneguts hi ha <span class="negrita">Notepad++, TextMate, Atom, Visual Studio Code o Sublim Text.</span>
+    </li>
+    <li>
+        <span class="negrita">Editors de text HTML</span>. Són editors especialitzats a escriure codi HTML. 
+        La diferència respecte als anteriors és que, amb aquests, no podrem escriure codi en llenguatges com C o Java. 
+        A canvi, tindrem més funcions per escriure en HTML. Per exemple, podrem previsualitzar el resultat del codi HTML (avançant-nos al navegador), 
+        pintat més ajustat als llenguatges de la web, reconeixement de llibreries i plantilles d'ús habitual de dissenyadors,…
+        <br>
+        Alguns són: <span class="negrita">Coda, Komodo Edit, WebStorm o Brackets</span>. 
+        Els editors Atom i Visual Studio Code n'hi ha que els col·loquen en aquest tipus perquè, encara que són editors políglotes, estan molt especialitzats en aplicacions web.
+    </li>
+    <li><span class="negrita">Editors XML</span>. Pensats per a la gent que treballa creant documents i elements relacionats amb XML. 
+        Entenen HTML, però no són tan potents com els anteriors, encara que poden servir per a feines que no requereixen molta especialització en HTML. 
+        Els editors XML més famosos són <span class="negrita">Oxygen i XMLSpy</span>.</li>
+    <li><span class="negrita">Entorns complets de programació</span>. Són els anomenats <span class="negrita">IDE</span> (Entorns de Desenvolupament Integrat) 
+        que són entorns de treball per programar en llenguatges avançats com <span class="negrita">Java o C++</span>, 
+        però que solen treballar perfectament per crear projectes per a la web. 
+        Destaquen <span class="negrita">Eclipse, Aptana</span> (versió d'Eclipse per a llenguatges a la web), <span class="negrita">NetBeans, IntelliJ IDEA i Microsoft Visual Studio</span>.</li>
+    <li><span class="negrita">Editors en línia</span>. Són aplicacions web que ens permeten escriure i provar el nostre HTML. Per exemple, l'editor de w3schools: <br>
+        <a class="enlace" target="_blank" href="http://www.w3schools.com/html/tryit.asp?filename=tryhtml_basic">http://www.w3schools.com/html/tryit.asp?filename=tryhtml_basic</a>
+        <br>
+        o bien
+        <br>
+        <a class="enlace" target="_blank" href="http://htmledit.squarefree.com/">http://htmledit.squarefree.com/</a> <br>
+        Per a petits fragments es fa servir <a class="enlace" target="_blank" href="https://codepen.io">https://codepen.io</a>
+    </li>
+    <li>
+        <span class="negrita">Editors visuals</span>. Permeten treballar de manera que puguem construir pàgines web sense escriure codi, de manera visual. 
+        Es basen en el programari <span class="d-word">WYSIWYG</span> (What You See Is What You Get), el que es veuen a la pantalla és el resultat que s'obtindrà. 
+        Referit al fet que treballes veient la feina tal com quedarà finalment. 
+        En realitat és impossible ja que l'aspecte final dependrà del dispositiu i el programari que s'utilitzi en veure la pàgina i això variarà enormement d'un usuari a un altre; 
+        però com a mínim permeten fer-se una idea molt visual del resultat.
+        <br>
+<span class="negrita">Adobe Dreamweaver</span> seria el més famós d'aquest tipus i el més complet, ja que també permet treballar còmodament amb el codi. 
+Altres opcions són <span class="negrita">Adobe Muse, Tumult Hype, Google Web Designer, Kompozer, WYSIWYG Web Builder o Xara Web Designer</span>.
+    </li>
+</ul>
+
+</p>
+</section><!-- End section eines per crear aplicacions en HTML-->
+
+<!--*********************************************************Versions d'HTML***********************************************************-->
+<section class="apartado">
+<a name="sVersionsdHTML"></a>
+<h2>Versions d'HTML</h2>
+
+<p>Els estàndards que segueixen en funcionament actualment són els següents:</p>
+
+<h3>HTML 4.01</h3>
+<p>Es tracta de la versió estàndard de l'HTML tradicional feta l'any 1999 i que segueix tenint certa vigència actualment, 
+    ja que és l'últim HTML l'estàndard del qual va definir la W3C abans de XHTML.
+    </p><p>
+Per avisar que el nostre document segueix les normes d'HTML 4.01, es col·loca a les pàgines web, una etiqueta DOCTYPE (ha de ser la primera línia del document) 
+que serveix per avisar precisament de quin tipus d'HTML segueix el document i quin document oficial li valida. 
+Per a HTML 4.01 transicional (hi ha una versió d'HTML4.01 estricta i una altra per a les, ja en desús, pàgines de marcs) és:</p>
+
+<section><pre><code class="language-xml">&lt;!DOCTYPE HTML PUBLIC
+  "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd"></code></pre>
+</section><br><br>
+
+<h3>XHTML</h3>
+
+<p>S'ideà com el substitut d'HTML, ja que es considerava que XML quedaria com a llenguatge de marques definitiu i que calia compatibilitzar HTML amb les normes d'XML. 
+    La primera versió, la 1.0 segueix sent la més utilitzada. Hi ha també una versió <span class="negrita">estricta</span>, una <span class="negrita">transicional</span>
+     i una versió per a <span class="negrita">pàgines amb marcs</span> (que gairebé no es fa servir). 
+     La més utilitzada és la transicional (igual que a HTML 4) perquè permet l'ús de nombrosos atributs i elements que es consideren obsolets, però que molts dissenyadors utilitzen.
+</p><p>
+Les pàgines XHTML obliguen a que l'escriptura d'HTML segueixi les regles del llenguatge XML ben format, per la qual cosa són més estrictes en la manera d'escriure.
+</p><p>
+Per indicar que utilitzem XHTML 1.0 transicional cal posar aquesta etiqueta DOCTYPE al principi del document:</p>
+
+<section><pre><code class="language-xml">&lt;!DOCTYPE html PUBLIC
+"-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"></code></pre>
+</section><br><br>
+
+<p>A més, l'etiqueta arrel html de tot document HTML s'ha d'usar d'aquesta manera (especificant l'espai de noms i l'idioma de la pàgina):</p>
+
+<section><pre><code class="language-xml">&lt;html xmlns="http://www.w3.org/1999/xhtml"xml:lang="ca"></code></pre>
+</section><br><br>
+
+<p>En el cas de XHTML 1.0 estricte, el DOCTYPE seria:</p>
+<section><pre><code class="language-xml">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"></code></pre>
+</section><br><br>
+
+
+<p>L'etiqueta arrel html seria igual que a la versió transicional</p>
+
+
+<h3>HTML 5</h3>
+<p>Es considera el estàndard actual. A poc a poc <span class="subrayado">s'està convertint en HTML més utilitzat</span>. 
+    Es va crear fora del <span class="negrita">World Wide Web Consortium</span> a l'entitat anomenada WHATWG (Web Hypertext Application Technology Working Group),
+     afavorida per <span class="negrita">Apple, Google i Mozilla</span> entre altres empreses a les quals s'han anat afegint moltes més.</p>
+
+<figure><img src="UD2/images/ud2-2023-09-18-13-33-31.png" /><br><figcaption>HTML 5</figcaption></figure>
+<br>
+
+<p>
+    La W3C va decidir unir-se a la WHATWG el 2008 per buscar un estàndard. Actualment HTML 5 ja és una recomanació oficial de la W3C que ha substituït WHATWG com a organisme encarregat de vetllar per l'estàndard.
+</p><p>
+HTML5 segueix una filosofia d'“estàndard viu” en què ja hi ha una recomanació d'ús per part seva, però que va canviant contínuament segons es consideren noves millores 
+o l'aparició de noves tecnologies; 
+aquesta forma dinàmica de fer servir les recomanacions ha estat la clau de l'èxit d'HTML 5 des de l'any 2012 
+(especialment gràcies que els dispositius Apple i Android sempre han manejat molt bé HTML 5).
+</p><p>
+Des del 2014 és la recomanació oficial de la W3C.
+</p><p>
+HTML 5 segueix creixent i per això (seguint la filosofia d'estàndard dinàmic de la WHATWG) 
+les pàgines HTML 5 indiquen que usen aquesta versió d'HTML mitjançant un DOCTYPE molt més senzill:
+    </p>
+
+<section><pre><code class="language-xml">&lt;!DOCTYPE html>
+&lt;html lang="es"></code></pre>
+</section><br><br>
+
+<p>L'etiqueta arrel HTML també és més senzilla que les utilitzades en XHTML (indicant simplement l'idioma).
+
+    <p>La versión actual és l'estàndard HTML 5.3</p>
+    
+<h3>Validar el cod HTML</h3>
+
+<p>Els navegadors no són estrictes amb les normes HTML; és a dir, encara que tinguem algunes fallades, els ignoraran per mostrar la millor versió del codi que fem. 
+    Als navegadors els interessa fer funcionar el codi, sigui vàlid o no.
+</p><p>
+Tot i això, com a creadors de pàgines web, hem de complir les normes del llenguatge aprenent així realment el llenguatge ia més impedint que el navegador s'equivoqui en interpretar les nostres fallades. A més, fa que altres creadors de pàgines comprenguin el codi perfectament, facilitant el treball col·laboratiu.
+</p><p>
+El validador oficial de la W3C (<a class="enlace" target="_blank" href="http://validator.w3.org/">http://validator.w3.org/</a>) permet validar totes les versions HTML, inclosa la versió 5.
+</p><p>
+Els errors greus es mostren en vermell i hi pot haver avisos (warnings) que són errors lleus, però que cal tenir en compte.
+</p><p>
+D'altra banda, la major part dels entorns de treball disposa de validador incorporat (al mateix entorn es marquen els errors alhora que escrivim el codi)
+ i alguns altres es pot instal·lar un plugin.
+</p><p>
+També podem instal·lar validadors en línia d'ordres com l'<span class="negrita">htmltidy</span>, disponible a <a class="enlace" target="_blank" href="http://www.html-tidy.org/">http://www.html-tidy.org/</a>, que permeten validar des de la línia d'ordres, encara que aquesta opció cada cop es fa servir menys.</p>
+
+<h3>Compatibilitat entre navegadors</h3>
+<p>La tecnologia dominant actualment per crear pàgines web és la que sorgeix dHTML5 i que inclou lús del llenguatge CSS (versió 3) i de JavaScript.
+</p><p>
+Tot i que avui dia gairebé tots els navegadors suporten HTML5, molts (sobretot si no estan actualitzats) no suporten totes les característiques. 
+De fet, com que HTML5 és viu i segueix introduint noves possibilitats, no hi ha cap navegador que inclogui totes les opcions.
+</p><p>
+Tradicionalment, Internet Explorer no és un navegador respectuós amb HTML 5, de fet només a partir de la versió 9 suporta els elements fonamentals d'HTML5 i 
+només a partir de la 10 ho fa de manera realment comparable a la de la resta de navegadors actuals. De fet, o es recomana als usuaris actuals fer servir aquest navegador, 
+excepte ara mostrar aplicacions web realitzades fa anys i que només són compatibles amb aquest, antany dominant, navegador.
+</p><p>
+El nou navegador de Microsoft, Edge sí que és més compatible. 
+Els navegadors en, general Chrome i Firefox són els que adopten més ràpid les noves normes i aporten més compatibilitat amb HTML5, però depèn de propietats. 
+Altres navegadors com Safari i Opera reconeixen també la immensa majoria d'HTML5.
+</p><p>
+La pàgina <a class="enlace" target="_blank" href="https://caniuse.com">caniuse.com</a> és la referència més completa i utilitzada per saber quines característiques dels llenguatges utilitzats a les pàgines web són suportades a cada navegador.</p>
+<figure><img src="UD2/images/ud2-2023-09-18-13-46-13.png" /><br><figcaption>can i use web</figcaption></figure>
+<br>
+
+<p>D'altra banda, el lloc <a class="enlace" target="_blank" href="http://html5test.com/">http://html5test.com/</a> realitza un test al navegador amb què entrem, 
+    per determinar el grau en què suporta HTML 5 (li dóna una puntuació) i ens indica quines característiques compleix i 
+    quines no ( cal tenir en compte que la tecnologia HTML5 no només es refereix al propi HTML sinó al CSS i JavaScript relacionat, així com a altres tecnologies dús amb HTML).
+</p><p>
+Una altra opció és <a class="enlace" target="_blank" href="http://fmbip.com/">http://fmbip.com/</a> que mostra les capacitats relacionades amb HTML5 que té el nostre navegador.
+</p><p>
+Una altra possibilitat interessant és utilitzar la llibreria Modernizr (disponible a <a class="enlace" target="_blank" href="http://modernizr.com/">http://modernizr.com/</a>) 
+que permet als desenvolupadors a JavaScript detectar les característiques que té el navegador de l'usuari i actuar en conseqüència des del codi mateix.</p>
+
+<h3>Webs de referència i ajuda</h3>
+
+<p>Davant de tants canvis i incompatibilitats, la situació és difícil per aprendre. 
+    Per això hi ha adreces a Internet que ens ajuden a utilitzar els diferents elements HTML5 (fins i tot ens en diuen la compatibilitat). Les més importants són:
+<ul><li>
+<span class="negrita">w3schools.</span> Conté informació al dia sobre HTML, CSS, JavaScript i altres tecnologies web. Està en anglès, però és senzilla i ben estructurada. L'ajuda de les etiquetes HTML és a l'adreça:
+<br><a class="enlace" target="_blank" href="http://www.w3schools.com/tags/">http://www.w3schools.com/tags/</a>
+</li><li>
+<span class="negrita">Mozilla Developer Network.</span> La pàgina oficial dels desenvolupadors del navegador Mozilla Firefox està fins i tot millor organitzada que l'anterior. 
+Conté informació de tots els elements HTML a mesura que apareixen, encara que no estiguen del tot estandarditzats, 
+indicant-ne la compatibilitat amb els navegadors i si ja és estàndard o no.
+Això sí, fa més èmfasi en els elements que el navegador Mozilla Firefox és capaç de reproduir.
+<br>
+<a class="enlace" target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">https://developer.mozilla.org/en-US/docs/Web/HTML/Element</a>
+</li><li>
+<span class="negrita">World Wide Web Consortium (W3C)</span>. Referència oficial de la documentació de tots els estàndards web. S'estructura de manera molt formal, però té l'avantatge que aquesta documentació és la que fa referència a l'estàndard. Sobre HTML podem acudir a l'adreça:
+<br><a class="enlace" target="_blank" href="https://www.w3.org/TR/html5/">https://www.w3.org/TR/html5/</a>
+
+</li></ul>
+</p>
+
+<h3>Publicació de llocs web</h3>
+
+
+
+<p>S'anomena <span class="negrita">lloc web</span> el conjunt de pàgines web i recursos que contenen tota la informació associada a una determinada adreça d'inici a Internet.</p>
+<figure><img src="UD2/images/ud2-2023-09-18-13-55-06.png" /><br><figcaption>Publicació d'un lloc web utilitzant FTP</figcaption></figure>
+<br>
+
+
+<p>Quan una persona desitja crear un nou lloc web, inicialment us crea al vostre ordinador de treball i 
+    per això ha de crear una carpeta i en ella emmagatzemar totes les pàgines i recursos necessaris (imatges, sons, vídeos, arxius auxiliars,…). 
+    Aquesta carpeta s'haurà d'enviar al servidor web que hàgim contractat o del que disposem per publicar la nostra pàgina a Internet.
+</p><p>
+Per això normalment s'utilitza el protocol de transmissió de fitxers conegut com a <span class="negrita">FTP</span>, encara que és possible que aquesta transmissió es faça amb altres protocols com <span class="negrita">WebDAV</span> o <span class="negrita">RDS</span>. 
+Amb copiar la carpeta al lloc adequat del nostre servidor, la pàgina estarà publicada.
+ Normalment per això se'ns demana un <span class="subrayado">usuari i una contrasenya</span> que verifica que realment som els propietaris de l'espai.
+</p><p>
+Una altra opció, més habitual avui dia per als desenvolupadors, és utilitzar sistemes de control de versions al núvol (el més conegut és <span class="negrita">GitHub</span>) 
+i descarregar l'última versió del codi directament al servidor web. 
+És a dir, des del nostre ordinador pugem la darrera versió del nostre codi al servidor al núvol i després actualitzem el codi al servidor web.</p>
+
+<figure><img src="UD2/images/ud2-2023-09-18-13-55-26.png" /><br><figcaption>Publicació de un lloc web utilitzant control de versió al núvol</figcaption></figure>
+<br>
+
+</section><!-- End section Versions d'HTML-->
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <script src="../script/prism.js"></script>
+</body>
+</html>
