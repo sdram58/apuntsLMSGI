@@ -848,7 +848,7 @@ Per indicar que utilitzem XHTML 1.0 transicional cal posar aquesta etiqueta DOCT
 <p>
     La W3C va decidir unir-se a la WHATWG el 2008 per buscar un estàndard. Actualment HTML 5 ja és una recomanació oficial de la W3C que ha substituït WHATWG com a organisme encarregat de vetllar per l'estàndard.
 </p><p>
-HTML5 segueix una filosofia d'“estàndard viu” en què ja hi ha una recomanació d'ús per part seva, però que va canviant contínuament segons es consideren noves millores 
+HTML5 segueix una filosofia d'"estàndard viu" en què ja hi ha una recomanació d'ús per part seva, però que va canviant contínuament segons es consideren noves millores 
 o l'aparició de noves tecnologies; 
 aquesta forma dinàmica de fer servir les recomanacions ha estat la clau de l'èxit d'HTML 5 des de l'any 2012 
 (especialment gràcies que els dispositius Apple i Android sempre han manejat molt bé HTML 5).
@@ -965,52 +965,3540 @@ i descarregar l'última versió del codi directament al servidor web.
 <a name="sEdiciobasicaelements"></a>
 <h2>Edició bàsica d'elements</h2>
 <h3>Etiquetes i elements</h3>
+<p>Un document HTML conté text. Ara bé, hi ha text que serveix per indicar <span class="negrita">elements</span> i propietats de la pàgina. 
+    És a dir, el text conté el que s'anomena <span class="negrita">etiquetes</span>.
+</p><p>
+Les etiquetes serveixen per delimitar elements de la pàgina. Els elements són cadascun dels elements de la mateixa; per exemple, un paràgraf és un element de la pàgina, 
+una taula també. Fins i tot hi ha elements que contenen altres elements (les taules consten de files i les files de cel·les, per exemple).
+</p><p>
+Les etiquetes són textos tancats entre els signes de més gran i més petit (<span class="d-word">&lt; ></span>). 
+Quan un navegador es troba un text tancat així, entendrà que dins dels símbols més petit i més gran el que s'<span class="subrayado">indica és l'inici d'un element</span>. 
+L'inici de l'ítem es marca amb el nom de l'ítem entre els símbols &lt; i >.
+
+Exemple:</p>
+
+<section><pre><code class="language-xml">&lt;strong></code></pre>
+</section><br><br>
+
+<p>L'etiqueta <span class="r-word">strong</span> serveix per indicar text important (se sol mostrar en negreta)
+</p>
+<p>
+La majoria d'etiquetes afecten un text determinat, el qual estarà tancat per les etiquetes. Per tant, gairebé sempre hi ha una etiqueta d'obertura i una altra de tancament, que s'interpretarà com l'inici i la fi d'un determinat element de la pàgina.
+</p><p>
+El tancament d‟una etiqueta es marca posant el símbol <span class="d-word">/</span>, seguit del nom de l‟element estem tancant. Exemple:</p>
+<section><pre><code class="language-xml">Text normal &lt;strong>text negreta&lt;/strong></code></pre>
+</section><br><br>
+
+<p>Literalment el que indiquem a l'exemple anterior és que el text conté un element de tipus <span class="cursiva">strong</span>, que conté el text: text negreta. 
+    Un navegador reaccionarà mostrant aquest text amb un tipus de lletra més fort. És a dir:</p>
+    <div class="muestra">Text normal <strong>text negreta</strong></div>
+
+<p>Ja s'ha comentat que un element pot contenir dins més elements, per la qual cosa entre l'obertura i el tancament d'una etiqueta hi pot haver més etiquetes.
+     Una norma important és que sempre hem de tancar primer les etiquetes obertes més tard.</p>
+<p>És a dir, aquest codi <span class="negrita">no és correcte</span>.</p>
+<section><pre><code class="language-xml">Text normal &lt;strong>&lt;em>text negreta i cursiva&lt;/strong>&lt;/em></code></pre>
+</section><br><br>
+<p>S'està tancant l'etiqueta <span class="r-word">em</span>  després de <span class="r-word">strong</span> i això no és correcte perquè curs és la darrera que es va obrir. 
+    El correcte és:</p>
+
+    <section><pre><code class="language-xml">Text normal &lt;strong>&lt;em>text negreta i cursiva&lt;/em>&lt;/strong></code></pre>
+    </section><br><br>
+
+<p>És a dir, primer es tanca l'element <span class="negrita">em</span> que va ser l'últim a obrir-se.</p>
+
+<figure><img src="UD2/images/ud2-2023-09-19-23-38-50.png" /><br><figcaption>Nidament HTML</figcaption></figure>
+<br>
+
+<p>
+    La veritat és que els navegadors no solen donar problemes quan cometem errors al codi. 
+    Fins i tot un error com el que mostra abans, no seria considerat. El que fan és arreglar els nostres errors, sempre que siga possible. 
+    La raó és que els interessa que les pàgines es vegen correctament i no actuar com a validadors del codi.
+</p>
+
 
 
 <h3>Atributs</h3>
+<p>Algunes etiquetes tenen <span class="negrita">atributs</span>. 
+    Els atributs són propietats de cada element a què podem assignar un valor, de manera que aquest valor varia el comportament de l'element.
+    La manera d'utilitzar atributs és:</p>
+<section><pre><code class="language-xml">&lt;element nomDeAtribut1="valor1" nomDeAtribut2="valor1" … ></code></pre>
+</section><br><br>
 
+<p>Als atributs se'ls assignen valors que han d'anar entre cometes. El símbol d'igualtat (<span class="negrita">=</span>) <span class="subrayado">és obligatori</span>.
+<br>
+Exemple:</p>
+<section><pre><code class="language-xml">&lt;p lang="es"></code></pre>
+</section><br><br>
 
+<p>Indica que el elemento está marcado en idioma español.
+
+La sintaxis de atributos es:</p>
+<section><pre><code class="language-xml">&lt;etiqueta atributo1="valor1" atributo2="valor2 valor3" ...>
+....
+&lt;/etiqueta></code></pre>
+</section><br><br>
+
+<p>Noteu que un atribut pot tindre més d'un valor, encara que no és el més habitual. En aquest cas els valors van separats per espais en blanc</p>
 
 <h3>Estructura bàsica d'un document HTML</h3>
 
+<p>
+    Per crear una pàgina web usant <span class="negrita">HTML 5</span>, l'estructura bàsica és la següent:
+</p>
 
+<section><pre><code class="language-xml">&lt;!DOCTYPE html>
+&lt;html lang="ca">
+    &lt;head>
+        &lt;meta charset="UTF-8" >
+            &lt;title>&lt;/title>
+    &lt;/head>
+    &lt;body>
+        
+    &lt;/body>
+&lt;/html></code></pre>
+</section><br><br>
+
+<p>On el significat dels elements és el següent:</p>
+<ul>
+    <li><span class="negrita">línia DOCTYPE</span>. L'etiqueta <span class="negrita">DOCTYPE</span> indica el tipus d'HTML que estem fent servir (concretament HTML 5). Es
+        tracta d'una línia que a l'actualitat segueix ignorant gairebé tots els navegadors, però que és molt
+        recomanable (i molt respectuós amb la norma) escriure. S'hi indica la versió HTML que segueix el
+        document.
+    </li>
+    <li><span class="negrita">etiqueta html</span>. Tot document HTML està tancat dins de
+        l'obertura i tancament d'aquesta etiqueta. Marca'n el principi i la fi (marca el <span class="negrita">element arrel</span> d'un document HTML). 
+        Cal afegir l'<span class="negrita">atribut</span> <span class="r-word">lang</span>  per indicar l'idioma en què està escrit el document.
+    </li>
+    <li><span class="negrita">capçalera</span>, etiqueta <span class="r-word">head</span>. Tanca les etiquetes de capçalera,
+        les quals proporcionen informació que el navegador ha de tenir en compte per al contingut del document
+        aparegui de forma correcta i també conté elements que proporcionen informació als cercadors (com
+        Google). Els elements habituals que conté són:
+        <ul>
+            <li><span class="negrita">etiquetes <span class="r-word">meta</span> </span>. Que serveixen per indicar aspectes de
+                funcionament de la pàgina web com, capçaleres del protocol http, indicacions sobre cada quant
+                caduca la pàgina, paraules clau per buscar la pàgina als navegadors, codificació de
+                caràcters de la pàgina,… En aquest cas només s'usa l'etiqueta <span class="negrita">meta</span> obligatòria que indica que estem codificant el text usant el
+                format <span class="negrita">utf-8</span> de <span class="negrita">Unicode</span>.
+            </li>
+            <li><span class="negrita">títol</span>, etiqueta <span class="r-word">title</span>. El títol de la pàgina, que els navegadors solen col·locar a la
+                barra de títol de la finestra on es mostra la pàgina.
+            </li>
+            <li><span class="negrita">declaració de fitxers externs i scripts</span>. A l'exemple no hi ha declaracions d'aquest tipus.</li>
+        </ul>
+    </li>
+    <li><span class="negrita">cos</span>. Tancat a l'etiqueta <span class="r-word">body</span> ,
+        tanca el contingut en si de la pàgina web. El que el navegador mostra per pantalla és el que es col·loca
+        en aquest apartat.
+    </li>
+</ul>
 
 <h3>Espais en blanc</h3>
+<p class="sub-section">Funcionament dels espais en blanc</p>
+<p>El text dins de les pàgines web no respecta els espais en blanc ni tabuladors que col·loquem al codi, 
+    a l'hora de mostrar el contingut per pantalla. Només es considera el primer espai en blanc, la resta s'eliminen.</p>
 
-<p class="sub-section">Funcionamient dels espais en blanco</p>
+    <p>Per exemple:</p>
+<section><pre><code class="language-xml">&lt;!DOCTYPE html>
+&lt;html lang="ca">
+    &lt;head>
+        &lt;meta charset="UTF-8">
+            &lt;title>&lt;/title>
+    &lt;/head>
+    &lt;body>
+        Aquest text
+                                en té molts
+                         espais
+    &lt;/body>
+&lt;/html></code></pre>
+</section><br><br> 
+<p>El resultat mostraria a la pàgina aquest text:</p>
 
+<div class="muestra">Aquest text té molts espais</div>
+
+<p>La raó és permetre una major llegibilitat del codi, permetent-hi que col·loquem el codi amb sagnies i espais que millorin la seva lectura, 
+    perquè el manteniment del mateix sigui més còmode.</p>
 
 <p class="sub-section">Etiqueta pre</p>
+<p>Si volem que els espais que col·loquem al codi sí que siguin tinguts en compte, podem utilitzar l'etiqueta <span class="r-word">pre</span> .
+</p><p>
+Realment, amb caràcter general, no s'aconsella l'ús de <span class="r-word">pre</span>  perquè ajuda a adquirir mals hàbits 
+i dificulta l'aprenentatge de les formes avançades de maquetar pàgines web. ´
+</p><p>
+Sí que hi ha contextos en què és obligat el seu ús, per exemple per mostrar textos referits a exemples de codi de llenguatges de programació. <br>Exemple:</p>
 
+<section><pre><code class="language-xml">&lt;!DOCTYPE html>
+&lt;html lang="ca">
+    &lt;head>
+        &lt;meta charset="UTF-8">
+            &lt;title>Hola món&lt;/title>
+    &lt;/head>
+    &lt;body>
+                &lt;p>Programa &lt;strong>Hola món&lt;/strong>
+                escrit amb Java
+
+    &lt;/body>
+&lt;/html>
+&lt;pre>
+public class HolaMon{
+    public string void main(String[] args){
+        System.out.println("Hola Món");
+    }
+}
+&lt;/pre></code></pre>
+</section><br><br>
+
+<p>Com que la pàgina anterior mostra un exemple de codi en <span class="negrita">Java</span>, el més apropiat és utilitzar <span class="r-word">pre</span> 
+     per mantenir les tabulacions tal com es van fer en escriure el codi. El resultat seria:</p>
+
+     <div class="muestra"><p>Programa <strong>Hola món</strong>
+escrit amb Java</p>
+
+    </body>
+</html>
+<pre>
+public class HolaMon{
+    public string void main(String[] args){
+        System.out.println("Hola Món");
+    }
+}
+</pre></div>
 
 <p class="sub-section">Ús de &amp;nbsp;</p>
+<p>Una altra manera d'obligar a tenir en compte espais en blanc és el codi <span class="negrita">&nbsp</span>. 
+    Aquest codi és una <span class="negrita">entitat</span> (les entitats s'expliquen més endavant en aquest capítol). 
+    Si, per exemple, escrivim quatre vegades seguides <span class="negrita">&amp;nbsp;</span> estarem deixant quatre espais en blanc que el navegador sí que tindrà en compte. Exemple:</p>
 
+<section><pre><code class="language-xml">text &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; un altre text</code></pre>
+</section><br><br>
 
+<p>El segon text apareixerà quatre espais en blanc darrere del primer.</p>
+
+<div class="muestra">text &nbsp; &nbsp; &nbsp; &nbsp; un altre text</div>
 
 <h3>Codificació de caracters en HTML</h3>
 
+<p class="sub-section">Ús de l'etiqueta <span class="cursiva">meta charset</span></p>
 
+<p>Els documents de text es poden codificar de diferents maneres. 
+    Exemples d'aquestes formes són la codificació <span class="negrita">ASCII</span> clàssica, o la taula <span class="negrita">ISO 8859-1</span> 
+    que és una taula ASCII estesa pensada per a les llengües d'Europa Occidental. </p>
+<p>
+Cal tenir en compte que les pàgines web es poden veure, un cop publicades a Internet, arreu del món 
+i el mateix codi es pot interpretar de manera diferent si no avisem de la manera com hem codificat el document.
+</p>
+<p>
+Fins fa uns anys, per escriure en espanyol s'aconsellava fer servir la codificació <span class="negrita">ISO-8859-1</span>
+ (encara hi ha milions de pàgines que usen aquesta codificació), però ara el recomanable és fer servir <span class="negrita">Unicode</span>, concretament en la seva forma <span class="negrita">UTF-8</span>.
+ Per indicar que la nostra pàgina utilitza Unicode UTF-8 només cal indicar a la capçalera, l'etiqueta:</p>
+
+ <section><pre><code class="language-xml">&lt;meta charset="UTF-8"></code></pre>
+ </section><br><br>
+
+ <p>En pàgines escrites en versions anteriors a HTML 5 es feia servir aquesta versió, més complexa:</p>
+ <section><pre><code class="language-xml">&lt;meta http-equiv="content-type"
+    content="text/html; charset=UTF-8"></code></pre>
+</section><br><br>
 
 <p class="sub-section">Indicació en el programari 
-    de escritura de la pàgina</p>
+    de escriptura de la pàgina</p>
 
+<p>No val només fer aquesta indicació. Hem d'estar segurs que realment estem codificant a Unicode. 
+    Per exemple si fem servir el <span class="negrita">Bloc de notes de Windows</span> per escriure la pàgina web i guardem sense cura, 
+    <span class="subrayado">no estarem codificant el text a Unicode</span>. Cal estar segurs que en desar estem realment guardant el text <span class="subrayado">usant Unicode UTF-8</span>:
+</p>
+<p>
+Si no assegurem que estem codificant així, en obrir la pàgina no es mostraran bé els caràcters fora de l'ASCII, 
+quan la persona que veu la nostra pàgina utilitza un altre sistema diferent del nostre 
+(per exemple si obre la pàgina en un sistema Linux i nosaltres havíem fet servir la codificació nativa de Windows).
+</p><p>
+Avui dia tots els editors professionals guarden de forma nativa a <span class="negrita">UTF8</span>, però no està de més assegurar-nos.</p>
 
 
 <p class="sub-section">Ús d'entitats</p>
+<p><span class="negrita">Introducció a les entitats</span></p>
+<p>Per evitar els problemes de la codificació, una altra opció (menys recomanable avui dia) és només utilitzar caràcters dins de l'ASCII original. 
+    Els caràcters fora de l'ASCII original s'escriurien usant les entitats.
+    </p>
+    <p>
+A més, hi ha símbols que no poden ser escrits com a text normal ja que es malinterpretarien pels navegadors com els símbols > o &lt; per exemple.
+</p><p>
+El problema és que l'ASCII no permet símbols d'altres idiomes com l'eñi i per això es va idear poder escriure codis nacionals usant una notació especial. Són les entitats.
+</p><p>
+Les entitats són codis especials que comencen amb el símbol & després del qual s'indica el nom de l'entitat (un nom mnemotècnic) i final es delimita amb un punt i coma (;). <br>
+Per exemple, <span class="negrita">&amp;ntilde;</span> és l'entitat que representa l'eñe. És el mateix escriure ñ que escriure &amp;ntilde;
+</p><p>
+També és possible codificar utilitzant la notació: <span class="negrita">&#n;</span></p>
+
+<p>On n és el número del codi dins de la taula Unicode (cal recordar que els primers 256 caràcters són els corresponents a la taula ISO-8859_1). 
+</p>
+<p>
+Evidentment és molt pesat escriure tots els símbols nacionals usant entitats (encara que hi ha programari que és capaç de fer la traducció automàticament 
+a mesura que escrivim el text), per això i perquè ara ja està molt implantat Unicode per codificar el text, ja no es fan servir les entitats amb aquest propòsit.</p>
+
+<br><br>
+
+<p><span class="negrita">Entitats d'ús obligatori a XML</span></p>
+<p>Les entitats avui dia es fan servir per escriure símbols que estan fora del teclat i, símbols que causen problemes en escriure text HTML.
+
+El llenguatge XML prohibeix utilitzar al text 5 caràcters i obliga a utilitzar entitats al seu lloc. Són aquestes entitats:</p>
+
+<table>
+    <thead>
+        <tr>
+            <td>
+                <p>Caràcter</p>
+            </td>
+            <td>
+                <p>Número</p>
+            </td>
+            <td>
+                <p>Nom</p>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+    
+    <tr>
+        <td>
+            <p>"</strong></p>
+        </td>
+        <td>
+            <p>&amp;#34;</p>
+        </td>
+        <td>
+            <p>&amp;quot;</strong></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>'</strong></p>
+        </td>
+        <td>
+            <p>&amp;#39;</p>
+        </td>
+        <td>
+            <p>&amp;apos; </strong>(el navegador Explorer no el reconeix,
+                per això no se n'aconsella l'ús)</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>&amp;</strong></p>
+        </td>
+        <td>
+            <p>&amp;#38;</p>
+        </td>
+        <td>
+            <p>&amp;amp;</strong></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>&lt;</strong></p>
+        </td>
+        <td>
+            <p>&amp;#60;</p>
+        </td>
+        <td>
+            <p>&amp;lt;</strong></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>&gt;</strong></p>
+        </td>
+        <td>
+            <p>&amp;#62;</p>
+        </td>
+        <td>
+            <p>&amp;gt;</strong></p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<br><br>
+<p><span class="negrita">Entitats que representen caràcters fora de l'ASCII i pertanyents a la ISO 88509-1</span></p>
+
+<table id="table021" class="tabla-manual">
+    <colgroup>
+        <col>
+        <col>
+        <col>
+    </colgroup>
+    <thead>
+    <tr class="tabla-manual">
+        <td class="tabla-manual cabecera-tabla cabecera-tabla">
+            <p class="cabeceraTabla">Carácter</p>
+        </td>
+        <td class="tabla-manual cabecera-tabla cabecera-tabla">
+            <p class="cabeceraTabla">Número</p>
+        </td>
+        <td class="tabla-manual cabecera-tabla cabecera-tabla">
+            <p class="cabeceraTabla">Nombre</p>
+        </td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">À</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#192;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;Agrave;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">Á</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#193;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;Aacute;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">Â</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#194;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;Acirc;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">Ã</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#195;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;Atilde;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">Ä</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#196;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;Auml;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">Å</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#197;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;Aring;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">Æ</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#198;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;AElig;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">Ç</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#199;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;Ccedil;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">È</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#200;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;Egrave;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">É</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#201;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;Eacute;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">Ê</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#202;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;Ecirc;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">Ë</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#203;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;Euml;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">Ì</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#204;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;Igrave;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">Í</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#205;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;Iacute;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">Î</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#206;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;Icirc;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">Ï</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#207;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;Iuml;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">Ð</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#208;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;ETH;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">Ñ</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#209;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;Ntilde;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">Ò</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#210;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;Ograve;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">Ó</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#211;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;Oacute;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">Ô</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#212;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;Ocirc;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">Õ</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#213;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;Otilde;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">Ö</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#214;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;Ouml;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">Ø</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#216;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;Oslash;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">Ù</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#217;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;Ugrave;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">Ú</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#218;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;Uacute;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">Û</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#219;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;Ucirc;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">Ü</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#220;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;Uuml;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">Ý</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#221;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;Yacute;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">Þ</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#222;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;THORN;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ß</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#223;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;szlig;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">à</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#224;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;agrave;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">á</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#225;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;aacute;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">â</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#226;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;acirc;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ã</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#227;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;atilde;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ä</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#228;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;auml;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">å</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#229;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;aring;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">æ</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#230;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;aelig;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ç</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#231;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;ccedil;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">è</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#232;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;egrave;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">é</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#233;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;eacute;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ê</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#234;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;ecirc;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ë</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#235;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;euml;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ì</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#236;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;igrave;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">í</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#237;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;iacute;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">î</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#238;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;icirc;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ï</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#239;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;iuml;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ð</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#240;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;eth;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ñ</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#241;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;ntilde;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ò</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#242;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;ograve;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ó</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#243;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;oacute;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ô</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#244;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;ocirc;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">õ</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#245;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;otilde;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ö</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#246;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;ouml;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ø</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#248;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;oslash;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ù</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#249;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;ugrave;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ú</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#250;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;uacute;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">û</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#251;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;ucirc;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ü</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#252;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;uuml;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ý</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#253;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;yacute;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">þ</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#254;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;thorn;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ÿ</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#255;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;yuml;</strong></p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<p>Otros símbolos de la tabla ISO 8859_1 son:</p>
+
+<table id="table022" class="tabla-manual">
+    <colgroup>
+        <col>
+        <col>
+        <col>
+    </colgroup>
+    <thead>
+    <tr class="tabla-manual">
+        <td class="tabla-manual cabecera-tabla cabecera-tabla">
+            <p class="cabeceraTabla">Caràcter</p>
+        </td>
+        <td class="tabla-manual cabecera-tabla cabecera-tabla">
+            <p class="cabeceraTabla">Número</p>
+        </td>
+        <td class="tabla-manual cabecera-tabla cabecera-tabla">
+            <p class="cabeceraTabla">Nom</p>
+        </td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">&nbsp;</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#160;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;nbsp; </strong>(espai obligatori, els navegadors respecten aquest espai en blanc)</p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">¡</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#161;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;iexcl;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">¢</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#162;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;cent;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">£</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#163;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;pound;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">¤</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#164;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;curren;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">¥</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#165;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;yen;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">¦</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#166;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;brvbar;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">§</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#167;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;sect;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">¨</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#168;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;uml;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">©</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#169;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;copy;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ª</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#170;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;ordf;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">«</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#171;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;laquo;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">¬</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#172;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;not;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+        </td><td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#173;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;shy;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">®</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#174;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;reg;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">¯</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#175;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;macr;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">°</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#176;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;deg;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">±</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#177;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;plusmn;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">²</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#178;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;sup2;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">³</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#179;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;sup3;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">´</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#180;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;acute;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">µ</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#181;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;micro;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">¶</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#182;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;para;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">·</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#183;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;middot;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">¸</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#184;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;cedil;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">¹</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#185;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;sup1;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">º</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#186;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;ordm;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">»</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#187;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;raquo;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">¼</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#188;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;frac14;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">½</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#189;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;frac12;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">¾</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#190;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;frac34;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">¿</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#191;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;iquest;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">×</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#215;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;times;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">÷</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#247;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;divide;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">€</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+        </td><td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;euro;</strong></p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<br>
+<p>Cal tenir en compte que a la taula 8859_1 no apareix el símbol de l'euro (sí a la 8859_2). Per tant, es permet utilitzar el codi <span class="negrita">&amp;euro;</span> per al símbol <span class="negrita">€</span>.</p>
+
+<br><br>
+<p><span class="negrita">Símbols matemàtics</span></p>
+
+<table id="table023" class="tabla-manual">
+    <colgroup>
+        <col>
+        <col>
+        <col>
+    </colgroup>
+    <thead>
+    <tr class="tabla-manual">
+        <td class="tabla-manual cabecera-tabla cabecera-tabla">
+            <p class="cabeceraTabla">Caràcter</p>
+        </td>
+        <td class="tabla-manual cabecera-tabla cabecera-tabla">
+            <p class="cabeceraTabla">Número</p>
+        </td>
+        <td class="tabla-manual cabecera-tabla cabecera-tabla">
+            <p class="cabeceraTabla">Nom</p>
+        </td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">∀</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#8704;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;forall;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">∂</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#8706;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;part;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">∃</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#8707;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;exist;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">∅</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#8709;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;empty;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">∇</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#8711;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;nabla;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">∈</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#8712;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;isin;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">∉</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#8713;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;notin;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">∋</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#8715;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;ni;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">∏</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#8719;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;prod;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">∑</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#8721;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;sum;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">−</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#8722;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;minus;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">∗</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#8727;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;lowast;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">√</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#8730;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;radic;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">∝</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#8733;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;prop;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">∞</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#8734;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;infin;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">∠</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#8736;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;ang;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">∧</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#8743;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;and;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">∨</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#8744;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;or;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">∩</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#8745;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;cap;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">∪</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#8746;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;cup;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">∫</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#8747;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;int;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">∴</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#8756;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;there4;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">∼</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#8764;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;sim;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">≅</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#8773;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;cong;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">≈</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#8776;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;asymp;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">≠</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#8800;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;ne;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">≡</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#8801;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;equiv;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">≤</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#8804;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;le;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">≥</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#8805;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;ge;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">⊂</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#8834;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;sub;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">⊃</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#8835;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;sup;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">⊄</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#8836;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;nsub;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">⊆</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#8838;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;sube;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">⊇</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#8839;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;supe;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">⊕</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#8853;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;oplus;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">⊗</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#8855;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;otimes;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">⊥</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#8869;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;perp;</strong></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">⋅</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal2">&amp;#8901;</p>
+        </td>
+        <td class="tabla-manual segunda-columna-tabla celda-normal">
+            <p class="Normal">&amp;sdot;</strong></p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<br><br>
+<p><span class="negrita">Resumint</span>: excepte per poder escriure símbols que no estan disponibles al teclat, les entitats no es fan servir molt actualment.
+    Però és molt bo conèixer-les per representar codis estranys o per evitar acudir a programes d'escriptura de codis especials com el <span class="negrita">mapa de caràcters</span> de Windows o altres, 
+    la codificació dels quals no sempre coincideix amb Unicode.
+
+Sí que és imprescindible fer servir l'entitat <span class="negrita">&amp;gt;</span> per representar el símbol "més gran que" (<span class="d-word">></span>) ja que, altrament, 
+causaria confusió al navegador. Passa el mateix amb el símbol menor que (<span class="d-word">&lt;</span>) amb la seua entitat <span class="negrita">&amp;lt;</span>. Altres símbols com els prohibits en XML convé també convertir-los a la seva forma amb entitats (tot i que no és imprescindible a HTML 5).</p>
 
 
 
 <h3>Codis d'idioma</h3>
+<p>Com hem indicat anteriorment, l'atribut <span class="r-word">lang</span> permet indicar dues lletres que signifiquen l'idioma en què està escrit el text de l'element. 
+    El més normal és indicar-lo a l'element html (per exemple <span class="cursiva">&lt;html lang="ca"></span>), però hi ha vegades que una pàgina conté elements el 
+        contingut dels quals està escrit en un idioma diferent de l'indicat com a general a l'apartat &lt;html>.
 
+Com l'atribut lang, és comú a tots els elements, es pot indicar quan sigui necessari. Exemple:</p>
 
+<section><pre><code class="language-xml">&lt;p>
+Com dirien als Estats Units:
+&lt;span lan="en">Welcome!&lt;/span>
+&lt;/p></code></pre>
+</section><br><br>
+<p>Per què prendre tantes molèsties? Perquè, per exemple, els cercadors d'Internet distingeixin el text en l'idioma apropiat i adaptin millor les nostres cerques. 
+    Altres eines (com a correctors ortogràfics, traductors en línia, etc.) funcionen molt millor marcant adequadament l'idioma.
+</p><p>
+Els codis d'idioma utilitzen la norma <span class="negrita">ISO 639-1</span> que indica aquests codis:</p>
+<table id="table027" class="tabla-manual">
+    <colgroup>
+        <col>
+        <col>
+        <col>
+        <col>
+    </colgroup>
+    <thead>
+    <tr class="tabla-manual">
+        <td class="tabla-manual cabecera-tabla cabecera-tabla">
+            <p class="cabeceraTabla">código</p>
+        </td>
+        <td class="tabla-manual cabecera-tabla">
+            <p class="cabeceraTabla">idioma</p>
+        </td>
+        <td class="tabla-manual cabecera-tabla cabecera-tabla">
+            <p class="cabeceraTabla">código</p>
+        </td>
+        <td class="tabla-manual cabecera-tabla">
+            <p class="cabeceraTabla">idioma</p>
+        </td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">aa</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_afar">afar</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">lb</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_luxemburgu%C3%A9s">luxemburgués</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ab</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_abjaso">abjaso</a>&nbsp;(o abjasiano)</p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">lg</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_luganda">luganda</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ae</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_av%C3%A9stico">avéstico</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">li</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_limburgu%C3%A9s">limburgués</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">af</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_afrik%C3%A1ans">afrikaans</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">ln</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_lingala">lingala</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ak</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_acano">akano</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">lo</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_lao">lao</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">am</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_am%C3%A1rico">amárico</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">lt</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_lituano">lituano</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">an</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_aragon%C3%A9s">aragonés</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">lu</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_luba-katanga">luba-katanga</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ar</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_%C3%A1rabe">árabe</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">lv</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_let%C3%B3n">letón</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">as</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_asam%C3%A9s">asamés</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">mg</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_malgache">malgache</a>&nbsp;(o malagasy)
+            </p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">av</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_avar">avar</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">mh</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_marshal%C3%A9s">marshalés</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ay</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_aimara">aimara</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">mi</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_maor%C3%AD">maorí</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">az</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_azer%C3%AD">azerí</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">mk</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_macedonio">macedonio</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ba</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_baskir">baskir</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">ml</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_malayalam">malayalam</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">be</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_bielorruso">bielorruso</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">mn</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_mongol">mongol</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">bg</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_b%C3%BAlgaro">búlgaro</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">mr</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_marat%C3%AD">maratí</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">bh</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_bhojpur%C3%AD">bhojpurí</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">ms</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_malayo">malayo</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">bi</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_bislama">bislama</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">mt</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_malt%C3%A9s">maltés</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">bm</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_bambara">bambara</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">my</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_birmano">birmano</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">bn</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_bengal%C3%AD">bengalí</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">na</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_nauruano">nauruano</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">bo</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_tibetano">tibetano</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">nb</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Bokm%C3%A5l">noruego bokmål</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">br</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_bret%C3%B3n">bretón</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">nd</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_ndebele_del_norte">ndebele del norte</a>
+            </p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">bs</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_bosnio">bosnio</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">ne</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_nepal%C3%AD">nepalí</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ca</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_catal%C3%A1n">catalán</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">ng</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Ndonga">ndonga</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ce</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_checheno">checheno</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">nl</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_neerland%C3%A9s">neerlandés</a>&nbsp;(u
+                holandés)</p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ch</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_chamorro">chamorro</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">nn</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Nynorsk">nynorsk</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">co</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_corso">corso</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">no</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_noruego">noruego</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">cr</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_cree">cree</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">nr</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_ndebele_del_sur">ndebele del sur</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">cs</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_checo">checo</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">nv</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_navajo">navajo</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">cu</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Antiguo_eslavo_eclesi%C3%A1stico">eslavo
+                eclesiástico antiguo</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">ny</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_chichewa">chichewa</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">cv</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_chuvasio">chuvasio</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">oc</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_occitano">occitano</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">cy</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_gal%C3%A9s">galés</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">oj</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_ojibwa">ojibwa</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">da</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_dan%C3%A9s">danés</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">om</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_oromo">oromo</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">de</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_alem%C3%A1n">alemán</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">or</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_oriya">oriya</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">dv</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_maldivo">maldivo</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">os</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_os%C3%A9tico">osético</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">dz</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_dzongkha">dzongkha</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">pa</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_panyab%C3%AD">panyabí</a>&nbsp;(o
+                penyabi)</p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ee</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_ewe">ewe</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">pi</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_pali">pali</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">el</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_griego">griego (moderno)</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">pl</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_polaco">polaco</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">en</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_ingl%C3%A9s">inglés</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">ps</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_past%C3%BA">pastú</a>&nbsp;(o pashto)</p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">eo</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_esperanto">esperanto</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">pt</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_portugu%C3%A9s">portugués</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">es</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_espa%C3%B1ol">español</a>&nbsp;(o
+                castellano)</p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">qu</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_quechua">quechua</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">et</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_estonio">estonio</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">rm</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Romanche">romanche</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">eu</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_euskera">euskera</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">rn</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_kirundi">kirundi</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">fa</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_persa">persa</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">ro</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_rumano">rumano</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ff</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_fula">fula</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">ru</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_ruso">ruso</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">fi</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_fin%C3%A9s">finés</a>&nbsp;(o finlandés)
+            </p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">rw</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_ruand%C3%A9s">ruandés</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">fj</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_fiyiano">fiyiano</a>&nbsp;(o fiyi)</p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">sa</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_s%C3%A1nscrito">sánscrito</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">fo</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_fero%C3%A9s">feroés</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">sc</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_sardo">sardo</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">fr</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_franc%C3%A9s">francés</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">sd</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_sindhi">sindhi</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">fy</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_fris%C3%B3n">frisón</a>&nbsp;(o frisio)
+            </p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">se</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Sami_septentrional">sami septentrional</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ga</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_irland%C3%A9s">irlandés</a>&nbsp;(o
+                gaélico)</p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">sg</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_sango">sango</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">gd</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_ga%C3%A9lico_escoc%C3%A9s">gaélico
+                escocés</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">si</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_cingal%C3%A9s">cingalés</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">gl</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_gallego">gallego</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">sk</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_eslovaco">eslovaco</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">gn</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_guaran%C3%AD">guaraní</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">sl</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_esloveno">esloveno</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">gu</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_guyarat%C3%AD">guyaratí</a>&nbsp;(o
+                guyaratí)</p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">sm</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_samoano">samoano</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">gv</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_man%C3%A9s">manés</a>&nbsp;(gaélico manés
+                o de Isla de Man)</p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">sn</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_shona">shona</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ha</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_hausa">hausa</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">so</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_somal%C3%AD">somalí</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">he</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_hebreo">hebreo</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">sq</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_alban%C3%A9s">albanés</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">hi</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_hindi">hindi</a>&nbsp;(o hindú)</p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">sr</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_serbio">serbio</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ho</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Hiri_motu">hiri motu</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">ss</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_suazi">suazi</a>&nbsp;(swati o siSwati)
+            </p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">hr</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_croata">croata</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">st</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_sesotho">sesotho</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ht</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_haitiano">haitiano</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">su</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_sundan%C3%A9s">sundanés</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">hu</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_h%C3%BAngaro">húngaro</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">sv</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_sueco">sueco</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">hy</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_armenio">armenio</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">sw</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_suajili">suajili</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">hz</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_herero">herero</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">ta</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_tamil">tamil</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ia</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_interlingua">interlingua</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">te</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_telug%C3%BA">telugú</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">id</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_indonesio">indonesio</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">tg</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_tayiko">tayiko</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ie</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_occidental">occidental</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">th</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_tailand%C3%A9s">tailandés</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ig</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_igbo">igbo</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">ti</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_tigri%C3%B1a">tigriña</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ii</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_yi">yi de Sichuán</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">tk</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_turcomano">turcomano</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ik</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_inupiaq">inupiaq</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">tl</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_tagalo">tagalo</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">io</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_ido">ido</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">tn</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Setsuana">setsuana</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">is</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_island%C3%A9s">islandés</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">to</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_tongano">tongano</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">it</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_italiano">italiano</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">tr</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_turco">turco</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">iu</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_inuktitut">inuktitut</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">ts</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_tsonga">tsonga</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ja</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_japon%C3%A9s">japonés</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">tt</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_t%C3%A1rtaro">tártaro</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">jv</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_javan%C3%A9s">javanés</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">tw</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_twi">twi</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ka</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_georgiano">georgiano</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">ty</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_tahitiano">tahitiano</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">kg</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_kongo">kongo</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">ug</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_uigur">uigur</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ki</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_kikuyu">kikuyu</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">uk</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_ucraniano">ucraniano</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">kj</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_kuanyama">kuanyama</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">ur</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_urdu">urdu</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">kk</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_kazajo">kazajo</a>&nbsp;(o kazajio)</p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">uz</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_uzbeko">uzbeko</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">kl</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_groenland%C3%A9s">groenlandés</a>&nbsp;(o
+                kalaallisut)</p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">ve</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_venda">venda</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">km</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_camboyano">camboyano</a>&nbsp;(o jemer)
+            </p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">vi</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_vietnamita">vietnamita</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">kn</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_canar%C3%A9s">canarés</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">vo</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_volap%C3%BCk">volapük</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ko</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_coreano">coreano</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">wa</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_val%C3%B3n">valón</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">kr</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_kanuri">kanuri</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">wo</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_w%C3%B3lof">wolof</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ks</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_cachemiro">cachemiro</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">xh</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_xhosa">xhosa</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ku</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_kurdo">kurdo</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">yi</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_y%C3%ADdish">yídish</a>&nbsp;(o yiddish)
+            </p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">kv</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_komi">komi</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">yo</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_yoruba">yoruba</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">kw</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_c%C3%B3rnico">córnico</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">za</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_chuan">chuan</a>&nbsp;(o zhuang)</p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">ky</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_kirgu%C3%ADs">kirguís</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">zh</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_chino">chino</a></p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla primera-celda-tabla">
+            <p class="Normal">la</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Lat%C3%ADn">latín</a></p>
+        </td>
+        <td class="tabla-manual primera-celda-tabla celda-normal">
+            <p class="Normal">zu</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p class="Normal"><a href="http://es.wikipedia.org/wiki/Idioma_zul%C3%BA">zulú</a></p>
+        </td>
+    </tr>
+    </tbody>
+</table>
 
+<br><br>
+<p>Podem ser més específics en l'idioma i indicar no només l'idioma sinó el dialecte concret. 
+    S'acompanya d'un guió al codi de l'idioma seguit de dues lletres majúscules. 
+    La norma ISO que conté els codis disponibles és la norma <span class="negrita">639-2</span>.
+    </p><p>
+
+Per exemple, si volem marcar un element amb l'idioma espanyol, però indicant que és espanyol de Mèxic, faríem el següent:</p>
+<section><pre><code class="language-xml">&lt;p>
+    Com dirien a Mèxic:
+    &lt;span lan="es-MX">¡Hijole!&lt;/span>
+&lt;/p></code></pre>
+</section><br><br>
 
 <h3>Contingut i contenidors</h3>
 
+<p>En HTML els elements que mostren alguna cosa a la pàgina, es col·loquen dins de la secció <span class="r-word">body</span>.
+    </p><p>
+
+A més, cal tenir en compte que hi ha elements pensats per contenir grans quantitats d'informació (com <span class="r-word">div</span> ) i elements que contenen poc text (com <span class="r-word">strong</span>).
+És correcte que aparegui un element <span class="negrita">strong</span> dins un element <span class="negrita">p</span>, però no al revés:</p>
+
+<section><pre><code class="language-xml">&lt;strong>&lt;p>Hola&lt;/p>&lt;/strong> --&gt;¡Incorrecte!!
+&lt;p&gt;&lt;strong&gt;Hola&lt;/strong&gt;&lt;/p&gt; --&gt;Correcte</code></pre>
+</section><br><br>
+
+<p>La majoria d'elements HTML són contenidors d'altres textos i elements. 
+    Cal conèixer quins tipus d'elements tenim. Els tipus estan relacionats amb la propietat <span class="negrita">CSS display</span>, 
+    que s'encarrega de dir com s'ha de mostrar un element. Per defecte, els elements funcionen d'aquesta manera:</p>
+
+    <ul>
+        <li>Elements de tipus <em class="cursiva">inline</em>. Són
+            elements que es mostren seguits a la mateixa línia. Aquests elements són els que marquen text
+            simple. Totes les etiquetes de marcatge de text tenen aquest <em class="cursiva">display</em>: strong, em, span, mark, abbr, etc.<p class ="sinpunt">Exemple, el codi:</p>
+            
+            <section><pre><code class="language-xml">&lt;strong>Hola&lt;/strong> &lt;em>Hola&lt;/em></code></pre>
+            </section>
+            <p class="sinpunt">Es mostra així:</p>
+            <div class="muestra"><strong>Hola</strong> <em>Hola</em></div>    
+        </li>
+        <li>Elements de tipus <em class="cursiva">block</em>. Són
+            contenidors més grans. Els elements que marquen paràgrafs sencers (com <span class="negrita">p, h1, h2
+            o blockquote</span>) i els contenidors de seccions (com <span class="negrita">div, section, article o figure</span>) tenen aquest
+            <span class="negrita">display</span>. La seva característica és que, per defecte, tenen forma rectangular i
+            abasten tota l'amplada del contenidor. Si indiquem per a ells un color de fons, aquest es mostra a
+            forma de rectangle (en els inline, el color de fons abasta exactament el text, com si ho haguéssim
+            pintat amb un retolador). Exemple:
+            <section><pre><code class="language-xml">&lt;h1>Hola&lt;/h1> &lt;p>Hola&lt;/p></code></pre>
+            </section>
+            <p class="sinpunt">Aquest codi es mostra així:</p>
+            <div class="muestra"><div style="font-size: 2.3em">Hola</div> <div>Hola</div></div></li>
+        <li>Elements de tipus <em class="cursiva">inline-block. </em>Són
+            rectangulars com els <span class="negrita">block</span>, però no abasten tot el seu contenidor. Es
+            adapten al contingut. Exemples són els elements <span class="negrita">button</span> o <span class="negrita">imatge</span>:
+            
+            <section><pre><code class="language-xml">&lt;strong>Hola&lt;/strong> &lt;button>Hola&lt;/button></code></pre>
+            </section>
+            
+            <p class="sinpunt">El resultat mostra un botó (element rectangular) seguit del text de tipus strong. 
+                Si el botó tingués un display de tipus block, saltaria a la línia següent.</p>
+            <div class="muestra"><strong>Hola</strong> <button>Hola</button></div></li>
+    </ul>
+
+    <br>   
+    <p>En tot cas, el display d'un element es pot modificar des del llenguatge CSS, però no convé fer combinacions antinaturals ja que es perd el sentit semàntic del codi.</p>
+    
 
 
 <h3>Atributs comuns</h3>
+<p>Tots els elements tenen una sèrie d'atributs comuns a tots. Això vol dir que els podem utilitzar independentment de quin sigui l'element.
 
+</p><p>
+
+L'atribut comú més conegut és <span class="r-word">aneu</span> , que permet identificar un element amb un identificador únic, però n'hi ha molts més. Els principals són:</p>
+
+<table id="table033" class="taula-manual">
+    <colgroup>
+        <col>
+        <col>
+    </colgroup>
+    <thead>
+    <tr class="taula-manual">
+        <td class="taula-manual capçalera-taula capçalera-taula">
+            <p class="capçaleraTaula">atribut</p>
+        </td>
+        <td class="taula-manual capçalera-taula capçalera-taula">
+            <p class="capçaleraTaula">significat</p>
+        </td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="taula-manual">
+        <td class="taula-manual primera-cel·la-taula">
+            <p class="Normal"><strong class="Negritta">lang</strong></p>
+        </td>
+        <td class="taula-manual cel·la normal">
+            <p class="Normal">Indica el llenguatge en què està escrit el text de l'element</p>
+        </td>
+    </tr>
+    <tr class="taula-manual">
+        <td class="taula-manual primera-cel·la-taula">
+            <p class="Normal"><strong class="Negritta">style</strong></p>
+        </td>
+        <td class="taula-manual cel·la normal">
+            <p class="Normal">Permet indicar codi CSS directament. Aquest codi només afectarà aquest element.</p>
+        </td>
+    </tr>
+    <tr class="taula-manual">
+        <td class="taula-manual primera-cel·la-taula">
+            <p class="Normal"><strong class="Negritta">class</strong></p>
+        </td>
+        <td class="taula-manual cel·la normal">
+            <p class="Normal">Permet indicar una classe CSS per a l'element</p>
+        </td>
+    </tr>
+    <tr class="taula-manual">
+        <td class="taula-manual primera-cel·la-taula">
+            <p class="Normal"><strong class="Negritta">id</strong></p>
+        </td>
+        <td class="taula-manual cel·la normal">
+            <p class="Normal">Permet identificar l'element. Un identificador és un nom únic que se li dóna al
+                element i que no es pot repetir en un altre element dins de la mateixa pàgina web. </p>
+            <p class="Normal">L'identificador només pot contenir lletres (de l'alfabet anglès) i números (no es
+                poden utilitzar espais en blanc). A més, ha de començar per una lletra. </p>
+            <p class="Normal">L'atribut <strong class="Negritta">id</strong> és un dels fonamentals.</p>
+        </td>
+    </tr>
+    <tr class="taula-manual">
+        <td class="taula-manual primera-cel·la-taula">
+            <p class="Normal"><strong class="Negritta">title</strong></p>
+        </td>
+        <td class="taula-manual cel·la normal">
+            <p class="Normal">Permet posar un títol a l'element. És una mena de descripció curta que és molt
+                útil en aquells elements que requereixen una explicació semàntica com un abreviatura, una
+                sigla, una imatge, etc. Normalment, els navegadors reaccionen a aquest atribut mostrant un
+                cartell amb el text indicat a <strong class="Negritta">title</strong>, quan el cursor del
+                ratolí s'aproxima a un element que utilitzi aquest atribut </p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<p>Hi ha molts més atributs comuns:</p>
+<table id="table034" class="tabla-manual">
+    <colgroup>
+        <col>
+        <col>
+    </colgroup>
+    <thead>
+    <tr class="tabla-manual">
+        <td class="tabla-manual cabecera-tabla cabecera-tabla">
+            <p class="cabeceraTabla">atribut</p>
+        </td>
+        <td class="tabla-manual cabecera-tabla cabecera-tabla">
+            <p class="cabeceraTabla">significat</p>
+        </td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla">
+            <p class="Normal"><strong class="Negritta">dir</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p>Indica la direcció de lectura del text contingut a l'element (permetria aplicar correctament la manera de mostrar text en àrab per exemple). 
+                Pot ser un d‟aquests dos valors: <span class="negrita">ltr</span> (left to right, d‟esquerra a dreta) o <span class="negrita">rtl</span> (right to left, de dreta a esquerra).</p>
+            
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla">
+            <p class="Normal"><strong class="Negritta">contenteditable</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p>Si val <span class="negrita">true</span>, l'usuari pot modificar el contingut de l'element. És d'HTML 5</p>
+            
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla">
+            <p class="Normal"><strong class="Negritta">draggable</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+           <p>Atribut inclòs a HTML 5. 
+            Especifica (amb valor <span class="negrita">true</span>) que el paràgraf té possibilitat de ser arrossegat amb el ratolí o els dits (en dispositius tàctils). 
+            El control de l'arrossegament de totes maneres ha de ser controlat per <span class="negrita">JavaScript</span>.</p>
+           
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla">
+            <p class="Normal"><strong class="Negritta">hidden</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p>No suportat per Internet Explorer. Quan apareix aquest atribut (sense valor) fa que l'element que el conté se'l marqui com a no rellevant i quedi ocult.</p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla">
+            <p class="Normal"><strong class="Negritta">spellcheck</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p>Si val <span class="negrita">true</span> el paràgraf queda marcat com a revisable per eines de correcció de text. És d'HTML 5</p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla">
+            <p class="Normal"><strong class="Negritta">onclick</strong></p>
+            <p class="Normal"><strong class="Negritta">ondblclic</strong></p>
+            <p class="Normal"><strong class="Negritta">onkeyup</strong></p>
+            <p class="Normal"><strong class="Negritta">onkeydown</strong></p>
+            <p class="Normal"><strong class="Negritta">onkeypress</strong></p>
+            <p class="Normal"><strong class="Negritta">onmouseover</strong></p>
+            <p class="Normal"><strong class="Negritta">onmouseout</strong></p>
+            <p class="Normal"><strong class="Negritta">onmousedown</strong></p>
+            <p class="Normal"><strong class="Negritta">onmouseup</strong></p>
+            <p class="Normal"><strong class="Negritta">onmousemove</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p>Permeten assignar codi <span class="negrita">Javascript</span> a alguna d'aquestes accions 
+                (un clic de ratolí, un doble clic, prémer tecla, deixar de prémer tecla, mantenir premuda la tecla, 
+                entrar amb el ratolí a l'element, moure el ratolí per sobre, treure el ratolí del element, 
+                prémer tecla de ratolí, alliberar tecla de ratolí,…)</p>            
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla">
+            <p class="Normal"><strong class="Negritta">accesskey</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p>Permet especificar una tecla per fer que el control de l'usuari passi a l'ítem que la conté. 
+                El seu ús més habitual és amb les etiquetes denllaç (<span class="negrita">a</span>). El pitjor és que no funciona de forma gaire intuïtiva, a l'exemple:</p>
+            
+                <section><pre><code class="language-xml">&lt;p>
+ Pots anar a
+ &lt;a href="http://www.elpais.es" accesskey="p">
+ El País
+ &lt;/a> o
+ &lt;a href="http://www.elmundo.es" accesskey="m">
+ El Món
+ &lt;/a>
+&lt;/p></code></pre>
+                </section>
+                
+            
+            <p>Cada element <span class="r-word">a</span>  permet, fent clic, anar al diari El País i El Mundo respectivament. 
+                Les tecles indicades són p per a El País i m per a El Mundo. En realitat la majoria de navegadors faran servir com a tecles Alt+p i Alt+m, 
+                alguns ignoraran aquest atribut i altres poden demanar a més utilitzar la tecla Intro.</p>
+                <p>
+
+No obstant aquest atribut és interessant amb ús de programari especial que faciliti la navegació per a persones amb necessitats especials (com ara els invidents).</p>
+        </td>
+    </tr>
+    <tr class="tabla-manual">
+        <td class="tabla-manual primera-celda-tabla">
+            <p class="Normal"><strong class="Negritta">tabindex</strong></p>
+        </td>
+        <td class="tabla-manual celda-normal">
+            <p>Atribut a què se li indica un número. 
+                Els elements amb tabindex més baix obtenen primer el focus. 
+                En prémer el tabulador es ressaltarà aquest element per poder utilitzar-lo amb el teclat.
+                </p><p>
+                És a dir, estableix els salts que ocorreran en prémer la tecla tabulador</p>
+            
+        </td>
+    </tr>
+    </tbody>
+</table>
 
 
 </section><!-- End section Edició bàsica d'elements-->
@@ -1022,6 +4510,28 @@ i descarregar l'última versió del codi directament al servidor web.
 <h2>Elements de text i paràgrafs</h2>
 <h3>Elements per a marcar caracters</h3>
 <p class="sub-section">Introducció</p>
+<p>Avui dia en una pàgina web, tot el text és dins d'algun element (delimitats mitjançant etiquetes), en realitat hi ha tres contextos principals a tenir en compte sobre el text
+<ul>
+    <li><span class="negrita">Elements capaços de contenir diversos paràgrafs</span>. 
+        La W3C anomena aquests elements <span class="cursiva">sectioning content</span>. 
+        Cada element d'aquesta part és el que avui dia es coneix com a <span class="negrita">capa</span> o <span class="negrita">secció</span>. 
+        Si no indiquem capa alguna, llavors tots els paràgrafs estan continguts a l'etiqueta <span class="r-word">body</span>, 
+        cosa que significa que el contenedor dels paràgrafs serà l'àrea que el navegador deixa per al text i que pot ser gairebé tota la pantalla.</li>
+    <li>
+        <span class="negrita">Elements que contenen paràgrafs individuals</span>. Tot i que a HTML 5 es permet escriure text que no estiga dins un paràgraf, 
+        no és una bona pràctica, ja que no podríem indicar més endavant el format del paràgraf (alineacions, marges,…). <br>
+        Lògicament dins un paràgraf, no podem indicar un altre paràgraf; és a dir, no podem introduir una etiqueta <span class="r-word">p</span>, dins una etiqueta <span class="r-word">h1</span>. <br>
+        Quan un text està dins un element de paràgraf (com <span class="r-word">p</span> ), farà que el text següent quede en un altre paràgraf, 
+        per tant hi haurà un salt de paràgraf entre els dos textos.
+    </li>
+    <li>
+        <span class="negrita">Elements que contenen text simple o conjunts de caràcters</span>. La W3C crida aquests elements <span class="cursiva">phrasing content</span>. 
+        Són elements pensats per ser interiors a un paràgraf. Un mateix paràgraf pot contenir molts elements d'aquest tipus. 
+        El mateix text pot estar contingut a diversos elements d'aquest tipus alhora. <br>
+Per exemple, podem indicar que un text és <span class="r-word">strong</span>  i <span class="r-word">em</span> alhora.
+    </li>
+</ul>
+</p>
 
 
 
