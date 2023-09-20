@@ -1,0 +1,69 @@
+$CATEGORY: LMSGI/UD1
+
+Els llenguatges de marques:{
+~Permeten representar informació
+~Es basen en marques o etiquetes
+~No són llenguatges de programació
+=Totes són vàlides
+}
+
+L'exemple més representatiu de llenguatges de marques orientat a la presentació d'informació és:{
+~GML
+~SGML
+=HTML
+~XML
+}
+
+HTML és un llenguatge de marques creat a partir de:{
+=SGML
+~XML
+~XHTML
+~SVG
+}
+
+Assenyala quina de les opcions següents és una de les característiques fonamentals dels llenguatges de marques:
+{
+=És independent de la plataforma
+~S'emmagatzemen en formats complexos codificats
+~Són rígids
+~Són difícils de processar
+}
+
+Una cançó mp3 és un fitxer:{
+    =de text
+    ~binari
+}
+
+Una foto és un fitxer:{
+    ~de text
+    =binari
+}
+
+Un document de word és un fitxer:{
+~de text
+=binari
+}
+
+UTF-8 és més senzill de manejar pels ordinadors però ocupa més que UTF-16{
+    ~Vertader
+    =Fals
+}
+
+A UTF-32 tots els caracters ocupen:{
+    ~1 byte
+    ~2 bytes
+    ~3 bytes
+    =4 bytes
+}
+
+El creador de HTML va ser{
+    =Tim Berner Lee
+    ~Microsoft
+    ~Charlse Goldfarb
+    ~Michael Jackson
+}
+
+JSON es una notación per a objectes de Java que està remplaçant XML{
+    ~Vertader
+    =Fals
+}

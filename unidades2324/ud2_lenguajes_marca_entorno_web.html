@@ -23,8 +23,8 @@
       </div>
       <div class="fila">
         <a href="#sVersionsdHTML">4.- Versions d'HTML</a><a
-        href="#sCol·leccions" class="oculto">5.- Col·leccions</a><a
-        href="#sFuncions"class="oculto">6.- Funcions</a>
+        href="#sEdiciobasicaelements">5.- Edició bàsica d'elements</a><a
+        href="#sElementsdeTextiParagrafs">6.- Elements de text i paràgrafs</a>
       </div>
     
 </nav>
@@ -39,8 +39,8 @@
     </div>
     <div class="fila">
       <a href="#sVersionsdHTML">4.- Versions d'HTML</a><a 
-      href="#sEdiciobasicaelements" class="relleno">5.- Edició bàsica d'elements</a><a 
-      href="#sElementsdeTextiParagrafs" class="relleno">6.- Elements de text i paràgrafs</a>
+      href="#sEdiciobasicaelements">5.- Edició bàsica d'elements</a><a 
+      href="#sElementsdeTextiParagrafs">6.- Elements de text i paràgrafs</a>
     </div>
     <div class="fila">
 
@@ -4535,37 +4535,295 @@ Per exemple, podem indicar que un text és <span class="r-word">strong</span>  i
 
 
 
-<h2>Etiquetes bàsiques de paràgraf</h2>
+<h3>Etiquetes bàsiques de paràgraf</h3>
+
+
+<p>Des de fa anys, tot text en un document HTML ha d'anar dins d'una etiqueta que serveixi per dir quin tipus de text és. 
+    I això vol dir, que el text ha d'anar dins una etiqueta de paràgraf. Es comenten les etiquetes disponibles per marcar paràgrafs.</p>
 
 
 <p class="sub-section">Paràgraf simple</p>
+<p>La norma HTML estàndard estableix que el <span class="subrayado">text de la pàgina ha d'estar contingut dins d'un element</span>. 
+    És a dir, <span class="negrita">no es pot posar text directament dins de l'etiqueta body</span>; hi ha d'haver un contenidor per a aquest text.
+</p>
+<p>
+L'element més senzill és marcat per l'etiqueta <span class="r-word">p</span> , que indica un element de paràgraf normal. 
+Tot text dins una etiqueta <span class="negrita">p</span>, queda marcat com a text dins un paràgraf normal.
+</p>
+Normalment els navegadors utilitzen fonts tipus Times de mida 11pt per a la lletra de paràgraf normal. Exemple dús:</p>
 
+<section><pre><code class="language-xml">&lt;body>
+&lt;p>
+Paràgraf amb una mica de text
+&lt;/p>
+&lt;p>
+ Aquest és un paràgraf complet englossat dins d'una etiqueta &lt;em>p&lt;/em>,
+ encara
+    el text s'escrigui
+    amb tots aquests salts de línia                  i               espais
+    es mostrarà seguit,
+    sense salts          de
+    línia interiors
+                                i entre cada paraula deixant un sol espai
+&lt;/p>
+&lt;/body></code></pre>
+</section><br><br>
+
+<p>Al navegador sortiria:</p>
+
+<div class="muestra"><p>
+Paràgraf amb una mica de text
+</p> <br>
+<p>
+ Aquest és un paràgraf complet englossat dins d'una etiqueta <em>p</em>,
+ encara
+    el text s'escrigui
+    amb tots aquests salts de línia i espais
+    es mostrarà seguit,
+    sense salts de
+    línia interiors
+i entre cada paraula deixant un sol espai
+</p></div>
+
+<p>A la imatge s'observa la manera com el navegador mostra el paràgraf. 
+    Per defecte els paràgrafs tipus p deixen espai amunt i avall (normalment mitja línia a cada direcció).</p>
 
 
 <p class="sub-section">Títols</p>
+<p>Hi ha una sèrie de set etiquetes que comencen amb la lletra <span class="negrita">h</span> a la qual segueix un número de l'1 al 6. 
+    Serveixen per marcar paràgrafs de manera que es consideraran títols del text. De manera que l'element <span class="r-word">h1</span>  marcarà títols de primer nivell, 
+    <span class="r-word">h2</span>  de segon nivell… i així fins a <span class="r-word">h6</span>  (sisè nivell).</p>
 
+<p>Exemple:</p>
 
+<section><pre><code class="language-xml">&lt;!DOCTYPE html>
+&lt;html lang="ca">
+    &lt;head>
+        &lt;title>Estrelles&lt;/title>
+        &lt;meta charset="UTF-8">
+    &lt;/head>
+    &lt;body>
+     &lt;h1>Sistema Solar&lt;/h1>
+     &lt;h2> Planetes&lt;/h2>
+     &lt;h3>Mercuri&lt;/h3>
+     &lt;p>
+Mercuri és el planeta del Sistema Solar més proper al Sol
+i el més petit (a excepció dels planetes nans). Forma part dels
+anomenats planetes interiors o rocosos i manca de satèl·lits
+     &lt;/p>
+     &lt;h3>Venus&lt;/h3>
+     &lt;p>
+     Venus és el segon planeta del sistema solar en ordre de distància
+des del Sol, i el tercer quant a mida, de menor a maig
+     &lt;/p>
+     &lt;p>...&lt;/p>
+     &lt;h2>Sol&lt;/h2>
+     &lt;p>
+       El Sol és l'estrella del sistema planetari on es troba la
+Terra; per tant, és la més propera a la Terra i l'astre amb més
+brillantor aparent
+     &lt;/p>
+      &lt;h2>Satèl·lits&lt;/h2>
+     &lt;h3>Luna&lt;/h3>
+     &lt;p>
+       La Lluna és l'únic satèl·lit natural de la Terra i el cinquè
+satèl·lit més gran del Sistema Solar.
+&lt;/p>
+     &lt;h3>Io&lt;/h3>
+     &lt;p>
+Va ser descobert per Galileu Galilei el 1610 i va rebre inicialment
+ el nom de Júpiter I com a primer satèl·lit de Júpiter.
+     &lt;/p>
+     &lt;p>...&lt;/p>
+     &lt;h1>Altres sistemes&lt;/h1>
+     &lt;h2>Fomalhaut&lt;/h2>
+&lt;p>
+Estrella coneguda des de la prehistòria ara se li han descobert planetes
+&lt;/p>
+&lt;h2>Vega&lt;/h2>
+&lt;p>Antiga estrella polar, molt venerada. Posseeix un disc de pols que podria
+ contenir planetes o bé formar-se aviat
+&lt;/p>
+&lt;/body>
+&lt;/html></code></pre>
+</section><br><br>
+
+<p>El resultat seria</p>
+
+<div class="muestra">
+
+     <h1>Sistema Solar</h1>
+     <h2> Planetes</h2>
+     <h3>Mercuri</h3>
+     <p>
+Mercuri és el planeta del Sistema Solar més proper al Sol
+i el més petit (a excepció dels planetes nans). Forma part dels
+anomenats planetes interiors o rocosos i manca de satèl·lits
+     </p>
+     <h3>Venus</h3>
+     <p>
+     Venus és el segon planeta del sistema solar en ordre de distància
+des del Sol, i el tercer quant a mida, de menor a maig
+     </p>
+     <p>...</p>
+     <h2>Sol</h2>
+     <p>
+       El Sol és l'estrella del sistema planetari on es troba la
+Terra; per tant, és la més propera a la Terra i l'astre amb més
+brillantor aparent
+     </p>
+      <h2>Satèl·lits</h2>
+     <h3>Luna</h3>
+     <p>
+       La Lluna és l'únic satèl·lit natural de la Terra i el cinquè
+satèl·lit més gran del Sistema Solar.
+</p>
+     <h3>Io</h3>
+     <p>
+Va ser descobert per Galileu Galilei el 1610 i va rebre inicialment
+ el nom de Júpiter I com a primer satèl·lit de Júpiter.
+     </p>
+     <p>...</p>
+     <h1>Altres sistemes</h1>
+     <h2>Fomalhaut</h2>
+<p>
+Estrella coneguda des de la prehistòria ara se li han descobert planetes
+</p>
+<h2>Vega</h2>
+<p>Antiga estrella polar, molt venerada. Posseeix un disc de pols que podria
+ contenir planetes o bé formar-se aviat
+</p>
+</div>
 
 <p class="sub-section">Salt de línia</p>
+<p>De vegades cal dins del text d'un paràgraf determinat fer un salt de línia. L'element que el realitza no té tancament i s'anomena <span class="r-word">br</span>.  <br>
+    Exemple:</p>
+<section><pre><code class="language-xml">&lt;p>Primera línia &lt;br>Segona línia&lt;/p></code></pre>
+</section><br><br>
 
+<p>Apareixerà cada text en una línia diferent.</p>
+<div class="muestra">
+    <p>Primera línia <br>Segona línia</p>
+</div>
 
 <p class="sub-section">Línia horizontal</p>
+<p>Una altra possibilitat és fer un salt però deixant una línia horitzontal al buit de les paraules. Això ho fa l'etiqueta <span class="r-word">hr</span> 
+     (que tampoc no té tancament): </p>
 
+<section><pre><code class="language-xml">&lt;p>Primera línia &lt;hr>Segona línia&lt;/p></code></pre>
+</section><br><br>
+Tot i que els navegadors entenen aquest codi. En realitat hr ha d'estar fora de les etiquetes de paràgraf, és a dir el que és correcte és:
 
+<section><pre><code class="language-xml">&lt;p>Primer paràgraf&lt;/p>
+&lt;hr>
+&lt;p>Segon paràgraf&lt;/p></code></pre>
+</section><br><br>
+<p>Resultat:</p>
+
+<div class="muestra"><p>Primer paràgraf</p>
+    <hr>
+    <p>Segon paràgraf</p></div>
 
 <h3>Elements de marcat de text simple</h3>
 
 
 <p class="sub-section">Text important</p>
+<p>A HTML 5 el text important es marca amb l'element <span class="r-word">strong</span>. 
+    En general, tots els navegadors marquen el text strong en negreta (lletra més gruixuda), però que es mostri en negreta és un acord visual que es pot modificar amb el llenguatge CSS. 
+    És a dir, no és el mateix text en negreta que el text important.
+</p><p>
+Sens dubte, <span class="r-word">strong</span> és un dels elements HTML fonamentals i imprescindible als documents HTML.</p>
 
 
 <p class="sub-section">Text emfatitzat</p>
+<p>L'element <span class="r-word">em</span>  marca text com a emfatitzat. 
+    El resultat visual amb què els donen format per defecte els navegadors és text en cursiva.</p>
+<p>La idea semàntica és marcar amb <span class="r-word">em</span>  el text amb èmfasi de segon nivell (deixant a <span class="negrita">strong</span>  el primer nivell) 
+    que normalment es dedica a paraules no acceptades encara, títols de treballs, sobrenoms, text subjectiu, etc.</p>
 
 
 <p class="sub-section">Text ressaltat</p>
+<p>Aquest és el tercer element d'HTML5 per remarcar text. 
+    Es fa mitjançant l'element <span class="r-word">mark</span>. En aquest cas, el seu efecte visual sol ser aplicar al text marcat així un fons de color 
+    viu que simula l'ús d'un subratllador. <br>Exemple:
+</p>
+<section><pre><code class="language-xml">&lt;p>Jo soc text normal, &lt;mark>i jo estic remarcat
+&lt;/mark>&lt;/p></code></pre>
+</section><br><br>
+
+<p>Obtindria el resultat:</p>
+<div class="muestra"><p>Jo sóc text normal, <mark>i jo estic remarcat
+</mark></p></div>
+<p>Aquest element no és tan antic com els anteriors perquè va aparèixer amb HTML5 (els navegadors antics no ho reconeixen). 
+    La idea semàntica és marcar text que volem realçar de manera molt cridanera indicat text a recordar o sobre el qual aprofundir.</p>
 
 
 <h3>Cites</h3>
+<p>A HTML5 hi ha tres maneres de marcar cites:</p>
+
+<p class="sub-section">Element <span class="r-word">q</span> </p>
+
+<p>Usada per indicar cites curtes incloses en un paràgraf amb un altre tipus de text. Indica un text procedent d'una altra font. 
+    Remarca una cita, amb la connotació de "text entrecometes". De fet, els navegadors, per defecte, entrecometen el contingut. 
+    <br>Exemple dús:
+<section><pre><code class="language-xml">Com va dir Juli Cèsar, &lt;q
+cite="http://es.wikipedia.org/wiki/Alea_iacta_est">
+Alea Jacta és&lt;/q></code></pre>
+</section><br><br>
+<p>
+No és obligatori fer servir l'atribut <span class="negrita">cite</span>. Aquest atribut permet indicar una font per consultar la cita original (els navegadors, però, no fan res amb el contingut d'aquest enllaç).</p>
+<div class="muestra">Com va dir Juli Cèsar, <q
+cite="http://es.wikipedia.org/wiki/Alea_iacta_est">Alea Jacta és</q></div>
+
+<p class="sub-section">Element <span class="r-word">cite</span> </p>
+
+<p>Aquest element era el que originalment s'usava per a cites literals. 
+    Actualment se'n recomana l'ús per indicar títols de treballs i el nom dels seus autors. 
+    Això inclou títols de llibres, memòries, assaigs, poemes, obres musicals, llocs web, entrades de bloc o fòrums, comentaris, tweets, discursos, etc. 
+    És a dir, qualsevol treball creatiu. <br>Exemple </p>
+<section><pre><code class="language-xml">&lt;p>
+Edgar Codd va publicar: &lt;cite>Un model relacional de dades per a grans
+bancs de dades compartides
+&lt;/cite> el 1970
+&lt;/p></code></pre>
+</section><br><br>
+<p>
+Els navegadors solen mostrar el contingut de cite en cursiva.</p>
+
+<div class="muestra"><p>
+Edgar Codd va publicar: <cite>Un model relacional de dades per a grans
+bancs de dades compartides
+</cite> el 1970
+</p></div>
+<p class="sub-section">Element <span class="r-word">blockquote</span> </p>
+
+<p>Aquest és lúnic element de marcat de cites que treballa a nivell de paràgraf. 
+    És a dir, indicat paràgrafs complets que són cites procedents de fonts externes al document. 
+    Se li pot indicar (igual que es fa amb l'element <span class="negrita">q</span>) l'atribut cite per indicar un enllaç a la font de la cita.Exemple:
+<section><pre><code class="language-xml">&lt;blockquote
+cite="http://noticias.juridicas.com/base_datos/Admin/constitucion.tp.html#a1">
+&lt;strong>Article 1 de la constitució&lt;strong>&lt;br>
+Espanya es constitueix en un Estat social i democràtic de Dret,
+ que propugna com a valors superiors del seu ordenament jurídic
+la llibertat, la justícia, la igualtat i el pluralisme polític.
+&lt;/blockquote></code></pre>
+</section><br><br>
+
+<div class="muestra">
+
+    <blockquote cite="http://noticias.juridicas.com/base_datos/Admin/constitucion.tp.html#a1">
+<strong>Article 1 de la constitució</strong><br>
+Espanya es constitueix en un Estat social i democràtic de Dret,
+ que propugna com a valors superiors del seu ordenament jurídic
+la llibertat, la justícia, la igualtat i el pluralisme polític.
+</blockquote>
+</div>
+<p>
+Podeu utilitzar l'atribut <span class="negrita">cite</span> (com s'observa a l'exemple) per indicar l'adreça URL que s'ha utilitzat com a font de la cita.
+</p>
+<p>
+Visualment els navegadors mostren el text <span class="negrita">blockquote</span> afegint una sagnia a la dreta ia l'esquerra. 
+Ignoren, visualment, l'ús de l'atribut cite, però altres eines sí que usen aquest contingut.</p>
 
 
 
@@ -4573,63 +4831,483 @@ Per exemple, podem indicar que un text és <span class="r-word">strong</span>  i
 
 
 <p class="sub-section">Subíndexs</p>
+<p>Permet que el text aparegui per sota de la línia base i en una mida més petita. Ho fa l'element sub, exemple:
+</p>
+    <section><pre><code class="language-xml">&lt;p>La fórmula de l'aigua és H&lt;sub>2&lt;/sub>O&lt;/p></code></pre>
+    </section><br><br>
+  <p>Mostraria:</p>  
+    <div class="muestra"><p>La fórmula de l'aigua és H<sub>2</sub>O</p></div>
 
 
 <p class="sub-section">superíndexs</p>
+<p>Semblant a l'anterior, però ara el text marcat amb l'element sup apareixerà per sobre i petit. <br>Exemple:</p>
+
+<section><pre><code class="language-xml">&lt;p>El teorema de Pitàgores és c&lt;sup>2&lt;/sup> = a&lt;sup>2&lt;/sup> + b&lt;sup>2&lt;/sup>&lt;/p></code></pre>
+</section><br><br>
+<p>Mostraria:</p>
+<div class="muestra"><p>El teorema de Pitàgores és c<sup>2</sup> = a<sup>2</sup> + b<sup>2</sup></p></div>
 
 
-<p class="sub-section">Element small</p>
+<p class="sub-section">Element <span class="r-word">small</span> </p>
+<p>Marcat de lletra xicoteta. S'usa, per exemple, en textos que marquin copyright, drets d'ús, comentaris, notes annexes i lletra petita (tipus la dels contractes) en general. 
+    L'efecte visual és que el text surt amb una mida més xicoteta. 
+    Fins i tot és possible niar un element small dins d'un altre, de manera que cada cop surt més xictet el text. <br>
+    Exemple:
+</p>
 
+<section><pre><code class="language-xml">&lt;p>Text normal &lt;small>xicotet
+&lt;small>Encara més xicotet&lt;/small>&lt;/small></p></code></pre>
+</section><br><br>
 
+<div class="muestra"><p>Text normal <small>xicotet
+<small>Encara més xicotet</small></small></p></div>
 
-<p class="sub-section">Element s</p>
+<p class="sub-section">Element <span class="r-word">s</span> </p>
+<p>És un antic element de les pàgines web que permetia indicar un subratllat. 
+    A la versió d'HTML 4 va quedar obsolet, no se'n recomanava l'ús ja que el subratllat es reserva per als enllaços. 
+    Amb HTML 5 se n'ha redefinit l'ús per marcar text obsolet que, visualment, es mostra amb <span class="subrayado">efecte de ratllat</span>.
+<br>
+Exemple:</p>
 
+<section><pre><code class="language-xml">La capital d'Alemanya és &lt;s>Bonn&lt;/s> Berlín</code></pre>
+</section><br><br>
+<p>Resultat:</p>
+<div class="muestra">La capital d'Alemanya és <s>Bonn</s> Berlín</div>
 
 
 <p class="sub-section">Element <span class="negrita">b</span></p>
+<p>Es tracta de l'element històric (de les primeres versions HTML) utilitzat per marcar text en negreta. 
+    En HTML 4 va quedar com a obsolet. A HTML 5 es va tornar a permetre però només si necessitem un nivell de marcatge de text més enllà de l'ús de 
+    <span class="negrita">strong, em o mark</span>. 
+    En definitiva, element d'ús molt poc aconsellable que només es mantenen per la gran quantitat de creadors que el segueixen utilitzant.</p>
 
 
 
 <p class="sub-section">Element <span class="cursiva">i</span> </p>
+<p>Teniu el mateix problema que l'anterior. 
+    És l'element històric (de les primeres versions HTML) utilitzat per marcar text en cursiva. 
+    En HTML 4 va quedar com a obsolet. 
+    A HTML 5 es pot utilitzar per marcar text tipus alternatiu si no encaixa amb altres elements de marcatge de caràcters.
+</p><p>
+Com passa amb l'element <span class="negrita">b</span>, el seu ús no és aconsellable.</p>
 
+<p class="sub-section">Abreviatures amb <span class="r-word">abbr</span> </p>
 
+<p>Marca text que indica una abreviatura o un acrònim. 
+    El vostre ús requereix utilitzar l'atribut title per indicar el significat de l'abreviatura. 
+    En general, els navegadors no mostren cap resultat, però sí un cartell amb el contingut de title quan s'acosta el ratolí. <br>Exemple:
 
-<p class="sub-section">Abreviatures amb abbr</p>
+<section><pre><code class="language-xml">&lt;p>S'ha coronat a
+&lt;abbr title="La seva Altesa Reial">SAR&lt;/abbr> el Rei Felip VI &lt;/p></code></pre>
+</section><br><br>
+<p>Resultat:</p>
+<div class="muestra"><p>S'ha coronat a
+<abbr title="La seva Altesa Reial">SAR</abbr> el Rei Felip VI </p></div>
+<p>
+A HTML 5 es va eliminar l'ús de l'element <span class="negrita">acronym</span> que estava pensat per a acrònims. 
+Ara tant acrònims com abreviatures s'han de fer servir amb <span class="negrita">abbr</span>.</p>
 
 
 
 <p class="sub-section">Definicions</p>
+<p>L'element <span class="r-word">dfn</span>  es fa servir de manera similar a l'anterior. 
+    Serveix per indicar definicions per al terme o paraules que enquadra.
+<br>Exemple: </p>
+
+<section><pre><code class="language-xml">&lt;dfn title="usar dos conceptes de significat oposat en una sola expressió">oxímoron
+&lt;/dfn></code></pre>
+</section><br><br>
+<p>Resultat:</p>
+<div class="muestra"><dfn title="usar dos conceptes de significat oposat en una sola expressió">oxímoron
+</dfn></div>
+<p>
+Els navegadors solen mostrar el contingut de l'element en cursiva i, com sempre, en un cartellet mostren el contingut de l'atribut title:</p>
 
 
 
 <p class="sub-section">Escriptura de codi o text informàtic</p>
+<p>HTML proporciona un element anomenat code que s'utilitza quan en un document volem escriure exemples de codi escrits en un llenguatge de programació. Per exemple:
 
+<section><pre><code class="language-xml">&lt;p>Aquest és un exemple de codi en JavaScript:&lt;/p>
+&lt;code>
+    window.onload=function(){
+        alert("Hola");
+    }
+&lt;/code></code></pre>
+</section><br><br>
+Això obtindria aquest resultat:</p>
+<div class="muestra"><p>Aquest és un exemple de codi en JavaScript:</p>
+<code>
+window.onload=function(){
+alert("Hola");
+}
+</code></div>
+
+<p>Es pot observar com els navegadors modifiquen el tipus de lletra (utilitzen un tipus de lletra monoespaiada) 
+    però no respecten els espais i els tabuladors utilitzats per indicar el codi. 
+    Com que és molt normal voler respectar els espais i tabuladors quan s'escriuen exemples de codi, el més habitual és fer aquesta combinació:</p>
+
+    <section><pre><code class="language-xml">&lt;p>Aquest és un exemple de codi en JavaScript:&lt;/p>
+&lt;pre>&lt;code>
+    window.onload=function(){
+        alert("Hola");
+    }
+&lt;/code>&lt;/pre></code></pre>
+    </section><br><br>
+
+    <p>I així obtenim aquest altre resultat:</p>
+    
+ <div class="muestra">
+<p>Este es un ejemplo de código en JavaScript:</p>
+<pre><code>
+	window.onload=function(){
+		alert("Hola");
+	}
+</code></pre></div>   
+
+<p>Amb intencions semblants a l'element anterior, tenim l'element <span class="r-word">samp</span>. 
+    S'utilitza quan volem en un document indicar exemples de resultats d'operacions a un ordinador. <br>Exemple:
+</p>
+<section><pre><code class="language-xml">&lt;p>En executar l'ordre vaig obtenir el missatge
+&lt;samp>Ordre o nom de fitxer incorrecte &lt;/samp>
+&lt;/p></code></pre>
+</section>
+
+Els navegadors solen mostrar aquest element en lletra monoespaiada. La sortida del codi anterior sol ser:</p>
+<div class="muestra"><p>En executar l'ordre vaig obtenir el missatge
+<samp>Ordre o nom de fitxer incorrecte </samp>
+</p></div>
+
+<p><span class="negrita">tecles</span></p>
+<p>
+L'element <span class="r-word">kbd</span>  serveix per indicar el nom d'una tecla o combinació de tecles 
+(també ordres de veu o entrades de menú). Podeu indicar l'atribut title per assenyalar el significat de la tecla.
+
+<br>Exemple:
+
+<section><pre><code class="language-xml">&lt;p>Per finalitzar pose &lt;kbd>Ctrl+C&lt;/kbd>&lt;/p></code></pre>
+</section><br><br>
+
+
+<div class="muestra"><p>Per finalitzar pose <kbd>Ctrl+C</kbd></p></div>
+
+<p>Variables</p>
+<p>L'element <span class="r-word">var</span>  serveix per indicar text que fa referència a noms de variables d'un programa informàtic. 
+    Només té sentit utilitzar-lo per a documents sobre programació.</p>
 
 
 <p class="sub-section">Dates i hores</p>
+<p>L'element <span class="r-word">time</span>  és present des d'HTML5 (a Internet Explorer des de la versió 9) 
+    i permet indicar una data i una hora (per exemple 10:00). <br>Atributs:</p>
 
+<p><span class="negrita">datetime</span>. Hora en format estàndard (yyyy-mm-dd o yyyy-mm-ddThh:mm:ssTZ) que representa l'hora exacta que mostra el text.</p>
 
+<section><pre><code class="language-xml">Avui és &lt;time datetime="2017-10-13">13 d'octubre de 2017&lt;/time>,es
+ va encendre el servidor a la
+&lt;time datetime="2017-10-13T01:12:00-0100">1 i 12 del matí (hora local)
+&lt;/time></code></pre>
+</section><br><br>
+
+<div class="muestra">Avui és <time datetime="2017-10-13">13 d'octubre de 2017</time>,ca
+ va encendre el servidor a la
+<time datetime="2017-10-13T01:12:00-0100">1 i 12 de la matí (hora local)
+</time></div>
 
 <p class="sub-section">Elements especials</p>
 
-
+<ul>
+    <li class="punt"><strong class="Negritta">bdi</strong>. S'usa per aïllar text del seu contenidor per aplicar-hi format diferenciat. Es fa servir si volem marcar text amb una intenció especial i atípica.</li>
+    <li class="punt"><strong class="Negritta">bdo</strong>. Permet indicar la direcció del text. Exemple:
+        <section><pre><code class="language-xml"><bdo dir="rtl">Aquest text surt al revés</bdo></code></pre>
+        </section><br>
+        <div class="muestra"><bdo dir="rtl">Aquest text surt al revés</bdo></div>
+        <p>Té un atribut anomenat dir que té dos valors possibles: <span class="negrita">ltr</span> (el text es mostra d'esquerra a dreta) i 
+            <span class="negrita">rtl</span> (el text es mostra de dreta a esquerra)</p>
+        
+        </li>
+    <li class="punt"><strong class="Negritta">u</strong>. Fins a HTML 3.2 indicava subratllat. Com que aquest format, fora d'un enllaç, no és recomanable, es va eliminar de l'estàndard. HTML 5 l'ha recuperat per indicar text que té un estil molt diferent del text general, com ara paraules mal escrites, errors d'ortografia o combinacions de text sense sentit. <p class="sinpunt">Els navegadors segueixen mostrant aquest text amb un subratllat.</p></li>
+    <li class="punt"><strong class="Negritta">wbr</strong>. Conté una paraula a la qual estarem indicant que pot ser partida per un guió per part del navegador. _idTextAnchor026"></a>span</h3></li>
+    </ul>
 
 <p class="sub-section">span</p>
+<p>Serveix per marcar un tros de text de forma inespecífica, sense indicar cap semàntica. 
+    En definitiva, seleccioneu un tros de text per necessitats tècniques (per exemple per indicar un format CSS diferent d'aquest text).
+</p><p>
+La recomanació és fer servir un element més semàntic sempre que sigui possible.</p>
+
+<p class="sub-section">element <span class="r-word">address</span></p>
+
+
+<p>L'element <span class="r-word">address</span>  us permet indicar una adreça, 
+    especialment indicada per mostrar informació sobre l'autor o els crèdits del document (amb informació dels autors per exemple) a l'estil dels peus d'articles periodístics.
+</p><p>
+Tot i que, de manera clàssica, se'l considera un element de marcatge de paràgrafs, actualment se l'ha denotat com un element de marcatge de seccions
+
+<br>Exemple: </p>
+
+<section><pre><code class="language-xml">&lt;address>
+Text traduït per &lt;a href="https://sdram58.github.io/apuntesPMDM/">
+Carlos&lt;/a>&lt;br>
+Carrer Els Informàtics 5&lt;br>
+València&lt;br>
+46001&lt;br>
+Espanya
+&lt;/address></code></pre>
+</section><br>
+<p>Resultat:</p>
+<div class="muestra"><address>
+Text traduït per <a href="https://sdram58.github.io/apuntesPMDM/">
+Carlos</a><br>
+Carrer Els Informàtics 5<br>
+València<br>
+46001<br>
+Espanya
+</address></div>
+<p>
+Els navegadors solen mostrar aquest tipus de paràgrafs en cursiva i centrats.</p>
 
 
 
 <p class="sub-section">Elements de marcat de correcció</p>
+<p>Permeten marcar text per indicar com a text que s'està revisant i que falta decidir-ne el contingut final. Hi ha dos elements d'aquest tipus <span class="r-word">ins</span>  i <span class="r-word">del</span> .</p>
 
+<ul>
+    <li class="punt"><strong class="Negritta">ins</strong>. Indica un text afegit al document. Podeu utilitzar dos atributs:</li>
+    <li class="punt"><strong class="Negritta">del</strong>. Indica un text que es vol retirar del document.</li>
+</ul>
 
+<p>Ambdós elements poden utilitzar dos atributs:</p>
+<ul>
+    <li class="punt"><strong class="Negritta">cite</strong>. Amb un enllaç a una adreça d'Internet que proveirà de més informació sobre la correcció.</li>
+    <li class="punt"><strong class="Negritta">datetime</strong>. Indica la data de modificació amb quatre xifres per a l'any, dues per al mes i dues per al dia. </li>
+</ul>
+<p>Exemple:</p>
 
+<section><pre><code class="language-xml">&lt;p>La capital d'Alemanya és &lt;del>Bonn&lt;/del>
+&lt;ins datetime="2012-03-12">Berlín&lt;/ins>
+&lt;/p></code></pre>
+</section><br>
+
+<div class="muestra"><p>La capital d'Alemanya és <del>Bonn</del>
+<ins datetime="2012-03-12">Berlín</ins>
+</p></div>
 
 <h3>Llistes</h3>
+<p>Les llistes permeten crear paràgrafs agrupats i alineats mitjançant símbols com vinyetes o números per facilitar la lectura i organització de les idees del document.</p>
 
 <p class="sub-section">Llistes amb vinyetes</p>
+<p>Les llistes amb vinyetes s'han d'englobar dins d'un element <span class="r-word">ul</span>  (acrònim d'<span class="negrita">unordered list</span>, llista no ordenada), 
+    després cada paràgraf de la llista estarà dins elements de tipus <span class="r-word">li</span>  (de list item, element de llista).
+
+<br>Exemple: </p>
+
+<section><pre><code class="language-xml">&lt;p>Llista de la compra&lt;/p>
+&lt;ul>
+    &lt;li>Aigua&lt;/li>
+    &lt;li>Vi&lt;/li>
+    &lt;li>Cervesa&lt;/li>
+&lt;/ul></code></pre>
+</section>
+<p>Resultat:</p>
+<div class="muestra"><p>Llista de la compra</p>
+<ul>
+    <li>Aigua</li>
+    <li>Vi</li>
+    <li>Cervesa</li>
+</ul></div>
 
 
+<p>Atribut <span class="negrita">type</span>:
+Un dels següents: <span class="negrita">'disc'</span>, '<span class="negrita">square</span>', o '<span class="negrita">circle</span>'.
+ Per defecte: depèn del nidament, el fixa el navegador</p>
 
+<p class="sub-section">Numèriques</p>
+
+
+<p>Les llistes numèriques apareixen dins de l'element <span class="r-word">ol</span>  (d'<span class="negrita">ordered list</span>, llista ordenada), 
+    després cada paràgraf de la llista estarà dins d'elements de tipus <span class="r-word">li</span> , igual que les anteriors. La diferència ara és que cada paràgraf amb li apareix amb un número i no amb una vinyeta.
+
+Exemple:</p>
+
+<section><pre><code class="language-xml">&lt;p>Llista de la compra&lt;/p>
+&lt;ol>
+    &lt;li>Aigua&lt;/li>
+    &lt;li>Vi&lt;/li>
+    &lt;li>Cervesa&lt;/li>
+&lt;/ol></code></pre>
+</section>
+<p>Resultat:</p>
+<div class="muestra"><p>Llista de la compra</p>
+<ol>
+    <li>Aigua</li>
+    <li>Vi</li>
+    <li>Cervesa</li>
+</ol></div>
+
+
+<p>Atribut <span class="negrita">type</span>: <span class="d-word">(1|a|A|i|I)</span>  estil de numeració.
+    <ul>
+        <li>1 - Llistes decimals</li>
+        <li>a - Llistes alfabètiques en minúscules</li>
+        <li>A - Llistes alfabètiques en majúscules</li>
+        <li>i - Llistes de números romans en minúscules</li>
+        <li>I - Llistes de números romans en majúscules</li>
+      </ul>
+</p>
+<p>Atribut <span class="negrita">start</span>: Indica el número inicial de la seqüència</p>
+<p>Atribut <span class="negrita">reversed</span>: Indica que comença de mes gran a més xicotet, es a dir, en ordre decreixent.</p>
+<section><pre><code class="language-xml">&lt;ol reversed>
+  &lt;li>Juliol&lt;/li>
+  &lt;li>Carmen&lt;/li>
+  &lt;li>Ignasi&lt;/li>
+  &lt;li>Elena&lt;/li>
+&lt;/ol></code></pre>
+</section>
+<div class="muestra"><ol reversed>
+  <li>Juliol</li>
+  <li>Carmen</li>
+  <li>Ignasi</li>
+  <li>Elena</li>
+</ol></div>
+
+<p class="sub-section">Llistes anidades</p>
+
+<p>És possible ficar una llista dins una altra, per exemple: </p>
+
+<section><pre><code class="language-xml">&lt;p>Llista de la compra&lt;/p>
+&lt;ul>
+   &lt;li>
+       No alcohòlics
+       &lt;ul>
+           &lt;li>Aigua&lt;/li>
+       &lt;/ul>
+   &lt;/li>
+   &lt;li>
+       Alcohòlics
+       &lt;ul>
+           &lt;li>Vaig veure&lt;/li>
+           &lt;li>Cervesa&lt;/li>
+       &lt;/ul>
+   &lt;/li>
+&lt;/ul></code></pre>
+</section>
+<p>Amb el resultat:</p>
+<div class="muestra"><p>Llista de la compra</p>
+<ul>
+   <li>
+       No alcohòlics
+       <ul>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Aigua</li>
+       </ul>
+   </li>
+   <li>
+       Alcohòlics
+       <ul>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Vaig veure</li>
+       <li>&nbsp;&nbsp;&nbsp;&nbsp;Cervesa</li>
+       </ul>
+   </li>
+</ul></div>
+
+<p class="sub-section">Llistes de definició</p>
+<p>Permet crear una llista de definicions de termes. S'hi indica el terme a definir i el seu significat. Exemple:</p>
+
+<section><pre><code class="language-xml">&lt;dl>
+   &lt;dt>Windows&lt;/dt>
+   &lt;dd>
+       Sistema operatiu de &lt;strong>Microsoft&lt;/strong> disponible per a PC
+       disponible en versions de 32 i 64 bits i per a servidors,
+       ordinadors i fins i tot tauletes i mòbils.&lt;br>
+       La darrera versió és la versió 10 i la 2016 per a servidors.
+   &lt;/dd>
+   &lt;dt>Linux&lt;/dt>
+   &lt;dd>
+       Sistema operatiu de codi obert disponible
+       en nombroses distribucions gratuïtes i de pagament.
+       És la base del sistema &lt;strong>Android&lt;/strong>.
+   &lt;/dd>
+   &lt;dt>Mac US&lt;/dt>
+   &lt;dd>
+       Sistema operatiu dels ordinadors de l'empresa &lt;strong>Apple&lt;/strong>
+&lt;br>
+        La darrera versió és &lt;strong>Mojave&lt;/strong>
+    &lt;/dd>
+&lt;/dl></code></pre>
+</section>
+<p>Resultat</p>
+<div class="muestra"><dl>
+   <dt>Windows</dt>
+   <dd>
+       &nbsp;&nbsp;&nbsp;&nbsp;Sistema operatiu de <strong>Microsoft</strong> disponible per a PC
+       &nbsp;&nbsp;&nbsp;&nbsp;disponible en versions de 32 i 64 bits i per a servidors,
+       &nbsp;&nbsp;&nbsp;&nbsp;ordinadors i fins i tot tauletes i mòbils.<br>
+       &nbsp;&nbsp;&nbsp;&nbsp;La darrera versió és la versió 10 i la 2016 per a servidors.
+   </dd>
+   <dt>Linux</dt>
+   <dd>
+    &nbsp;&nbsp;&nbsp;&nbsp;Sistema operatiu de codi obert disponible
+    &nbsp;&nbsp;&nbsp;&nbsp;en nombroses distribucions gratuïtes i de pagament.
+    &nbsp;&nbsp;&nbsp;&nbsp;És la base del sistema <strong>Android</strong>.
+   </dd>
+   <dt>Mac US</dt>
+   <dd>
+    &nbsp;&nbsp;&nbsp;&nbsp;Sistema operatiu dels ordinadors de l'empresa <strong>Apple</strong>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;La darrera versió és <strong>Mojave</strong>
+    </dd>
+</dl></div>
+
+<a class="tarea" target="_blank" href=""><span class="negrita">Activitat 1</span><br>
+Amb les etiquetes que has après, replica el text html següent en un nou fitxer. Crida'l activitat1.html</a>
+
+<div class="muestra"><h1>La Intel·ligència Artificial</h1>
+    
+    <p>La <strong>Intel·ligència Artificial (IA)</strong><sub>1</sub> és un camp d'estudi que s'enfoca a desenvolupar sistemes i algorismes que poden realitzar tasques que, quan són realitzades per éssers humans, requereixen intel·ligència. Aquestes tasques inclouen l'aprenentatge, la resolució de problemes, el raonament i la presa de decisions.</p>
+    
+    <h2>Aplicacions de la IA</h2>
+    
+    <p>La IA té una àmplia varietat d'aplicacions a la vida quotidiana. Alguns exemples inclouen:</p>
+    
+    <ul>
+        <li>Assistents virtuals com Siri<sup>2</sup> i Alexa<sup>3</sup>.</li>
+        <li>Automatització de tasques industrials.</li>
+        <li>Diagnòstic mèdic assistit per ordinador.</li>
+    </ul>
+    
+    <h2>Conceptes Clau</h2>
+    
+    <dl>
+        <dt>Aprenentatge automàtic</dt>
+        <dd>L'aprenentatge automàtic és una subdisciplina de la IA que s'enfoca a desenvolupar algoritmes que permeten als ordinadors aprendre de dades i millorar-ne el rendiment en tasques específiques amb l'experiència.</dd>
+        
+        <dt>Xarxes Neuronals</dt>
+        <dd>Les xarxes neuronals són models d'IA inspirats en el funcionament del cervell humà i s'utilitzen per a tasques com ara el reconeixement de patrons i la classificació de dades.</dd>
+    </dl>
+    
+    <h2>Cita Inspiradora</h2>
+    
+    <blockquote>
+        <p>"La intel·ligència artificial no és un substitut de la intel·ligència natural; n'és una extensió".</p>
+        <footer>- Don R. Shin, Científic de Dades</footer>
+    </blockquote>
+    
+    <h2>Data de Publicació</h2>
+    
+    <p>Aquest document va ser creat el <time datetime="2023-09-20">20 de setembre de 2023</time>.</p>
+    
+    <hr>
+    
+    <p>Per obtenir més informació sobre la IA i les seves aplicacions, visiteu la meua web.</p></div>
+
+
+    <a class="tarea" target="_blank" href=""><span class="negrita">Activitat 2</span><br>
+    Intenta simular la imatge següent usant les etiquetes HTML que coneixes.</a>
+
+    <figure><img src="UD2/images/ud2-2023-09-20-13-50-07.png" /><br><figcaption>Activitat 2</figcaption></figure>
+    <br>
+    
 </section><!-- End section Elements de text i paràgrafs-->
+
 
 
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
