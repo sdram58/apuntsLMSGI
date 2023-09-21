@@ -26,6 +26,10 @@
         href="#sEdiciobasicaelements">5.- Edició bàsica d'elements</a><a
         href="#sElementsdeTextiParagrafs">6.- Elements de text i paràgrafs</a>
       </div>
+
+      <div class="fila">
+        <a href="sElementsEstructurals">7. Elements estructurales</a>
+      </div>
     
 </nav>
 
@@ -42,8 +46,10 @@
       href="#sEdiciobasicaelements">5.- Edició bàsica d'elements</a><a 
       href="#sElementsdeTextiParagrafs">6.- Elements de text i paràgrafs</a>
     </div>
-    <div class="fila">
-
+    <div class="fila">        
+        <a href="sElementsEstructurals">7. Elements estructurals</a>
+        <a href="" class="relleno">8. Elements estructurals</a>
+        <a href="" class="relleno" >9. Elements estructurals</a>
     </div>
   </div>
 
@@ -58,7 +64,6 @@
     Al final d'aquesta dècada <span class="negrita">Tim Bernes Lee</span>, científic britànic que treballava al <span class="negrita">CERN</span>, 
     va utilitzar SGML per definir un nou llenguatge d'etiquetes que va anomenar <span class="d-word">Hypertext Markup Language</span> (llenguatge de marcat d'hipertext) 
     per crear documents transportables a través d'Internet on fos possible l'<span class="negrita">hipertext</span>.
-
 </p>
 <p>
 S'anomena hipertext a la possibilitat que en un document determinades paraules marcades de manera especial permetin obrir un document relacionat amb elles; 
@@ -118,7 +123,7 @@ Lògicament des del 1989 fins als nostres dies HTML ha millorat. Entre els seus 
     <ul>
         <li><span class="negrita"><span class="negrita">1989</span>. </span>
             <ul>
-                <li>Tim Bernes Lee</a></span></span>,
+                <li>Tim Bernes Lee</a>,
                     científic britànic que treballava al CERN centre de
                     desenvolupament nuclear ubicat a Suïssa. Intenta traslladar l'hipertext als documents
                     científics, mitjançant el qual és possible avançar d'un document a un altre mitjançant enllaços
@@ -630,7 +635,7 @@ Lògicament des del 1989 fins als nostres dies HTML ha millorat. Entre els seus 
 
 <!--*********************************************************Funcionament de les aplicacions web***********************************************************-->
 <section class="apartado">
-<a name="sFuncionamientodelasaplicacionesweb"></a>
+<a name="sFuncionamentdelesaplicacionsweb"></a>
 <h2>Funcionament de les aplicacions web</h2>
 
 <h3>HTML, CSS i JavaScript</h3>
@@ -987,7 +992,7 @@ La majoria d'etiquetes afecten un text determinat, el qual estarà tancat per le
 </p><p>
 El tancament d‟una etiqueta es marca posant el símbol <span class="d-word">/</span>, seguit del nom de l‟element estem tancant. Exemple:</p>
 <section><pre><code class="language-xml">Text normal &lt;strong>text negreta&lt;/strong></code></pre>
-</section><br><br>
+</section>
 
 <p>Literalment el que indiquem a l'exemple anterior és que el text conté un element de tipus <span class="cursiva">strong</span>, que conté el text: text negreta. 
     Un navegador reaccionarà mostrant aquest text amb un tipus de lletra més fort. És a dir:</p>
@@ -997,7 +1002,7 @@ El tancament d‟una etiqueta es marca posant el símbol <span class="d-word">/<
      Una norma important és que sempre hem de tancar primer les etiquetes obertes més tard.</p>
 <p>És a dir, aquest codi <span class="negrita">no és correcte</span>.</p>
 <section><pre><code class="language-xml">Text normal &lt;strong>&lt;em>text negreta i cursiva&lt;/strong>&lt;/em></code></pre>
-</section><br><br>
+</section>
 <p>S'està tancant l'etiqueta <span class="r-word">em</span>  després de <span class="r-word">strong</span> i això no és correcte perquè curs és la darrera que es va obrir. 
     El correcte és:</p>
 
@@ -1056,7 +1061,7 @@ La sintaxis de atributos es:</p>
         
     &lt;/body>
 &lt;/html></code></pre>
-</section><br><br>
+</section>
 
 <p>On el significat dels elements és el següent:</p>
 <ul>
@@ -1120,11 +1125,14 @@ La sintaxis de atributos es:</p>
 
 <p class="sub-section">Etiqueta pre</p>
 <p>Si volem que els espais que col·loquem al codi sí que siguin tinguts en compte, podem utilitzar l'etiqueta <span class="r-word">pre</span> .
-</p><p>
+</p>
+<p>
 Realment, amb caràcter general, no s'aconsella l'ús de <span class="r-word">pre</span>  perquè ajuda a adquirir mals hàbits 
-i dificulta l'aprenentatge de les formes avançades de maquetar pàgines web. ´
-</p><p>
-Sí que hi ha contextos en què és obligat el seu ús, per exemple per mostrar textos referits a exemples de codi de llenguatges de programació. <br>Exemple:</p>
+i dificulta l'aprenentatge de les formes avançades de maquetar pàgines web.
+</p>
+<p>
+Sí que hi ha contextos en què és obligat el seu ús, per exemple per mostrar textos referits a exemples de codi de llenguatges de programació. <br>Exemple:
+</p>
 
 <section><pre><code class="language-xml">&lt;!DOCTYPE html>
 &lt;html lang="ca">
@@ -1153,8 +1161,6 @@ public class HolaMon{
      <div class="muestra"><p>Programa <strong>Hola món</strong>
 escrit amb Java</p>
 
-    </body>
-</html>
 <pre>
 public class HolaMon{
     public string void main(String[] args){
@@ -1169,7 +1175,7 @@ public class HolaMon{
     Si, per exemple, escrivim quatre vegades seguides <span class="negrita">&amp;nbsp;</span> estarem deixant quatre espais en blanc que el navegador sí que tindrà en compte. Exemple:</p>
 
 <section><pre><code class="language-xml">text &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; un altre text</code></pre>
-</section><br><br>
+</section>
 
 <p>El segon text apareixerà quatre espais en blanc darrere del primer.</p>
 
@@ -4248,8 +4254,8 @@ Per exemple, si volem marcar un element amb l'idioma espanyol, però indicant qu
 <h3>Contingut i contenidors</h3>
 
 <p>En HTML els elements que mostren alguna cosa a la pàgina, es col·loquen dins de la secció <span class="r-word">body</span>.
-    </p><p>
-
+    </p>
+    <p>
 A més, cal tenir en compte que hi ha elements pensats per contenir grans quantitats d'informació (com <span class="r-word">div</span> ) i elements que contenen poc text (com <span class="r-word">strong</span>).
 És correcte que aparegui un element <span class="negrita">strong</span> dins un element <span class="negrita">p</span>, però no al revés:</p>
 
@@ -4304,7 +4310,7 @@ A més, cal tenir en compte que hi ha elements pensats per contenir grans quanti
 
 </p><p>
 
-L'atribut comú més conegut és <span class="r-word">aneu</span> , que permet identificar un element amb un identificador únic, però n'hi ha molts més. Els principals són:</p>
+L'atribut comú més conegut és <span class="r-word">id</span> , que permet identificar un element amb un identificador únic, però n'hi ha molts més. Els principals són:</p>
 
 <table id="table033" class="taula-manual">
     <colgroup>
@@ -4856,8 +4862,8 @@ Ignoren, visualment, l'ús de l'atribut cite, però altres eines sí que usen aq
 </p>
 
 <section><pre><code class="language-xml">&lt;p>Text normal &lt;small>xicotet
-&lt;small>Encara més xicotet&lt;/small>&lt;/small></p></code></pre>
-</section><br><br>
+&lt;small>Encara més xicotet&lt;/small>&lt;/small>&lt;/p></code></pre>
+</section><br><br> <!--hasta aquí..............................-->
 
 <div class="muestra"><p>Text normal <small>xicotet
 <small>Encara més xicotet</small></small></p></div>
@@ -5307,6 +5313,121 @@ Amb les etiquetes que has après, replica el text html següent en un nou fitxer
     <br>
     
 </section><!-- End section Elements de text i paràgrafs-->
+
+<a href="#s">Elements estructurals</a>
+<!--*********************************************************Elements estructurals***********************************************************-->
+<section class="apartado">
+<a name="sElementsEstructurals"></a>
+<h2>Elements estructurals</h2>
+
+<h3>Element <span class="r-word">div</span></h3>
+<p>Es tracta d'un element clàssic, ja era present a les primeres versions d'HTML, 
+    que s'utilitza com a contenidor d'altres elements per poder manipular-los tots alhora. 
+    Dins de <span class="r-word">div</span> es poden col·locar tota mena d'etiquetes (taules, paràgrafs, imatges,…).
+    </p>
+<p>
+Des de fa anys ha esdevingut l'element utilitzat, combinat amb CSS, per crear capes. 
+Les capes són elements visuals que es poden posicionar a voluntat a la pàgina web. 
+D'aquesta manera, mitjançant les capes s'aconsegueixen maquetacions molt artístiques.
+</p>
+<p>
+Per defecte, els navegadors no donen format al contingut d'un element neg, de manera que visualment no es diferencia de la resta d'elements, 
+llevat del fet que un element div té un <span class="negrita">display</span>  de tipus <span class="negrita">block</span> . 
+És a dir, el contingut d'aquests elements, per defecte, es mostra de forma separada a la resta.
+</p>
+<p>
+A l'exemple següent es destaca l'element <span class="r-word">div</span> pintant-lo de roig:</p>
+
+<section><pre><code class="language-xml">&lt;h1>Títol principal&lt;/h1>
+&lt;p>Lorem ipsum dolor sit amet, consectetur adipisicing
+   elit. Quos, arxitecte, sapient corporis debitis
+   placeat libero ipsa labore molèsties omnis facere
+   odit fugiat. Dolore, quam, tempore molèsties
+   arxitecte veritatis magnam atque?
+&lt;/p>
+&lt;div style="background-color:red";>
+    &lt;h2>Títol secundari&lt;/h2>
+    &lt;p>Lorem ipsum dolor sit amet, consectetur
+       adipisicing elit. Odi, fugit, sint maxime unde
+       laudantium arxitecte asperiors libero sit
+       accusamus itaque doloribus quae error aliquam in
+       soluta còmode porro mollitia excepturi!
+    &lt;/p>
+    &lt;p>Commodi, eaque, voluptate a culpa explicabo
+       deserunt sequi molèsties nemo quibusdam
+       consequuntur arxitecte cum iste et nobis
+       praesentium minima illum. Ex laborum consectetur
+       voluptatem deleniti magnam iste tenetur est
+       facilis.
+    &lt;/p>
+&lt;/div>
+&lt;p>Velit, ex tenetur arxitecte culpa officia
+   soluta exercitationem recusandae aut ea
+   praesentium. Recusandae, qui, repudiandae, eaque
+   amet doloribus quod ad illum nihil pariatur iste
+   natus velit nostrum voluptatum nemo dicta.
+&lt;/p></code></pre>
+</section><br><br>
+
+<p>El resultat seria el següent:</p>
+
+<div class="muestra">
+    <h1>Títol principal</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing
+   elit. Quos, arxitecte, sapient corporis debitis
+   placeat libero ipsa labore molèsties omnis facere
+   odit fugiat. Dolore, quam, tempore molèsties
+   arxitecte veritatis magnam atque?
+</p>
+<div style="background-color:red";>
+    <h2>Títol secundari</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur
+       adipisicing elit. Odi, fugit, sint maxime unde
+       laudantium arxitecte asperiors libero sit
+       accusamus itaque doloribus quae error aliquam in
+       soluta còmode porro mollitia excepturi!
+    </p>
+    <p>Commodi, eaque, voluptate a culpa explicabo
+       deserunt sequi molèsties nemo quibusdam
+       consequuntur arxitecte cum iste et nobis
+       praesentium minima illum. Ex laborum consectetur
+       voluptatem deleniti magnam iste tenetur est
+       facilis.
+    </p>
+</div>
+<p>Velit, ex tenetur arxitecte culpa officia
+   soluta exercitationem recusandae aut ea
+   praesentium. Recusandae, qui, repudiandae, eaque
+   amet doloribus quod ad illum nihil pariatur iste
+   natus velit nostrum voluptatum nemo dicta.
+</p>
+</div>
+
+<h3>Element <span class="r-word">span</span> </h3>
+<p>
+    És molt similar a l'anterior, però com que els navegadors no afegeixen res (ni tan sols espais) a aquesta etiqueta quan es mostra per pantalla, 
+    en lloc de per definir capes (encara que es podria) s'usa per marcar contingut interior a un paràgraf, 
+    amb la finalitat de que a aquest contingut se li puga donar un format especial mitjançant CSS. 
+    És a dir, amb <span class="negrita">div</span>  marquem capes (contenidors grans) i amb <span class="negrita">span</span>  marquem blocs xicotets de text.
+</p>
+
+
+<p>Exemple:</p>
+
+<section><pre><code class="language-xml">&lt;p>Dins d'aquest text &lt;span style="color:red">aquesta frase surt de color vermell&lt;/span>. Això torna a sortir normal&lt;/p></code></pre>
+</section><br><br>
+
+<p>I com a resultat:</p>
+
+<div class="muestra">
+    <p>Dins d'aquest text <span style="color:red">aquesta frase surt de color vermell</span>. Això torna a sortir normal</p>
+</div>
+
+
+
+
+
+</section><!-- End section Elements estructurals-->
 
 
 
