@@ -28,7 +28,7 @@
       </div>
 
       <div class="fila">
-        <a href="sElementsEstructurals">7. Elements estructurales</a>
+        <a href="#sElementsEstructurals">7. Elements estructurales</a>
       </div>
     
 </nav>
@@ -47,7 +47,7 @@
       href="#sElementsdeTextiParagrafs">6.- Elements de text i paràgrafs</a>
     </div>
     <div class="fila">        
-        <a href="sElementsEstructurals">7. Elements estructurals</a>
+        <a href="#sElementsEstructurals">7. Elements estructurals</a>
         <a href="" class="relleno">8. Elements estructurals</a>
         <a href="" class="relleno" >9. Elements estructurals</a>
     </div>
@@ -5424,6 +5424,325 @@ A l'exemple següent es destaca l'element <span class="r-word">div</span> pintan
 </div>
 
 
+<h3>Elements estructurals semàntics</h3>
+<p>La idea en HTML5 (a diferència de les versions anteriors) és que els elements HTML <span class="subrayado">aportin valor semàntic</span> al contingut. 
+    És a dir, es tracta que el codi HTML indiqui quin tipus de contingut és el que és dins de cada element. 
+    Això val per a quasi tots els elements ja coneguts com <span class="negrita">p</span> (paràgraf),
+     <span class="negrita">abbr</span> (abreviatura), <span class="negrita">strong</span> (remarcat fort), etc.
+</p>
+<p>
+Tot i això els estàndards anteriors a la versió 5 tenien una carència molt important. 
+L'únic element per marcar contenidors grans era <span class="negrita">div</span>. I aquest element <span class="subrayado">no aporta cap semàntica al contingut</span>.
+</p>
+<p>
+A HTML 5 hi ha una sèrie molt important d'elements que no donen cap format al text, tret del fet que apareguin amb un display de bloc, però permeten donar-li un significat. 
+Serà CSS l'encarregat que aquests elements apareguin amb un format apropiat al seu significat a la pàgina final. 
+La idea final és que aquests elements substitueixin el <span class="negrita">sobreús</span> que tradicionalment es feia de l'etiqueta <span class="negrita">div</span>.
+</p>
+<p>
+No és fàcil aquesta idea, ja que hi ha nombroses plantilles i patrons de treball professionals (com passava per exemple amb Bootstrap) 
+que es basen en <span class="negrita">div</span> per treballar-hi. 
+La majoria de plantilles actuals (inclosa la pròpia Bootstrap) s'han adaptat a aquesta idea.
+</p>
+<p class="sub-section">Element <span class="r-word">header</span> </p>
+
+<p>
+    Permet marcar contingut com a capçalera del document. 
+    Cal assenyalar que aquest element <span class="subrayado">no té res a veure amb l'element</span> <span class="negrita">head</span>. 
+    <span class="r-word">Header</span>  marca una sèrie paràgrafs per indicar que pertanyen a la capçalera de la pàgina.
+</p>
+<p>
+    La capçalera de la pàgina sol contenir el logotip de la pàgina, el menú, el títol principal, etc.
+</p>
+<p>
+    Realment una pàgina pot tenir diversos elements <span class="r-word">header</span> . 
+    Si esteu al nivell de l'etiqueta body indica que el contingut és la capçalera de la pàgina completa. 
+    Però dins d'un element de secció, per exemple, <span class="r-word">article</span> , indicaria que el contingut és la capçalera d'aquest article.
+</p>
+<p>
+    No heu d'indicar un element <span class="r-word">header</span>  dins d'un altre <span class="r-word">header</span>  
+    ni dins d'un element <span class="r-word">footer</span>  o <span class="r-word">address</span> .
+</p>
+
+<p class="sub-section">Element <span class="r-word">footer</span> </p>
+<p>
+    Similar a l'anterior però <span class="negrita">serveix per marcar el peu d'una pàgina</span>, <span class="negrita">secció</span>, <span class="negrita">article</span>, etc.
+    En cas que un element footer és col·loqui al nivell de l'element body, servirà per indicar el peu general de la pàgina que sol contenir informació sobre l'autor,
+    el copyright, els termes d'ús de la pàgina, el contacte , etc.
+</p>
+<p>
+    Igual que passava amb <span class="r-word">header</span>, no es pot col·locar un <span class="r-word">footer</span>  dins un altre 
+    <span class="subrayado">ni pot estar dins header o address</span>.
+</p>
+
+<p class="sub-section">Element <span class="r-word">main</span> </p>
+
+<p>
+    És fins i tot més modern que els anteriors. 
+    Permet indicar una secció (que podrà incloure articles, capçaleres, títols, paràgrafs, seccions d'imatge…) de manera que s'entendrà que aquesta és la secció principal del document.
+</p>
+<p>
+    <span class="subrayado">Només hi pot haver un element <span class="r-word">main</span>  en una pàgina web</span>. 
+    S'usa per diferenciar les seccions de menú, publicitat o qualsevol tipus d'informació a la pàgina considerada secundària.
+</p>
+<p>
+    <span class="r-word">main</span>  <span class="subrayado">no es pot col·locar</span> dins de seccions de tipus <span class="r-word">article</span>, <span class="r-word">footer</span>
+    , <span class="r-word">header</span>, <span class="r-word">aside</span> o <span class="r-word">nav</span>. 
+    <span class="subrayado">Sí que s'admet</span> dins de <span class="r-word">section</span> , per marcar elements principals dins una secció.
+</p>
+
+<p class="sub-section">Element <span class="r-word">section</span></p>
+<p>És un element que permet dividir en diferents parts o seccions un document. Exemple de pàgina dividida en seccions:</p>
+
+<section><pre><code class="language-xml">&lt;!DOCTYPE html>
+&lt;html lang="ca-ES">
+    &lt;head>
+        &lt;meta charset="UTF-8">
+            &lt;title>&lt;/title>
+    &lt;/head>
+    &lt;body>
+        &lt;header>
+            &lt;h1>Història d'HTML&lt;/h1>
+            &lt;p>Des del 1989 fins als nostres dies&lt;/p>
+        &lt;/header>
+        &lt;section id="inici">
+            &lt;h2>Inicis en HTML. Tim Bernes Lee&lt;/h2>
+            &lt;p>.....&lt;/p>
+        &lt;/section>
+        &lt;section id="creació">
+          &lt;h2>Creació de la web. Primers navegadors
+          &lt;/h2>
+            &lt;p>.....&lt;/p>
+        &lt;/section>
+        &lt;section id="guerra">
+            &lt;h2>La guerra dels navegadors&lt;/h2>
+            &lt;p>.....&lt;/p>
+        &lt;/section>
+        &lt;section id="versions">
+            &lt;h2>D'HTML 4 a HTML 5 passant per XHTML&lt;/h2>
+            &lt;p>...&lt;/p>
+        &lt;/section>
+        &lt;footer>
+            &lt;p>Realitzat per Jorge Sánchez&lt;/p>
+        &lt;/footer>
+    &lt;/body>
+&lt;/html></code></pre>
+</section><br><br>
+
+<p>L'atribut <span class="r-word">aneu</span> no és obligatori, 
+    però de vegades es fa servir amb la finalitat d'identificar de manera única cada secció, 
+    per exemple per donar-li un format especial a una secció concreta.</p>
+
+<p class="sub-section">Element <span class="r-word">nav</span></p>
+<p>
+Es tracta d'un element que marca el contingut com una <span class="subrayado">secció d'enllaços o menú</span>, és a dir, una barra de navegació. 
+Més endavant amb CSS es pot donar un format especial a aquests enllaços. 
+<span class="r-word">nav</span> es pot escriure dins de qualsevol element HTML estructural (<span class="negrita">section, article, header, footer</span>,..), 
+però tampoc no s'han de marcar tots els enllaços de navegació com a part d'un element nav, 
+només els que formen un menú real i complet de navegació.
+</p>
+<p>
+Els elements marcats per <span class="r-word">nav</span> poden ser omesos pels lectors digitals de pàgines web que utilitzen, 
+per exemple, les persones invidents. 
+Això facilita la comprensió del text i així que aquest contingut quede marcat només per utilitzar els enllaços interiors a <span class="negrita">nav</span>.
+</p>
+<p>
+Lògicament dins de <span class="r-word">nav</span> se solen incloure nombrosos elements de tipus <span class="r-word">a</span>.
+</p>
+
+<p class="sub-section">Element <span class="r-word">article</span></p>
+
+<p>
+    Si s'observen els elements descrits anteriorment, sembla clar que HTML 5 utilitza, com a metàfora, la forma de distribuir continguts d'un diari. 
+    Així hi ha capçaleres, peus, seccions i, amb aquest element, articles.
+</p>
+<p>
+    La idea és col·locar dins aquest element, que té sentit que aparega dins l'element <span class="r-word">section</span> o fins i tot aparèixer de manera independent, 
+    contingut que puga ser entengut com un tot que descrigui un tema de manera íntegra.
+</p>
+<p>
+    És a dir, dins d'<span class="r-word">article</span> es col·loquen els elements que serveixin per descriure un mateix tema.
+</p>
+<p>
+    És possible (encara que poc habitual) col·locar elements article dins d'altres elements article, 
+    però només quan volem indicar articles externs relacionats amb l'article principal.
+</p>
+<p>
+    L'autoria de l'article (nom de l'autor i els crèdits) es pot indicar amb l'element <span class="r-word">address</span>.
+</p>
+
+<p class="sub-section">Element <span class="r-word">figure</span></p>
+
+<p>
+    Serveix per agrupar els elements relatius a una imatge com la pròpia imatge (element <span class="r-word">img</span>), 
+    el títol de la mateixa, el peu, els paràgrafs relatius, etc. 
+    Contingut relacionat amb el que té al voltant, però que es podria utilitzar de manera independent en un altre document.
+</p>
+
+<p class="sub-section">Elemento <span class="r-word">figcaption</span></p>
+
+<p>
+    Permet indicar el títol d'una imatge dins d'un element <span class="r-word">figuri</span> fent l'efecte d'un peu d'imatge. 
+    Per defecte la imatge i el text quedaran alineats de la mateixa manera.
+</p>
+<p>
+Exemple dús:
+</p>
+
+<section><pre><code class="language-xml">&lt;article>
+    &lt;hgroup>
+        &lt;h2>Palència&lt;/h2>
+        &lt;h3>Paisatges&lt;/h3>
+    &lt;/hgroup>
+    &lt;figure>
+    &lt;img src="montanaPalentina.jpg" alt="Vista de la Muntanya Palentina" width="350" height="400"/>
+        &lt;figcaption>
+            Vista de la Muntanya Palentina des de Camporedon
+        &lt;/figcaption>
+    &lt;/figure>
+    &lt;p>
+        Els paisatges a la província de Palència.
+    &lt;/p>
+    ....
+    
+&lt;/article></code></pre>
+</section><br><br>
+
+
+<p class="sub-section">Element <span class="r-word">aside</span></p>
+
+<p>
+    Permet marcar text dins d'un article perquè no es tinga en compte com a part del text de l'article, 
+    sinó com un text a part que permet fer aclariments a l'article, referències, resums remarcats i sobretot quadres de text d'estil periodístic per destacar parts del article. 
+    Perquè aquest text aparega de manera especial, us heu de donar format amb CSS.
+</p>
+
+<p>La idea és simular el típic requadre que apareix als diaris on s'expressen idees interessants o que resumeixen l'article.</p>
+
+<p>En definitiva, aixi defineix text que no forma part del flux principal de la pàgina sinó que posseeix contingut que ha de fluir a part.</p>
+
+<p class="sub-section">títulos en las elementos de sección</p>
+
+<p>
+    Podem entendre que hi ha contenedors que permeten estructurar un contingut de forma completa i que aquest contingut és, 
+    alhora, part d'un tot més gran. 
+    És a dir, una pàgina actual es pot comprendre com un conjunt de seccions cada secció, alhora, es pot dividir en més seccions.
+</p>
+<p>
+    D'aquesta manera, els títols <span class="r-word">h1</span>, <span class="r-word">h2</span>, <span class="r-word">h3</span>, etc. permeten establir una jerarquia extra. 
+    És a dir: un element <span class="r-word">h1</span> dins directament de l'element <span class="r-word">body</span> és considerava un títol principal de tota la pàgina web. 
+    Ara, normalment, es col·locarà <span class="r-word">h1</span> dins una secció concreta, 
+    cosa que significarà que aquest <span class="r-word">h1</span> és el títol principal d'aquesta secció. 
+    Fins i tot aquesta secció es pot dividir en subseccions, 
+    cada una de les quals tindran els seus propis elements <span class="r-word">h1</span> que seran títols principals però de cada subsecció, 
+    i per tant de menys nivell que els <span class="r-word">h1</span> de la secció.
+</p>
+<p>
+    Això sona a galimaties, però el cert és que dóna més flexibilitat a l'hora d'estructurar el contingut de les pàgines i, també, a l'hora de donar-la format.
+</p>
+
+<figure><img src="UD2/images/ud2-2023-09-21-14-55-10.png" /><br><figcaption>Estructura típca pàgina web</figcaption></figure>
+<br>
+
+<h3>Elements per a accions interactives</h3>
+<p class="sub-section">Elements per indicar seccions de tipus mostrar/amagar</p>
+
+<p>
+    Es tracta de seccions que estan dins un element anomenat <span class="r-word">details</span>. 
+    Dins aquest element es pot posar una secció de tipus <span class="r-word">summary</span> que mostra un text de resum de la secció. 
+    Quan feu clic a l'apartat <span class="r-word">summary</span>, es mostra tot el contingut de la secció.
+</p>
+
+<p>
+    És a dir, en definitiva, aconsegueix crear en un document HTML un apartat de tipus resum/detall. Ejemplo:
+</p>
+<p>
+Exemple:
+</p>
+
+<section><pre><code class="language-xml">&lt;body>
+&lt;details>
+    &lt;summary>
+        La ciutat de Palència
+    &lt;/summary>
+    &lt;p>Localitat de 80.000 habitants situada entre
+        les Valls de Cerrato i la Terra de Campos
+        en ple altiplà castellà&lt;/p>
+    &lt;p>Més informació a
+     &lt;a href="https://es.wikipedia.org/wiki/Palencia">
+        Wikipedia-Ciutat de Palència
+     &lt;/a>
+    &lt;/p>
+&lt;/details>
+&lt;/body></code></pre>
+</section><br><br>
+
+<p>
+    Al obrir aquesta pàgina es mostraria:
+</p>
+
+<div class="muestra"><details>
+    <summary>
+        La ciutat de València
+    </summary>
+    <p>Localitat de 800.000 habitants situada entre
+       al est d'Espanya</p>
+    <p>Més informació a
+     <a href="https://es.wikipedia.org/wiki/Valencia">
+        Wikipedia-Ciutat de Palència
+     </a>
+    </p>
+</details></div>
+
+<p><span class="r-word">summary</span> i <span class="r-word">details</span> formen part de l'especificació HTML 5.2, 
+    encara que ja tots els navegadors (excepte els de Microsoft: Edge i Explorer) els reconeixen.</p>
+
+
+    <p><span class="negrita">Element <span class="r-word">summary</span></span></p>
+    <p>
+Es col·loca dins de l'anterior. 
+És un text que es pot posar als elements de tipus <span class="r-word">detail</span>. 
+Aquest text apareix en lloc del text Detalls que apareix per defecte a una secció de tipus <span class="r-word">detail</span>.</p>
+    
+<p class="sub-section">Elements de quadre de diàleg</p>
+
+<p>Se solen anomenar quadres de diàleg a les finestres que els sistemes mostren als usuaris per donar-los missatges,
+     o per permetre'ls configurar una determinada resposta o operació.</p>
+
+<p>A HTML 5 s'ha incorporat una nova etiqueta anomenada <span class="r-word">diàleg</span>, precisament amb aquesta finalitat. 
+    Encara està en fase de proves. El contingut de l'element de <span class="r-word">diàleg</span> es mostra en un quadre. 
+    La gràcia és que des de Javascript té moltes opcions de manipulació.</p>
+
+<p>Hi ha un atribut anomenat <span class="r-word">open</span> (no se li posa cap valor quan s'usa) 
+    que fa que es mostre el quadre de diàleg (sense aquest atribut, el quadre no es mostra). Exemple:</p>
+
+<section><pre><code class="language-xml">&lt;dialog id="favDialog" open>
+    &lt;form method="dialog">
+        &lt;fieldset>
+            &lt;legend>Sexe&lt;/legend>
+            &lt;input type="ràdio" id="home"
+                 name="sexe">
+            &lt;label for="home">Home&lt;/label>&lt;br>
+            &lt;input type="ràdio" id="dona"
+                name="sexe">
+            &lt;label for="dona">Dona&lt;/label>
+         &lt;/fieldset>
+         &lt;br>
+         &lt;label for="nom">Nom&lt;/label>
+         &lt;input type="text" name="nom"
+                  id="home">
+        &lt;button id="cancel" type="reset">
+          Cancel·la
+        &lt;/button>
+        &lt;button type="submit">Acceptar&lt;/button>
+    &lt;/form>
+&lt;/dialog></code></pre>
+</section><br><br>
+
+<p>Resultat:</p>
+
+<figure><img src="UD2/images/ud2-2023-09-21-15-09-38.png" /><br><figcaption>Dialog</figcaption></figure>
+<br>
 
 
 
