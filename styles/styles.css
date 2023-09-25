@@ -75,7 +75,7 @@ body{
     color:chocolate;
 }
 
-p{
+p:not(.muestra *){
     text-align: justify;
 }
 
@@ -170,6 +170,7 @@ span.icono{
 
 .negrita{
     font-weight: bold;
+    color:rgb(26, 12, 63)
 }
 
 .subrayado{
@@ -237,7 +238,7 @@ span.icono{
     text-decoration: none;
 }
 
-body h1{
+body h1:not(.muestra h1){
     text-align: center;
     margin: 0 20px;
     color:white;
@@ -254,7 +255,7 @@ html body .oculto{
     display: none !important;
 }
 
-body h2{
+body h2:not(.muestra h2){
     text-align: center;
     color:rgb(104, 138, 240);
     color:rgb(12, 12, 243);
@@ -266,7 +267,7 @@ body h2{
     background-color: rgba(209, 220, 240, 0.7);
 }
 
-body h3{
+body h3:not(.muestra h3){
     text-align: left;
     margin: 0 20px;
     color:rgb(68, 68, 40);
@@ -277,7 +278,7 @@ body h3{
 
 }
 
-li p{
+li p:not(.muestra *){
     padding-left: 30px;
 }
 
@@ -287,7 +288,7 @@ a.enlace{
     font-style: italic;
 }
 
-a.enlace::before{
+a.enlace:not(.muestra *)::before{
     content: url('../imagenes/link.png') " ";
 }
 .tarea{
@@ -300,17 +301,18 @@ a.enlace::before{
     content: url('../imagenes/tarea.jpg') " ";
 }
 
-p{
+p:not(.muestra p){
     margin-bottom: 10px;
     line-height: 2em;
 }
 
-p ul,p ul li{
+p ul:not(.muestra ul),p ul li:not(.muestra li){
     margin-left: 20px;
     list-style: disc;
+    text-align: justify;
 }
 
-figure{
+figure:not(.muestra figure){
     width: 97%;
     text-align: center;
     padding: 10px;
@@ -318,11 +320,11 @@ figure{
     
 }
 
-figure>img{
+figure>img:not(.muestra img){
     max-width: 80%;
 }
 
-figure figcaption{
+figure figcaption:not(.muestra figcaption){
     display: block;
     margin: 6px 0px;
     font-size: 0.8em;
@@ -330,27 +332,30 @@ figure figcaption{
     text-align: center;
 }
 
-table, td{
+table:not(.muestra table), td:not(.muestra td){
     border: 1px solid black; 
     border-collapse: collapse;
     padding: 10px;
 }
 
-ul>li{
+ul>li:not(.muestra *){
+    text-align: justify;
     padding-left: 20px;
     list-style:inside;
     list-style-type:circle;
+    margin-bottom: 15px;
+    line-height: 1.8em;
 }
-ol>li{
+ol>li:not(.muestra *){
     padding-left: 20px;
     list-style-position:inside;
 }
 
-li{
+li:not(.muestra *){
     line-height: 1.5em;
 }
 
-p.sub-section{
+p.sub-section:not(.muestra *){
     text-decoration: underline;
     font-weight: bold;
     color:blueviolet;
@@ -358,7 +363,7 @@ p.sub-section{
     padding: 30px 0;
 }
 
-.apartado {
+.apartado:not(.muestra *) {
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
@@ -403,29 +408,29 @@ body {
   counter-reset: section;
 }
 
-h2::before {
+h2:not(div.muestra h2)::before {
   counter-increment: section;
   content: counter(section) ".- ";
 }
-h2{
+h2:not(div.muestra h2){
     counter-reset: subsection;
 }
-h3{
+h3:not(div.muestra h3){
     counter-reset: subsubsection;
 }
-h3::before {
+h3:not(div.muestra h3)::before {
     counter-increment: subsection;
     content: counter(section)"."counter(subsection)".- ";
   }
 
-.sub-section::before{
+.sub-section:not(div.muestra *)::before{
     counter-increment: subsubsection;
     content: counter(section)"."counter(subsection)"."counter(subsubsection) ".- ";
 }
 
 
 /*Tablas*/
-thead tr{
+thead tr:not(.muestra tr){
     background-color: rgb(60, 64, 112);
     color:white;
 }
@@ -435,6 +440,15 @@ tbody tr:nth-child(2n){
 }
 
 tbody tr:nth-child(2n + 1){
-    background-color: rgb(245, 188, 242);
+    background-color: rgb(160, 67, 155);
     color:white;
+}
+
+
+div.muestra{
+    padding:20px;
+    border:1px solid black;
+    background-color: rgb(223, 223, 217);
+    margin: 20px 0;
+    
 }
