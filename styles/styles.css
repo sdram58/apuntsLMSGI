@@ -439,7 +439,7 @@ tbody tr:nth-child(2n){
 }
 
 tbody tr:nth-child(2n + 1){
-    background-color: rgb(245, 188, 242);
+    background-color: rgb(160, 67, 155);
     color:white;
 }
 
