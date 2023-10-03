@@ -332,6 +332,7 @@ figure figcaption:not(.muestra figcaption){
     text-align: center;
 }
 
+
 table:not(.muestra table), td:not(.muestra td){
     border: 1px solid black; 
     border-collapse: collapse;
@@ -444,6 +445,15 @@ tr:not(.mostra tr):nth-child(2n + 1){
     color:white;
 }
 
+thead tr td{
+    background-color: rgb(82, 53, 245);
+    color:white;
+    font-size: 1.3em;
+}
+
+table:not(.muestra) colgroup col:first-child{
+    background-color: gray; 
+}
 
 div.muestra{
     padding:20px;
