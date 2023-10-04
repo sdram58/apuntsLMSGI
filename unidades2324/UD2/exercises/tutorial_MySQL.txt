@@ -1,44 +1,44 @@
 Tutorial de MySQL
 
-Introducció
+IntroducciÃ³
 Show databases
 Crear una taula i mostrar els camps
-Càrrega de registres a una taula i la recuperació
+CÃ rrega de registres a una taula i la recuperaciÃ³
 
-Introducció
+IntroducciÃ³
 
-SQL, Structure Query Language (Llenguatge de Consulta Estructurat) és un llenguatge de programació per treballar amb base de dades relacionals com MySQL, Oracle, etc.
-MySQL és un interpretador de SQL, és un servidor de base de dades.
+SQL, Structure Query Language (Llenguatge de Consulta Estructurat) Ã©s un llenguatge de programaciÃ³ per treballar amb base de dades relacionals com MySQL, Oracle, etc.
+MySQL Ã©s un interpretador de SQL, Ã©s un servidor de base de dades.
 MySQL permet crear base de dades i taules, inserir dades, modificar-les, eliminar-les, ordenar-les, fer consultes i fer moltes operacions, etc., resumint: administrar bases de dades.
-Ingressant instruccions a la línia d'ordres o embegudes en un llenguatge com PHP ens comuniquem amb el servidor. Cada sentència ha d'acabar amb punt i coma (;).
-La sensibilitat a majúscules i minúscules, és a dir, si fa diferència entre elles, depèn del sistema operatiu, Windows no és sensible, però Linux sí. Per exemple, Windows interpreta igualment les sentències següents:
-Create database administració;
-Create DataBase administració;
-Però Linux interpretarà com un error la segona.
-Es recomana fer servir sempre minúscules. És més el lloc mysqlya.com.ar està instal·lat sobre un servidor Linux de manera que tots els exercicis hauran de respectar-se majúscules i minúscules.
+Ingressant instruccions a la lÃ­nia d'ordres o embegudes en un llenguatge com PHP ens comuniquem amb el servidor. Cada sentpÃ¨ncia ha d'acabar amb punt i coma (;).
+La sensibilitat a majÃºscules i minÃºscules, Ã©s a dir, si fa diferÃ¨ncia entre elles, depÃ©n del sistema operatiu, Windows no Ã©s sensible, perÃ² Linux sÃ­. Per exemple, Windows interpreta igualment les sentÃ¨ncies segÃ¼ents:
+Create database administraciÃ³;
+Create DataBase administraciÃ³;
+PerÃ² Linux interpretarÃ  com un error la segona.
+Es recomana fer servir sempre minÃºscules. Ã‰s mÃ©s el lloc mysqlya.com.ar estÃ  instalÂ·lat sobre un servidor Linux de manera que tots els exercicis hauran de respectar-se majÃºscules i minÃºscules.
 
 
 Show databases
 
-Una base de dades és un conjunt de taules.
-Una base de dades té un nom amb el qual hi accedirem.
-Treballarem en una base de dades ja creada al lloc, anomenada "administració".
-Perquè el servidor ens mostri les bases de dades existents, us ho sol·licitem enviant la instrucció:
+Una base de dades tÃ© un conjunt de taules.
+Una base de dades tÃ© un nom amb el qual hi accedirem.
+Treballarem en una base de dades ja creada al lloc, anomenada "administraciÃ³".
+PerquÃ¨ el servidor ens mostri les bases de dades existents, us ho solÂ·licitem enviant la instrucciÃ¯Â¿Â½:
 show databases;
-Ens mostrarà els noms de les bases de dades, ha d'aparèixer en aquest lloc "administració".
+Ens mostrarÃ  els noms de les bases de dades, ha d'aparÃ©ixer en aquest lloc "administraciÃ³".
 
 
 Crear una taula i mostrar els camps
 
 Una base de dades emmagatzema les vostres dades en taules.
-Una taula és una estructura de dades que organitza les dades en columnes i files; cada columna és un camp (o atribut) i cada fila, un registre. La intersecció d'una columna amb una fila conté una dada específica, un sol valor.
-Cada registre conté una dada per cada columna de la taula.
-Cada camp (columna) ha de tenir un nom. El nom del camp fa referència a la informació que emmagatzemarà.
-Cada camp (columna) també ha de definir el tipus de dades que emmagatzemarà.
+Una taula Ã©s una estructura de dades que organitza les dades en columnes i files; cada columna Ã©s un camp (o atribut) i cada fila, un registre. La intersecciÃ³ d'una columna amb una fila contÃ© una dada especÃ­fica, un sol valor.
+Cada registre contÃ© una dada per cada columna de la taula.
+Cada camp (columna) ha de tenir un nom. El nom del camp fa referÃ¨ncia a la informaciÃ³ que emmagatzemarÃ .
+Cada camp (columna) tambÃ© ha de definir el tipus de dades que emmagatzemarÃ .
 
 
-Càrrega de registres a una taula i la recuperació
+CÃ rrega de registres a una taula i la recuperaciÃ²
 
-Fem servir "insert into". Especificem els noms dels camps entre parèntesis i separats per comes i després els valors per a cada camp, també entre parèntesis i separats per comes.
-És important ingressar els valors en el mateix ordre en què s'anomenen els camps, si ingressem les dades en un altre ordre, no apareix un missatge d'error i les dades es guarden de manera incorrecta.
-Noteu que les dades ingressades, com corresponen a camps de cadenes de caràcters, es col·loquen entre cometes simples. Les cometes simples són OBLIGATÒRIES.
+Fem servir "insert into". Especificem els noms dels camps entre parÃ¨ntesis i separats per comes i desprÃ¯Â¿Â½s els valors per a cada camp, tambÃ© entre parÃ¯Â¿Â½ntesis i separats per comes.
+Ã©s important ingressar els valors en el mateix ordre en quÃ¯Â¿Â½ s'anomenen els camps, si ingressem les dades en un altre ordre, no apareix un missatge d'error i les dades es guarden de manera incorrecta.
+Noteu que les dades ingressades, com corresponen a camps de cadenes de carÃ¯Â¿Â½cters, es colÃ¯Â¿Â½loquen entre cometes simples. Les cometes simples sÃ³n OBLIGATÃ’RIES.
