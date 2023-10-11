@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WatchCoords</title>
+</head>
+<body>
+    <section class="image">
+        <img id="image" src="" alt="Ací voràs l'imatge"> <br>
+
+        <br>
+
+        <div id="coords">
+
+        </div>
+
+    </section>
+    <section class="form">
+        <form action="">
+            <label for="image_input">Selecciona la imatge</label><input name="image_input" type="file" id="image_input">
+        </form>
+    </section>
+
+
+    <script type="text/Javascript">
+        var sectionImage=document.querySelector(".image")
+
+        var element = document.getElementById("image_input")
+        var imatge = document.getElementById("image")
+        var coords = document.getElementById("coords")
+        element.addEventListener(
+            'change',
+            function(){
+                const [file] = this.files
+                if (file) {
+                    imatge.src = URL.createObjectURL(file)
+                    imatge.addEventListener(
+                        'mousemove',
+                        function(event){
+
+                            coords.innerHTML = "(X: " + (event.clientX-sectionImage.offsetLeft) + ", Y: " + (event.clientY-sectionImage.offsetTop) + ")"
+                        }
+                    )
+                }
+            }
+        )
+        
+    </script>
+    
+    
+</body>
+</html>
