@@ -435,12 +435,12 @@ tr:not(.muestra tr){
     background-color: rgb(60, 64, 112);
     color:white;
 }
-tr:not(.mostra tr):nth-child(2n){
+tr:not(.muestra tr):nth-child(2n){
     background-color: rgb(117, 119, 143);
     color:white;
 }
 
-tr:not(.mostra tr):nth-child(2n + 1){
+tr:not(.muestra tr):nth-child(2n + 1){
     background-color: rgb(160, 67, 155);
     color:white;
 }
