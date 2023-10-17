@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="llenç1" width="600" height="400">
+        <script type="text/javascript">
+            var canvas=document.getElementById("llenç1");
+            var context=canvas.getContext("2d");
+            context.lineWidth=2;
+            for(i=0;i<=600;i+=20){
+                context.moveTo(0,0);
+                context.lineTo(i,400)
+                context.stroke();
+            }
+        </script>
+    
+</body>
+</html>
