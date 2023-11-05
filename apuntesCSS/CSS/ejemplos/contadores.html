@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <title>Contadores</title>
+    <style type="text/css">
+        body{
+            counter-reset: section; /*Nombre del contador*/           
+        }
+        h1{
+            counter-reset: item;
+        }
+        
+        h1:before{
+            counter-increment: section;
+            content: "Capitulo " counter(section) ": ";
+        }
+        h2:before{
+            counter-increment: item;
+            content: counter(section) "." counter(item) ". ";
+        }
+    
+    </style>
+</head>
+<body>
+    <h1>HTML</h1>
+    <h2>HTML 4.0</h2>
+    <h2>XHTML 1.0</h2>
+    <h2>HTML 5</h2>
+    <h1>Scripts</h1>
+    <h2>Javascript</h2>
+    <h2>DHTML</h2>
+    <h1>Frameworks</h1>
+    <h2>JQUERY</h2>
+    <h2>Dojo</h2>
+    <h2>Angular</h2>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

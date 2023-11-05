@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Html5</title>
+<meta charset="UTF-8">
+<style type="text/css">
+    #padre{
+        width: 300px;
+    }
+    
+    .item{
+        padding:6px;
+        background-color: blue;
+        margin-top: 3px;
+        border-radius: 4px;
+    }
+    
+    .item:hover{
+        cursor: pointer;
+        color:white;
+        border-radius: 4px 4px 0 0;
+    }
+    .contenido{
+        height: 0px;
+        overflow: hidden;
+        background-color: aquamarine;
+        transition: height 3s ease 2s;
+        border-radius: 0 0 4px 4px;
+    }
+    
+    .item:hover +.contenido{
+        height: 300px;
+    }
+</style>
+</head>
+<body>
+   <div id="padre">
+   <div class="item">Item1</div>
+    <div class="contenido">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga blanditiis nihil, temporibus, enim dolorem atque nisi minima autem deserunt voluptate dignissimos ratione voluptatem aspernatur architecto ex perspiciatis sapiente doloremque. Possimus.</div>
+    <div class="item">Item2</div>
+    <div class="contenido">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta facere deserunt animi incidunt in, vero ut quisquam dolorem ducimus ad cumque assumenda sed aperiam impedit tenetur quibusdam eum similique quasi!</div>
+    <div class="item">Item3</div>
+    <div class="contenido">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero laudantium molestias, sed vero pariatur nihil voluptatum aliquid porro velit, deserunt provident dolorem. Iure nemo illo suscipit odio, placeat odit? Atque!</div>
+    <div class="item">Item4</div>
+    <div class="contenido">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime dolores architecto consequuntur optio veniam provident nisi autem, eius quae eaque enim, vel maiores aspernatur id nam, quidem, sit ducimus doloremque!</div>
+   </div>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

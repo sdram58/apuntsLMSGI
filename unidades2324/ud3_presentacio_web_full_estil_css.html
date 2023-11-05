@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UD2.-Llenguatges de marques en entorns web</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/prism.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <script src="../script/script.js"></script>
+</head>
+
+<body class="line-numbers">
+    <div class="logos">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <nav id="menu-lateral" class="main-menu-lateral oculto">
+        <div class="fila">
+            <a href="#sIntroduccioCSS" title="1.- Introducció a les fulles d'estil">1.- Introducció a les fulles d'estil</a>
+
+        </div>
+    </nav>
+    <!-- TO_MENU-->
+
+    <h1>UD3.- Presentació web. Fulls d'estil. CSS</h1>
+
+    <div class="main-menu">
+        <div class="fila">
+            <a href="#sIntroduccioCSS" title="1.- Introducció a les fulles d'estil">1.- Introducció a les fulles d'estil</a>
+            <a href="" class="relleno"></a><a href="" class="relleno"></a>
+        </div>
+
+            
+    </div>
+
+    
+    <!--*********************************************************Introducció a les fulles de estil***********************************************************-->
+    <section class="apartado">
+    <a name="sIntroduccioCSS"></a>
+    <h2>Introducció a les fulles d'estil</h2>
+    
+    <h3>Concepte de fulles d'estil</h3>
+    
+    <p>Els <span class="negrita">fulls d'estil</span> són elements agregats al llenguatge Html que tindran en compte la
+presentació del document o de l'aplicació Web.</p>
+
+<figure><img src="UD3/images/ud3-2023-11-05-23-21-23.png" /><br><figcaption></figcaption></figure>
+<br>
+
+    
+    <p>El mateix contingut html es pot presentar de manera diferent segons el full d'estil utilitzada. 
+        En aquesta web (<a class="enlace" target="_blank" href="https://www.csszengarden.com/">css zen garden</a>) es pot vore clarament com canvia una pàgina d'una altra només canviant l'estil</p>
+
+    
+<h3>Ús de les fulles d'estil</h3>
+<p>
+    <ul>
+<li><span class="negrita">Obligatòries en HTML5</span>: Separació entre contingut i presentació.</li>
+
+<li><span class="negrita">Simplificació del codi</span></li>
+
+<li><span class="negreta">Manteniment del lloc web més senzill</span>: Els fulls d'estil permeten, modificant un únic fitxer, actualitzar la presentació gràfica del conjunt de pàgines d'un lloc complet</li >
+
+<li><span class="negrita">Una via cap a l'accessibilitat</span>: Els fulls d'estil ofereixen, per exemple, la possibilitat de visualitzar una pàgina de text amb caràcters més grans i, per tant, més llegibles.</li>
+    </ul>
+</p>
+
+<h3>Breu Història</h3>
+<p>
+    <ul>
+<li><span class="negrita">1991</span> Tim Berners- Lee inventa la web, el llenguatge HTML es concep per al intercanvi dinformació entre els científics de tot el món.</li>
+<li><span class="negrita">1994</span>. Sorgeix la idea de proporcionar estil a les pàgines web</li>
+<li><span class="negrita">1995</span>. El W3C (World Wide Web Consortium) va començar a funcionar i publica el primer esborrany sobre els fulls d'estil.</li>
+<li><span class="negrita">1996</span>. L'esborrany es converteix en una recomanació oficial amb el nom "Fulls d'estil en cascada, nivell 1" o CSS1</li>
+<li><span class="negrita">1998</span>. Es publica una extensió de la recomanació amb el nom CSS2</li>
+<li><span class="negrita">2006</span>. Es publiquen algunes correccions i extensions baix el nom CSS2.1.</li>
+<li><span class="negrita">2009</span>. Es va començar a parlar de les fulles d'estil CSS3.</li>
+</ul>
+</p>
+
+<h3>Validador de les fulles d'estil</h3>
+<p>Igual que per a HTML5, hi ha un validador per als fulls d'estil.</p>
+
+<p>El validador en línia del W3C per als fulls CSS (<a class="enlace" target="_blank" href="http://jigsaw.w3.org/css-validator/">http://jigsaw.w3.org/css-validator/</a>) 
+    és una eina de gran valor amb una qualitat reconeguda unànimement. 
+    Permet lliurar pàgines perfectes, respectant escrupolosament les normes dictades pel W3C.</p>
+<figure><img src="UD3/images/ud3-2023-11-06-00-00-39.png" /><br><figcaption></figcaption></figure>
+<br>
+
+
+<section class="marco-t inf">
+    <span class="icono info"> </span> 
+    </section>
+<section class="marco-b">
+    El validador CSS només comprova els fulls d'estil. D'aquesta manera, només cal introduir el fitxer de fulls d'estil extern o el contingut de l'etiqueta
+    <span class="cursiva">&lt;style></span> per a les fulls d'estil interns del document.
+</section>
+    
+<h3>Declaració d'estils i selectors bàsics</h3>
+
+<p>La declaració d'un estil es fa mitjançant el binomi <span class="negrita">propietat: valor:</span>
+Exemple:</p>
+
+<section><pre><code class="language-css">background-color: red;</code></pre>
+</section><br><br>
+
+<p class="sub-section">Selectors d'etiqueta.</p>
+
+<p>La sintaxi d'un selector d'etiqueta és el nom de l'etiqueta seguit de la declaració d'estil entre claus. <br>
+
+<span class="cursiva">selector { declaració d'estil }</span> </p>
+
+<p>Exemple</p>
+<section><pre><code class="language-css">div { background-color: red;}</code></pre>
+</section><br><br>
+
+
+
+<p>Podem aplicar el mateix estil a diferents selectors d'etiqueta separant-los amb comes. Exemple:</p>
+
+
+<section><pre><code class="language-css">h1, h2, h3 {declaració d'estils}</code></pre>
+</section><br><br>
+
+<p class="sub-section">Selectors de classe</p>
+
+<p>El dissenyador defineix els seus propis selectors.
+<br>
+<span class="cursiva">.nom_de_la_classe { declaració(ns) d'estil}</span>
+
+<p>Exemple</p>
+
+<section><pre><code class="language-css">.roig { background-color: red;}</code></pre>
+</section><br>
+
+<p>La crida a la classe es realitza de la següent manera:</p>
+
+<section><pre><code class="language-xml">&lt;etiqueta class="nom_de_la_classe"></code></pre>
+</section><br>
+
+<p>Exemple</p>
+
+<section><pre><code class="language-xml">&lt;div class="roig"> ... &lt;/div></code></pre>
+</section><br>
+
+<p>Podem definir una classe únicament per a una etiqueta, per exemple</p>
+
+<section><pre><code class="language-css">blockquote.roig { background-color: red;}</code></pre>
+</section><br>
+
+<p>Amb aquesta definició de classe, només la podrem aplicar a l'etiqueta seleccionada, en aquest cas <span class="cursiva">blockquote</span>.</p>
+<section class="marco-t inf">
+    <span class="icono info"> </span> El primer caràcter de la classe no pot ser un número, un guió o un caràcter de subratllat.
+    </section>
+<section class="marco-b">
+        
+</section>
+
+<p class="sub-section">Selectors d'identificador</p>
+
+<p><span class="negreta">L'identificador ha de ser únic</span> per a cada element de la pàgina,
+per tant, el selector d'identificador s'invocarà una sola vegada al document.
+La definició d'un selector id és:</p>
+
+
+<p><span class="cursiva">#nom_del_identificador {declaració d'estil}</span></p>
+
+<p>Exemple</p>
+
+<section><pre><code class="language-css">#roig { background-color: red;}</code></pre>
+</section><br>
+
+<p>La cridada es fa mitjançant:</p>
+
+<section><pre><code class="language-xml">&lt;etiqueta id="nom_d'identificador"></code></pre>
+</section><br>
+
+<p>Exemple:</p>
+<section><pre><code class="language-xml">&lt;div id="roig"> ... &lt;/div></code></pre>
+</section><br><br>
+    
+<h3>Comentaris</h3>
+<p>En un full d'estil CSS, un comentari comença amb els caràcters d'obertura barra obliqua i asterisc (és a dir /*) 
+    i acaba amb els caràcters asterisc i barra obliqua (és a dir */)</p>
+
+<p>Exemple</p>
+
+<section><pre><code class="language-css">/* Això és un comentari */</code></pre>
+</section><br>
+
+<h3>Unitats de mesura</h3>
+<p>Les fulles d'estil CSS permeten utilitzar nombroses unitats de mesura, bé en <span class="negrita">polzades</span> (inxes), 
+    en <span class="negrita">centímetres</span>, en <span class="negrita">mil·límetres</span>, en <span class="negrita">punts</span>,
+     en <span class="negrita">piques</span>, en <span class="negrita">píxels</span> o en <span class="negrita">percentatge</span>.</p>
+
+<p>També es distingeix entre <span class="negrita">valors relatius</span>, que poden variar segons l'ordinador utilitzat, i <span class="negrita">valors absoluts</span>, 
+    que permaneixen constants siga quin siga el dispositiu o el programari utilitzat.</p>
+
+    <p class="sub-section">Valors absoluts</p>
+
+    <table>
+        <tr>
+            <th>Unitat</th>
+            <th>Nom</th>
+            <th>Descripció</th>
+            <th>Valor</th>
+            <th>Exemple</th>
+        </tr>
+        <tr>
+            <td>pt</td>
+            <td>punt</td>
+            <td>72pt = 1inch</td>
+            <td>Int</td>
+            <td>48pt</td>
+        </tr>
+        <tr>
+            <td>pc</td>
+            <td>pica</td>
+            <td>1pc = 12pt</td>
+            <td>real</td>
+            <td>4.5pc</td>
+        </tr>
+        <tr>
+            <td>mm</td>
+            <td>mil·límetres</td>
+            <td>1 mm = 0.24pc</td>
+            <td>Int</td>
+            <td>60mm</td>
+        </tr>
+        <tr>
+            <td>cm</td>
+            <td>centímetre</td>
+            <td>1 cm = 10 mm</td>
+            <td>Int</td>
+            <td>6cm</td>
+        </tr>
+        <tr>
+            <td>in</td>
+            <td>polzada (inch)</td>
+            <td>1 in = 2.54 cm</td>
+            <td>real</td>
+            <td>0.1in</td>
+        </tr>
+    </table>
+    
+    <p class="sub-section">Valors relatius</p>
+    
+    <table>
+        <tr>
+            <th>Unitat</th>
+            <th>Descripció</th>
+            <th>Valor</th>
+            <th>Exemple</th>
+        </tr>
+        <tr>
+            <td>em</td>
+            <td>Unitat relativa que se basa en el tamany del tipus de lletra per defecte del element pare. (Tamany de la M majúscula)</td>
+            <td>real</td>
+            <td>1.8em</td>
+        </tr>
+        <tr>
+            <td>rem</td>
+            <td>Similar al anterior pero basat amb el tamany per defecte de la pàgin (element arrel html)</td>
+            <td>real</td>
+            <td>1.8rem</td>
+        </tr>
+        <tr>
+            <td>ex</td>
+            <td>Unitat relativa a la altura de la lletra minúscula en el element seleccionat.</td>
+            <td>real</td>
+            <td>1.3ex</td>
+        </tr>
+        <tr>
+            <td>px</td>
+            <td>Un píxel és la part més menuda d'una imatge. Depen de la resolució de pantalla.</td>
+            <td>enter</td>
+            <td>220px</td>
+        </tr>
+        <tr>
+            <td>%</td>
+            <td>Percentatge</td>
+            <td>enter</td>
+            <td>80%</td>
+        </tr>
+    </table>
+
+    </section><!-- End section Introducció a les fulles de estil-->
+
+
+    <!-- TO_MENU-->
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <script src="../script/prism.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+div{
+    width: 200px;
+    box-sizing: border-box;
+    
+    
+}
+
+div.item{
+    background-color: blue;
+    padding:7px;
+    border-radius: 4px;
+    
+}
+
+div.contenido{
+    background-color: skyblue;
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 2px;
+    transition: height linear 2s 2s;
+    border-radius: 0 0 4px 4px;
+}
+div.item:hover{
+    border-radius: 4px 4px 0 0;
+    color:white;
+    cursor: pointer;
+}
+
+div.item:hover + .contenido{
+    height: 150px;
+    
+}

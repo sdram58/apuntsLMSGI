@@ -168,7 +168,7 @@ span.icono{
     font-style: italic;
 }
 
-.negrita{
+.negreta, .negrita{
     font-weight: bold;
     color:rgb(26, 12, 63)
 }

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <title>Submenú</title>
+    
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0px;
+            font-family: "verdana";
+            box-sizing: border-box;
+        }
+        
+        div.wrapper{
+            width: 80%;
+            margin: 0 auto;
+        }
+        
+        .menu{
+            background-color: black;
+            color:white;
+            padding: 5px;
+        }
+        
+        ul,li{
+            list-style: none;
+            position: relative;
+            color:white;
+            background-color: black;
+        }
+        
+        li ul{
+            display: none;
+        }
+        
+        .principal>li{
+            display: inline-block;
+            width: 33.33%;
+            text-align: center;
+            border:1px solid red;
+            
+        }
+        
+        li:hover{
+            background-color: gray;
+            cursor: pointer;
+        }
+        ul ul{
+            position: absolute;
+            border:1px solid blue;
+        }
+        
+        ul ul li{
+            padding:5px;
+        }
+        
+        li:hover>ul{
+            display: block;
+            width: 80%;
+            text-align: left;
+        }
+        
+        li ul li:hover>ul{
+            display: block;
+            width: 80%;
+            text-align: left;
+            left:99%;
+            top:0;
+        }
+        
+        
+        
+        
+        
+        
+    </style>
+</head>
+<body>
+    
+    <div class="wrapper">
+        <div class="menu">
+            <ul class="principal">
+                <li>Inicio
+                  <ul>
+                      <li>opcion1</li>
+                      <li>opcion2</li>
+                      <li>opcion3</li>
+                  </ul>
+                  </li><li>
+                   Contactos
+                    <ul>
+                        <li>Internos
+                        <ul>
+                            <li>opcion1
+                                <ul>
+                                    <li>opcion1.1</li>
+                                    <li>opcion1.2</li>
+                                    <li>opcion1.3</li>
+                                </ul>
+                            </li>
+                            <li>opcion2</li>
+                        </ul></li>
+                        <li>Externos<ul>
+                            <li>opcion1</li>
+                            <li>opcion2</li>
+                        </ul></li>
+                    </ul>
+                </li><li>
+                    Otro
+                </li>
+            </ul>
+        </div>
+        <div class="cuerpo">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores ipsum ab, alias, aliquam eveniet sit ex ullam iste sint, rem soluta laudantium quos tempore magnam. Quia doloribus, consequatur suscipit mollitia!
+        </div>
+    </div>
+</body>
+</html>

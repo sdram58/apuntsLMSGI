@@ -1,0 +1,122 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.wrapper{
+    border:1px solid blue;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.menu{
+    background-color: black;
+    color:white;
+    text-align: center;
+    padding: 5px;
+    position: fixed;
+    width: 80%;
+    height: 40px;
+}
+
+.menu ul{
+    list-style: none;
+}
+
+.menu li{
+    display: inline-block;
+    padding: 5px 10px;
+    width: 30%
+
+}
+
+.menu li:hover{
+    background-color: antiquewhite;
+    /*font-size: 1.1em;*/
+    color:black;
+}
+
+.menu li:nth-child(1),.menu li:nth-child(2){
+    border-right: 1px solid white;
+}  
+
+.menu li:hover a{
+    color: black
+}
+
+.menu a{
+    text-decoration: none;
+    color:white;
+}
+
+
+.cuerpo{
+    margin-top: 50px;
+    min-height: 400px;
+}
+
+.izquierda, .centro, .derecha{
+    float: left;
+    min-height: 400px;
+    
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.izquierda{
+    width: 25%;
+}
+.centro{
+    width: 50%;
+    border:1px solid red;
+}
+
+.derecha{
+    width: 25%;
+}
+
+.break{
+    clear: both;
+}
+
+
+.pie{
+    color:white;
+    font-size:0.8em;
+    background-color: black;
+    text-align: center;
+    padding: 5px 0;
+}
+
+
+.uno{
+    min-height: 100px;
+    background-color: red;
+    z-index: 10;
+    position: relative;
+    top:20px;
+    left: 20px;
+}
+
+.dos{
+    position: relative;
+    min-height: 100px;
+    background-color: green;
+    z-index: 50;
+    top:20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
