@@ -22,6 +22,7 @@
     <nav id="menu-lateral" class="main-menu-lateral oculto">
         <div class="fila">
             <a href="#sIntroduccioCSS" title="1.- Introducció a les fulles d'estil">1.- Introducció a les fulles d'estil</a>
+            <a href="#sSelectorsJerarquics" title="2.- Selectors Jerarquics">2.- Selectors Jerarquics</a>
 
         </div>
     </nav>
@@ -32,7 +33,8 @@
     <div class="main-menu">
         <div class="fila">
             <a href="#sIntroduccioCSS" title="1.- Introducció a les fulles d'estil">1.- Introducció a les fulles d'estil</a>
-            <a href="" class="relleno"></a><a href="" class="relleno"></a>
+            <a href="#sSelectorsJerarquics" title="2.- Selectors Jerarquics">2.- Selectors Jerarquics</a>
+            <a href="" class="relleno"></a>
         </div>
 
             
@@ -42,9 +44,9 @@
     <!--*********************************************************Introducció a les fulles de estil***********************************************************-->
     <section class="apartado">
     <a name="sIntroduccioCSS"></a>
-    <h2>Introducció a les fulles d'estil</h2>
+    <h2>Introducció a les fulls d'estil</h2>
     
-    <h3>Concepte de fulles d'estil</h3>
+    <h3>Concepte de fulls d'estil</h3>
     
     <p>Els <span class="negrita">fulls d'estil</span> són elements agregats al llenguatge Html que tindran en compte la
 presentació del document o de l'aplicació Web.</p>
@@ -289,7 +291,393 @@ La definició d'un selector id és:</p>
         </tr>
     </table>
 
+
+    <h3>Notacions de colors</h3>
+<p>Els fulls CSS proporcionen múltiples notacions per declarar un color.
+    <ul>
+        <li><span class="negrita">La notació hexadecimal clàssica, és a dir #ffcc00:</span>. Defineix el color, o més aviat els tres components del color. 
+            roig (r de red), verd (g de green) i blau (b de blue), mitjançant una notació hexadecimal de tipus <span class="d-word">#RRGGBB</span>.
+        <ul>
+            <li><span class="negrita">Notació amb alpha</span>: <span class="d-word">#RRGGBBAA</span> s'hi afegeixen un parell més al final que fa referència al canal <span class="cursiva">alpha</span></li>
+            <li><span class="negrita">Notació curta</span>: podem escriure-ho usant un sol digit per color/alpha. 
+                El resultat serà que per a cada color es duplica la lletra. Evidentment és menys precís. <span class="negrita">#FC0</span> será igual a <span class="negrita">#FFCC00</span></li>
+        </ul></li>
+        <li><span class="negrita">La notació decimal, per exemple, color</span>: <span class="d-word">rgb(0, 0, 255)</span>. 
+            El codi RGB del color no es codifica segons el valor hexadecimal sinó per un <span class="subrayado">número comprès entre 0 i 255</span>.
+            <ul>
+                <li><span class="negrita">rgba(R, G, B, A)</span>: s'afegiex un quart paràmetre que és el <span class="cursiva">alpha</span>. El grau d'opacitat.
+                Aquest pot estar en percentatge o decimal de 0 a 1, sent 0 no es veu, completament traparent i 1 completament opac.</li>
+            </ul>
+        </li>
+        <li><span class="negrita">La notació en percentatge:</span>, per exemple, <span class="cursiva">color: rgb(25%, 50%, 0%)</span>. 
+            El valor 0% significa l'absència del component esmentat i 100% el valor màxim.</li>
+        <li><span class="negrita">Paraules clau</span>: per exemple, <span class="cursiva">color: red</span>.</li>
+        <li><span class="negrita">La notació HSL (Hue Saturation Luminance), al valencià Tonalitat:</span>
+Saturació, Lluminositat. La notació HSL consisteix en tres valors.
+<ul>
+<li>El primer s'expressa en graus, de 0° a 359° (el símbol de grau º no apareix a la notació).
+    Es correspon amb un color de la roda cromàtica: vermell (0°), groc (60°) , verd (120°), cian (180°), blau (240°) i magenta (300°)</li>
+<li>El segon i el tercer valor s'expressen en percentatge i descriuen respectivament la saturació i la lluminositat. 
+    Per exemple, color: <span class="cursiva">hsl(0, 100%, 50%)</span> per al roig.</li></li>
+</ul>
+    </ul>
+</p>
+
+    <h3>CSS integrades en un element HTML5</h3>
+
+<p>A HTML és possible afegir directament al codi una declaració d'estil en una etiqueta determinada.</p>
+
+<section><pre><code class="language-xml">&lt;h1 style="color: red;">Título de nivel 1&lt;/h1></code></pre>
+</section><br>
+
+<p>És convenient <span class="subrayado">evitar aquesta manera de procedir</span> en virtut del principi de separació entre contingut i presentació. 
+    Això no obstant, pot resultar útil per donar prioritat a una propietat d'estil respecte a la que s'haja especificat a la declaració interna o externa.</p>
+
+    <section><pre><code class="language-xml">&lt;!DOCTYPE html>
+&lt;html lang="ca">
+    &lt;head>
+        &lt;title>Html5&lt;/title>
+        &lt;meta charset="UTF-8">
+    &lt;/head>
+    &lt;body>
+        &lt;h1 style="font-style: italic;">Títol 1&lt;/h1>
+        &lt;h1>Títol 2&lt;/h1>
+    &lt;/body>
+&lt;/html></code></pre>
+    </section><br>
+
+<p>i quedaria de la següent manera:</p>
+    <div class="muestra">
+        <h1 style="font-style: italic;">Títol 1</h1>
+        <h1>Títol 2</h1>
+    </div>
+
+<h3>CSS internes al document HTML5.</h3>
+<p>L'ús principal dels fulls destil CSS consisteix a determinar un estil que s'aplique a la totalitat d'una pàgina HTML5.</p>
+
+<p>El codi dels fulls d'estil s'agrupa a la capçalera del document, entre les etiquetes <span class="cursiva">&lt;head> i &lt;/head></span>.</p>
+<p>La sintaxi es presenta de la següent manera:</p>
+
+<section><pre><code class="language-xml">&lt;head>
+    &lt;style type="text/css"> 
+
+        h1 { color: red;}
+
+    &lt;/style>
+
+&lt;/head></code></pre>
+</section><br>
+
+
+<h3>CSS externes al document HTML5.</h3>
+<p>Les declaracions d'estil es poden agrupar en un fitxer extern (diferent) al fitxer Html.</p>
+
+<p>Aquesta manera de fer respecta millor el <span class="subrayado">principi de separació entre contingut i presentació</span>.</p>
+
+<p>Aquesta tècnica empra dos arxius:
+    <ul>
+        <li><span class="negrita">El full d'estil extern</span>: Un fitxer que conté la declaració d'estil. Aquest fitxer té l'extensió <span class="r-word">.css</span>.</li>
+        <li><span class="negrita">El document Html5</span>: Entre les etiquetes <span class="cursiva">&lt;head> i &lt;/head></span>, 
+            s'afegeix un enllaç al full d'estil en qüestió. 
+        <section><pre><code class="language-xml">&lt;link rel="stylesheet" type="text/css" href="exemple.css"></code></pre>
+        </section><br>
+        on:
+        <ul>
+            <li><span class="negrita">link</span> indica al navegador que el que segueix és un enllaç.</li>
+            <li><span class="negrita">rel="stylesheet"</span> necessita que aquest enllaç sigui relatiu a un full d'estil.</li>
+            <li><span class="negrita">href="exemple.css"</span> és l'escriptura clàssica d'un enllaç a Html.</li>
+            <li>L'enllaç pot ser absolut (començant per http://...) o relatiu.</li>
+            <li>Res no impedeix incloure diverses etiquetes <span class="cursiva">&lt;link></span> cap a fulls d'estil externs diferents.</li>
+            <li>Res no impedeix utilitzar, a més, un full d'estil intern.</li>
+        </ul>
+        </li>
+    </ul>
+</p>
+
+<p>Exemple:</p>
+<section><pre><code class="language-xml">&lt;head>
+    &lt;title>Html5&lt;/title>
+    &lt;meta charset="UTF-8">
+    &lt;link rel="stylesheet" type="text/css" href="exemple.css">
+&lt;/head>
+&lt;body>
+    &lt;h1>Títol de nivell 1&lt;/h1>
+&lt;/body></code></pre>
+</section><br>
+<h3>CSS importada (@import).</h3>
+<p>Una altra forma d'usar els fulls d'estil externs consisteix a fer servir l'ordre <span class="r-word">@import</span>.</p>
+
+<section><pre><code class="language-xml">&lt;style type="text/css"> 
+    @import url(exemple.css);
+&lt;/style></code></pre>
+</section><br><br>
+
+<p><span class="negrita">@import</span> es podrà utilitzar no només per invocar un full d'estil extern en un document Html sinó també per importar un altre full d'estil al full d'estil extern.</p>
+
+<section><pre><code class="language-xml">&lt;!DOCTYPE html>
+&lt;html lang="ca">
+&lt;head>
+    &lt;title>Html5&lt;/title>
+    &lt;meta charset="UTF-8">
+    &lt;style type="text/css">
+        @import url(exemple.css);
+    &lt;/style>
+&lt;/head>
+&lt;body>
+    &lt;h1>Títol de nivell 1&lt;/h1>
+&lt;/body>
+</html></code></pre>
+</section><br><br>
+
+<section class="marco-t warn">
+    <span class="icono warning"> </span> Les etiquetes <span class="cursiva">&lt;style> ... &lt;/style></span> són necessàries.
+    </section>
+<section class="marco-b">
+        
+</section>
+
+<h3>Noció de cascada</h3>
+
+<p>Als apartats anteriors hem constatat com és possible tenir diverses definicions d'estil, bé en línia, interna(es) o externa(es). 
+    n cas que hi haja una competència entre diversos elements d'estil, intervé la noció de cascada (la paraula Cascading a Cascading Style Sheets) o ordre de prioritat.</p>
+
+<p>El navegador pren primer en consideració les especificacions dels fulls d'estil externs (amb l'extensió css), 
+    a continuació els fulls d'estil interns (aquells situats a l'interior de les etiquetes <span class="cursiva">&lt;head></span>) i, 
+    tot seguit, els fulls d'estil en línia (aquelles lligades a un element Html5).</p>
+
+<p>L'ordre creixent de prioritat (de menor a major) és:
+    <ol>
+        <li>Propietats per defecte del navegador.</li>
+        <li>Fulles d'estil externes.</li>
+        <li>Fulles d'estil internes.</li>
+        <li>Fulls destil en línia.</li>
+    </ol>
+</p>
+<section class="marco-t inf">
+    <span class="icono info"> </span> La regla de prioritat, per visualitzar el document al navegador, 
+    consisteix en utilitzar el full d'estil més proper a al element.
+    </section>
+<section class="marco-b">
+        
+</section>
+
+<p>Exemple:</p>
+
+<p>L'arxiu d'estil extern <span class="inline-file">estil1.css</span> es:</p>
+    <section><pre><code class="language-css">h1 { text-decoration: underline;}</code></pre>
+    </section><br>
+
+    <section><pre><code class="language-xml">&lt;!DOCTYPE html>
+&lt;html lang="ca">
+&lt;head>
+    &lt;title>Html5&lt;/title>
+    &lt;meta charset="UTF-8">
+        &lt;link rel="stylesheet" type="text/css" href="estil1.css">
+    &lt;style type="text/css">
+        h1 { text-decoration: overline;}
+    &lt;/style>
+&lt;/head>
+&lt;body>
+    &lt;h1>Títol de nivell 1&lt;/h1>
+&lt;/body>
+&lt;/html></code></pre>
+    </section><br>
+    
+    <p>Donant com a resultat:</p>
+
+    <div class="muestra">
+        <h1 style="text-decoration: overline;">Títol de nivell 1</h1>
+    </div>
+
+    <p>Es pot donar prioritat a l'estil extern, és a dir a l'estil de subratllat, mitjançant el valor <span class="r-word">!important</span>.</p>
+    
+<p>El fitxer d'estil extern (<span class="inline-file">estil2.css</span>) és:</p>
+
+<section><pre><code class="language-css">h1 { text-decoration: underline !important;}</code></pre>
+</section><br>
+
+<p>El document Html5:</p>
+
+<section><pre><code class="language-xml">&lt;!DOCTYPE html>
+&lt;html lang="ca">
+&lt;head>
+    &lt;title>Html5&lt;/title>
+    &lt;meta charset="UTF-8">
+    &lt;link rel="stylesheet" type="text/css" href="estil2.css">
+    &lt;style type="text/css">
+        h1 { text-decoration: overline;}
+    &lt;/style>
+&lt;/head>
+&lt;body>
+    &lt;h1>Títol de nivell 1&lt;/h1>
+&lt;/body>
+&lt;/html></code></pre>
+</section><br>
+
+<p>Donant com a resultat:</p>
+
+    <div class="muestra">
+        <h1 style="text-decoration: underline;">Títol de nivell 1</h1>
+    </div>
+
+    <h3>Noció d'herència</h3>
+    <p>Si tenim diverses etiquetes anidades amb diferents estils</p>
+<figure><img src="UD3/images/ud3-2023-11-06-12-59-13.png" /><br><figcaption></figcaption></figure>
+<br>
+
+<p>Els estils s'hereten:
+    <ul>
+        <li>L'estil 2 es caracteritza pel propi estil més el de l'estil 1, que ha heretat. </li>
+        <li>L'estil 3 es caracteritza pel propi estil més el dels estils 1 i 2, que ha heretat.</li>
+        <li>Seguint la mateixa lògica podem utilitzar els termes "pare" i "fill".</li>
+        <li>L'estil 1 seria el pare de l'estil 2. De la mateixa manera, l'estil 2 i l'estil 1 serien pares de l'estil 3. O bé l'estil 2 és fill de l'estil 1 i l 'estil 3 és fill dels estils 2 i 1 .</li>
+    </ul>
+</p>
+
+
     </section><!-- End section Introducció a les fulles de estil-->
+
+
+    <!--*********************************************************Selectors Jerarquics***********************************************************-->
+    <section class="apartado">
+    <a name="sSelectorsJerarquics"></a>
+    <h2>Selectors Jerarquics</h2>
+    <p>Podemo trobar els següents selector jerarquics:
+        <br>
+
+        <table>
+            <tr>
+                <td>A B</td>
+                <td>Descendents</td>
+                <td>Seleccioneu qualsevol element B que és descendent de l'element A.</td>
+            </tr>
+            <tr>
+                <td>A>B</td>
+                <td>Fills</td>
+                <td>Seleccioneu qualsevol element B que és fill directe de l'element A.</td>
+            </tr>
+            <tr>
+                <td>A+B</td>
+                <td>Germà adjacent</td>
+                <td>Seleccioneu qualsevol element B precedit immediatament de l'element A.</td>
+            </tr>
+        </table>
+    </p>
+
+    <section><pre><code class="language-xml">&lt;!DOCTYPE html>
+&lt;html lang="ca">
+&lt;head>
+    &lt;title>Html5&lt;/title>
+    &lt;meta charset="UTF-8">
+    &lt;style type="text/css"> 
+        #division h1 { 
+            width: 200px;
+            background-color: #9cf;
+        } 
+        h1 { 
+            margin-top: 5px; 
+            margin-bottom:5px;
+            font-size: 20px;
+        }
+        p { 
+            margin-top: 5px; 
+            margin-bottom:5px;
+        }
+    &lt;/style>
+&lt;/head>
+&lt;body>
+    &lt;div id="division">
+        &lt;h1>Títol 1&lt;/h1>
+        &lt;div id="contingut" style="padding-left: 20px;">
+            &lt;h1> Títol 1 bis&lt;/h1>
+            &lt;p>Paràgraf 1&lt;/p>
+        &lt;/div>
+        &lt;h1>Títol 2&lt;/h1>
+    &lt;/div>
+&lt;/body>
+&lt;/html></code></pre>
+    </section><br>
+
+    <p>Resultat:</p>
+    <figure><img src="UD3/images/ud3-2023-11-06-13-19-19.png" /><br><figcaption></figcaption></figure>
+    <br>
+    
+
+    <p>Exemple 2:</p>
+    <section><pre><code class="language-xml">&lt;!DOCTYPE html>
+
+&lt;html lang="ca">
+&lt;head>
+    &lt;title>Html5&lt;/title>
+    &lt;meta charset="UTF-8">
+    &lt;style type="text/css">
+        #division > h1 {
+            width: 200px;
+            background-color: #9cf;
+        }
+        h1 {
+            margin-top: 5px;
+            margin-bottom:5px;
+            font-size: 20px;
+        }
+        p {
+            margin-top: 5px;
+            margin-bottom:5px;
+        }
+    &lt;/style>
+&lt;/head>
+&lt;body>
+    &lt;div id="division">
+        &lt;h1>Títol 1&lt;/h1>
+        &lt;div id="contingut" style="padding-left: 20px;">
+            &lt;h1> Títol 1 bis&lt;/h1>
+            &lt;p>Paràgraf 1&lt;/p>
+        &lt;/div>
+        &lt;h1>Títol 2&lt;/h1>
+    &lt;/div>
+&lt;/body>
+&lt;/html></code></pre>
+    </section><br>
+
+    <p>Quedant com a resultat:</p>
+    <figure><img src="UD3/images/ud3-2023-11-06-13-23-39.png" /><br><figcaption></figcaption></figure>
+ <br>
+
+ <p>Exemple 3:</p>
+ <section><pre><code class="language-xml">&lt;!DOCTYPE html>
+
+&lt;html lang="ca">
+&lt;head>
+    &lt;title>Html5&lt;/title>
+    &lt;meta charset="UTF-8">
+    &lt;style type="text/css"> 
+        li.uno + li { 
+            width: 200px;
+            background-color: #9cf;
+        }        
+    &lt;/style>
+&lt;/head>
+&lt;body>
+    &lt;ul>  
+        &lt;li class="uno">Item 1&lt;/li>
+        &lt;li>Item 2&lt;/li>
+        &lt;li>Item 3&lt;/li>
+        &lt;li>Item 4&lt;/li>
+        &lt;li>Item 5&lt;/li>
+    &lt;/ul>
+&lt;/body>
+&lt;/html></code></pre>
+ </section><br>
+
+ <p>Resultat:</p>
+
+ <figure><img src="UD3/images/ud3-2023-11-06-13-27-11.png" /><br><figcaption></figcaption></figure>
+ <br>
+ 
+    
+    
+    
+    </section><!-- End section Selectors Jerarquics-->
 
 
     <!-- TO_MENU-->
