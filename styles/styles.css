@@ -31,8 +31,6 @@ nav.main-menu-lateral a:visited{
 
 nav.main-menu-lateral a:hover{    
     background-color: rgb(148, 207, 199);
-    
-    
 }
 
 body{
@@ -43,6 +41,11 @@ body{
 
 .logos{
     margin:20px 0;
+    height: 160px;    
+    background-image: url(../imagenes/logos.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .logos div{
