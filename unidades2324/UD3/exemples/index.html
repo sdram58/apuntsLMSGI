@@ -2,22 +2,34 @@
 
 <html lang="ca">
 <head>
-    <title>Html5</title>
     <meta charset="UTF-8">
-    <style type="text/css"> 
-        li.uno + li { 
-            width: 200px;
-            background-color: #9cf;
-        }        
+    <title>Prova nth-child</title>
+    <style>
+        table{
+    width:450px;
+    border-collapse:collapse;
+}
+td,th{
+    border:1px solid
+black;
+}
+td:nth-of-type(2){
+    background-color:red;
+}
+element {
+    color: green; /*Text de color verd*/
+    background-color:red; /*Color de fons roig*/
+    text-decoration: underline; /*Text subratllat*/
+    text-align: right;/* Text alineat a la dreta */
+    text-align: center; /*Text centrat*/
+    font-size: 1em; /*Tamany de font*/
+    font-style: italic;/*Cursiva*/
+    font-weight: bold;/*En negreta*/
+}
     </style>
 </head>
 <body>
-    <ul>  
-        <li class="uno">Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-        <li>Item 4</li>
-        <li>Item 5</li>
-    </ul>
+    <input type="text">
+    <br>
+    <input type="text">
 </body>
-</html>

@@ -17,8 +17,9 @@
 
     <nav id="menu-lateral" class="main-menu-lateral oculto">
         <div class="fila">
-            <a href="#sIntroduccioCSS" title="1.- Introducció a les fulles d'estil">1.- Introducció a les fulles d'estil</a>
-            <a href="#sSelectorsJerarquics" title="2.- Selectors Jerarquics">2.- Selectors Jerarquics</a>
+            <a href="#sIntroduccioCSS" title="1.- Introducció a les fulles d'estil">1.- Introducció als fulls d'estil</a>
+            <a href="#sSelectors" title="2.- Selectors">2.- Selectors</a>
+            <a href="#sPseudoclassesdeselecció" title="3.- Pseudoclasses">3.- Pseudoclasses</a>
         </div>
     </nav>
     <!-- TO_MENU -->
@@ -27,306 +28,361 @@
 
     <div class="main-menu">
         <div class="fila">
-            <a href="#sIntroduccioCSS" title="1.- Introducció a les fulles d'estil">1.- Introducció a les fulles d'estil</a>
-            <a href="#sSelectorsJerarquics" title="2.- Selectors Jerarquics">2.- Selectors Jerarquics</a>
-            <a href="" class="relleno"></a>
-        </div>       
+            <a href="#sIntroduccioCSS" title="1.- Introducció a les fulles d'estil">1.- Introducció als fulls d'estil</a>
+            <a href="#sSelectors" title="2.- Selectors">2.- Selectors</a>
+            <a href="#sPseudoclassesdeselecció" title="3.- Pseudoclasses">3.- Pseudoclasses</a>
+        </div>
     </div>
 
-    
+
     <!--*********************************************************Introducció a les fulles de estil***********************************************************-->
     <section class="apartado">
-    <a name="sIntroduccioCSS"></a>
-    <h2>Introducció a les fulls d'estil</h2>
-    
-    <h3>Concepte de fulls d'estil</h3>
-    
-    <p>Els <span class="negrita">fulls d'estil</span> són elements agregats al llenguatge Html que tindran en compte la
-presentació del document o de l'aplicació Web.</p>
+        <a name="sIntroduccioCSS"></a>
+        <h2>Introducció als fulls d'estil</h2>
 
-<figure><img src="UD3/images/ud3-2023-11-05-23-21-23.png" /><br><figcaption></figcaption></figure>
-<br>
+        <h3>Concepte de fulls d'estil</h3>
 
-    
-    <p>El mateix contingut html es pot presentar de manera diferent segons el full d'estil utilitzada. 
-        En aquesta web (<a class="enlace" target="_blank" href="https://www.csszengarden.com/">css zen garden</a>) es pot vore clarament com canvia una pàgina d'una altra només canviant l'estil</p>
+        <p>Els <span class="negrita">fulls d'estil</span> són elements agregats al llenguatge Html que tindran en compte
+            la
+            presentació del document o de l'aplicació Web.</p>
 
-    
-<h3>Ús de les fulles d'estil</h3>
-<p>
-    <ul>
-<li><span class="negrita">Obligatòries en HTML5</span>: Separació entre contingut i presentació.</li>
-
-<li><span class="negrita">Simplificació del codi</span></li>
-
-<li><span class="negreta">Manteniment del lloc web més senzill</span>: Els fulls d'estil permeten, modificant un únic fitxer, actualitzar la presentació gràfica del conjunt de pàgines d'un lloc complet</li >
-
-<li><span class="negrita">Una via cap a l'accessibilitat</span>: Els fulls d'estil ofereixen, per exemple, la possibilitat de visualitzar una pàgina de text amb caràcters més grans i, per tant, més llegibles.</li>
-    </ul>
-</p>
-
-<h3>Breu Història</h3>
-<p>
-    <ul>
-<li><span class="negrita">1991</span> Tim Berners- Lee inventa la web, el llenguatge HTML es concep per al intercanvi dinformació entre els científics de tot el món.</li>
-<li><span class="negrita">1994</span>. Sorgeix la idea de proporcionar estil a les pàgines web</li>
-<li><span class="negrita">1995</span>. El W3C (World Wide Web Consortium) va començar a funcionar i publica el primer esborrany sobre els fulls d'estil.</li>
-<li><span class="negrita">1996</span>. L'esborrany es converteix en una recomanació oficial amb el nom "Fulls d'estil en cascada, nivell 1" o CSS1</li>
-<li><span class="negrita">1998</span>. Es publica una extensió de la recomanació amb el nom CSS2</li>
-<li><span class="negrita">2006</span>. Es publiquen algunes correccions i extensions baix el nom CSS2.1.</li>
-<li><span class="negrita">2009</span>. Es va començar a parlar de les fulles d'estil CSS3.</li>
-</ul>
-</p>
-
-<h3>Validador de les fulles d'estil</h3>
-<p>Igual que per a HTML5, hi ha un validador per als fulls d'estil.</p>
-
-<p>El validador en línia del W3C per als fulls CSS (<a class="enlace" target="_blank" href="http://jigsaw.w3.org/css-validator/">http://jigsaw.w3.org/css-validator/</a>) 
-    és una eina de gran valor amb una qualitat reconeguda unànimement. 
-    Permet lliurar pàgines perfectes, respectant escrupolosament les normes dictades pel W3C.</p>
-<figure><img src="UD3/images/ud3-2023-11-06-00-00-39.png" /><br><figcaption></figcaption></figure>
-<br>
+        <figure><img src="UD3/images/ud3-2023-11-05-23-21-23.png" /><br>
+            <figcaption></figcaption>
+        </figure>
+        <br>
 
 
-<section class="marco-t inf">
-    <span class="icono info"> </span> 
-    </section>
-<section class="marco-b">
-    El validador CSS només comprova els fulls d'estil. D'aquesta manera, només cal introduir el fitxer de fulls d'estil extern o el contingut de l'etiqueta
-    <span class="cursiva">&lt;style></span> per a les fulls d'estil interns del document.
-</section>
-    
-<h3>Declaració d'estils i selectors bàsics</h3>
-
-<p>La declaració d'un estil es fa mitjançant el binomi <span class="negrita">propietat: valor:</span>
-Exemple:</p>
-
-<section><pre><code class="language-css">background-color: red;</code></pre>
-</section><br><br>
-
-<p class="sub-section">Selectors d'etiqueta.</p>
-
-<p>La sintaxi d'un selector d'etiqueta és el nom de l'etiqueta seguit de la declaració d'estil entre claus. <br>
-
-<span class="cursiva">selector { declaració d'estil }</span> </p>
-
-<p>Exemple</p>
-<section><pre><code class="language-css">div { background-color: red;}</code></pre>
-</section><br><br>
+        <p>El mateix contingut html es pot presentar de manera diferent segons el full d'estil utilitzada.
+            En aquesta web (<a class="enlace" target="_blank" href="https://www.csszengarden.com/">css zen garden</a>)
+            es pot vore clarament com canvia una pàgina d'una altra només canviant l'estil</p>
 
 
-
-<p>Podem aplicar el mateix estil a diferents selectors d'etiqueta separant-los amb comes. Exemple:</p>
-
-
-<section><pre><code class="language-css">h1, h2, h3 {declaració d'estils}</code></pre>
-</section><br><br>
-
-<p class="sub-section">Selectors de classe</p>
-
-<p>El dissenyador defineix els seus propis selectors.
-<br>
-<span class="cursiva">.nom_de_la_classe { declaració(ns) d'estil}</span>
-
-<p>Exemple</p>
-
-<section><pre><code class="language-css">.roig { background-color: red;}</code></pre>
-</section><br>
-
-<p>La crida a la classe es realitza de la següent manera:</p>
-
-<section><pre><code class="language-xml">&lt;etiqueta class="nom_de_la_classe"></code></pre>
-</section><br>
-
-<p>Exemple</p>
-
-<section><pre><code class="language-xml">&lt;div class="roig"> ... &lt;/div></code></pre>
-</section><br>
-
-<p>Podem definir una classe únicament per a una etiqueta, per exemple</p>
-
-<section><pre><code class="language-css">blockquote.roig { background-color: red;}</code></pre>
-</section><br>
-
-<p>Amb aquesta definició de classe, només la podrem aplicar a l'etiqueta seleccionada, en aquest cas <span class="cursiva">blockquote</span>.</p>
-<section class="marco-t inf">
-    <span class="icono info"> </span> El primer caràcter de la classe no pot ser un número, un guió o un caràcter de subratllat.
-    </section>
-<section class="marco-b">
-        
-</section>
-
-<p class="sub-section">Selectors d'identificador</p>
-
-<p><span class="negreta">L'identificador ha de ser únic</span> per a cada element de la pàgina,
-per tant, el selector d'identificador s'invocarà una sola vegada al document.
-La definició d'un selector id és:</p>
-
-
-<p><span class="cursiva">#nom_del_identificador {declaració d'estil}</span></p>
-
-<p>Exemple</p>
-
-<section><pre><code class="language-css">#roig { background-color: red;}</code></pre>
-</section><br>
-
-<p>La cridada es fa mitjançant:</p>
-
-<section><pre><code class="language-xml">&lt;etiqueta id="nom_d'identificador"></code></pre>
-</section><br>
-
-<p>Exemple:</p>
-<section><pre><code class="language-xml">&lt;div id="roig"> ... &lt;/div></code></pre>
-</section><br><br>
-    
-<h3>Comentaris</h3>
-<p>En un full d'estil CSS, un comentari comença amb els caràcters d'obertura barra obliqua i asterisc (és a dir /*) 
-    i acaba amb els caràcters asterisc i barra obliqua (és a dir */)</p>
-
-<p>Exemple</p>
-
-<section><pre><code class="language-css">/* Això és un comentari */</code></pre>
-</section><br>
-
-<h3>Unitats de mesura</h3>
-<p>Les fulles d'estil CSS permeten utilitzar nombroses unitats de mesura, bé en <span class="negrita">polzades</span> (inxes), 
-    en <span class="negrita">centímetres</span>, en <span class="negrita">mil·límetres</span>, en <span class="negrita">punts</span>,
-     en <span class="negrita">piques</span>, en <span class="negrita">píxels</span> o en <span class="negrita">percentatge</span>.</p>
-
-<p>També es distingeix entre <span class="negrita">valors relatius</span>, que poden variar segons l'ordinador utilitzat, i <span class="negrita">valors absoluts</span>, 
-    que permaneixen constants siga quin siga el dispositiu o el programari utilitzat.</p>
-
-    <p class="sub-section">Valors absoluts</p>
-
-    <table>
-        <tr>
-            <th>Unitat</th>
-            <th>Nom</th>
-            <th>Descripció</th>
-            <th>Valor</th>
-            <th>Exemple</th>
-        </tr>
-        <tr>
-            <td>pt</td>
-            <td>punt</td>
-            <td>72pt = 1inch</td>
-            <td>Int</td>
-            <td>48pt</td>
-        </tr>
-        <tr>
-            <td>pc</td>
-            <td>pica</td>
-            <td>1pc = 12pt</td>
-            <td>real</td>
-            <td>4.5pc</td>
-        </tr>
-        <tr>
-            <td>mm</td>
-            <td>mil·límetres</td>
-            <td>1 mm = 0.24pc</td>
-            <td>Int</td>
-            <td>60mm</td>
-        </tr>
-        <tr>
-            <td>cm</td>
-            <td>centímetre</td>
-            <td>1 cm = 10 mm</td>
-            <td>Int</td>
-            <td>6cm</td>
-        </tr>
-        <tr>
-            <td>in</td>
-            <td>polzada (inch)</td>
-            <td>1 in = 2.54 cm</td>
-            <td>real</td>
-            <td>0.1in</td>
-        </tr>
-    </table>
-    
-    <p class="sub-section">Valors relatius</p>
-    
-    <table>
-        <tr>
-            <th>Unitat</th>
-            <th>Descripció</th>
-            <th>Valor</th>
-            <th>Exemple</th>
-        </tr>
-        <tr>
-            <td>em</td>
-            <td>Unitat relativa que se basa en el tamany del tipus de lletra per defecte del element pare. (Tamany de la M majúscula)</td>
-            <td>real</td>
-            <td>1.8em</td>
-        </tr>
-        <tr>
-            <td>rem</td>
-            <td>Similar al anterior pero basat amb el tamany per defecte de la pàgin (element arrel html)</td>
-            <td>real</td>
-            <td>1.8rem</td>
-        </tr>
-        <tr>
-            <td>ex</td>
-            <td>Unitat relativa a la altura de la lletra minúscula en el element seleccionat.</td>
-            <td>real</td>
-            <td>1.3ex</td>
-        </tr>
-        <tr>
-            <td>px</td>
-            <td>Un píxel és la part més menuda d'una imatge. Depen de la resolució de pantalla.</td>
-            <td>enter</td>
-            <td>220px</td>
-        </tr>
-        <tr>
-            <td>%</td>
-            <td>Percentatge</td>
-            <td>enter</td>
-            <td>80%</td>
-        </tr>
-    </table>
-
-
-    <h3>Notacions de colors</h3>
-<p>Els fulls CSS proporcionen múltiples notacions per declarar un color.
-    <ul>
-        <li><span class="negrita">La notació hexadecimal clàssica, és a dir #ffcc00:</span>. Defineix el color, o més aviat els tres components del color. 
-            roig (r de red), verd (g de green) i blau (b de blue), mitjançant una notació hexadecimal de tipus <span class="d-word">#RRGGBB</span>.
+        <h3>Ús de les fulles d'estil</h3>
+        <p>
         <ul>
-            <li><span class="negrita">Notació amb alpha</span>: <span class="d-word">#RRGGBBAA</span> s'hi afegeixen un parell més al final que fa referència al canal <span class="cursiva">alpha</span></li>
-            <li><span class="negrita">Notació curta</span>: podem escriure-ho usant un sol digit per color/alpha. 
-                El resultat serà que per a cada color es duplica la lletra. Evidentment és menys precís. <span class="negrita">#FC0</span> será igual a <span class="negrita">#FFCC00</span></li>
-        </ul></li>
-        <li><span class="negrita">La notació decimal, per exemple, color</span>: <span class="d-word">rgb(0, 0, 255)</span>. 
-            El codi RGB del color no es codifica segons el valor hexadecimal sinó per un <span class="subrayado">número comprès entre 0 i 255</span>.
-            <ul>
-                <li><span class="negrita">rgba(R, G, B, A)</span>: s'afegiex un quart paràmetre que és el <span class="cursiva">alpha</span>. El grau d'opacitat.
-                Aquest pot estar en percentatge o decimal de 0 a 1, sent 0 no es veu, completament traparent i 1 completament opac.</li>
-            </ul>
-        </li>
-        <li><span class="negrita">La notació en percentatge:</span>, per exemple, <span class="cursiva">color: rgb(25%, 50%, 0%)</span>. 
-            El valor 0% significa l'absència del component esmentat i 100% el valor màxim.</li>
-        <li><span class="negrita">Paraules clau</span>: per exemple, <span class="cursiva">color: red</span>.</li>
-        <li><span class="negrita">La notació HSL (Hue Saturation Luminance), al valencià Tonalitat:</span>
-Saturació, Lluminositat. La notació HSL consisteix en tres valors.
-<ul>
-<li>El primer s'expressa en graus, de 0° a 359° (el símbol de grau º no apareix a la notació).
-    Es correspon amb un color de la roda cromàtica: vermell (0°), groc (60°) , verd (120°), cian (180°), blau (240°) i magenta (300°)</li>
-<li>El segon i el tercer valor s'expressen en percentatge i descriuen respectivament la saturació i la lluminositat. 
-    Per exemple, color: <span class="cursiva">hsl(0, 100%, 50%)</span> per al roig.</li></li>
-</ul>
-    </ul>
-</p>
+            <li><span class="negrita">Obligatòries en HTML5</span>: Separació entre contingut i presentació.</li>
 
-    <h3>CSS integrades en un element HTML5</h3>
+            <li><span class="negrita">Simplificació del codi</span></li>
 
-<p>A HTML és possible afegir directament al codi una declaració d'estil en una etiqueta determinada.</p>
+            <li><span class="negreta">Manteniment del lloc web més senzill</span>: Els fulls d'estil permeten,
+                modificant un únic fitxer, actualitzar la presentació gràfica del conjunt de pàgines d'un lloc complet
+            </li>
 
-<section><pre><code class="language-xml">&lt;h1 style="color: red;">Título de nivel 1&lt;/h1></code></pre>
-</section><br>
+            <li><span class="negrita">Una via cap a l'accessibilitat</span>: Els fulls d'estil ofereixen, per exemple,
+                la possibilitat de visualitzar una pàgina de text amb caràcters més grans i, per tant, més llegibles.
+            </li>
+        </ul>
+        </p>
 
-<p>És convenient <span class="subrayado">evitar aquesta manera de procedir</span> en virtut del principi de separació entre contingut i presentació. 
-    Això no obstant, pot resultar útil per donar prioritat a una propietat d'estil respecte a la que s'haja especificat a la declaració interna o externa.</p>
+        <h3>Breu Història</h3>
+        <p>
+        <ul>
+            <li><span class="negrita">1991</span> Tim Berners- Lee inventa la web, el llenguatge HTML es concep per al
+                intercanvi dinformació entre els científics de tot el món.</li>
+            <li><span class="negrita">1994</span>. Sorgeix la idea de proporcionar estil a les pàgines web</li>
+            <li><span class="negrita">1995</span>. El W3C (World Wide Web Consortium) va començar a funcionar i publica
+                el primer esborrany sobre els fulls d'estil.</li>
+            <li><span class="negrita">1996</span>. L'esborrany es converteix en una recomanació oficial amb el nom
+                "Fulls d'estil en cascada, nivell 1" o CSS1</li>
+            <li><span class="negrita">1998</span>. Es publica una extensió de la recomanació amb el nom CSS2</li>
+            <li><span class="negrita">2006</span>. Es publiquen algunes correccions i extensions baix el nom CSS2.1.
+            </li>
+            <li><span class="negrita">2009</span>. Es va començar a parlar de les fulles d'estil CSS3.</li>
+        </ul>
+        </p>
 
-    <section><pre><code class="language-xml">&lt;!DOCTYPE html>
+        <h3>Validador de les fulles d'estil</h3>
+        <p>Igual que per a HTML5, hi ha un validador per als fulls d'estil.</p>
+
+        <p>El validador en línia del W3C per als fulls CSS (<a class="enlace" target="_blank"
+                href="http://jigsaw.w3.org/css-validator/">http://jigsaw.w3.org/css-validator/</a>)
+            és una eina de gran valor amb una qualitat reconeguda unànimement.
+            Permet lliurar pàgines perfectes, respectant escrupolosament les normes dictades pel W3C.</p>
+        <figure><img src="UD3/images/ud3-2023-11-06-00-00-39.png" /><br>
+            <figcaption></figcaption>
+        </figure>
+        <br>
+
+
+        <section class="marco-t inf">
+            <span class="icono info"> </span>
+        </section>
+        <section class="marco-b">
+            El validador CSS només comprova els fulls d'estil. D'aquesta manera, només cal introduir el fitxer de fulls
+            d'estil extern o el contingut de l'etiqueta
+            <span class="cursiva">&lt;style></span> per a les fulls d'estil interns del document.
+        </section>
+
+        <h3>Declaració d'estils i selectors bàsics</h3>
+
+        <p>La declaració d'un estil es fa mitjançant el binomi <span class="negrita">propietat: valor:</span>
+            Exemple:</p>
+
+        <section>
+            <pre><code class="language-css">background-color: red;</code></pre>
+        </section><br><br>
+
+        <p class="sub-section">Selectors d'etiqueta.</p>
+
+        <p>La sintaxi d'un selector d'etiqueta és el nom de l'etiqueta seguit de la declaració d'estil entre claus. <br>
+
+            <span class="cursiva">selector { declaració d'estil }</span>
+        </p>
+
+        <p>Exemple</p>
+        <section>
+            <pre><code class="language-css">div { background-color: red;}</code></pre>
+        </section><br><br>
+
+
+
+        <p>Podem aplicar el mateix estil a diferents selectors d'etiqueta separant-los amb comes. Exemple:</p>
+
+
+        <section>
+            <pre><code class="language-css">h1, h2, h3 {declaració d'estils}</code></pre>
+        </section><br><br>
+
+        <p class="sub-section">Selectors de classe</p>
+
+        <p>El dissenyador defineix els seus propis selectors.
+            <br>
+            <span class="cursiva">.nom_de_la_classe { declaració(ns) d'estil}</span>
+
+        <p>Exemple</p>
+
+        <section>
+            <pre><code class="language-css">.roig { background-color: red;}</code></pre>
+        </section><br>
+
+        <p>La crida a la classe es realitza de la següent manera:</p>
+
+        <section>
+            <pre><code class="language-xml">&lt;etiqueta class="nom_de_la_classe"></code></pre>
+        </section><br>
+
+        <p>Exemple</p>
+
+        <section>
+            <pre><code class="language-xml">&lt;div class="roig"> ... &lt;/div></code></pre>
+        </section><br>
+
+        <p>Podem definir una classe únicament per a una etiqueta, per exemple</p>
+
+        <section>
+            <pre><code class="language-css">blockquote.roig { background-color: red;}</code></pre>
+        </section><br>
+
+        <p>Amb aquesta definició de classe, només la podrem aplicar a l'etiqueta seleccionada, en aquest cas <span
+                class="cursiva">blockquote</span>.</p>
+        <section class="marco-t inf">
+            <span class="icono info"> </span> El primer caràcter de la classe no pot ser un número, un guió o un
+            caràcter de subratllat.
+        </section>
+        <section class="marco-b">
+
+        </section>
+
+        <p class="sub-section">Selectors d'identificador</p>
+
+        <p><span class="negreta">L'identificador ha de ser únic</span> per a cada element de la pàgina,
+            per tant, el selector d'identificador s'invocarà una sola vegada al document.
+            La definició d'un selector id és:</p>
+
+
+        <p><span class="cursiva">#nom_del_identificador {declaració d'estil}</span></p>
+
+        <p>Exemple</p>
+
+        <section>
+            <pre><code class="language-css">#roig { background-color: red;}</code></pre>
+        </section><br>
+
+        <p>La cridada es fa mitjançant:</p>
+
+        <section>
+            <pre><code class="language-xml">&lt;etiqueta id="nom_d'identificador"></code></pre>
+        </section><br>
+
+        <p>Exemple:</p>
+        <section>
+            <pre><code class="language-xml">&lt;div id="roig"> ... &lt;/div></code></pre>
+        </section><br><br>
+
+        <h3>Comentaris</h3>
+        <p>En un full d'estil CSS, un comentari comença amb els caràcters d'obertura barra obliqua i asterisc (és a dir
+            /*)
+            i acaba amb els caràcters asterisc i barra obliqua (és a dir */)</p>
+
+        <p>Exemple</p>
+
+        <section>
+            <pre><code class="language-css">/* Això és un comentari */</code></pre>
+        </section><br>
+
+        <h3>Unitats de mesura</h3>
+        <p>Les fulles d'estil CSS permeten utilitzar nombroses unitats de mesura, bé en <span
+                class="negrita">polzades</span> (inxes),
+            en <span class="negrita">centímetres</span>, en <span class="negrita">mil·límetres</span>, en <span
+                class="negrita">punts</span>,
+            en <span class="negrita">piques</span>, en <span class="negrita">píxels</span> o en <span
+                class="negrita">percentatge</span>.</p>
+
+        <p>També es distingeix entre <span class="negrita">valors relatius</span>, que poden variar segons l'ordinador
+            utilitzat, i <span class="negrita">valors absoluts</span>,
+            que permaneixen constants siga quin siga el dispositiu o el programari utilitzat.</p>
+
+        <p class="sub-section">Valors absoluts</p>
+
+        <table>
+            <tr>
+                <th>Unitat</th>
+                <th>Nom</th>
+                <th>Descripció</th>
+                <th>Valor</th>
+                <th>Exemple</th>
+            </tr>
+            <tr>
+                <td>pt</td>
+                <td>punt</td>
+                <td>72pt = 1inch</td>
+                <td>Int</td>
+                <td>48pt</td>
+            </tr>
+            <tr>
+                <td>pc</td>
+                <td>pica</td>
+                <td>1pc = 12pt</td>
+                <td>real</td>
+                <td>4.5pc</td>
+            </tr>
+            <tr>
+                <td>mm</td>
+                <td>mil·límetres</td>
+                <td>1 mm = 0.24pc</td>
+                <td>Int</td>
+                <td>60mm</td>
+            </tr>
+            <tr>
+                <td>cm</td>
+                <td>centímetre</td>
+                <td>1 cm = 10 mm</td>
+                <td>Int</td>
+                <td>6cm</td>
+            </tr>
+            <tr>
+                <td>in</td>
+                <td>polzada (inch)</td>
+                <td>1 in = 2.54 cm</td>
+                <td>real</td>
+                <td>0.1in</td>
+            </tr>
+        </table>
+
+        <p class="sub-section">Valors relatius</p>
+
+        <table>
+            <tr>
+                <th>Unitat</th>
+                <th>Descripció</th>
+                <th>Valor</th>
+                <th>Exemple</th>
+            </tr>
+            <tr>
+                <td>em</td>
+                <td>Unitat relativa que se basa en el tamany del tipus de lletra per defecte del element pare. (Tamany
+                    de la M majúscula)</td>
+                <td>real</td>
+                <td>1.8em</td>
+            </tr>
+            <tr>
+                <td>rem</td>
+                <td>Similar al anterior pero basat amb el tamany per defecte de la pàgin (element arrel html)</td>
+                <td>real</td>
+                <td>1.8rem</td>
+            </tr>
+            <tr>
+                <td>ex</td>
+                <td>Unitat relativa a la altura de la lletra minúscula en el element seleccionat.</td>
+                <td>real</td>
+                <td>1.3ex</td>
+            </tr>
+            <tr>
+                <td>px</td>
+                <td>Un píxel és la part més menuda d'una imatge. Depen de la resolució de pantalla.</td>
+                <td>enter</td>
+                <td>220px</td>
+            </tr>
+            <tr>
+                <td>%</td>
+                <td>Percentatge</td>
+                <td>enter</td>
+                <td>80%</td>
+            </tr>
+        </table>
+
+
+        <h3>Notacions de colors</h3>
+        <p>Els fulls CSS proporcionen múltiples notacions per declarar un color.
+        <ul>
+            <li><span class="negrita">La notació hexadecimal clàssica, és a dir #ffcc00:</span>. Defineix el color, o
+                més aviat els tres components del color.
+                roig (r de red), verd (g de green) i blau (b de blue), mitjançant una notació hexadecimal de tipus <span
+                    class="d-word">#RRGGBB</span>.
+                <ul>
+                    <li><span class="negrita">Notació amb alpha</span>: <span class="d-word">#RRGGBBAA</span> s'hi
+                        afegeixen un parell més al final que fa referència al canal <span class="cursiva">alpha</span>
+                    </li>
+                    <li><span class="negrita">Notació curta</span>: podem escriure-ho usant un sol digit per
+                        color/alpha.
+                        El resultat serà que per a cada color es duplica la lletra. Evidentment és menys precís. <span
+                            class="negrita">#FC0</span> será igual a <span class="negrita">#FFCC00</span></li>
+                </ul>
+            </li>
+            <li><span class="negrita">La notació decimal, per exemple, color</span>: <span class="d-word">rgb(0, 0,
+                    255)</span>.
+                El codi RGB del color no es codifica segons el valor hexadecimal sinó per un <span
+                    class="subrayado">número comprès entre 0 i 255</span>.
+                <ul>
+                    <li><span class="negrita">rgba(R, G, B, A)</span>: s'afegiex un quart paràmetre que és el <span
+                            class="cursiva">alpha</span>. El grau d'opacitat.
+                        Aquest pot estar en percentatge o decimal de 0 a 1, sent 0 no es veu, completament traparent i 1
+                        completament opac.</li>
+                </ul>
+            </li>
+            <li><span class="negrita">La notació en percentatge:</span>, per exemple, <span class="cursiva">color:
+                    rgb(25%, 50%, 0%)</span>.
+                El valor 0% significa l'absència del component esmentat i 100% el valor màxim.</li>
+            <li><span class="negrita">Paraules clau</span>: per exemple, <span class="cursiva">color: red</span>.</li>
+            <li><span class="negrita">La notació HSL (Hue Saturation Luminance), al valencià Tonalitat:</span>
+                Saturació, Lluminositat. La notació HSL consisteix en tres valors.
+                <ul>
+                    <li>El primer s'expressa en graus, de 0° a 359° (el símbol de grau º no apareix a la notació).
+                        Es correspon amb un color de la roda cromàtica: roig (0°), groc (60°) , verd (120°), cian
+                        (180°), blau (240°) i magenta (300°)</li>
+                    <li>El segon i el tercer valor s'expressen en percentatge i descriuen respectivament la saturació i
+                        la lluminositat.
+                        Per exemple, color: <span class="cursiva">hsl(0, 100%, 50%)</span> per al roig.</li>
+            </li>
+        </ul>
+        </ul>
+        </p>
+
+        <h3>CSS integrades en un element HTML5</h3>
+
+        <p>A HTML és possible afegir directament al codi una declaració d'estil en una etiqueta determinada.</p>
+
+        <section>
+            <pre><code class="language-xml">&lt;h1 style="color: red;">Título de nivel 1&lt;/h1></code></pre>
+        </section><br>
+
+        <p>És convenient <span class="subrayado">evitar aquesta manera de procedir</span> en virtut del principi de
+            separació entre contingut i presentació.
+            Això no obstant, pot resultar útil per donar prioritat a una propietat d'estil respecte a la que s'haja
+            especificat a la declaració interna o externa.</p>
+
+        <section>
+            <pre><code class="language-xml">&lt;!DOCTYPE html>
 &lt;html lang="ca">
     &lt;head>
         &lt;title>Html5&lt;/title>
@@ -337,21 +393,24 @@ Saturació, Lluminositat. La notació HSL consisteix en tres valors.
         &lt;h1>Títol 2&lt;/h1>
     &lt;/body>
 &lt;/html></code></pre>
-    </section><br>
+        </section><br>
 
-<p>i quedaria de la següent manera:</p>
-    <div class="muestra">
-        <h1 style="font-style: italic;">Títol 1</h1>
-        <h1>Títol 2</h1>
-    </div>
+        <p>i quedaria de la següent manera:</p>
+        <div class="muestra">
+            <h1 style="font-style: italic;">Títol 1</h1>
+            <h1>Títol 2</h1>
+        </div>
 
-<h3>CSS internes al document HTML5.</h3>
-<p>L'ús principal dels fulls destil CSS consisteix a determinar un estil que s'aplique a la totalitat d'una pàgina HTML5.</p>
+        <h3>CSS internes al document HTML5.</h3>
+        <p>L'ús principal dels fulls destil CSS consisteix a determinar un estil que s'aplique a la totalitat d'una
+            pàgina HTML5.</p>
 
-<p>El codi dels fulls d'estil s'agrupa a la capçalera del document, entre les etiquetes <span class="cursiva">&lt;head> i &lt;/head></span>.</p>
-<p>La sintaxi es presenta de la següent manera:</p>
+        <p>El codi dels fulls d'estil s'agrupa a la capçalera del document, entre les etiquetes <span
+                class="cursiva">&lt;head> i &lt;/head></span>.</p>
+        <p>La sintaxi es presenta de la següent manera:</p>
 
-<section><pre><code class="language-xml">&lt;head>
+        <section>
+            <pre><code class="language-xml">&lt;head>
     &lt;style type="text/css"> 
 
         h1 { color: red;}
@@ -359,36 +418,44 @@ Saturació, Lluminositat. La notació HSL consisteix en tres valors.
     &lt;/style>
 
 &lt;/head></code></pre>
-</section><br>
-
-
-<h3>CSS externes al document HTML5.</h3>
-<p>Les declaracions d'estil es poden agrupar en un fitxer extern (diferent) al fitxer Html.</p>
-
-<p>Aquesta manera de fer respecta millor el <span class="subrayado">principi de separació entre contingut i presentació</span>.</p>
-
-<p>Aquesta tècnica empra dos arxius:
-    <ul>
-        <li><span class="negrita">El full d'estil extern</span>: Un fitxer que conté la declaració d'estil. Aquest fitxer té l'extensió <span class="r-word">.css</span>.</li>
-        <li><span class="negrita">El document Html5</span>: Entre les etiquetes <span class="cursiva">&lt;head> i &lt;/head></span>, 
-            s'afegeix un enllaç al full d'estil en qüestió. 
-        <section><pre><code class="language-xml">&lt;link rel="stylesheet" type="text/css" href="exemple.css"></code></pre>
         </section><br>
-        on:
-        <ul>
-            <li><span class="negrita">link</span> indica al navegador que el que segueix és un enllaç.</li>
-            <li><span class="negrita">rel="stylesheet"</span> necessita que aquest enllaç sigui relatiu a un full d'estil.</li>
-            <li><span class="negrita">href="exemple.css"</span> és l'escriptura clàssica d'un enllaç a Html.</li>
-            <li>L'enllaç pot ser absolut (començant per http://...) o relatiu.</li>
-            <li>Res no impedeix incloure diverses etiquetes <span class="cursiva">&lt;link></span> cap a fulls d'estil externs diferents.</li>
-            <li>Res no impedeix utilitzar, a més, un full d'estil intern.</li>
-        </ul>
-        </li>
-    </ul>
-</p>
 
-<p>Exemple:</p>
-<section><pre><code class="language-xml">&lt;head>
+
+        <h3>CSS externes al document HTML5.</h3>
+        <p>Les declaracions d'estil es poden agrupar en un fitxer extern (diferent) al fitxer Html.</p>
+
+        <p>Aquesta manera de fer respecta millor el <span class="subrayado">principi de separació entre contingut i
+                presentació</span>.</p>
+
+        <p>Aquesta tècnica empra dos arxius:
+        <ul>
+            <li><span class="negrita">El full d'estil extern</span>: Un fitxer que conté la declaració d'estil. Aquest
+                fitxer té l'extensió <span class="r-word">.css</span>.</li>
+            <li><span class="negrita">El document Html5</span>: Entre les etiquetes <span class="cursiva">&lt;head> i
+                    &lt;/head></span>,
+                s'afegeix un enllaç al full d'estil en qüestió.
+                <section>
+                    <pre><code class="language-xml">&lt;link rel="stylesheet" type="text/css" href="exemple.css"></code></pre>
+                </section><br>
+                on:
+                <ul>
+                    <li><span class="negrita">link</span> indica al navegador que el que segueix és un enllaç.</li>
+                    <li><span class="negrita">rel="stylesheet"</span> necessita que aquest enllaç sigui relatiu a un
+                        full d'estil.</li>
+                    <li><span class="negrita">href="exemple.css"</span> és l'escriptura clàssica d'un enllaç a Html.
+                    </li>
+                    <li>L'enllaç pot ser absolut (començant per http://...) o relatiu.</li>
+                    <li>Res no impedeix incloure diverses etiquetes <span class="cursiva">&lt;link></span> cap a fulls
+                        d'estil externs diferents.</li>
+                    <li>Res no impedeix utilitzar, a més, un full d'estil intern.</li>
+                </ul>
+            </li>
+        </ul>
+        </p>
+
+        <p>Exemple:</p>
+        <section>
+            <pre><code class="language-xml">&lt;head>
     &lt;title>Html5&lt;/title>
     &lt;meta charset="UTF-8">
     &lt;link rel="stylesheet" type="text/css" href="exemple.css">
@@ -396,18 +463,22 @@ Saturació, Lluminositat. La notació HSL consisteix en tres valors.
 &lt;body>
     &lt;h1>Títol de nivell 1&lt;/h1>
 &lt;/body></code></pre>
-</section><br>
-<h3>CSS importada (@import).</h3>
-<p>Una altra forma d'usar els fulls d'estil externs consisteix a fer servir l'ordre <span class="r-word">@import</span>.</p>
+        </section><br>
+        <h3>CSS importada (@import).</h3>
+        <p>Una altra forma d'usar els fulls d'estil externs consisteix a fer servir l'ordre <span
+                class="r-word">@import</span>.</p>
 
-<section><pre><code class="language-xml">&lt;style type="text/css"> 
+        <section>
+            <pre><code class="language-xml">&lt;style type="text/css"> 
     @import url(exemple.css);
 &lt;/style></code></pre>
-</section><br><br>
+        </section><br><br>
 
-<p><span class="negrita">@import</span> es podrà utilitzar no només per invocar un full d'estil extern en un document Html sinó també per importar un altre full d'estil al full d'estil extern.</p>
+        <p><span class="negrita">@import</span> es podrà utilitzar no només per invocar un full d'estil extern en un
+            document Html sinó també per importar un altre full d'estil al full d'estil extern.</p>
 
-<section><pre><code class="language-xml">&lt;!DOCTYPE html>
+        <section>
+            <pre><code class="language-xml">&lt;!DOCTYPE html>
 &lt;html lang="ca">
 &lt;head>
     &lt;title>Html5&lt;/title>
@@ -420,47 +491,53 @@ Saturació, Lluminositat. La notació HSL consisteix en tres valors.
     &lt;h1>Títol de nivell 1&lt;/h1>
 &lt;/body>
 </html></code></pre>
-</section><br><br>
+        </section><br><br>
 
-<section class="marco-t warn">
-    <span class="icono warning"> </span> Les etiquetes <span class="cursiva">&lt;style> ... &lt;/style></span> són necessàries.
-    </section>
-<section class="marco-b">
-        
-</section>
+        <section class="marco-t warn">
+            <span class="icono warning"> </span> Les etiquetes <span class="cursiva">&lt;style> ... &lt;/style></span>
+            són necessàries.
+        </section>
+        <section class="marco-b">
 
-<h3>Noció de cascada</h3>
+        </section>
 
-<p>Als apartats anteriors hem constatat com és possible tenir diverses definicions d'estil, bé en línia, interna(es) o externa(es). 
-    n cas que hi haja una competència entre diversos elements d'estil, intervé la noció de cascada (la paraula Cascading a Cascading Style Sheets) o ordre de prioritat.</p>
+        <h3>Noció de cascada</h3>
 
-<p>El navegador pren primer en consideració les especificacions dels fulls d'estil externs (amb l'extensió css), 
-    a continuació els fulls d'estil interns (aquells situats a l'interior de les etiquetes <span class="cursiva">&lt;head></span>) i, 
-    tot seguit, els fulls d'estil en línia (aquelles lligades a un element Html5).</p>
+        <p>Als apartats anteriors hem constatat com és possible tenir diverses definicions d'estil, bé en línia,
+            interna(es) o externa(es).
+            n cas que hi haja una competència entre diversos elements d'estil, intervé la noció de cascada (la paraula
+            Cascading a Cascading Style Sheets) o ordre de prioritat.</p>
 
-<p>L'ordre creixent de prioritat (de menor a major) és:
-    <ol>
-        <li>Propietats per defecte del navegador.</li>
-        <li>Fulles d'estil externes.</li>
-        <li>Fulles d'estil internes.</li>
-        <li>Fulls destil en línia.</li>
-    </ol>
-</p>
-<section class="marco-t inf">
-    <span class="icono info"> </span> La regla de prioritat, per visualitzar el document al navegador, 
-    consisteix en utilitzar el full d'estil més proper a al element.
-    </section>
-<section class="marco-b">
-        
-</section>
+        <p>El navegador pren primer en consideració les especificacions dels fulls d'estil externs (amb l'extensió css),
+            a continuació els fulls d'estil interns (aquells situats a l'interior de les etiquetes <span
+                class="cursiva">&lt;head></span>) i,
+            tot seguit, els fulls d'estil en línia (aquelles lligades a un element Html5).</p>
 
-<p>Exemple:</p>
+        <p>L'ordre creixent de prioritat (de menor a major) és:
+        <ol>
+            <li>Propietats per defecte del navegador.</li>
+            <li>Fulles d'estil externes.</li>
+            <li>Fulles d'estil internes.</li>
+            <li>Fulls destil en línia.</li>
+        </ol>
+        </p>
+        <section class="marco-t inf">
+            <span class="icono info"> </span> La regla de prioritat, per visualitzar el document al navegador,
+            consisteix en utilitzar el full d'estil més proper a al element.
+        </section>
+        <section class="marco-b">
 
-<p>L'arxiu d'estil extern <span class="inline-file">estil1.css</span> es:</p>
-    <section><pre><code class="language-css">h1 { text-decoration: underline;}</code></pre>
-    </section><br>
+        </section>
 
-    <section><pre><code class="language-xml">&lt;!DOCTYPE html>
+        <p>Exemple:</p>
+
+        <p>L'arxiu d'estil extern <span class="inline-file">estil1.css</span> es:</p>
+        <section>
+            <pre><code class="language-css">h1 { text-decoration: underline;}</code></pre>
+        </section><br>
+
+        <section>
+            <pre><code class="language-xml">&lt;!DOCTYPE html>
 &lt;html lang="ca">
 &lt;head>
     &lt;title>Html5&lt;/title>
@@ -474,24 +551,27 @@ Saturació, Lluminositat. La notació HSL consisteix en tres valors.
     &lt;h1>Títol de nivell 1&lt;/h1>
 &lt;/body>
 &lt;/html></code></pre>
-    </section><br>
-    
-    <p>Donant com a resultat:</p>
+        </section><br>
 
-    <div class="muestra">
-        <h1 style="text-decoration: overline;">Títol de nivell 1</h1>
-    </div>
+        <p>Donant com a resultat:</p>
 
-    <p>Es pot donar prioritat a l'estil extern, és a dir a l'estil de subratllat, mitjançant el valor <span class="r-word">!important</span>.</p>
-    
-<p>El fitxer d'estil extern (<span class="inline-file">estil2.css</span>) és:</p>
+        <div class="muestra">
+            <h1 style="text-decoration: overline;">Títol de nivell 1</h1>
+        </div>
 
-<section><pre><code class="language-css">h1 { text-decoration: underline !important;}</code></pre>
-</section><br>
+        <p>Es pot donar prioritat a l'estil extern, és a dir a l'estil de subratllat, mitjançant el valor <span
+                class="r-word">!important</span>.</p>
 
-<p>El document Html5:</p>
+        <p>El fitxer d'estil extern (<span class="inline-file">estil2.css</span>) és:</p>
 
-<section><pre><code class="language-xml">&lt;!DOCTYPE html>
+        <section>
+            <pre><code class="language-css">h1 { text-decoration: underline !important;}</code></pre>
+        </section><br>
+
+        <p>El document Html5:</p>
+
+        <section>
+            <pre><code class="language-xml">&lt;!DOCTYPE html>
 &lt;html lang="ca">
 &lt;head>
     &lt;title>Html5&lt;/title>
@@ -505,38 +585,264 @@ Saturació, Lluminositat. La notació HSL consisteix en tres valors.
     &lt;h1>Títol de nivell 1&lt;/h1>
 &lt;/body>
 &lt;/html></code></pre>
-</section><br>
+        </section><br>
 
-<p>Donant com a resultat:</p>
+        <p>Donant com a resultat:</p>
 
-    <div class="muestra">
-        <h1 style="text-decoration: underline;">Títol de nivell 1</h1>
-    </div>
+        <div class="muestra">
+            <h1 style="text-decoration: underline;">Títol de nivell 1</h1>
+        </div>
 
-    <h3>Noció d'herència</h3>
-    <p>Si tenim diverses etiquetes anidades amb diferents estils</p>
-<figure><img src="UD3/images/ud3-2023-11-06-12-59-13.png" /><br><figcaption></figcaption></figure>
-<br>
+        <h3>Noció d'herència</h3>
+        <p>Si tenim diverses etiquetes anidades amb diferents estils</p>
+        <figure><img src="UD3/images/ud3-2023-11-06-12-59-13.png" /><br>
+            <figcaption></figcaption>
+        </figure>
+        <br>
 
-<p>Els estils s'hereten:
-    <ul>
-        <li>L'estil 2 es caracteritza pel propi estil més el de l'estil 1, que ha heretat. </li>
-        <li>L'estil 3 es caracteritza pel propi estil més el dels estils 1 i 2, que ha heretat.</li>
-        <li>Seguint la mateixa lògica podem utilitzar els termes "pare" i "fill".</li>
-        <li>L'estil 1 seria el pare de l'estil 2. De la mateixa manera, l'estil 2 i l'estil 1 serien pares de l'estil 3. O bé l'estil 2 és fill de l'estil 1 i l 'estil 3 és fill dels estils 2 i 1 .</li>
-    </ul>
-</p>
+        <p>Els estils s'hereten:
+        <ul>
+            <li>L'estil 2 es caracteritza pel propi estil més el de l'estil 1, que ha heretat. </li>
+            <li>L'estil 3 es caracteritza pel propi estil més el dels estils 1 i 2, que ha heretat.</li>
+            <li>Seguint la mateixa lògica podem utilitzar els termes "pare" i "fill".</li>
+            <li>L'estil 1 seria el pare de l'estil 2. De la mateixa manera, l'estil 2 i l'estil 1 serien pares de
+                l'estil 3. O bé l'estil 2 és fill de l'estil 1 i l 'estil 3 és fill dels estils 2 i 1 .</li>
+        </ul>
+        </p>
 
 
     </section><!-- End section Introducció a les fulles de estil-->
 
 
-    <!--*********************************************************Selectors Jerarquics***********************************************************-->
+    <!--*********************************************************Selectors***********************************************************-->
     <section class="apartado">
-    <a name="sSelectorsJerarquics"></a>
-    <h2>Selectors Jerarquics</h2>
-    <p>Podemo trobar els següents selector jerarquics:
-        <br>
+        <a name="sSelectors"></a>
+        <h2>Selectors</h2>
+
+        <h3>Selector universal</h3>
+        <p>Permet aplicar un estil a totes les etiquetes del document. Això ho aconsegueix l'asterisc. Exemple:</p>
+
+        <section>
+            <pre><code class="language-css">* {
+    color:black;
+}</code></pre>
+        </section><br>
+
+        <p>No se sol utilitzar així ja que és massa indiscriminada. Però sí que s'utilitza per a elements d'aquest
+            tipus:</p>
+
+        <section>
+            <pre><code class="language-xml">&lt;!doctype html>
+&lt;html lang="ca">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;title>Document&lt;/title>
+    &lt;style>
+        table *{
+            color:red;
+        }
+    &lt;/style>
+&lt;/head>
+&lt;body>
+    &lt;p>Ix normal&lt;/p>
+    &lt;table>
+        &lt;tr>
+            &lt;th>Ix roig&lt;/th>
+        &lt;/tr>
+        &lt;tr>
+            &lt;td>Ix roig&lt;/td>
+        &lt;/tr>
+    &lt;/table>
+&lt;/body>
+&lt;/html></code></pre>
+        </section><br><br>
+        <p>Permet pintar en roig el text que estiga dins una taula;
+            no importarà que etiqueta siga la que està dins de la taula. Un altre exemple:</p>
+
+        <section>
+            <pre><code class="language-xml">&lt;!doctype html>
+&lt;html lang="ca">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;title>Document&lt;/title>
+    &lt;style>
+        p *{ color:red;}
+    &lt;/style>
+&lt;/head>
+&lt;body>
+    &lt;p>Ix normal &lt;span>Ix roig&lt;/span>&lt;/p>
+&lt;/body>
+&lt;/html></code></pre>
+        </section><br><br>
+
+        <p>Ara ix de color roig el text dins de l'etiqueta <span class="cursiva">span</span>.</p>
+
+
+        <h3>Selectors per atributs</h3>
+
+        <p>Permet aplicar estils a un element quan aquest té un valor determinat sobre un atribut.
+            Per fer-ho, s'indica l'atribut entre claudàtors <span class="negrita">[]</span>,
+            seguit del signe d'igualtat i el valor entre cometes. Exemple:</p>
+
+        <section>
+            <pre><code class="language-xml">&lt;!doctype html>
+&lt;html lang="ca">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;title>Document&lt;/title>
+    &lt;style>
+        p[lang="en"]{
+            font-style: italic;
+        }
+    &lt;/style>
+ &lt;/head>
+ &lt;body>
+     &lt;p lang="es">text que ix normalment&lt;/p>
+     &lt;p lang="en">text que ix en cursiva&lt;/p>
+ &lt;/body>
+ &lt;/html></code></pre>
+        </section><br>
+
+        <p>Es pot barrejar aquest tipus de definicions amb classes o definicions per identificador:</p>
+        <section>
+            <pre><code class="language-css">p.classe1[lang="en"]{
+    font-style: italic;
+}</code></pre>
+        </section><br><br>
+        <p>En aquest cas, l'estil definit s'aplica a paràgrafs de <span class="cursiva">classe 1</span>
+            que estiguen marcats amb el valor a l'atribut <span class="cursiva">lang</span> (és a dir, que estiguen en
+            anglès).</p>
+        <p>Fins i tot es pot utilitzar més d'un atribut:</p>
+
+
+        <section>
+            <pre><code class="language-css">p[lang="en"][spellcheck="true"]{
+    font-style: italic;
+}</code></pre>
+        </section><br>
+
+        <p>En aquest cas s'aplica l'estil per als elements de tipus <span class="cursiva">p</span> que utilitzen els
+            atributs <span class="cursiva">lang</span>
+            i <span class="cursiva">spellcheck</span> amb els valors indicats.</p>
+
+
+        <p>Fins i tot podem utilitzar diversos valors per al mateix atribut:</p>
+
+        <section>
+            <pre><code class="language-css">p[lang="en"][lang="fr"]{
+    font-style: italic;
+}</code></pre>
+        </section><br><br>
+        <p>Aplica la cursiva a paràgrafs el llenguatge dels quals sigui anglès o francès.</p>
+        <p>També podem indicar l'estil simplement per als elements que usen l'atribut independentment del valor:</p>
+
+        <section>
+            <pre><code class="language-xml">&lt;!doctype html>
+&lt;html lang="ca">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;title>Document&lt;/title>
+    &lt;style>
+        p[lang]{
+            font-style: italic;
+        }
+    &lt;/style>
+&lt;/head>
+&lt;body>
+    &lt;p>Aquest text es mostra normalment&lt;/p>
+    &lt;p lang="en">This text is shown with italics (es mostra amb cursiva)&lt;/p>
+    &lt;p lang="ca">Aquest text també es mostra en cursiva&lt;/p>
+&lt;/body>
+&lt;/html></code></pre>
+        </section><br>
+        <p>D'altra banda, gràcies a CSS3 disposem d'aquestes possibilitats:</p>
+        <p>
+        <table>
+            <colgroup>
+                <col>
+                <col>
+            </colgroup>
+            <thead>
+                <tr>
+                    <td>
+                        <p>sintaxi</p>
+                    </td>
+                    <td>
+                        <p>significat</p>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <p>element[<strong>atribut</strong>~=<span>"valor"</span>]</p>
+                    </td>
+                    <td>
+                        <p>Elements que usen l'atribut indicat que continguen el valor encara que separat d'altres
+                            valors per espais</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>element[<strong>atribut</strong>$=<span>"valor"</span>]</p>
+                    </td>
+                    <td>
+                        <p>Elements que utilitzen l'atribut i el contingut del qual finalitzi amb el valor indicat</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>element[<strong>atribut</strong>^=<span>"valor"</span>]</p>
+                    </td>
+                    <td>
+                        <p>Elements que utilitzen l'atribut i el contingut dels quals comenci amb el valor indicat</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>element[<strong>atribut</strong>|=<span>"valor"</span>]</p>
+                    </td>
+                    <td>
+                        <p>Elements que utilitzen l'atribut, el contingut del qual comenci amb el valor indicat ia més
+                            aquest valor sigui una paraula</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>element[<strong>atribut</strong>*=<span>"valor"</span>]</p>
+                    </td>
+                    <td>
+                        <p>Elements que utilitzen l'atribut indicat i continguen (arreu) l'atribut indicat</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </p>
+        <p>Exemple:</p>
+        <section>
+            <pre><code class="language-xml">&lt;!doctype html>
+&lt;html lang="ca">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;title>Document&lt;/title>
+    &lt;style>
+    p[lang*="ca"]{
+    font-style: italic;
+    }
+    &lt;/style>
+&lt;/head>
+&lt;body>
+  &lt;p lang="es-AR">Aquest text es mostra en cursiva&lt;/p>
+  &lt;p lang="ca-ES">Aquest text també es mostra a cursiva&lt;/p>
+  &lt;p lang="ca">Fins i tot aquest també&lt;/p>
+  &lt;p lang="en">Aquest no&lt;/p>
+&lt;/body>
+&lt;/html></code></pre>
+        </section><br>
+
+        <h3>Selectors jeràrquics</h3>
+        <p>Podem trobar els següents selector jerarquics:
+            <br>
 
         <table>
             <tr>
@@ -555,121 +861,821 @@ Saturació, Lluminositat. La notació HSL consisteix en tres valors.
                 <td>Seleccioneu qualsevol element B precedit immediatament de l'element A.</td>
             </tr>
         </table>
-    </p>
+        </p>
 
-    <section><pre><code class="language-xml">&lt;!DOCTYPE html>
+        <section>
+            <pre><code class="language-xml">&lt;!DOCTYPE html>
 &lt;html lang="ca">
 &lt;head>
-    &lt;title>Html5&lt;/title>
-    &lt;meta charset="UTF-8">
-    &lt;style type="text/css"> 
-        #division h1 { 
-            width: 200px;
-            background-color: #9cf;
-        } 
-        h1 { 
-            margin-top: 5px; 
-            margin-bottom:5px;
-            font-size: 20px;
+&lt;title>Html5&lt;/title>
+&lt;meta charset="UTF-8">
+&lt;style type="text/css">
+#division h1 {
+    width: 200px;
+    background-color: #9cf;
+}
+h1 {
+    margin-top: 5px;
+    margin-bottom:5px;
+    font-size: 20px;
+}
+p {
+    margin-top: 5px;
+    margin-bottom:5px;
+}
+&lt;/style>
+&lt;/head>
+&lt;body>
+&lt;div id="division">
+&lt;h1>Títol 1&lt;/h1>
+&lt;div id="contingut" style="padding-left: 20px;">
+    &lt;h1> Títol 1 bis&lt;/h1>
+    &lt;p>Paràgraf 1&lt;/p>
+&lt;/div>
+&lt;h1>Títol 2&lt;/h1>
+&lt;/div>
+&lt;/body>
+&lt;/html></code></pre>
+        </section><br>
+
+        <p>Resultat:</p>
+        <figure><img src="UD3/images/ud3-2023-11-06-13-19-19.png" /><br>
+            <figcaption></figcaption>
+        </figure>
+        <br>
+
+
+        <p>Exemple 2:</p>
+        <section>
+            <pre><code class="language-xml">&lt;!DOCTYPE html>
+
+&lt;html lang="ca">
+&lt;head>
+&lt;title>Html5&lt;/title>
+&lt;meta charset="UTF-8">
+&lt;style type="text/css">
+#division > h1 {
+    width: 200px;
+    background-color: #9cf;
+}
+h1 {
+    margin-top: 5px;
+    margin-bottom:5px;
+    font-size: 20px;
+}
+p {
+    margin-top: 5px;
+    margin-bottom:5px;
+}
+&lt;/style>
+&lt;/head>
+&lt;body>
+&lt;div id="division">
+&lt;h1>Títol 1&lt;/h1>
+&lt;div id="contingut" style="padding-left: 20px;">
+    &lt;h1> Títol 1 bis&lt;/h1>
+    &lt;p>Paràgraf 1&lt;/p>
+&lt;/div>
+&lt;h1>Títol 2&lt;/h1>
+&lt;/div>
+&lt;/body>
+&lt;/html></code></pre>
+        </section><br>
+
+        <p>Quedant com a resultat:</p>
+        <figure><img src="UD3/images/ud3-2023-11-06-13-23-39.png" /><br>
+            <figcaption></figcaption>
+        </figure>
+        <br>
+
+        <p>Exemple 3:</p>
+        <section>
+            <pre><code class="language-xml">&lt;!DOCTYPE html>
+
+&lt;html lang="ca">
+&lt;head>
+&lt;title>Html5&lt;/title>
+&lt;meta charset="UTF-8">
+&lt;style type="text/css">
+li.u + li {
+    width: 200px;
+    background-color: #9cf;
+}
+&lt;/style>
+&lt;/head>
+&lt;body>
+&lt;ul>
+&lt;li class="un">Item 1&lt;/li>
+&lt;li>Item 2&lt;/li>
+&lt;li>Item 3&lt;/li>
+&lt;li>Item 4&lt;/li>
+&lt;li>Item 5&lt;/li>
+&lt;/ul>
+&lt;/body>
+&lt;/html></code></pre>
+        </section><br>
+
+        <p>Resultat:</p>
+
+        <figure><img src="UD3/images/ud3-2023-11-06-13-27-11.png" /><br>
+            <figcaption></figcaption>
+        </figure>
+        <br>
+
+        <p class="sub-section">Altres selectors jeràrquics</p>
+
+        <table>
+            <colgroup>
+                <col>
+                <col>
+            </colgroup>
+            <thead>
+                <tr>
+                    <td>
+                        <p>sintaxis</p>
+                    </td>
+                    <td>
+                        <p>significado</p>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <p>element1 <strong class="negrita">~ </strong>element2</p>
+                    </td>
+                    <td>
+                        <p>S'aplica al <em class="cursiva">element2</em> quan és germà del <em
+                                class="cursiva">element1</em> i aquest el precedeix, encara que no siga immediatament.
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>element<strong class="negrita">:empty</strong></p>
+                    </td>
+                    <td>
+                        <p>S'aplica quan l'element és buit</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>element:<strong class="negrita">nth-child(</strong>número<strong class="negrita">)</strong>
+                        </p>
+                    </td>
+                    <td>
+                        <p>S'aplica a l'element indicat quan sigui el fill amb el número indicat (per exemple, número
+                            seria 3, per al tercer fill). </p>
+                        <p>Es poden fer servir expressions més complexes mitjançant l'ús de la variable <strong
+                                class="negrita">n </strong>per aconseguir fórmules més complexes (la <em
+                                class="cursiva">n</em> el navegador la substituirà automàticament per cada número sencer
+                            per calcular quines files se seleccionen)</p>
+                        <p>Es permet també utilitza les paraules clau <strong class="negrita">odd </strong>(<em
+                                class="cursiva">imparell</em>) i <strong class="negrita">even </strong>(<em
+                                class="cursiva">parell</em>)</p>
+                        <p>Exemples dús:</p>
+                        <ul>
+                            <li><strong class="negrita">tr:nth-child(3)</strong>. Selecciona la tercera fila d'una taula
+                            </li>
+                            <li><strong class="negrita">tr:nth-child(odd)</strong>. Selecciona les files senars</li>
+                            <li><strong class="negrita">td:nth-child(even)</strong>. Als parells</li>
+                            <li><strong class="negrita">tr:nth-child(2n+1)</strong>. Selecciona les files 1,3,5,... (les
+                                senars)</li>
+                            <li><strong class="negrita">tr:nth-child(3n+1)</strong>. Selecciona les files 1, 4, 7, 10,
+                                13... (de tres a tres)</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>element<strong class="negrita">:nth-last-child(</strong>n<strong class="negrita">)</strong>
+                        </p>
+                    </td>
+                    <td>
+                        <p>Funciona igual que l'anterior però compta els elements fills a partir de l'últim (és a dir,
+                            l'ordre del darrere cap endavant).</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>element<strong>:</strong><strong class="negrita">first-child</strong></p>
+                    </td>
+                    <td>
+                        <p>S'aplica a l'element quan és el primer fill</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>element<strong class="negrita">:last-child</strong></p>
+                    </td>
+                    <td>
+                        <p>S'aplica a l'element quan és el darrer fill</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>element<strong class="negrita">:only-child</strong></p>
+                    </td>
+                    <td>
+                        <p>S'aplica quan l'element és l'únic fill</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>element<strong class="negrita">:first-of-type</strong></p>
+                    </td>
+                    <td>
+                        <p>Primer descendiente de su tipo</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>element<strong class="negrita">:last-of-type</strong></p>
+                    </td>
+                    <td>
+                        <p><span lang="ar-SA">Últim descendent del seu fill</span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>element<strong>:</strong><strong class="negrita">nth-of-type</strong>(n)</p>
+                    </td>
+                    <td>
+                        <p>Funciona com <strong class="negrita">nth-child</strong>, però fa referència al número de fill
+                            d'aquest tipus. No compte fills, sinó fills del tipus indicat. </p>
+                        <p>Exemple:</p>
+                        <section>
+                            <pre><code class="language-xml">&lt;head>
+    &lt;style&gt;
+        article p:nth-of-type(2){
+            color:<span>red</span>;
         }
-        p { 
-            margin-top: 5px; 
-            margin-bottom:5px;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;article&gt;
+        &lt;h1&gt;Primer fill, no s'acoloreix&lt;/h1&gt;
+        &lt;p&gt;Segon fill, primer de tipus p. No s'acoloreix&lt;/p&gt;
+        &lt;p&gt;Tercer fill, segon de tipus p. ES COL·LOREJA&lt;/p&gt;
+        &lt;p&gt;Quart fill, tercer de tipus p. No s'acoloreix&lt;/p&gt;
+    &lt;/article&gt;
+&lt;/body&gt;</code></pre>
+                        </section>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>element<strong class="negrita">:nth-last-of-type(</strong>n<strong class="negrita">)</strong>
+                        </p>
+                    </td>
+                    <td>
+                        <p>Com l'anterior però conta <em class="cursiva">n</em> des del final.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>element<strong class="negrita">:only-of-type</strong></p>
+                    </td>
+                    <td>
+                        <p>S'aplica quan l'element és l'únic fill d'aquest tipus</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+<br>
+        <p>Exemple d'ús de nth-child:</p>
+        <section>
+            <pre><code class="language-xml">&lt;html lang="ca">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;title>Prova nth-child&lt;/title>
+    &lt;style>
+        table{
+            width:450px;
+            border-collapse:collapse;
+        }
+        td,th{
+            border:1px solid black;
+            }
+        td:nth-child(2){
+            background-color:xarxa;
         }
     &lt;/style>
 &lt;/head>
 &lt;body>
-    &lt;div id="division">
-        &lt;h1>Títol 1&lt;/h1>
-        &lt;div id="contingut" style="padding-left: 20px;">
-            &lt;h1> Títol 1 bis&lt;/h1>
-            &lt;p>Paràgraf 1&lt;/p>
-        &lt;/div>
-        &lt;h1>Títol 2&lt;/h1>
-    &lt;/div>
-&lt;/body>
-&lt;/html></code></pre>
-    </section><br>
+    &lt;table>
+        &lt;tr>
+            &lt;th>& nbsp;&lt;/th>
+            &lt;td>& nbsp;&lt;/td>
+            &lt;td>& nbsp;&lt;/td>
+            &lt;td>& nbsp;&lt;/td>
+        &lt;/tr>
+        &lt;tr>
+            &lt;th>& nbsp;&lt;/th>
+            &lt;td>& nbsp;&lt;/td>
+            &lt;td>& nbsp;&lt;/td>
+            &lt;td>& nbsp;&lt;/td>
+        &lt;/tr>
+    &lt;/table>
+&lt;/body></code></pre>
+        </section><br>
 
-    <p>Resultat:</p>
-    <figure><img src="UD3/images/ud3-2023-11-06-13-19-19.png" /><br><figcaption></figcaption></figure>
-    <br>
+        <p>El codi resultant és el següent:</p>
+
+        <figure><img src="UD3/images/ud3-2023-11-08-10-02-26.png" /><br><figcaption></figcaption></figure>
+        <br>
+        
+        <p>La segona columna ix amb fons roig, ja que l'etiqueta <span class="negrita">td</span> és el segon fill de l'etiqueta <span class="negrita">tr</span>.
+            Però si el codi CSS fos aquest:</p>
+        
+<section><pre><code class="language-css">table{
+    width:450px;
+    border-collapse:collapse;
+}
+td,th{
+    border:1px solid black;
+}
+td:nth-of-type(2){
+    background-color:red;
+}</code></pre>
+</section><br>
+<p>El resultat seria el següent</p>
+<figure><img src="UD3/images/ud3-2023-11-08-10-06-35.png" /><br><figcaption></figcaption></figure>
+<br>
+
+<p>Perquè ara es pinta l'etiqueta <span class="negrita">td</span> quan és el segon fill del tipus 
+    (la primera columna és de tipus <span class="negrita">th</span> i no <span class="negrita">td</span>).</p>
+
+<p>Podem fins i tot fer combinacions avançades. Exemple:</p>
+
+<section><pre><code class="language-css">ul > li + li {
+    color:green;
+}</code></pre>
+</section><br>
+
+<p>S'aplica als elements <span class="negrita">li</span> que estiguen dins elements <span class="negrita">ul</span> i a més estiguen immediatament precedits per un altre element <span class="negrita">li</span>. Exemple:</p>
+
+<section><pre><code class="language-xml">&lt;ul>
+    &lt;li>Jo normal&lt;/li>
+    &lt;li>Jo verd&lt;/li>
+    &lt;li>Jo també verd&lt;/li>
+&lt;/ul></code></pre>
+</section><br><br>
+
+    </section><!-- End section Selectors-->
+
+    <!--*********************************************************Pseudoclasses***********************************************************-->
+    <section class="apartado">
+        <a name="sPseudoclassesdeselecció"></a>
+        <h2>Pseudoclasses</h2>
+        <h3>Bàsiques</h3>
+
+        <p>Les <span class="negrita">pseudoclases</span> permeten associar estils a un selector quan li passa una determinada circumstància. Inicialment les pseudoclasses s'aplicaven als enllaços (element a), però ara s'apliquen a qualsevol element. Les pseudoclasses clàssiques són:
+            <ul>
+                <li><span class="negreta">:link</span>. S'aplica als enllaços no visitats</li>
+                <li><span class="negreta">:visited</span>. Enllaços visitats</li>
+                <li><span class="negreta">:activeu</span>. Enllaços actius (aquells sobre els quals fem clic)</li>
+                <li><span class="negreta">:hover</span>. S'aplica quan el ratolí passa per sobre de l'element (seguiu un enllaç o no)</li>
+            </ul>
+        </p>
+                
+        <p>Exemple:   </p>
+        <section><pre><code class="language-css">a{
+    text-decoration: none;
+}
+a:visited{
+    color: gray;
+}
+a:hover{
+    text-decoration: underline;
+}
+</code></pre>
+        </section><br>
+
+        <p>A l'exemple els enllaços als quals s'aplique aquest full d'estil sortiran sense subratllar, si estan visitats sortiran de color gris i si s'hi acosta el ratolí serà quan es mostrin subratllats.</p>        
+
+<p>Aquestes pseudoclases permeten un cert dinamisme a la pàgina HTML. Actualment, a més, és possible utilitzar-les en altres elements diferents de l'etiqueta <span class="negrita">a</span> (com <span class="negrita">p</span>, <span class="negrita">div</span>, etc.), cosa que dóna enormes possibilitats.</p>
+
+<h3>Més pseudoclasses</h3>
+<p>CSS3 ha incorporat moltes més pseudoclasses:</p>
+
+<p><table>
+				<colgroup>
+					<col>
+					<col>
+				</colgroup>
+				<thead>
+					<tr>
+						<td>
+							<p>pseudoclase</p>
+						</td>
+						<td>
+							<p>selecciona...</p>
+						</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<p><strong class="negrita">:focus</strong></p>
+						</td>
+						<td>
+							<p>Quan l'element obté el focus, és a dir, quan l'element ha capturat l'entrada del teclat. Molt útil en formularis.</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p><strong class="negrita">:lang(</strong>codi<strong class="negrita">)</strong></p>
+						</td>
+						<td>
+							<p>S'aplica quan l'element estiga marcat amb el llenguatge indicat pel vostre codi d'idioma a l'atribut <strong class="negreta">lang</strong> (<em class="cursiva">es</em> per a espanyol, <em class="cursiva">en</em> per a anglès,…)</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p><strong class="negrita">:enabled</strong></p>
+						</td>
+						<td>
+							<p>Quan l'element està habilitat (útil als formularis)</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p><strong class="negrita">:disabled</strong></p>
+						</td>
+						<td>
+							<p>Quan l'element està deshabilitat (útil als formularis)</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p><strong class="negrita">:checked</strong></p>
+						</td>
+						<td>
+							<p>En controls de formulari de tipus <strong class="negreta" lang="en-US">radio</strong> o <strong class="negreta" lang="en-US">checkbox,</strong > quan l'element passa a estar activat.</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p><strong class="negrita">:in-range</strong></p>
+						</td>
+						<td>
+							<p>En controls de formulari (de tipus <strong class="negreta">input</strong>) quan el valor que contenen està dins de rang. Això significa que els atributs <strong class="negreta">min </strong>i <strong class="negreta">max </strong>(que només s'apliquen a alguns tipus de controls <strong class="negreta"> input</strong>) han delimitat valors el contingut del control compleix.</p>
+                            <p>No funciona a Internet Explorer.</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p><strong class="negrita">:out-of-range</strong></p>
+						</td>
+						<td>
+							<p>A l'inrevés de l'anterior. Aplica el contingut CSS a controls els valors dels quals estan fora de rang.</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p><strong class="negrita">:target</strong></p>
+						</td>
+						<td>
+							<p>S'aplica quan l'element a què fa referència ha estat destinació d'un enllaç. Exemple:</p>
+                            <section><pre><code class="language-css">#intro:target{
+    color:blue;
+}</code></pre>
+                            </section><br>
+                            <section><pre><code class="language-xml">...
+&lt;h1 id="intro">Introducció&lt;/h1>
+...
+&lt;a href="#intro">Anar a la introducció&lt;/a></code></pre>
+                            </section><br><br>
+
+							
+							<p>Quan fem clic sobre l'enllaç <em class="cursiva">anar a la introducció</em>, el títol <em class="cursiva">Introducció </em>es posarà de color blau.</p> 
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p><strong class="negrita">:valid</strong></p>
+						</td>
+						<td>
+							<p>Controls de formulari que contenen valors vàlids (ho seran o no depenent del tipus d'element). Per exemple, no serà vàlid un text en un quadre <strong class="negreta">input </strong>de tipus <strong class="negreta">numèric </strong>(<em class="cursiva">number</ em>).</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p><strong class="negrita">:invalid</strong></p>
+						</td>
+						<td>
+							<p>Invers a l'anterior. És a dir, selecciona controls els valors dels quals no siguin vàlids.</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p><strong class="negrita">:read-only</strong></p>
+						</td>
+						<td>
+							<p>Controls de formulari que estan en mode de només lectura (a causa de l'atribut HTMl <strong class="negreta">readonly<strong>). No funciona a Internet Explorer i a Mozilla Firefox només si es fa servir amb el prefix <strong class="negreta">-moz-</strong></p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p><strong class="negrita">:read-write</strong></p>
+						</td>
+						<td>
+							<p>Invers a l'anterior. Controls que es puguen llegir i escriure.</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p><strong class="negrita">:required</strong></p>
+						</td>
+						<td>
+							<p>Controls de formulari que estan marcats (gràcies a l'atribut HTMl <strong class="negreta">required</strong>) per ser emplenats obligatòriament.</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p><strong class="negrita">:optional</strong></p>
+						</td>
+						<td>
+							<p>Contrari a l'anterior. Controls que no estan obligats a ser emplenats.</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p><strong class="negrita">:default</strong></p>
+						</td>
+						<td>
+							<p>Selecciona els elements d'un formulari que són les opcions marcades per defecte. Per exemple, el botó de ràdio que actualment estiga activat. No funciona a Internet Explorer.</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p><strong class="negrita">:first-line</strong></p>
+						</td>
+						<td>
+							<p>La primera línia de l'element.</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p><strong class="negrita">:first-letter</strong></p>
+						</td>
+						<td>
+							<p>La primera lletra de l'element.</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p><strong class="negrita">:before</strong></p>
+						</td>
+						<td>
+							<p>Contingut anterior a l'element. Sempre s'utilitza amb la propietat <strong class="negreta">content</strong> per afegir contingut a l'element. Exemple:</p>
+							<section><pre><code class="language-css">p:before{
+  content:url('fletxa.gif');
+}</code></pre>
+                            </section><br><br>
+							<p>Col·loca la imatge d'una fletxa davant del paràgraf</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p><strong class="negrita">:after</strong></p>
+						</td>
+						<td>
+							<p>Per indicar contingut després de l'element.</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p><strong class="negrita">:lang(</strong>codiLlenguatge<strong class="negrita">)</strong></p>
+						</td>
+						<td>
+							<p>Seleccioneu els elements que hagin utilitzat l'atribut <strong class="negrita">lang </strong>amb el codi indicat. 
+                                És equivalent a <em class="cursiva">[lang="codiLlenguatge"]</em>.</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p><strong class="negrita">:not(</strong>selector<strong class="negrita">)</strong></p>
+						</td>
+						<td>
+							<p>S'aplica quan l'element no compleix el tipus indicat pel selector dins la paraula <strong class="negrita">not</strong>. Exemple:</p>
+							<section><pre><code class="language-css">div >:not(p){
+    color:red;
+}</code></pre>
+                            </section><br><br>
+							<p>El color roig s'aplica al contingut dels elements <strong class="negrita">div</strong> llevat que estiguen dins d'elements <span class="negrita">p</span>.</p>
+							<p>Un altre exemple:</p>
+							<section><pre><code class="language-css">p:not(:first-of-type){
+    color:green;
+}</code></pre>
+                            </section><br><br>
+							<p>S'aplica a tots els paràgrafs excepte el primer de cada grup de germans.</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p><strong class="negrita">:root</strong></p>
+						</td>
+						<td>
+							<p>Només té utilitat quan s'aplica CSS sobre documents XML. Aplica l'estil a l'ítem quan és arrel del document. En un document HTML, l'arrel és sempre l'element <strong class="negrita">html</strong>, per la qual cosa no té utilitat.</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p><strong class="negrita">:dir(</strong>direccion<strong class="negrita">)</strong></p>
+						</td>
+						<td>
+							<p>Encara que és estàndard, no ho suporta encara gairebé cap navegador. Selecciona sobre la base de l'adreça on s'escriu el text. Aquesta adreça pot prendre el valor <strong class="negrita">ltr </strong>(esquerra a dreta) o <strong class="negrita">rtl </strong>(dreta a esquerra)</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p><strong class="negrita">:fullscreen</strong></p>
+						</td>
+						<td>
+							<p>Selector interessant, però experimental que s'aplica als elements que es mostren quan la pàgina HTML està en mode de pantalla completa. Tots els navegadors actuals la suporten però si es fa servir el prefix del navegador (per exemple <strong class="negrita">-moz-fullscreen</strong>). Només el navegador <strong class="negrita">Edge</strong> de <strong class="negrita">Microsoft</strong> la reconeix sense prefix.</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p><strong class="negrita">:left</strong></p>
+						</td>
+						<td>
+							<p>S'aplica quan la pàgina s'imprimeix. Selecciona la pàgina esquerra (en impressió a doble cara).</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p><strong class="negrita">:right</strong></p>
+						</td>
+						<td>
+							<p>S'aplica quan la pàgina s'imprimeix. Selecciona la pàgina dreta (en impressió a doble cara).</p>
+						</td>
+					</tr>
+				</tbody>
+			</table></p>
+
+            <p>Les pseudoclasses es poden combinar, de manera que es poden construir coses com:</p>
+            
+<section><pre><code class="language-css">input:focus:hover {
+    background-color: yellow;
+}</code></pre>
+</section><br>
+
+<p>Es posarà color de fons groc, quan el quadre de tipus input tingui el focus i el ratolí passe per damunt. O coses més complexes com:</p>
+
+<section><pre><code class="language-css">input.classe1:focus:hover[type="password"] ​​{
+    background-color: yellow;
+}</code></pre>
+</section><br>
+
+<p>En aquest cas, s'aplica el fons groc quan el cursor estiga damunt d'un control de text de tipus contrasenya que, a més, tinga el focus i siga de classe1.</p>
+
+<h3>pseudoelements</h3>
+<p>Es tracta d'una millora de CSS3 que permet aplicar estils a elements, encara que aquests no existeixin a l'arbre d'elements del document. La raó perquè un element no estiga a l'arbre és que no existeix al codi fins que s'executi, per exemple, una determinada sentència en llenguatge JavaScript.</p>
+
+<p>Els pseudoelements utilitzen els símbols <span class="r-word">::</span> en lloc de simplement <span class="r-word">:</span> com passa amb les pseudoclases.</p>
+
+<table>
+    <colgroup>
+        <col>
+        <col>
+    </colgroup>
+    <thead>
+        <tr>
+            <td>
+                <p>pseudoelement</p>
+            </td>
+            <td>
+                <p>significat</p>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <p><strong class="negrita">::first-line</strong></p>
+            </td>
+            <td>
+                <p>Primera línia de l'element</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><strong class="negrita">::first-letter</strong></p>
+            </td>
+            <td>
+                <p>Primera lletra de l'element</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><strong class="negrita">::after</strong></p>
+            </td>
+            <td>
+                <p>S'aplica per col·locar codi després de l'element</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><strong class="negrita">::before</strong></p>
+            </td>
+            <td>
+                <p>Se aplica para colocar código antes del elemento</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><strong class="negrita">::selection</strong></p>
+            </td>
+            <td>
+                <p>S'aplica al text seleccionat de l'element. En el cas dels navegadors de <strong class="negreta">Mozilla</strong>, cal utilitzar el prefix <strong class="negreta">-moz-</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><strong class="negrita">::placeholder</strong></p>
+            </td>
+            <td>
+                <p>Pseudoclasse experimental (només funciona si es fa servir el prefix de cada navegador) que s'aplica al text de tipus <em class="cursiva">placeholder </em>dels controls dels formularis.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>CSS3 als navegadors</h3>
+<p>Fins a la versió 9, Internet Explorer no ha aplicat els selectors avançats pertanyents a CSS3. La resta de navegadors els va incorporar molt abans.</p>
+
+<p>No és l'únic cas d'aplicació tardana. Internet Explorer és, sens dubte, el navegador que més triga a incorporar millores de CSS3 que els altres navegadors porten implementant des de fa un temps. Però la resta també triguen a aplicar aquestes millores de CSS (lògic ja que CSS3 no deixa de créixer).</p>
+
+<p>El seu successor, Edge, és més respectuós amb el CSS3. Però la qüestió és que encara hi ha molts usuaris que utilitzen Internet Explorer.</p>
+
+<p>També pot passar que alguns navegadors accepten algunes coses i d'altres no. Per exemple que accepten la pseudoclasse avançada <span class="negrita">::selection</span> i tanmateix no reconeguen <span class="negrita">:not</span>. 
+    Això complica enormement la feina del dissenyador de pàgines web.</p>
+
+
+<p>Les últimes versions de tots els navegadors ja incorporen la majoria dels selectors.</p>
+
+<p>Tot i que de vegades cal comprovar que no es requereix prefix. És el cas del selector <span class="negrita">::selection</span>, 
+    només els últims navegadors el reconeixen i en el cas del Firefox cal acompanyar-lo del prefix <span class="negrita">–moz-</span></p>
+
+<p>Ejemplo:</p>
+<section><pre><code class="language-css">p::-moz-selection{
+    background-color:red;
+}</code></pre>
+</section><br>
+    <p>En definitiva, cal fer servir amb cautela aquest tipus de selectors.</p>
+        
+    <p>A causa de la manca de compatibilitat tan gran d'Internet Explorer amb CSS3, és habitual utilitzar codi concret per a aquest navegador (i que només volem que execute aquest navegador) per a això s'utilitza aquest truc:</p>
     
+    <section><pre><code class="language-xml">&lt;!--[if lt IE 9]>
+    ..codi ignorat per tots els navegadors excepte per Internet Explorer anteriors a la versió 9
+&lt;![endif]--></code></pre>
+    </section><br><br>
 
-    <p>Exemple 2:</p>
-    <section><pre><code class="language-xml">&lt;!DOCTYPE html>
 
-&lt;html lang="ca">
-&lt;head>
-    &lt;title>Html5&lt;/title>
-    &lt;meta charset="UTF-8">
-    &lt;style type="text/css">
-        #division > h1 {
-            width: 200px;
-            background-color: #9cf;
-        }
-        h1 {
-            margin-top: 5px;
-            margin-bottom:5px;
-            font-size: 20px;
-        }
-        p {
-            margin-top: 5px;
-            margin-bottom:5px;
-        }
-    &lt;/style>
-&lt;/head>
-&lt;body>
-    &lt;div id="division">
-        &lt;h1>Títol 1&lt;/h1>
-        &lt;div id="contingut" style="padding-left: 20px;">
-            &lt;h1> Títol 1 bis&lt;/h1>
-            &lt;p>Paràgraf 1&lt;/p>
-        &lt;/div>
-        &lt;h1>Títol 2&lt;/h1>
-    &lt;/div>
-&lt;/body>
-&lt;/html></code></pre>
-    </section><br>
+    <div class="tarea">
+        <p>Activitat Blancaneus</p>
 
-    <p>Quedant com a resultat:</p>
-    <figure><img src="UD3/images/ud3-2023-11-06-13-23-39.png" /><br><figcaption></figcaption></figure>
- <br>
+        <p>Descarrega l'html i la imatge des <a class="enlace" target="_blank" href="../apuntesCSS/CSS/Actividad_1_css-20201112/Cuento/blancaneus.zip">d'ací</a>. Després, sense tocar l'html (la part del body) realitza les següents accions.
+            <ol>
+                <li>Canvieu el fons (background-color)de la pàgina a negre i el color del text a blanc.</li>
+                <li>Canvia el color de text (color) perquè siga tot blanc excepte el segon i el penúltim paràgraf que serà groc.</li>
+                <li>Canvia els paràgrafs de la madrastra a roig i els del espill a blau</li>
+                <li>Si vols canviar el color dels paràgrafs a groc: He de canviar les seccions.</li>
+                <li>Si vols canviar els colors de la madrastra a verd i violeta…</li>
+                <li>Posar el css dins de l'html</li>
+                <li>Treure el css fora de l'html</li>
+            </ol>
+        </p>
+        
+<p><span class="negrita">Objectiu:</span> comprovar que l'ús del CSS ens permet canviar fàcilment les característiques
+del document sense haver de recórrer-lo. En un document no sembla molta millora, però
+imagina't en una web amb 100 pàgines…. Canviar el tipus de lletra seria molta feina.</p>
 
- <p>Exemple 3:</p>
- <section><pre><code class="language-xml">&lt;!DOCTYPE html>
-
-&lt;html lang="ca">
-&lt;head>
-    &lt;title>Html5&lt;/title>
-    &lt;meta charset="UTF-8">
-    &lt;style type="text/css"> 
-        li.uno + li { 
-            width: 200px;
-            background-color: #9cf;
-        }        
-    &lt;/style>
-&lt;/head>
-&lt;body>
-    &lt;ul>  
-        &lt;li class="uno">Item 1&lt;/li>
-        &lt;li>Item 2&lt;/li>
-        &lt;li>Item 3&lt;/li>
-        &lt;li>Item 4&lt;/li>
-        &lt;li>Item 5&lt;/li>
-    &lt;/ul>
-&lt;/body>
-&lt;/html></code></pre>
- </section><br>
-
- <p>Resultat:</p>
-
- <figure><img src="UD3/images/ud3-2023-11-06-13-27-11.png" /><br><figcaption></figcaption></figure>
- <br>
-     
-    </section><!-- End section Selectors Jerarquics-->
-
-    
+    </div>
+    <hr> <br>
+    <div class="tarea">
+        <p>Activitat Curriculum Vitae</p>
+        <p>Descarrega l'html des <a class="enllaç" target="_blank" href="../apuntesCSS/CSS/Actividad_1_css-20201112/Curriculo-vitae/curriculum_vitae_val.html.zip">d'ací</a>. Afegeix les etiquetes HTML que consideres amb els atributs corresponents (classes, evita id's) per a que junt amb CSS tinga un aspecte similar al següent:</p>
+        <figure><img src="UD3/images/ud3-2023-11-08-12-18-25.png" /><br><figcaption></figcaption></figure>
+        <br>
+        <p>Algunes propietats que pot ser necessites:</p>
+        <section><pre><code class="language-css">element {
+    color: green; /*Text de color verd*/
+    background-color:red; /*Color de fons roig*/
+    text-decoration: underline; /*Text subratllat*/
+    text-align: right;/* Text alineat a la dreta */
+    text-align: center; /*Text centrat*/
+    font-size: 1em; /*Tamany de font*/
+    font-style: italic;/*Cursiva*/
+    font-weight: bold;/*En negreta*/
+}</code></pre>
+        </section><br>
+        
+    </div>
+    </section><!-- End section -->
 
 
 

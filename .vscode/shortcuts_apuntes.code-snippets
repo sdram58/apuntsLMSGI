@@ -28,6 +28,12 @@
 		"body": ["<section><pre><code class=\"language-xml\">$CLIPBOARD</code></pre>\n</section><br><br>"],
 		"description": "Code example"
 	},
+	"Sample css source code": {
+		"scope": "html",
+		"prefix": "cs-",
+		"body": ["<section><pre><code class=\"language-css\">$CLIPBOARD</code></pre>\n</section><br><br>"],
+		"description": "Code example"
+		},
 	"Sample json source code": {
 		"scope": "html",
 		"prefix": "cj-",
