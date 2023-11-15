@@ -21,6 +21,10 @@
             <a href="#sSelectors" title="2.- Selectors">2.- Selectors</a>
             <a href="#sPseudoclassesdeselecció" title="3.- Pseudoclasses">3.- Pseudoclasses</a>
         </div>
+        <div class="fila">
+            <a href="#sFormatText" title="4.- Format Text en CSS">4.- Format Text en CSS</a>
+
+        </div>
     </nav>
     <!-- TO_MENU -->
 
@@ -1676,6 +1680,149 @@ imagina't en una web amb 100 pàgines…. Canviar el tipus de lletra seria molta
         
     </div>
     </section><!-- End section -->
+
+    <!--*********************************************************FormatText***********************************************************-->
+    <section class="apartado">
+    <a name="sFormatText"></a>
+    <h2>Format de Text en CSS</h2>
+    
+    <h3>Propietats de les fonts</h3>
+    <figure><img src="UD3/images/ud3-2023-11-15-12-40-15.png" /><br><figcaption></figcaption></figure>
+    <br>
+    <p>Indubtablement la tipografia (anomenada també <span class="negrita">format de font</span> o, simplement, <span class="negrita">font</span>)
+    és un dels aspectes més importants de l'estètica d'un document escrit. 
+    Manejar adequadament l'estil de la lletra pot fer que la nostra pàgina sigui molt més atractiva. 
+    De fet, hi ha dissenyadors que consideren que aquesta és la primera decisió a prendre per la tremenda influència que té sobre la resta d'elements. 
+    L'ideal és dedicar molt de temps a aquesta decisió.</p>
+    
+<p>CSS disposa de nombroses propietats per modificar els tipus de lletra. Moltes de les seves propietats es poden observar a la imatge anterior
+     s'observen les línies bàsiques que permeten encaixar les lletres. Els elements que cal tenir en compte són:
+    <ul>
+<li><span class="negrita">Línia base</span>. És la línia principal on es col·loquen les lletres. És la línia que permet col·locar adequadament a l'horitzontal el text.</li>
+<li><span class="negrita">Alçada de la lletra <span class="cursiva">x</span></span>. Mesura la mida de la lletra equis minúscula, que serveix de referència per a totes les lletres minúscules (encara que algunes com la g i la del primer exemple la puguin excedir).</li>
+<li><span class="negrita">Ascendent</span>. Línia superior que indica el màxim que pot ocupar les lletres (a la imatge és el límit superior de la lletra <span class="cursiva">f</span> ).</li>
+<li><span class="negrita">Descendent</span>. Línia inferior, posició màxima inferior que pot ocupar el text (la lletra <span class="cursiva">g</span> a l'exemple és la que marca aquesta posició)</li>
+<li><span class="negrita">Alçada majúscules</span>. Línia superior màxima de les lletres majúscules (se sol prendre la de la lletra <span class="cursiva">M</span> majúscula).</li>
+<li><span class="negrita">Interlineat</span>. Distància entre dues línies, es pren utilitzant les línies base.</li>
+<li><span class="negrita">Interletrat</span>. Distància horitzontal entre lletra i lletra. Ampliar significaria distàncies més cada lletra d'una paraula.</li>
+<li><span class="negrita">Kerning</span>. És la distància entre lletra i lletra però aplicant distàncies diferents en funció de les lletres. 
+    Així a la imatge anterior s'observa que la distància entre la <span class="cursiva">M</span> i la lletra <span class="cursiva">o</span> , 
+    no és la mateixa que entre la o <span class="negrita">i</span> la <span class="negrita">x</span> (la x es fica una mica més dins de la o ), 
+    ja que així el text és més estètic.</li>
+<li><span class="negrita">Cos</span>. La major part de les tipografies actuals tenen mides (en horitzontal) diferents de les lletres. 
+    És a dir, no ocupa el mateix la lletra <span class="cursiva">M</span> que la lletra <span class="cursiva">N</span> (la N és més curta). 
+    Els anomenats tipus de lletra <span class="negrita">monoespaiats</span> (com la lletra Courier ), fan que cada caràcter ocupi el mateix 
+    (a l'estil de les màquines d'escriure antigues) la M ocupa el mateix que la N .</li>
+<li><span class="negrita">Lletres vectorials i lletres en mapa de bits</span>. Avui dia totes les tipografies són de tipus vectorial, 
+    això vol dir que no es guarda una imatge de cada lletra, sinó que de cada lletra es guarda la fórmula per dibuixar-la. 
+    Això permet que en ampliar les lletres mai perdem resolució (al contrari del que passava als ordinadors antics).
+    <br><br>
+Les primeres lletres vectorials van ser les pertanyents al llenguatge <span class="negrita">PostScript</span> d'<span class="negrita">Adobe inclosos</span>
+ als ordinadors <span class="negrita">Apple MacIntosch</span>. <span class="negrita">Microsoft</span> va crear el tipus de lletra <span class="negrita">TrueType</span>
+  per a Windows i les dues companyies actualment desenvolupen els tipus OpenType que s'espera es converteixi en un estàndard obert.
+<br><br>
+Actualment es dóna per fet que totes les fonts són vectorials.</li>
+
+<li><span class="negrita">Família</span>. Hi ha dues grans famílies de lletres les lletres de tipus <span class="negrita">Serif</span> i les <span class="negrita">Sans-Serif</span>.
+    Les primeres es distingeixen per col·locar potes en algunes lletres. És el cas de la lletra <span class="negrita">Times</span>, que escriuria així: <span class="times">MÈTODE</span>
+     (observeu-vos les potes de la M i la T ), mentre que en forma sans serif, per exemple com la lletra Arial, s'escriuria així: <span style="font-family: Arial, Helvetica, sans-serif;">MÈTODE</span>.</li>
+A més d'aquestes dues famoses famílies, CSS permet distingir tres famílies més. En total són:
+
+<li><span class="negrita">Serif</span>. Ja explicada, per exemple: <span class="negrita">Times , Garamond , Geòrgia , Bodoni , Bitstream Cyberbit, Baskerville, Bookman Old Style.</span></li>
+<li><span class="negrita">Sans-serif</span>. Ja explicada, per exemple: <span class="negrita">Arial , Verdana , Helvetica , Trebuchet , Gill Sans , Futura , Tahoma , Geneva,</span> etc</li>
+<li><span class="negrita">Cursiu</span>. Són lletres normalment inclinades i molt ornamentades que simulen l'escriptura manual. 
+    Per exemple: <span class="negrita">Zapf-Chancery , Comic Sans , Script MT, Catflish Script, Adobe Poetica, Monotype Corsiva , Brush Script</span>, etc.</li>
+<li><span class="negrita">Fantasy</span>. Lletres molt ornamentades que no estan pensades per al text normal d'un document, 
+    però sí que es podria utilitzar per als seus títols (però només per als que volem recarregar). 
+    Per exemple: <span class="negrita">Western , Impact , Copperplate , Artistik , Britannic Bold , Algerian, Herculanum</span>, etc.</li>
+<li><span class="negrita">Monospaced</span>. Lletres monoespaiades, cada lletra ocupa el mateix. Simulen escriptura amb màquina d'escriure antiga. 
+    Exemples: <span class="negrita">Courier , Lucida Console , Consoles , Monaco , Liberation Mono, Source Code Pro , Andale Mono</span>, etc.</li>
+    </ul>
+    </p>
+
+    <h3>Propietats CSS per a modificar la font</h3>
+
+    <p class="sub-section">font-size</p>
+    <p>Modifica la mida de la font. Es por especificar de tres maneres:
+        <ul> 
+            <li><strong class="negrita">Usant paraules especials</strong>. Fan referència a mides predefinides.<p>Són:</p>
+             <table>
+              <colgroup>
+               <col>
+               <col>
+              </colgroup>
+              <tbody>
+               <tr>
+                <th><p>valor</p></td>
+                <th><p>significat</p></td>
+               </tr>
+               <tr>
+                <th><p><strong class="negrita">xx-small</strong></p></td>
+                <td><p>Font molt petita</p></td>
+               </tr>
+               <tr>
+                <th><p><strong class="negrita" lang="en-US">x-small</strong></p></td>
+                <td><p>Font petita</p></td>
+               </tr>
+               <tr>
+                <th><p><strong class="negrita" lang="en-US">small</strong></p></td>
+                <td><p>Font una mica petita</p></td>
+               </tr>
+               <tr>
+                <th><p><strong class="negrita" lang="en-US">medium</strong></p></td>
+                <td><p>Font normal.</p></td>
+               </tr>
+               <tr>
+                <th><p><strong class="negrita" lang="en-US">large</strong></p></td>
+                <td><p>Font una mica gran</p></td>
+               </tr>
+               <tr>
+                <th><p><strong class="negrita" lang="en-US">x-large</strong></p></td>
+                <td><p>Font gran</p></td>
+               </tr>
+               <tr>
+                <th><p><strong class="negrita" lang="en-US">xx-large</strong></p></td>
+                <td><p>Font molt gran</p></td>
+               </tr>
+              </tbody>
+             </table></li> 
+            <li><strong class="negrita">Augmentant o disminuint la mida</strong>. En aquest cas s'augmenta o disminueix la mida de la lletra sobre la mida que correspondria a la lletra, per herènci.>Valors:
+             <table>
+              <colgroup>
+               <col>
+               <col>
+              </colgroup>
+              <tbody>
+               <tr>
+                <th><p>valor</p></td>
+                <th><p>significat</p></td>
+               </tr>
+               <tr>
+                <th><p><strong class="negrita" lang="en-US">smaller</strong></p></td>
+                <td><p>Més petita</p></td>
+               </tr>
+               <tr>
+                <th><p><strong class="negrita" lang="en-US">larger</strong></p></td>
+                <td><p>Més gran</p></td>
+               </tr>
+              </tbody>
+             </table></li> 
+            <li><strong class="negrita">Grandària heretada. </strong>Ho aconsegueix la paraula <strong class="negrita" lang="en-US">inherit</strong>.>Deixa la lletra amb la mida que hereta del seu contenidor o element pare.</li> 
+            <li><strong class="negrita">Grandària inicial. </strong>Ho aconsegueix la paraula <strong class="negrita" lang="en-US">initial</strong>.>Col·loca la lletra a la mida per defecte ( <strong class="negrita">Internet Explorer</strong> no reconeix aquest valor).</li> 
+            <li><strong class="negrita">Mode exacte</strong>.>En aquest cas s'indica la mida de la lletra amb el valor numèri.>Immediatament després d'aquest número s'indica la mesura en què s'ha de mesurar el número (sigui de manera absoluta o relativa.>Exemples: <em class="cursiva">12px</em> , <em class="cursiva">2mm</em> , <em class="cursiva">12pt, 1.2em, 120%,…</em> <p>Exemple (puja la lletra un 40% sobre la mida que li correspondria normalment a l'element h1):</p>
+             <section><pre><code class="language-css">h1 {
+  font-size : 1.4em ;
+}</code></pre>
+             </section><br><br></li> 
+           </ul>
+    </p>
+
+    
+
+    
+    
+    
+    </section><!-- End section FormatText-->
 
 
 

@@ -468,5 +468,8 @@ div.muestra{
     background-color: rgb(223, 223, 217);
     margin: 20px 0;   
 }
+span.times{
+    font-family: "Times New Roman", Times, serif;
+}
 
 
