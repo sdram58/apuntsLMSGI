@@ -1817,6 +1817,137 @@ A més d'aquestes dues famoses famílies, CSS permet distingir tres famílies m�
            </ul>
     </p>
 
+
+    <p class="sub-section">font-family</p>
+    
+    <p>Indica el tipus de lletra. El problema és que no totes les fonts estan disponibles a tots els sistemes. 
+        Per això, se solen indicar diverses opcions separades per comes. 
+        Si la primera no està disponible, es fa servir la següent.</p>
+    
+<p>Exemple:</p>
+
+<section><pre><code class="language-css">p{
+   font-family: AvantGarde Bk, Arial, Helvetica, sans-serif ;
+}</code></pre>
+</section><br>
+<p>En aquest codi s'intenta assignar la font <span class="cursiva">AvantGarde Bk</span> a tots els paràgrafs. 
+    Si el sistema de l'usuari no té aquest tipus de lletra, es prova amb <span class="cursiva">Arial</span>. 
+    Si tampoc està disponible, es prova amb <span class="cursiva">Helvetica</span> . Si tampoc, es prova amb una lletra <span class="cursiva">sans-serif</span> genèrica.</p>
+
+<p>S'usen cometes dobles per als noms de fonts compostes per diverses paraules.</p>
+
+<p>La norma obliga a donar com a darrera opció de la llista de valors de <span class="negrita">font-family</span> una d'aquestes famílies genèriques:
+<br>
+<table>
+    
+<th>família</th>
+<th>ús</th>
+
+<tr><th>serif</th>
+<td>Lletra genèrica utilitzada en tipus de lletres amb potetes. Com per exemple Times New Roman.</td></tr>
+
+<tr><th>sans-serif</th>
+<td>Per a lletres genèriques sense potes com Arial O Helvètica.</td></tr>
+
+<tr><th>fantasy</th>
+<td>Per a lletres més informals com Impact.</td></tr>
+
+<tr><th>monospaced</th>
+<td>Lletres on cada caràcter ocupa el mateix. A Windows sol ser Arial.</td></tr>
+
+<tr><th>cursive</th>
+<td>Per a lletres que simulen escriptura manual com Brush Script</td></tr>
+</table>
+</p>
+
+<p class="sub-section">font-weight</p>
+
+<p>Pes de la font (grossor). Valors possibles:
+    <ul>
+        <li><span class="negrita">normal</span>. Gruix normal.</li>
+        <li><span class="negrita">bold</span>. Negreta</li>
+        <li><span class="negrita">Número</span>. Es tracta d'indicar un número, que pot ser: 100 , 200 , 300 , 400 , 500 , 600 , 700 , 800 , 900 o 1000. Perquè funcionin aquests valors, hem de tenir tipus de lletra que incloguin aquests gruixos.</li>
+        <li><span class="negrita">bolder</span>. Més gruixuda. Augmenta el gruix actual de la lletra (al següent disponible).</li>
+        <li><span class="negrita">lighter</span>. Més prima. Disminueix el gruix actual de la lletra (al següent disponible).</li>
+    </ul>
+</p>
+<p>També són vàlids els valors <span class="negrita">initial</span> i <span class="negrita">inherit</span> .</p>
+
+<p class="sub-section">font-style</p>
+
+<p><span class="negrita">Estil de lletra.</span> Pot ser: normal , italic (cursiva) o oblique (normalment es representa igual que l'anterior). Com sempre, també són vàlids els valors initial i inherit .</p>
+
+
+<p class="sub-section">font-variant</p>
+
+<p><span class="negrita">Versals( small-caps )</span>. Valors: normal i small-caps (a més d' initial i inherit )</p>
+
+
+<p class="sub-section">line-height</p>
+
+<p>Permet calibrar interlineat (la distància entre cada línia). Es pot especificar d'aquestes maneres:
+    <ul>
+        <li><span class="negrita">Un número</span>. En aquest cas dicta la distància multiplicant aquest número per la distància normal. És a dir si indiquem 2 , l'interlineat serà doble, si indiquem 1.5 serà un 50% més gran del normal.</li>
+        <li><span class="negrita">Un nombre seguit d'una unitat de mesura</span>. Si indiquem 16px , aleshores estem indicant la distància exacta entre cada línia (que serà de 16 píxels).</li>
+    </ul>
+</p>
+
+
+
+
+<p class="sub-section">font-stretch</p>
+
+<p>Estableix l'amplada de la lletra. Possibles valors:</p>
+
+<li><span class="negrita">ultracondensed</span>.</li>
+<li><span class="negrita">extra-condensed</span>.</li>
+<li><span class="negrita">condensed</span>.</li>
+<li><span class="negrita">semi-condensed</span>.</li>
+<li><span class="negrita">normal</span>.</li>
+<li><span class="negrita">semi-expanded</span>.</li>
+<li><span class="negrita">expandiu</span>.</li>
+<li><span class="negrita">ultraexpanded</span>.</li>
+
+<p>Només funciona al Firefox i Internet Explorer, tots dos des de la versió 9.</p>
+
+
+<p class="sub-section">font</p>
+
+<p>Permet des d'una sola propietat canviar en un sol cop totes les anteriors. La seva sintaxi és:</p>
+
+<section><pre><code class="language-css">font : font-style font-variant font-weight font-size/line-height font-family;</code></pre>
+</section><br>
+<p>L'ordre ha de ser estrictament aquest , però algunes propietats es poden deixar sense fer servir.</p>
+
+
+<p>Exemples:</p>
+
+
+<section><pre><code class="language-css">/*Lletra cursiva i negreta de tipus Comic amb opcions a Arial i Helvetica*/
+font: italic bold 16pt “Comic Sans MS”, Arial,
+	Helvetica, sans-serif;
+/* Lletra cursiva amb versaletes de mida 18 punts i 24 de punts de distància entre cada línia */
+font: italic small-caps 18pt/24pt;
+/* Lletra cursiva */
+font: italic ;</code></pre>
+</section><br><br>
+<p>Aquesta propietat també ens permet utilitzar les fonts dels elements del sistema operatiu en què estiguem, concretament:
+    <ul>
+        <li><span class="negrita">caption</span>. Lletra utilitzada per als títols.</li>
+        <li><span class="negrita">icon</span>. Lletra de les icones</li>
+        <li><span class="negrita">menú</span>. Lletra dels menús</li>
+        <li><span class="negrita">message -box</span>. Lletra dels quadres de diàleg</li>
+        <li><span class="negrita">small-caption</span>. Lletra dels controls petits.</li>
+        <li><span class="negrita">status-bar</span>. Lletra de barres d'estat.</li>
+    </ul>
+</p>
+
+
+
+
+
+<p class="sub-section">color</p>
+
     
 
     
