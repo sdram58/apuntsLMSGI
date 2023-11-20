@@ -23,6 +23,11 @@
         </div>
         <div class="fila">
             <a href="#sFormatText" title="4.- Format Text en CSS">4.- Format Text en CSS</a>
+            <a href="#sFormatLlistes" title="5.- Format per a les Llistes">5.- Format per a les Llistes</a>
+            <a href="#sFormatdeFons" title="6.- Format de Fons">6.- Format de Fons</a>
+        </div>
+        <div class="fila">
+            <a href="#sElementsdelformatdecaixa" title="7.- Elements del format de caixa">7.- Elements del format de caixa</a>
 
         </div>
     </nav>
@@ -444,7 +449,7 @@
                 on:
                 <ul>
                     <li><span class="negrita">link</span> indica al navegador que el que segueix és un enllaç.</li>
-                    <li><span class="negrita">rel="stylesheet"</span> necessita que aquest enllaç sigui relatiu a un
+                    <li><span class="negrita">rel="stylesheet"</span> necessita que aquest enllaç siga relatiu a un
                         full d'estil.</li>
                     <li><span class="negrita">href="exemple.css"</span> és l'escriptura clàssica d'un enllaç a Html.
                     </li>
@@ -737,7 +742,7 @@
     font-style: italic;
 }</code></pre>
         </section><br><br>
-        <p>Aplica la cursiva a paràgrafs el llenguatge dels quals sigui anglès o francès.</p>
+        <p>Aplica la cursiva a paràgrafs el llenguatge dels quals siga anglès o francès.</p>
         <p>També podem indicar l'estil simplement per als elements que usen l'atribut independentment del valor:</p>
 
         <section>
@@ -808,7 +813,7 @@
                     </td>
                     <td>
                         <p>Elements que utilitzen l'atribut, el contingut del qual comenci amb el valor indicat ia més
-                            aquest valor sigui una paraula</p>
+                            aquest valor siga una paraula</p>
                     </td>
                 </tr>
                 <tr>
@@ -1028,7 +1033,7 @@ li.uno + li {
                         </p>
                     </td>
                     <td>
-                        <p>S'aplica a l'element indicat quan sigui el fill amb el número indicat (per exemple, número
+                        <p>S'aplica a l'element indicat quan siga el fill amb el número indicat (per exemple, número
                             seria 3, per al tercer fill). </p>
                         <p>Es poden fer servir expressions més complexes mitjançant l'ús de la variable <strong
                                 class="negrita">n </strong>per aconseguir fórmules més complexes (la <em
@@ -1369,7 +1374,7 @@ a:hover{
 							<p><strong class="negrita">:invalid</strong></p>
 						</td>
 						<td>
-							<p>Invers a l'anterior. És a dir, selecciona controls els valors dels quals no siguin vàlids.</p>
+							<p>Invers a l'anterior. És a dir, selecciona controls els valors dels quals no siguen vàlids.</p>
 						</td>
 					</tr>
 					<tr>
@@ -1454,7 +1459,7 @@ a:hover{
 							<p><strong class="negrita">:lang(</strong>codiLlenguatge<strong class="negrita">)</strong></p>
 						</td>
 						<td>
-							<p>Seleccioneu els elements que hagin utilitzat l'atribut <strong class="negrita">lang </strong>amb el codi indicat. 
+							<p>Seleccioneu els elements que hagen utilitzat l'atribut <strong class="negrita">lang </strong>amb el codi indicat. 
                                 És equivalent a <em class="cursiva">[lang="codiLlenguatge"]</em>.</p>
 						</td>
 					</tr>
@@ -1490,7 +1495,7 @@ a:hover{
 							<p><strong class="negrita">:dir(</strong>direccion<strong class="negrita">)</strong></p>
 						</td>
 						<td>
-							<p>Encara que és estàndard, no ho suporta encara gairebé cap navegador. Selecciona sobre la base de l'adreça on s'escriu el text. Aquesta adreça pot prendre el valor <strong class="negrita">ltr </strong>(esquerra a dreta) o <strong class="negrita">rtl </strong>(dreta a esquerra)</p>
+							<p>Encara que és estàndard, no ho suporta encara gairebé cap navegador. Selecciona sobre la base de l'direcció on s'escriu el text. Aquesta direcció pot prendre el valor <strong class="negrita">ltr </strong>(esquerra a dreta) o <strong class="negrita">rtl </strong>(dreta a esquerra)</p>
 						</td>
 					</tr>
 					<tr>
@@ -1527,7 +1532,7 @@ a:hover{
 }</code></pre>
 </section><br>
 
-<p>Es posarà color de fons groc, quan el quadre de tipus input tingui el focus i el ratolí passe per damunt. O coses més complexes com:</p>
+<p>Es posarà color de fons groc, quan el quadre de tipus input tinga el focus i el ratolí passe per damunt. O coses més complexes com:</p>
 
 <section><pre><code class="language-css">input.classe1:focus:hover[type="password"] ​​{
     background-color: yellow;
@@ -1685,13 +1690,330 @@ imagina't en una web amb 100 pàgines…. Canviar el tipus de lletra seria molta
     <section class="apartado">
     <a name="sFormatText"></a>
     <h2>Format de Text en CSS</h2>
+    <h3>Format de Text en CSS</h3>
+    <p>Són propietats que afecten el text, fonamentalment canvien el format dels paràgrafs i aspectes del text que no es refereixen a la tipografia.</p>
+    
+    
+    <p class="sub-section">word-spacing</p>
+    
+    <p>Indica la distància entre les paraules del text. Usa les mateixes mesures que la propietat <span class="negrita">font-size</span>. 
+        Exemple de text amb <span class="cursiva">word-spacing: 20px;</span></p>
+    
+    <figure><img src="UD3/images/ud3-2023-11-20-10-35-09.png" /><br><figcaption>word-spacing: 20px;</figcaption></figure>
+    <br>
+       
+    <p class="sub-section">letter-spacing</p>
+    
+    
+    <p>Indica la distància entre les lletres del text. 
+        És semblant a l'anterior, però ara referida a la distància horitzontal entre caràcters. Exemple amb <span class="cursiva">letter-spacing: 20px;</span></p>
+    
+        <figure><img src="UD3/images/ud3-2023-11-20-10-41-17.png" /><br><figcaption>letter-spacing: 20px;</figcaption></figure>
+        <br>
+        
+    
+    
+    
+    <p class="sub-section">text-decoration</p>
+    
+    <p>S'indiquen possibles efectes al text. Valors:
+        <ul>
+            <li><span class="negrita">underline</span>. Subratllat (línia per sota del text)</li>
+    <li><span class="negrita">overline</span>. Línia per sobre del text.</li>
+    <li><span class="negrita">line-through</span>. Ratat, línia que travessa el text.</li>
+    <li><span class="negrita">blink</span>. Parpelleig. No funciona a gairebé cap navegador (sí al Firefox).</li>
+        </ul>
+    </p>
+    
+    
+    
+    <p class="sub-section">text-decoration-line</p>
+    <p>Només funciona a Mozilla Firefox (amb el prefix <span class="negrita"> -moz- </span>). 
+        Per ara és igual a <span class="negrita">text-decoration</span>. 
+        En anys successius s'espera que text-decoration permet indicar totes les propietats d'aquest apartat.</p>
+    
+    <span class="r-word">text-decoration-color</span>
+    <p>Permet especificar el color del subratllat quan s'utilitzen línies mitjançant <span class="negrita">text-decoration</span>. 
+        Només funciona, per ara, a Mozilla Firefox (i requereix utilitzar el prefix <span class="negrita">-moz-</span> ).</p>
+        
+    <span class="r-word">text-decoration-style</span>
+    <p>Permet especificar l'estil del subratllat. Només funciona, per ara, a Mozilla Firefox (i requereix utilitzar el prefix <span class="negrita">-moz-</span>).
+        <br>
+        <span class="cursiva">Valors: solid (sòlida), double (línia doble), dotted (línia puntejada), dashed (línia ratllada) i wavy (línia ondulada).</p></span>
+    
+    
+    <p class="sub-section">vertical- align</p>
+    
+    <p>Posició vertical del text (o imatge) respecte al contenidor. És molt versàtil perquè permet tant alinear en vertical un text respecte,
+        per exemple, a la cel·la de la taula on es trobe; com indicar superíndexs i subíndexs. Possibilitats:
+    <ul>
+        <li><span class="negrita">baseline</span>. A la línia base inferior del text</li>
+        <li><span class="negrita">sub</span>. Subíndex</li>
+        <li><span class="negrita">super</span>. Superíndex</li>
+        <li><span class="negrita">top</span>. Amunt respecte a l'element més alt de la línia</li>
+        <li><span class="negrita">text-top</span>. A la línia superior del text</li>
+        <li><span class="negrita">middle</span>. Mitjà respecte a l'alçada del text o contenidor on estiguem</li>
+        <li><span class="negrita">bottom</span>. A sota respecte a l'element més alt de la línia</li>
+        <li><span class="negrita">text-bottom</span>. A la línia inferior del text</li>
+        <li><span class="negrita">Percentatge</span>. Percentatge respecte al text (per exemple 120%)</li>
+    </ul>
+    </p>
+    
+    
+    
+    <p>El pitjor és que només funciona en text dins de cel·les de taules. 
+        Si volem alinear el text dins una etiqueta <span class="negrita">div</span> per exemple, caldria utilitzar la propietat display amb el valor <span class="negrita">table-cell</span>.</p>
+    
+    
+    <p>Exemple:</p>
+    
+    
+    <section><pre><code class="language-xml">&lt;!doctype html>
+&lt;html  lang = "ca" >
+&lt;head>
+    &lt;meta  charset = "UTF-8" >
+    &lt;title> Document &lt;/title>
+    &lt;style>
+        div{
+            height : 200px ;
+            width : 300px ;
+            background-color : yellow ;
+            vertical-align: bottom ;
+            display : table-cell ;
+        }
+    &lt;/style>
+&lt;/head>&lt;body>
+    &lt;div>
+        &lt;p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, rerum, explica ratione qui provident consequatur ab quasi recusandae vitae sit voluptatibus laboriosam in eum ipsum ipsam perspiciatis suscipit qui asperiors magni quibusdam .&lt;/p>
+    &lt;/div>
+&lt;/body>
+&lt;/html></code></pre>
+    </section><br><br>
+    <p>Resultat:</p>
+    
+    <figure><img src="UD3/images/ud3-2023-11-20-10-55-27.png" /><br><figcaption></figcaption></figure>
+    <br>
+    
+    <p>Una altra possibilitat és alinear respecte a un element que està posat a la mateixa línia:</p>
+    
+    
+    <section><pre><code class="language-xml">&lt;!doctype html>
+&lt;html  lang = "ca" >
+&lt;head>
+    &lt;meta  charset = "UTF-8" >
+    &lt;title> Document &lt;/title>
+    &lt;style>
+    &lt;style>
+        img{
+            vertical-align : middle ;
+        }
+    &lt;/style>
+&lt;/head>
+&lt;body>
+    &lt;p>&lt;img  src = "turing/turing16.jpg" >
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, rerum, explica ratione qui provident consequatur ab quasi recusandae vitae sit voluptatibus laboriosam in eum ipsum ipsam perspiciatis suscipit qui asperiors magni quibusdam .&lt;/p>
+&lt;/body>
+&lt;/html></code></pre>
+    </section><br><br>
+
+    <p>S'obté aquest resultat:</p>
+    
+    <figure><img src="UD3/images/ud3-2023-11-20-11-02-34.png" /><br><figcaption></figcaption></figure>
+    <br>
+    
+      
+    
+    <p class="sub-section">text-align</p>
+    
+    <p>Alineació horitzontal del text. Pot ser: <span class="negrita">left</span> (esquerra)
+    , <span class="negrita">right</span> (dreta), <span class="negrita">center</span> (centrada) o 
+    <span class="negrita">justify</span> ( justificada a dreta i esquerra) .</p>
+    
+        
+    <p class="sub-section">text-indent</p>
+    
+    <p>Sangria de la primera línia del paràgraf. Distància extra que es deixa a la primera línia respecte a la resta de línies. 
+        Per exemple, si indiquem, <span class="cursiva">text-indent:50px;</span> el resultat seria (per a un paràgraf a què s'apliqui aquest codi):</p>
+    
+    <figure><img src="UD3/images/ud3-2023-11-20-11-05-08.png" /><br><figcaption>text-indent:50px;</figcaption></figure>
+    <br>
+           
+    <p class="sub-section">text-transform</p>
+    
+    <p>Permet modificar el text perquè es mostri en majúscules o minúscules.
+<ul>
+    <li><span class="negrita">capitalize</span>. La primera lletra a Majúscules</li>
+    <li><span class="negrita">uppercase</span>. Majúscules</li>
+    <li><span class="negrita">lowercase</span>. Minúscules</li>
+    <li><span class="negrita">none</span>. No fa cap transformació</li>    
+</ul>
+    </p>
+        
+    
+    <p class="sub-section">direction</p>
+    
+    <p>Procedeix de CSS2, especifica l'direcció on s'escriu el text. Possibilitats:
+        <ul>
+            <li><span class="negrita">ltr</span>. Left to right , d'esquerra a dreta</li>
+            <li><span class="negrita">rtl</span>. Right to left , de dreta a esquerra (utilitzada en llengües com l'àrab)</li>
+        </ul>
+    </p>
+    
+    <p class="sub-section">text-overflow</p>
+    
+    <p>Parteix de CSS3. Indica que fer amb el text quan està dins d'un contenidor (com una capa) i no té prou mida per mostrar tot el text. Possibilitats:
+<ul>
+    <li><span class="negrita">clip</span>. El text apareix retallat. Només es veu el text que cap a la capa, la resta no es mostra</li>
+    <li><span class="negrita">ellipsi</span>. Com l'anterior, però es posen punts suspensius al final del text retallat.</li>    
+</ul>
+    </p>
+          
+    <p class="sub-section">text-shadow</p>
+    
+    <p>És una propietat CSS3. Permet col·locar una ombra al text per donar-li efecte de volum. Té aquesta sintaxi:
+
+    </p>
+    <section><pre><code class="language-css">text-shadow: color distànciaX distànciaY desenfocament;</code></pre>
+    </section><br><br>
+    <p>
+        <ul>
+            <li><span class="negrita">color</span>. És el color de l'ombra</li>
+            <li><span class="negrita">distànciaX</span>. És el desplaçament horitzontal que tindrà l'ombra (pot ser positiu o negatiu)</li>
+            <li><span class="negrita">distànciaY</span>. És el desplaçament vertical que tindrà l'ombra (pot ser positiu o negatiu)</li>
+            <li><span class="negrita">desenfocament</span>. És opcional i indica quant es desenfocarà l'ombra. S'indica una quantitat que com més gran siga, més desenfocarà el fons.</li>
+        </ul>
+    </p>  
+    
+    
+    <p>Exemple:</p>
+    
+    <section><pre><code class="language-xml">&lt;style>
+        h1{
+            color : red;
+            text-shadow : 5px 5px 10px black;
+        }
+    &lt;/style>
+&lt;/head>
+&lt;body>
+    &lt;h1> Títol &lt;/h1></code></pre>
+    </section><br><br>
+        
+   <p> Resultat:</p>
+   
+    <figure><img src="UD3/images/ud3-2023-11-20-11-14-39.png" /><br><figcaption></figcaption></figure>
+    <br>
+        
+    
+<p>Es poden fins i tot indicar diversos ombrejats alhora al text:</p>
+    
+    
+<section><pre><code class="language-css">h1{
+    color : gray ;
+    text-shadow : 2px 2px 4px yellow, 4px 4px 4px red,
+    6px 6px 4px green ;
+}</code></pre>
+    </section><br><br>
+    <p>Aquest codi mostra el resultat següent:</p>
+    
+    
+    <figure><img src="UD3/images/ud3-2023-11-20-11-15-52.png" /><br><figcaption></figcaption></figure>
+    <br>
+    
+        
+    <p class="sub-section">word-wrap</p>
+    
+    <p>És una nova propietat de CSS3 que permet partir el text quan tenim paraules molt llargues. Exemple:</p>
+        
+        <section><pre><code class="language-xml">&lt;style>
+            div{
+                width : 200px;
+                height : 600px;
+                background-color : red;
+            }
+        &lt;/style>
+    &lt;/head>
+    &lt;body>
+        &lt;h1> Títol &lt;/h1>
+        &lt;div> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, obcaecati, triendi velit incidunt natus inventore sint quidem dolors com praesentium! Sabent veritatis totam textllarguíssimllarguíssimllarguíssimllarguíssimllarguíssimllarguíssimllarguíssim&lt;/div></code></pre>
+        </section><br><br>
+    <p>Obté aquest resultat:</p>
+    
+    <figure><img src="UD3/images/ud3-2023-11-20-11-25-29.png" /><br><figcaption></figcaption></figure>
+    <br>
+     
+    <p>Modificant el CSS:</p>
+       
+    
+        <section><pre><code class="language-css">div{
+    width: 200px ;
+    height: 600px ;
+    background-color: red; 				
+    word-wrap: break-word;
+}</code></pre>
+        </section><br><br>
+   
+    <p>Obtenim:</p>
+    
+    <figure><img src="UD3/images/ud3-2023-11-20-11-26-51.png" /><br><figcaption></figcaption></figure>
+    <br>
+    
+    
+    
+    <p>És a dir word-wrap amb valor <span class="negrita">break-word</span>, parteix el text en aquelles paraules que, altrament, se ixen fora del marge.</p>
+    
+    
+    <p class="sub-section">avançades</p>
+    
+    <span class="r-word">text-rendering</span>
+    <p>Decideix la manera de mostrar les fonts que utilitzarà el navegador. És una propietat poc suportada fins ara pels navegadors. Possibles valors:
+
+<ul>
+    <li><span class="negrita">interlocutòria</span>. El navegador decideix de manera independent la manera de mostrar el text en pantalla.</li>
+    <li><span class="negrita">optimizeSpeed</span>. Mostra el text de forma veloç en detriment de la seva llegibilitat.</li>
+    <li><span class="negrita">optimizeLegibility</span>. Prioritza la llegibilitat del text.</li>
+    <li><span class="negrita">geometricPrecission</span>. Actualment significa el mateix que l'anterior, més endavant (en noves versions de CSS) se li dóna significat propi.</li>
+</ul>
+    </p>
+       
+    
+    <span class="r-word">hyphens</span>
+
+    <p>Indica si el text es pot dividir al final de la línia. Possibilitats:
+        <li><span class="negrita">None</span>. Cap paraula no es parteix amb guions al final de la línia.</li>
+        <li><span class="negrita">Manual</span>. Es parteix la paraula si s'indica amb l'entitat <span class="negrita">& shy;</span> o <span class="negrita">& hyphen;</span>. La diferència és que el segon guió sempre es veu.</li>
+        <li><span class="negrita">Auto</span>. El navegador decideix si cada paraula trenca o no.</li>
+    </p>
+    
+    
+    
+    <p>És una propietat en esborrany però que és ja adoptada en part (no per a tots els idiomes) 
+        en els navegadors (això sí indicant els prefixos de cada motor de navegador).</p>
+    
+    
+    <span class="r-word">tab-size</span>
+    <p>Personalitza la mida del tabulador (normalment val 8 caràcters). S'utilitza per utilitzar amb l'element pre. Està en procés d'esborrany CSS3 i és suportada per Chrome i per Opera i Firefox (aquests dos si s'indica el prefix).</p>
+    
+    
+    <span class="r-word">text-align-last</span>
+    <p>Indica quina és l'alineació de l'última línia d'un paràgraf. Possibles valors:
+        <li><span class="negrita">auto</span>. Agafa l'alineació que tingui la resta de línia del paràgraf (la que estableix la propietat text-align ).</li>
+        <li><span class="negrita">left</span>. Esquerra.</li>
+        <li><span class="negrita">right</span>. Dreta.</li>
+        <li><span class="negrita">center</span>. Centre.</li>
+        <li><span class="negrita">justify</span>. S'estira a esquerra i dreta perquè s'ajusti a banda i banda. Per això afegeix espai entre cada paraula.</li>
+    </p>
+       
+    
+    <p>Només els navegadors moderns la permeten fer servir.</p>
+    
+    <!--*********************************************************************************************** -->
     
     <h3>Propietats de les fonts</h3>
     <figure><img src="UD3/images/ud3-2023-11-15-12-40-15.png" /><br><figcaption></figcaption></figure>
     <br>
     <p>Indubtablement la tipografia (anomenada també <span class="negrita">format de font</span> o, simplement, <span class="negrita">font</span>)
     és un dels aspectes més importants de l'estètica d'un document escrit. 
-    Manejar adequadament l'estil de la lletra pot fer que la nostra pàgina sigui molt més atractiva. 
+    Manejar adequadament l'estil de la lletra pot fer que la nostra pàgina siga molt més atractiva. 
     De fet, hi ha dissenyadors que consideren que aquesta és la primera decisió a prendre per la tremenda influència que té sobre la resta d'elements. 
     L'ideal és dedicar molt de temps a aquesta decisió.</p>
     
@@ -1809,7 +2131,7 @@ A més d'aquestes dues famoses famílies, CSS permet distingir tres famílies m�
              </table></li> 
             <li><strong class="negrita">Grandària heretada. </strong>Ho aconsegueix la paraula <strong class="negrita" lang="en-US">inherit</strong>.>Deixa la lletra amb la mida que hereta del seu contenidor o element pare.</li> 
             <li><strong class="negrita">Grandària inicial. </strong>Ho aconsegueix la paraula <strong class="negrita" lang="en-US">initial</strong>.>Col·loca la lletra a la mida per defecte ( <strong class="negrita">Internet Explorer</strong> no reconeix aquest valor).</li> 
-            <li><strong class="negrita">Mode exacte</strong>.>En aquest cas s'indica la mida de la lletra amb el valor numèri.>Immediatament després d'aquest número s'indica la mesura en què s'ha de mesurar el número (sigui de manera absoluta o relativa.>Exemples: <em class="cursiva">12px</em> , <em class="cursiva">2mm</em> , <em class="cursiva">12pt, 1.2em, 120%,…</em> <p>Exemple (puja la lletra un 40% sobre la mida que li correspondria normalment a l'element h1):</p>
+            <li><strong class="negrita">Mode exacte</strong>.>En aquest cas s'indica la mida de la lletra amb el valor numèri.>Immediatament després d'aquest número s'indica la mesura en què s'ha de mesurar el número (siga de manera absoluta o relativa.>Exemples: <em class="cursiva">12px</em> , <em class="cursiva">2mm</em> , <em class="cursiva">12pt, 1.2em, 120%,…</em> <p>Exemple (puja la lletra un 40% sobre la mida que li correspondria normalment a l'element h1):</p>
              <section><pre><code class="language-css">h1 {
   font-size : 1.4em ;
 }</code></pre>
@@ -1913,7 +2235,7 @@ A més d'aquestes dues famoses famílies, CSS permet distingir tres famílies m�
 
 <p class="sub-section">font</p>
 
-<p>Permet des d'una sola propietat canviar en un sol cop totes les anteriors. La seva sintaxi és:</p>
+<p>Permet des d'una sola propietat canviar en un sol cop totes les anteriors. La seua sintaxi és:</p>
 
 <section><pre><code class="language-css">font : font-style font-variant font-weight font-size/line-height font-family;</code></pre>
 </section><br>
@@ -1924,7 +2246,7 @@ A més d'aquestes dues famoses famílies, CSS permet distingir tres famílies m�
 
 
 <section><pre><code class="language-css">/*Lletra cursiva i negreta de tipus Comic amb opcions a Arial i Helvetica*/
-font: italic bold 16pt “Comic Sans MS”, Arial,
+font: italic bold 16pt "Comic Sans MS", Arial,
 	Helvetica, sans-serif;
 /* Lletra cursiva amb versaletes de mida 18 punts i 24 de punts de distància entre cada línia */
 font: italic small-caps 18pt/24pt;
@@ -1945,17 +2267,889 @@ font: italic ;</code></pre>
 
 
 
-
 <p class="sub-section">color</p>
 
+    <p>Color de la font. Utilitzant qualsevol dels codis de color explicats a l'apartat dedicat a les unitats i mides</p>
     
+<section><pre><code class="language-css">p{
+    color:red;
+}</code></pre>
+</section><br><br>
+    
+<h3>Importar tipus de lletra</h3>
+<p class="sub-section">@font-face</p>
 
-    
+<p>Un dels problemes més importants sobre la tipografia és voler utilitzar un tipus de lletra sobre la qual,
+     no hi ha seguretat que hi haja al dispositiu de la persona que està veient la pàgina HTML.</p>
+
+<p>CSS3 ha introduït l'ús d'aquesta directiva al codi CSS per precarregar el tipus de lletra necessari. 
+    Per això haurem d'utilitzar el fitxer que conté el tipus de lletra en si. 
+    El format possible per als fitxers amb el tipus de lletra és:
+<ul>
+    <li><span class="negrita">ttf</span>. Lletres de tipus <span class="negrita">TrueType</span>, les clàssiques de Windows. 
+        Utilitzades per Mozilla i Chrome/Safari (i altres).</li>
+    <li><span class="negrita">otf</span>. Lletres de tipus <span class="negrita">Open Type</span>, són les que s'usen als sistemes Windows actuals. 
+        Està basada en el format anterior. Utilitzades per Mozilla i Chrome/Safari (i altres).</li>
+    <li><span class="negrita">eot</span>. Propietat de Microsoft (i per tant compatible amb els navegadors d'aquesta empresa)</li>
+    <li><span class="negrita">woff</span>. <span class="negrita">Web Open Font Format</span>, format obert per a la web impulsat per Mozilla 
+        i compatible en quasi totes les versions dels ultims navegadors. Es va crear per evitar problemes de propietat dels formats anteriors.</li>
+    <li><span class="negrita">svg</span>. Format estàndard vectorial de gràfics, que permet també dissenyar tipus de lletres. 
+        Ho reconeixen alguns navegadors (especialment per al mòbil).</li>
+</ul>
+</p>
+
+<p>Amb tants formats i incompatibilitats podem tenir el problema que la font escollida al final no es vegi correctament. 
+    Per això serveis com el disponible a la pàgina <span class="negrita">Font Squirrel</span> 
+    ( <a class="enlace" target="_blank" href="http://www.fontsquirrel.com/tools/webfont-generator">http://www.fontsquirrel.com/tools/webfont-generator</a> ) 
+    permet pujar la lletra en format <span class="negrita">Open Type</span> (suposant que la font no tinga drets reservats o bé els hàgem pagat ) 
+    i ens descarrega tots els fitxers en els altres formats i fins i tot el codi que cal escriure al nostre full d'estils CSS 
+    per carregar la font correctament en qualsevol navegador compatible amb CSS3.</p>
+
+
+<p>Per carregar la font s'usa la instrucció <span class="r-word">@font-face</span> a la qual se li incoporen diverses propietats 
+    entre les que estan almenys font-family.</p>
+
+<p>Per exemple, suposem que volem utilitzar el tipus de lletra <span class="cursiva">Cantarell</span>
+     i disposem (tenint en compte que els tipus de lletra poden tenir drets exclusius d'ús, per la qual cosa cal assegurar-vos que ús és lliure o 
+     bé pagar els drets per al seu ús) de fitxer <span class="cursiva">Artistik.ttf</span> que conté el tipus de lletra en si. 
+     El codi perquè tots els paràgrafs la usen (amb la seguretat que sí que sortiria) és:
+    <ul>
+        <li><span class="negrita">font-family</span>. Per donar nom de família a la lletra que estem important. 
+            Aquest nom és el que després utilitzaran els selectors per triar la lletra que hem carregat 
+            (a l'exemple és el que utilitza <span class="negrita">p</span> per donar format amb aquesta lletra als paràgrafs).</li>
+        <li><span class="negrita">src</span>. En què s'indica una o més URL (separades per comes) que apunten a fitxers de lletres que es carregaran 
+            a la pàgina perquè es veja correctament la lletra. 
+            El fet de donar diverses rutes amb fitxers de tipus de lletra és per proporcionar opcions, 
+            per en cas de no funcionar el primer fitxer carregar el segon i així successivament.</li>
+    </ul>
+    </p>
+
+<p>Opcionalment podem utilitzar les propietats:
+
+    <ul>
+        <li><span class="negrita">font-weight</span>.</li>
+        <li><span class="negrita">font-style</span>.</li>
+        <li><span class="negrita">font-stretch</span>.</li>
+    </ul>
+</p>
+
+<p>Totes elles vistes anteriorment i que ara serveixen per indicar de quina mena és la font que s'està carregant; si és negreta, cursiva, etc.</p>
+
+
+<p>Exemple:</p>
+
+<section><pre><code class="language-css">
+@font-face {
+    font-family : cantarellbold ;
+	/* primera opció, tipus de lletra EOT, no admet utilitzar opcions */
+    src : url( 'font/cantarell-bold-webfont.eot' );
+	/* opcions en ordre de prioritat desitjada per importar els tipus de lletra */
+    src :
+     local( "Cantarell Bold" ),
+     url( 'font/cantarell-bold-webfont.eot?#iefix' ) format( 'embedded-opentype' ),
+     url( 'font/cantarell-bold-webfont.woff' ) format( 'woff' ),
+     url( 'font/cantarell-bold-webfont.ttf' ) format( 'truetype' ),
+     url( 'font/cantarell-bold-webfont.svg#cantarellbold' ) format( 'svg' );
+    font-weight:  bold ;
+    font-style: normal ;
+}
+p{
+	font-family : cantarellbold ;
+	...
+}</code></pre>
+</section><br><br>
+
+<p>A l'exemple anterior a la propietat <span class="negrita">src</span> s'indiquen diverses rutes mitjançant la funció <span class="negrita">url</span>
+     i a cada una s'indica el format del fitxer mitjançant la funció <span class="negrita">format</span>. 
+     Abans de fer servir les rutes, es cercarà la font <span class="cursiva">Cantarell Bold</span> a l'ordinador local gràcies a la funció local 
+     i així si l'usuari ja la té al sistema no caldrà carregar-la des del fitxer extern.</p>
+
+<p>Encara que aquesta tècnica és molt interessant perquè ens permet utilitzar fonts personals i no dependre que l'usuari o usuària té instal·lat 
+    al vostre ordinador, cal carregar l'arxiu de fonts i això pot portar cert temps, 
+    durant el qual no es veu cap text o es veu amb un format diferent, cosa que pot ser problemàtica. 
+    No cal abusar d'aquesta tècnica carregant massa fonts perquè si no la càrrega de la pàgina web seria molt lenta.</p>
+
+<p class="sub-section">Serveis online d'importació de tipus de lletra</p>
+
+<p>El problema dels tipus de lletra a poc a poc es va solucionant gràcies a l'element <span class="negrita">@font-face</span>, 
+el problema és que el seu maneig no és gens senzill.</p>
+
+<p>Per això han aparegut serveis de tipus de lletra en línia, que ens permeten utilitzar tipus de lletra de llibreries 
+    (algunes gratuïtes i altres de pagament) disponibles a Internet. 
+    Per això se sol requerir afegir a les pàgines un enllaç a un fitxer CSS o JavaScript, que en realitat s'encarrega per nosaltres 
+    d'importar adequadament el tipus de lletra.</p>
+
+
+<p>Importar molts tipus de lletra pot endarrerir moltíssim la càrrega de la pàgina web per la qual cosa cal utilitzar amb cautela. 
+    Les instruccions per importar aquests tipus de lletra els proporcionen els propis serveis en línia. Els més coneguts són:
+<ul>
+    <li><span class="negrita">Google Fonts</span>. Disponible a <a class="enlace" target="_blank" href="https://www.google.com/fonts">https://www.google.com/fonts</a>
+        i pertanyent a Google, és clarament el més utilitzat per incorporar un bon nombre de tipus de lletra gratuïtes.</li>
+   <li><span class="negrita">Adobe Typekit</span>. El més utilitzat a nivell professional. Hi ha possibilitat de subscripció gratuïta a un nombre limitat de fonts, 
+       per utilitzar-ne moltes més cal pagar una quota (o disposar de llicència <span class="negrita">Creative Cloud d' Adobe</span> ). Disponible a <a class="enlace" target="_blank" href="https://typekit.com/">https://typekit.com/</a></li>
+   <li><span class="negrita">Adobe Edge Fonts</span>. Servei gratuït d'Adobe (realment servit des de <span class="negrita">Typekit</span> ) que permet utilitzar a les pàgines web al voltant de 500 tipus de lletra. https://edgewebfonts.adobe.com/fonts</li>
+   <li><span class="negrita">fontdeck</span>. Es tracta del web <a class="enlace" target="_blank" href="http://fontdeck.com/">http://fontdeck.com/</a> que disposa d'un catàleg de tipus de lletra de qualitat. Es cobra per l'ús de les lletres, si usem poques es paga poc si usem moltes, es paga més. Només es cobra a més si hi ha pàgines web que creiem que segueixin utilitzant aquestes fonts.</li>
+   <li><span class="negrita">webtype</span>. A <a class="enlace" target="_blank" href="http://www.webtype.com/">http://www.webtype.com/</a> , servei semblant a l'anterior.</li>
+   <li><span class="negrita">fonts.com</span>. Té el catàleg més ampli de tipus de lletra. Té un pla gratuït amb accés a 200 fonts (el de pagament accedeix a més de 20.000) limitat a dos projectes i 20.000 pàgines vistes al mes.</li>
+</ul>
+</p>
+
+
     
     
     </section><!-- End section FormatText-->
 
 
+<!--*********************************************************Formato Listas***********************************************************-->
+<section class="apartado">
+<a name="sFormatLlistes"></a>
+<h2>Format per a les Llistes</h2>
+<h3>list-style-type</h3>
+<p>La propietat <span class="r-word">list-style-type</span> ens permet especificar el tipus d'ítem de numeració de la llista. 
+    Normalment els navegadors mostren un cercle sòlid a les llistes no numerades (les que es realitzen mitjançant l'etiqueta <span class="negrita">ul</span>)
+     i números aràbics a les llistes numerades (etiqueta <span class="negrita">ol</span> ).</p>
+
+<p>Aquesta propietat permet canviar aquests símbols per triar el que desitgem. 
+    La qüestió és que (encara que es podria) no és recomanable fer que l'etiqueta <span class="negrita">ol</span> mostre símbols no numèrics 
+    i tampoc que l'etiqueta <span class="negrita">ul</span> mostre símbols numèrics, per mantenir la coherència semàntica en el llenguatge HTML.</p>
+
+<p>En tot cas, els possibles valors d'aquesta propietat són:
+    <ul>
+        <li><span class="negrita">armenian</span>. La llista quedarà encapçalada per números de l'alfabet armeni.</li>
+        <li><span class="negrita">circle</span>. La llista quedarà encapçalada per cercles.</li>
+        <li><span class="negrita">cjk -ideographic</span>. Es fan servir símbols numèrics ideogràfics xinesos.</li>
+        <li><span class="negrita">decimal</span>. Números decimals.</li>
+        <li><span class="negrita">decimal-leading-zero</span>. Números decimals començant per zero.</li>
+        <li><span class="negrita">disc</span>. La llista quedarà encapçalada per cercles sense emplenar.</li>
+        <li><span class="negrita">georgian</span>. Números de l'alfabet georgià.</li>
+        <li><span class="negrita">hebrew</span>. Números de l'alfabet hebreu.</li>
+        <li><span class="negrita">hiragana</span>. Números de l'alfabet Hiragana japonès en ús actual ( <span class="cursiva">gojūon</span> ).</li>
+        <li><span class="negrita">hiragana-iroha</span>. Números de l'alfabet japonès Hiragana clàssic ( <span class="cursiva">iroha </span> )</li>
+        <li><span class="negrita">katakana</span>. Números de l'alfabet Katakana japonès en ús ( <span class="cursiva">gojūon</span> ).</li>
+        <li><span class="negrita">katakana-iroha</span>. Números de l'alfabet Katakana japonès clàssic ( <span class="cursiva">gojūon</span> ).</li>
+        <li><span class="negrita">lower-alpha</span>. Lletres minúscules de l'alfabet actual.</li>
+        <li><span class="negrita">lower-greek</span>. Lletres gregues minúscules</li>
+        <li><span class="negrita">lower- latin</span>. Lletres minúscules llatines.</li>
+        <li><span class="negrita">lower-roman</span>. Números romans en minúscules.</li>
+        <li><span class="negrita">none</span>. Sense números.</li>
+        <li><span class="negrita">square</span>. Quadrats farcits.</li>
+        <li><span class="negrita">upper-alpha</span>. Lletres majúscules de l'alfabet actual.</li>
+        <li><span class="negrita">upper- latin</span>. Lletres majúscules llatines.</li>
+        <li><span class="negrita">upper-roman</span>. Números romans en majúscules.</li>
+    </ul>
+</p>
+
+<h3>list-style-image</h3>
+<p>En lloc de fer servir un dels símbols anteriors, es pot indicar una imatge amb què s'emplenarà la llista. 
+    La imatge pot tenir qualsevol dels formats habituals a les pàgines web ( gif, jpg, png ). 
+    Lògicament la mida deu ser apropiada; si és molt gran la llista quedarà totalment desquadrada.</p>
+
+<p>Exemple d'ús:</p>
+
+<section><pre><code class="language-css">list-style-image :url( 'quadrat.gif' );</code></pre>
+</section><br><br>
+
+<h3>list-style-position</h3>
+<p>Només té dos possibles valors referits a la posició del text respecte de la imatge.
+<ul>
+    <li><span class="negrita">inside</span>. El símbol de numeració és interior als marges de l'element on es col·loca. És lopció per defecte.</li>
+    <li><span class="negrita">outside</span>. El símbol de numeració és exterior.</li>
+</ul>
+</p>
+
+<h3>list-style</h3>
+La propietat <span class="negrita">list-style</span> permet a un sol cop configurar les propietats anteriors. La seva sintaxi és:
+
+<section><pre><code class="language-css">list-style : list-Style-Type, list-style-position,	list-style-image;</code></pre>
+</section><br><br>
+<p>Exemple:</p>
+
+
+<section><pre><code class="language-css">list–style : square url( "quadrat.gif" );</code></pre>
+</section><br><br>
+
+
+</section><!-- End section -->
+
+<!--*********************************************************Format de fons***********************************************************-->
+<section class="apartado">
+<a name="sFormatdeFons"></a>
+<h2>Format de fons</h2>
+
+<p>S'anomena fons l'espai que queda per sota del text i les imatges d'un element. 
+    Normalment el fons és transparent, però podem pintar-lo o fer servir imatges com a fons.</p>
+
+
+<h3>Color de fons</h3>
+<p>La propietat <span class="r-word">background-color</span> permet establir un color de fons a l'element a què s'apliqui la propietat. 
+    Si s'aplica a l'element <span class="negrita">body</span>, tota la pàgina tindrà aquest color de fons; 
+    aplicat a un altre element (com <span class="negrita">div</span> o <span class="negrita">p</span> per exemple), aquest element tindrà com a fons el color aplicat.</p>
+
+
+<h3>Imatge de fons</h3>
+<p class="sub-section">background-image</p>
+
+<p>La propietat <span class="r-word">background-image</span> permet establir una imatge de fons. 
+    Aquesta imatge se superposa al color de fons (si n'hi ha, de manera que si la imatge no es pot carregar (perquè la ruta no s'ha indicat), 
+    llavors apareix el color de fons.)</p>
+
+<p>Per defecte, la imatge de fons es repeteix les vegades necessàries (creant un mosaic), 
+    tant horitzontalment com vertical, fins que s'omple l'element. Exemple de codi complet:</p>
+
+
+<section><pre><code class="language-xml">&lt;!doctype html>
+&lt;html  lang = "ca">
+&lt;head>
+        &lt;meta  charset = "UTF-8" >
+        &lt;title> Document &lt;/title>
+        &lt;style>
+            .fons{
+                background-color:  maroon ;
+                background-image : url( granit.png );
+                color : white ;
+            }
+        &lt;/style>
+&lt;/head>
+&lt;body>
+        &lt;p class = "fons" > Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sigueu quo nam dignissimos eum ex perferendis dolorem dolor fugida quasi. Praesentium provident necessitatibus beatae id tempora ab triendi omnis quitium natus temporibus repellendus deleniti repellat  &lt;/p> 
+        &lt;p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum excepturi u quaerat magnam error percumque reprehenderit necessitatibus perferendis minus laudantium neque molèsties quo .&lt;/p>
+&lt;/body>
+&lt;/html></code></pre>
+</section><br><br>
+<p>Resultat:</p>
+
+<figure><img src="UD3/images/ud3-2023-11-20-12-29-02.png" /><br><figcaption></figcaption></figure>
+<br>
+
+
+<p class="sub-section">Repetició del fons. background-repeat</p>
+
+<p>En principi, el fons es repeteix a totes les adreces fins a omplir l'element al qual s'aplica la imatge de fons. 
+    Però podem fer que la imatge es repeteixi en una sola direcció (horitzontal o vertical), i fins i tot fer que no es repetisca.</p>
+
+
+<p>Possibles valors de la propietat:
+    <ul>
+        <li><span class="negrita">repeat</span>. És el valor per defecte. la imatge es repeteix a totes les adreces (efecte mosaic), fins a omplir completament l'element.</li>
+        <li><span class="negrita">repeat-x</span>. La repetició de la imatge es fa només en horitzontal.</li>
+        <li><span class="negrita">repeat-y</span>. La repetició de la imatge es fa només en vertical.</li>
+        <li><span class="negrita">no-repeat</span>. La imatge no es repeteix apareixerà només una vegada</li>
+    </ul>
+</p>
+
+
+
+<p class="sub-section">Posició de la imatge. background-position</p>
+
+<p>Per defecte, la imatge es col·loca des del cantó superior esquerre de la pàgina (posició 0,0) 
+    i des d'ací es repeteix (si s'ha indicat repetició de la imatge amb la propietat anterior) o no.</p>
+
+<p>La posició des de la qual la imatge es col·loca inicialment es pot modificar. La manera de fer-ho és així:</p>
+
+
+<section><pre><code class="language-css">background-position: posicióHorizontal posicióVertical</code></pre>
+</section><br><br>
+
+<p>Podem indicar ambdós valors així:
+<ul>
+    <li><span class="negrita">posicióHorizontal</span>. Es poden especificar les paraules: <span class="negrita">left</span> (esquerra), <span class="negrita">right</span> (dreta) o <span class="negrita">middle</span> (centre). 
+        També es pot indicar una coordenada horitzontal concreta (per exemple 12px ) o relativa ( 5% ).</li>
+    <li><span class="negrita">posicióHorizontal</span>. Es poden especificar les paraules: <span class="negrita">top</span> (a dalt), <span class="negrita">bottom</span> (a baix) o <span class="negrita">center</span> (centre). 
+        També es pot indicar una coordenada vertical concreta (per exemple 20px ) o relativa ( 15% ).</li>
+</ul>
+</p>
+
+
+
+<p>Així per exemple el codi:</p>
+
+
+<section><pre><code class="language-css">background-position:  right bottom;</code></pre>
+</section><br><br>
+<p>La imatge de fons (si no hi ha repetició) es mostrarà a la part inferior dreta de l'element on es pose.</p>
+
+
+<p class="sub-section">Desplaçament del fons. background-attachment</p>
+
+<p>Quan es desplaça el contingut d'una pàgina web, el fons es mou amb la resta de la pàgina. 
+    Mitjançant aquesta propietat podrem fer que el fons quede fix mentre només la resta d'elements es mouen. 
+    Els possibles valors per a la propietat són:
+    <ul>
+        <li><span class="negrita">scroll</span>. Valor per defecte. El fons i el text es mouen junts quan lusuari es desplaça per la pàgina</li>
+        <li><span class="negrita">fixed</span>. El fons és fix i només es mou el text.</li>
+    </ul>
+</p>
+
+
+
+<p class="sub-section">Mida del fons. background-size</p>
+
+<p>Permet indicar la mida de la imatge de fons indicant la mida en horitzontal i en vertical.
+    És una propietat de CSS3 que només funciona als navegadors més moderns.</p>
+
+<p>Exemple (Fa que la imatge de fons medisca 320px per 240px):</p>
+
+<section><pre><code class="language-css">background-size : 320px 240px;</code></pre>
+</section><br><br>
+
+<p>Una altra possibilitat és:</p>
+
+<section><pre><code class="language-css">background-size : 50% auto;</code></pre>
+</section><br><br>
+
+<p>La paraula <span class="negrita">auto</span> fa que la dimensió en què apareix aquesta paraula (en l'exemple fa referència a l'alçada)
+     es calcule automàticament.</p>
+
+
+<p>Més recentment (i per tant no reconegut per navegadors que no siguin prou moderns) a aquesta propietat li podem donar els valors:
+<ul>
+    <li><span class="negrita">cover</span>. Fa que la imatge ompli el contenidor on es troba de forma responsive , és a dir, 
+        sense perdre la seva proporció d'alçada i alçada. Fa que la imatge siga el més gran possible sense perdre la proporció d'alçada per altura.</li>
+<li><span class="negrita">contain</span>. Escala la imatge fent que cobrisca el 100% de l'amplada o de l'alçada depenent de la mida de la finestra 
+    de manera que quedaran buits al contenidor de la imatge ja que l'altra proporció no s'escala.</li>
+</ul>
+</p>
+
+
+
+<p class="sub-section">Àrea de dibuix del fons. background-clip</p>
+
+<p>És una propietat de CSS3 que defineix des de quina zona es dibuixa el fons. Les seves possibilitats són:
+    <ul>
+        <li><span class="negrita">border-box</span>. Opció per defecte, el fons es dibuixa des d'on normalment hi ha la vora d'element al què estem dibuixant 
+            un fons.</li>
+        <li><span class="negrita">padding -box</span>. El fons es dibuixa a l'àrea de reompliment ( padding ) que és una zona interior a la vora.</li>
+        <li><span class="negrita">content-box</span>. El fons es dibuixa a la zona de contingut que és on es col·loca el text a l'element.</li>
+    </ul>
+</p>
+
+<p class="sub-section">Origen del fons. background-origin</p>
+
+<p>És una propietat CSS3 que encara no és molt compatible amb els navegadors. 
+    Té les mateixes possibilitats que l'anterior; però, en aquest cas, fa referència des de prenem l'origen de coordenades que ens servirà com
+     a referència per posicionar les imatges de fons.</p>
+
+
+<p class="sub-section">propietat background</p>
+
+<p>Fixa en una sola propietat totes les propietats de fons. Sintaxi:</p>
+
+<section><pre><code class="language-css">background : background-color background-image
+    background-repeat background-attachment
+    background-position</code></pre>
+</section><br><br>
+<p>Exemple:</p>
+
+<section><pre><code class="language-css">background : maroon url( 'fondo1.gif' ) no-repeat fixed left bottom;</code></pre>
+</section><br><br>
+
+<p>Col·loca color marró de fons, la imatge <span class="cursiva">fondo1.gif</span>, que només apareix una vegada, 
+    a la part inferior esquerra i que es queda fix al fons quan l'usuari es desplaça per la pantalla.</p>
+
+
+<p class="sub-section">Posar diverses imatges de fons</p>
+
+<p>CSS3 va incorporar una important millora a les imatges de fons i és el fet de poder col·locar diverses imatges de fons en un element. 
+    Per això n'hi ha prou de posar comes a les imatges en si. Exemple:</p>
+
+
+<section><pre><code class="language-xml">&lt;style>
+	body{
+		background-image :url( lluna.png ),
+					url( saturn.png ),url( lactea.jpg );
+		background-posició : left top, right top, 0 0 ;
+		background-repeat : no-repeat,no-repeat,repeat ;
+	}
+&lt;/style></code></pre>
+</section><br><br>
+<span class="negrita">El resultat és:</span>
+<figure><img src="UD3/images/ud3-2023-11-20-12-44-35.png" /><br><figcaption></figcaption></figure>
+<br>
+
+<p>Com s'ha vist, aplicar diverses imatges de fons es fa simplement separant cada imatge per comes a cada propietat.</p>
+
+<p>Podem fer servir directament la propietat background per produir el mateix resultat:</p>
+
+
+<section><pre><code class="language-css">body{
+	background :
+		url( lluna.png ) no-repeat left top ,
+		url( saturn.png ) no-repeat right top ,
+		black url( lactea.jpg ) repeat ;
+}</code></pre>
+</section><br><br>
+<p>Una vegada més, el pitjor és que no tots els navegadors són capaços d'aplicar aquesta possibilitat, 
+    per la qual cosa molts dissenyadors opten per construir capes i a cada una manejar el fons, per fer aquest tipus d'efectes.</p>
+
+</section><!-- End section -->
+
+<!--*********************************************************elements del format de caixa***********************************************************-->
+<section class="apartado">
+<a name="sElementsdelformatdecaixa"></a>
+<h2>Elements del format de caixa</h2>
+<p>Se sol anomenar format de caixa (o format de quadre ) a la part de CSS encarregada del format referent al rectangle imaginari que envolta un element 
+    d'una pàgina HTML. Aquest rectangle imaginari conté completament l'element, així com la vora (si n'hi ha) 
+    i l'espai que es deixa fora del marge ( <span class="negrita">margin</span> ) i l'espai que es deixa per dins de la vora ( <span class="negrita">padding</span> ).</p>
+
+<figure><img src="UD3/images/ud3-2023-11-20-12-51-14.png" /><br><figcaption>Components del format de quadre d'un element CSS</figcaption></figure>
+<br>
+
+<p>L'espai que va des del contingut de l'element (a la il·lustració seria el text de color negre) fins a la vora és el que s'anomena espai de farciment o <span class="cursiva">padding</span>. Aquest espai queda pintat o emplenat amb el fons que s'hagi configurat.</p>
+
+
+<p>El marge és un espai exterior a la vora. En aquest espai no es veu la vora, és un espai transparent veurem en ell, 
+    el fons configurat al contenidor de l'element. És a dir si l'element és una etiqueta <span class="cursiva">p</span> que penja directament de <span class="cursiva">body</span>,
+    a l'espai de marge veurem el fons de l'element <span class="cursiva">body</span> .</p>
+
+
+<h3>Configuració de la vora</h3>
+<p class="sub-section">propietats per a la vora</p>
+
+<p>La vora té tres propietats fonamentals: <span class="negrita">color</span>, <span class="negrita">estil</span> i <span class="negrita">gruix</span>. 
+    A més, podrem configurar independentment cada vora (esquerra, dret, superior i inferior). Pel que disposem de totes possibilitats:
+    <ul>
+        <li><span class="negrita">border-width</span>. Amplada de la vora, indicada a la unitat desitjada. Per exemple 12px indicaria una vora de dotze píxels. També podem indicar aquests valors:
+        <ul>
+            <li><span class="negrita">thin</span>. Vora fina</li>
+            <li><span class="negrita">medium</span>. Vora de gruix mitjà</li>
+            <li><span class="negrita">thick</span>. Vora gruixuda</li>
+        </ul>
+        <p>Podem indicar alhora diferents gruixos. Per això podem especificar quadre valors alhora en lloc d'un. L'ordre per indicar-los és a dalt, dreta, a baix i esquerra (seguint les agulles del rellotge des de les dotze). Exemple:</p>
+        <section><pre><code class="language-css">border-width : thick thin thick 0px ;</code></pre>
+        </section><br>
+<p>Aquest codi aplica vores superior i inferior gruixudes, a la dreta fina i a l'esquerra no dibuixarà cap vora. No cal indicar totes les vores. Per exemple:</p>
+<section><pre><code class="language-css">border-width : thick thin ;
+/* superior i inferior gruixut, esquerre i dret fi */
+border-width : thick thin 0px ;
+/* superior gruixut, esquerre i dret fi i inferior sense vora */</code></pre>
+</section><br><br>
+        </li>
+        <li><span class="negrita">border-style.</span> Modifica l'estil de la vora. Aquesta propietat afecta totes les vores (superior, dret, inferior i esquerre). Possibilitats:
+        <ul>
+            <li><span class="negrita">solid.</span> Vora sòlida</li>
+            <li><span class="negrita">dashed.</span> Vora ratllada</li>
+            <li><span class="negrita">dotted.</span> Puntejat</li>
+            <li><span class="negrita">double.</span> Doble</li>
+            <li><span class="negrita">groove.</span> Vora 3D amb efecte d'enfonsament</li>
+            <li><span class="negrita">ridge.</span> Vora 3D amb efecte d'elevació</li>
+            <li><span class="negrita">inset.</span>
+                <figure><img src="UD3/images/ud3-2023-11-20-13-08-30.png" /><br><figcaption></figcaption></figure>
+                <br>
+                
+                 L'efecte depèn del color escollit</li>
+            <li><span class="negrita">outset.</span> 
+                <figure><img src="UD3/images/ud3-2023-11-20-13-08-56.png" /><br><figcaption></figcaption></figure>
+                <br>
+                
+                L'efecte depèn del color escollit.
+            
+            </li>
+            <li><span class="negrita">none</span></li>
+        </ul>
+        <p>Com passa amb <span class="negrita">border-width</span>, podem indicar diversos estils alhora. Exemples:</p>
+        <section><pre><code class="language-css">border-style : solid dashed dotted dotted ;
+/* superior sòlid, dret ratllat, inferior i esquerre puntejat*/
+border-style : solid dashed dotted ;
+/* superior sòlid, esquerre i dret ratllat i inferior puntejat */</code></pre>
+        </section><br>
+        </li>
+        <li><span class="negrita">border -color</span>. Color de la vora. Igual que en les dues propietats anteriors, podem assignar colors diferents a cada vora (seguint el que ja s'ha comentat).</li>
+        <li><span class="negrita">border-top-width, border-top-color, border-top-style</span>. Permet indicar respectivament l'amplada, el color i l'estil de la vora superior.</li>
+        <li><span class="negrita">border-left-width, border-left-color, border-left-style</span>. Permet indicar respectivament l'amplada, el color i l'estil de la vora esquerra.</li>
+        <li><span class="negrita">border-bottom-width, border-bottom-color, border-bottom-style</span>. Permet indicar respectivament l'amplada, el color i l'estil de la vora inferior.</li>
+        <li><span class="negrita">border-right-width, border-right-color, border-right-style</span>. Permet indicar respectivament l'amplada, el color i l'estil de la vora dreta.</li>
+        <li><span class="negrita">border-top</span>. Permet indicar alhora les tres propietats per a la vora esquerra. L'ordre és: gruix, estil i color. Exemple:
+        <section><pre><code class="language-css">border-top : 2px solid red ;</code></pre>
+        </section><br>
+<p>No estem obligats a emplenar les tres propietats podem emplenar només una o dues.</p>
+
+        </li>
+        <li><span class="negrita">border-right</span>. Permet indicar, alhora, les tres propietats de la vora dreta.</li>
+        <li><span class="negrita">border-bottom</span>. Permet indicar, alhora, les tres propietats de la vora inferior</li>
+        <li><span class="negrita">border-left</span>. Permet indicar, alhora, les tres propietats de la vora esquerra</li>
+        <li><span class="negrita">border</span>. Permet indicar el gruix, estil i color de les quatre vores alhora. 
+            S'usa igual que les anteriors però en aquest cas el que configurarem implica totes les vores.</li>
+
+    </ul>
+</p>
+
+
+<h3>Vores arrodonides</h3>
+<p>A CSS3 ha aparegut la possibilitat de crear vores arrodonides així les cantonades de les vores poden formar un radi d'un cercle la mida del qual 
+    podrem especificar. És possible fins i tot indicar diferents arrodonits per a les diferents cantonades.</p>
+
+<p>La pega és que és un format CSS3 de manera que alguns navegadors no ho reconeixen. Propietats relacionades:
+    <ul>
+        <li><span class="negrita">border-radius</span>. Permet indicar vores arrodonides (també afecta l'ombreig que sortirà amb les vores arrodonides. Exemple d'ús:
+            <section><pre><code class="language-css">p{
+	background-color : lightgray ;
+	border : thick double black ;
+	border-radius : 10px ;
+}</code></pre>
+            </section><br>
+            <p>Resultat:</p>
+            <figure><img src="UD3/images/ud3-2023-11-20-13-14-50.png" /><br><figcaption></figcaption></figure>
+            <br>
+            
+        </li>
+        <li>Permet indicar diverses mides d'arrodoniment a l'ordre d'esquerra a dreta i de dalt a baix.
+            <p>Exemple:</p>
+        
+        
+            <section><pre><code class="language-css">p{
+                background-color : lightgray ;
+                border : thick double black ;
+                border-radius : 10px 5px 0px 20px ;
+            }</code></pre>
+            </section><br><br>
+            <p>Resultat:</p>
+            <figure><img src="UD3/images/ud3-2023-11-20-13-15-59.png" /><br><figcaption></figcaption></figure>
+            <br>
+            
+        </li>
+        <li><span class="negrita">border-bottom-left-radius</span>. Permet indicar una mida de ràdio per arrodonir la vora inferior esquerra.</li>
+        <li><span class="negrita">border-bottom-right-radius</span>. Permet indicar una mida de ràdio per arrodonir la vora inferior dreta.</li>
+        <li><span class="negrita">border-top-left-radius</span>. Permet indicar una mida de ràdio per arrodonir la vora superior esquerra.</li>
+        <li><span class="negrita">border-top-right-radius</span>. Permet indicar una mida de ràdio per arrodonir la vora superior dreta.
+            <p>La vora admet dos radis, un en vertical i un altre en horitzontal. Exemple:</p>
+
+
+            <section><pre><code class="language-css">p{
+    background-color : red ;
+    border-radius : 80px / 20px ;
+}</code></pre>
+            </section><br><br>
+            <p>Resultat:</p>
+            <figure><img src="UD3/images/ud3-2023-11-20-13-17-16.png" /><br><figcaption></figcaption></figure>
+            <br>
+            
+        </li>
+    </ul>
+</p>
+
+
+<p>La vora arrodonida queda molt estranya ja que s'ha posat un radi molt gran en horitzontal i un altre molt més petit per a la vertical.</p>
+
+
+<h3>Vores usant imatges (CSS3)</h3>
+<p>També a CSS3 ha aparegut la possibilitat d'indicar una imatge perquè cobreixi la vora. 
+    La idea és crear una imatge (el format idoni és PNG) en què es pintin les vores. 
+    S'estirarà la imatge a la zona que no són les cantonades (la mida de les cantonades es pot indicar) per cobrir tota la mida de l'element que 
+    s'està vorejant amb la imatge.</p>
+
+<p>Normalment la imatge té només acolorida les vores i la resta de la imatge són píxels que es consideraran transparents 
+    (per això el format més habitual per utilitzar amb aquest tipus d'imatge és el PNG).</p>
+
+<p>Un exemple d'imatge preparada per pintar-se com a bord és aquesta:</p>
+
+<figure><img src="UD3/images/ud3-2023-11-20-13-20-21.png" /><br><figcaption></figcaption></figure>
+<br>
+
+<p>Tot el que apareix de blanc a la imatge, en realitat té color transparent i així a través seu s'observarà el fons.</p>
+
+<p>La idea és indicar la part de la imatge dedicada als cantons usant la seva mida (a la imatge cada quadrat dels cantons mesura 18 píxels). 
+    D'aquesta manera, la imatge quedarà trossejada en nou parts (les quatre cantonades i la part superior, inferior, esquerra, dreta i central de la imatge).</p>
+
+
+<p>Per a la zona que no és la cantonada, indicarem com farem per emplenar completament l'element. És a dir, a la imatge anterior, 
+    els cercles blaus no valen per omplir l'element complet al que estiguem donant vora amb la imatge. 
+    Per això indicarem al navegador que repeteixi cada cercle ( <span class="negrita">round</span> ), o bé que li estire ( <span class="negrita">stretch</span> ).</p>
+
+
+<p>Sintaxi de la propietat <span class="r-word">border-image</span>:</p>
+
+
+<section><pre><code class="language-css">border-image: origenDeLaImatge  tamanyCantons modeEstirar ;</code></pre>
+</section><br><br>
+<p>
+    <span class="cursiva">origenDeLaImagen</span>. És la ruta a la imatge
+    <ul>
+        <li><span class="cursiva">midaCantons</span>. És el que mesura cada cantonada començant per la superior esquerra i després anant cap a la dreta i cap avall. 
+            Si medixen el mateix, només se n'indica un número (normalment no s'indica la unitat perquè sempre s'entén en píxels)</li>
+        <li><span class="cursiva">modeEstirar</span>. Pot ser <span class="negrita">repeat</span> (repetir fins a omplir), 
+            <span class="negrita">round</span> (igual que a l'anterior però aconseguint que els dos extrems no quedin partits) o <span class="negrita">stretch</span>
+             (estirar la imatge). Podem indicar dos valors, el primer es referirà a la forma d'emplenar-lo en horitzontal i el segon serà en vertical.</li>
+    </ul>
+</p>
+
+
+
+<p>Exemples (suposant que la imatge anterior és borde2.png i que els quadradets de la imatge mesuren 18 píxels x 19 píxels ):</p>
+
+
+<section><pre><code class="language-css">p{
+   background-color : lightgray ;
+   border : 15px solid transparent ;
+   -webkit-border-image : url( borde2.png ) 18 19 round ; 	 
+   /*per a Safari*/
+   -o-vorder-image : url( borde2.png ) 18 19 round ;
+   /* per a Opera*/
+   border-image : url( borde2.png ) 18 19 round ; 
+}</code></pre>
+</section><br><br>
+<p>La propietat <span class="negrita">border</span> ha d'indicar com a tipus de vora el valor <span class="negrita">transparent</span> . per tal d'usar imatges Resultat:</p>
+<figure><img src="UD3/images/ud3-2023-11-20-13-34-24.png" /><br><figcaption></figcaption></figure>
+<br>
+
+<p>Un altre:</p>
+
+<section><pre><code class="language-css">p{
+   background-color : lightgray ;
+   border-width : 15px ;
+   -webkit-border-image : url( borde2.png ) 18 19 stretch ;
+   /*per a Safari*/
+   -o-vorder-image : url( borde2.png ) 18 19 stretch ;
+   /* per a Opera*/
+   border-image : url( borde2.png )   18 19 stretch ;
+}</code></pre>
+</section><br><br>
+<p>Resultat:</p>
+<figure><img src="UD3/images/ud3-2023-11-20-13-34-39.png" /><br><figcaption></figcaption></figure>
+<br>
+
+<p>I un altre:</p>
+
+
+<section><pre><code class="language-css">p{
+   background-color : lightgray ;
+   border-width : 15px ;
+  /*per a Safari*/
+   -webkit-border-image : url( borde2.png ) 18 19 stretch round ; 	
+  /* per a Opera*/
+   -o-border-image : url( borde2.png ) 18 19 stretch round ;   
+   border-image : url( borde2.png ) 18 19 stretch round ; 
+}</code></pre>
+</section><br><br>
+<p>Resultat:</p>
+
+<h3>Ombrejat de la caixa. box-shadow</h3>
+
+<p>Es pot aplicar una ombra a un element mitjançant la propietat <span class="r-word">box-shadow</span> . La sintaxi és:</p>
+
+
+<section><pre><code class="language-css">box-shadow :distànciaH distànciaV desenfocat propagació color inset;</code></pre>
+</section><br><br>
+
+<p>On:
+    <ul>
+        <li><span class="cursiva">distànciaH</span>. És la distància horitzontal de la vora de l'element a la vora de l'ombra aplicada.</li>
+        <li><span class="cursiva">distànciaV</span>. És la distància vertical de la vora de l'element a la vora de l'ombra aplicada.</li>
+        <li><span class="cursiva">desenfocat</span>. És la quantitat de desenfocat de la imatge. Si no s'indica, no s'aplica cap desenfocament a l'ombra.</li>
+        <li><span class="cursiva">propagació</span>. Força de l'ombra, com més força, més contrast tindrà i les seves vores envairan més la resta d'elements. Per defecte val 0.</li>
+        <li><span class="cursiva">color</span>. Color que apliquem a l'ombra (per defecte és el negre)</li>
+        <li><span class="negrita">inset</span>. Si apareix, fa que l'ombra es mostri cap a l'interior de la caixa, fent un efecte d'enfonsament. D'altra manera, l'ombra es dibuixa cap a l'exterior, fent un efecte d'elevació</li>
+    </ul>
+</p>
+
+
+
+<p>Exemple:</p>
+
+<section><pre><code class="language-css">p{
+		background-color : yellow ;
+		box-shadow : 20px 20px 15px black ;
+		-webkit-box-shadow : 20px 20px 15px black ;
+		/* per a Chrome anterior a la versió 10 */
+		-moz-box-shadow : 20px 20px 15px black ;
+		/* Per a mozilla anterior a la versió 15*/
+}</code></pre>
+</section><br><br>
+<p>Resultat:</p>
+
+<p>Aquesta propietat ha estat recollida des de fa poc temps a tots els navegadors, Internet Explorer a partir de la versió 9 i Chrome i 
+    Firefox des de les versions 10 i 15 (abans permetien el seu ús mitjançant prefix -webkit- i -moz- respectivament)</p>
+
+<h3>Gradients</h3>
+<p class="sub-section">Gradients lineals</p>
+
+<p>Un gradient és un degradat que permet pintar en lloc d'un color únic, amb una variació que va d'un color a un altre. 
+    CSS3 permet l'ús d'una funció anomenada <span class="negrita">linear-gradient</span> que permet utilitzar-se per exemple a la propietat <span class="negrita">background</span>
+    per establir un gradient.</p>
+
+
+<p>Sintaxi de la funció (estàndard):</p>
+
+<section><pre><code class="language-css">linear-gradient( direccion,primerColor posicion1,segonColor posicion2,… )</code></pre>
+</section><br><br>
+
+<p>El significat dels paràmetres és el següent:
+    <ul>
+        <li><span class="cursiva">direcció</span>. És opcional i serveix per dir en quina direcció es dibuixarà el gradient. 
+            Possibilitats: indicar un angle (per exemple 45deg ) o una direcció a un cantó o costat de la pantalla usant la paraula <span class="negrita">to</span>.
+            Exemples:
+            <ul>
+                <li><span class="cursiva">45deg</span>. 45 graus d'inclinació</li>
+                <li><span class="cursiva">to top</span>. Degrau vertical</li>
+                <li><span class="cursiva">to left</span>. Degradat horitzontal</li>
+                <li><span class="cursiva">to top left</span>. Degradat en direcció a la cantonada superior esquerra</li>
+            </ul>
+        </li>
+        <li><span class="cursiva">colors (primer, segon,..)</span>. Són els diferents colors del degradat, com més posem, més bandes tindrà.</li>
+        <li><span class="cursiva">posicions</span>. Per a cada color podem indicar-ne la posició, normalment un percentatge. Si no es fa servir, els colors es reparteixen uniformement a l'àrea del degradat.</li>
+    </ul>
+</p>
+
+<p>Exemple:</p>
+
+
+<section><pre><code class="language-xml">&lt;!doctype html >
+&lt;html  lang = "ca" >
+&lt;head>
+	&lt;meta  charset = "UTF-8" >
+	&lt;title> Document &lt;/title>
+	&lt;style>
+		div{
+			width : 100px ;
+			height : 100px ;
+			float : left ;
+			margin : 5px ;
+		}
+#d1{
+   background : linear-gradient( to top,red,blue );
+}
+#d2{
+    background :
+	linear-gradient( to right top,red,blue,yellow );
+}
+#d3{
+   background :
+	linear-gradient( 45deg,red,blue,yellow );  
+}
+#d4{
+   background :
+	linear-gradient( to top,red,blue 80% );
+}
+#d5{
+   background :
+	linear-gradient( to top,red,blue 20%, yellow 80% )	
+}
+&lt;/style>
+&lt;/head>
+&lt;body>
+	&lt;div id = "d1" >&lt;/div>
+	&lt;div id = "d2" >&lt;/div>
+	&lt;div id = "d3" >&lt;/div>
+	&lt;div id = "d4" >&lt;/div>
+	&lt;div id = "d5" >&lt;/div>
+&lt;/body>
+&lt;/html></code></pre>
+</section><br><br>
+<p>Resultat:</p>
+<figure><img src="UD3/images/ud3-2023-11-20-13-44-02.png" /><br><figcaption></figcaption></figure>
+<br>
+
+
+<p>Malauradament l'estàndard no és utilitzat res més que pels últims navegadors, per la qual cosa per a versions antigues cal fer servir la versió que, 
+    per a si mateixos, construeix cada navegador.</p>
+
+<p>Per exemple per a Firefox (encara que ja funciona l'estàndard en les últimes versions), tenim aquesta sintaxi:</p>
+
+<section><pre><code class="language-css">-moz-linear-gradient( angle o direcció, color1, color2 )</code></pre>
+</section><br><br>
+<p>Que és molt similar (però no fa servir la paraula <span class="negrita">to</span> per a les adreces del degradat).</p>
+
+<p>Per la seva banda els navegadors webkit (com Chrome i Safari ) usaven aquesta altra fórmula en les seves versions antigues:</p>
+
+<section><pre><code class="language-css">-webkit-gradient(linear, puntInicial,
+	puntFinal, from( color ),
+	color-stop( percentatge1,color1 ), ), 	
+	color-stop( percentatge2,color1 ),..,to( color ))</code></pre>
+</section><br><br>
+
+<p class="sub-section">Gradients radials</p>
+
+<p>La sintaxi estàndard de la funció que permet dibuixar gradients radials (degradats en forma circular) és:</p>
+
+
+<section><pre><code class="language-css">radial-gradient( forma at posició, color1 posició1,
+		color2 posicion2,… )</code></pre>
+</section><br><br>
+
+<p>El primer paràmetre ( forma at posició ), és opcional. La forma pot ser <span class="negrita">circle</span> (circular), 
+   ellipse  (el·lipse) o un percentatge d'amplada per altura (per exemple 30% 50%) que indica la mida del radi horitzontal i el vertical de l'el·lipse. 
+   És opcional indicar la posició mitjançant la paraula <span class="negrita">at</span> , si ho fem indicarem la posició exacta del radi.</p>
+
+
+<p>La resta de paràmetres (els colors) es manegen com en el cas del gradient lineal.</p>
+
+
+<p>Exemple:</p>
+
+<section><pre><code class="language-xml">&lt;!doctype html >
+&lt;html  lang = "ca" >
+&lt;head>
+	&lt;meta  charset = "UTF-8" >
+	&lt;title> Document &lt;/title>
+	&lt;style>
+		div{
+			width : 100px ;
+			height : 100px ;
+			float : left ;
+			margin : 5px ;
+		}
+#d1{
+	background : radial-gradient( red,blue );
+}
+#d2{
+	background : radial-gradient( red,blue,green );
+}
+#d3{
+  background :
+	radial-gradient( 30% 50%,red,blue,green );
+}
+#d4{
+   background :
+    radial-gradient( 30% 50% at 10% 50%,red,blue,green );
+}
+#d5{
+   background :
+	radial-gradient(at 10% 50%,red,blue,green );
+}		
+#d6{
+   background :
+	radial-gradient( 100% 100% at 10% 50%,red,blue 20%,green 50% );
+}
+&lt;/style>
+&lt;/head>
+&lt;body>
+	&lt;div id = "d1" >&lt;/div>
+	&lt;div id = "d2" >&lt;/div>
+	&lt;div id = "d3" >&lt;/div>
+	&lt;div id = "d4" >&lt;/div>
+	&lt;div id = "d5" >&lt;/div>
+&lt;/body>
+&lt;/html></code></pre>
+</section><br><br>
+<p>Resultat:</p>
+
+<figure><img src="UD3/images/ud3-2023-11-20-13-52-42.png" /><br><figcaption></figcaption></figure>
+<br>
+
+<p>Novament, la compatibilitat amb aquesta funció és recent i molts navegadors incorporaven la seva versió d'aquesta funció i fins i 
+    tot simplement no manejaven aquest tipus de resultat.</p>
+
+<h3>Perfils</h3>
+<p>Els perfils són vores que es posen a l'exterior dels elements de tipus caixa.</p>
+
+
+<p>A diferència de les vores, pròpiament dites, explicades als apartats anteriors, els perfils són línies que no mengen espai ni al farciment ni al marge.
+    Els perfils són vores que es col·loquen a la posició en què normalment ocupa una vora però no ocupen un espai extra, 
+    com si la línia que dibuixen estiguera per baix del text. Les propietats dels perfils són:
+<ul>
+    <li><span class="negrita">outline-color</span>. Color del perfil.</li>
+    <li><span class="negrita">outline-width</span>. Amplada del perfil</li>
+    <li><span class="negrita">outline-style</span>. Estil del perfil (admet les mateixes possibilitats que border-style).</li>
+    <li><span class="negrita">outline</span>. Resumeix les tres anteriors en una sola propietat, admet posar primer el color, després l'estil i després l'amplada.</li>
+</ul></p>
+
+<p>L'estàndard CSS va afegir aquestes propietats no per substituir les vores, sinó per ser aplicats a elements de formulari per tal que quedarà marcat 
+    l'element que actualment té el focus; és a dir, aquell element que rep les dades procedents del dispositiu dentrada de lusuari, normalment el teclat. 
+    S'utilitzen també per a depuració i per donar format CSS a esdeveniments de tipus hover, 
+    ja que la vora s'afegeix sense que es moguin els elements al seu voltant, cosa que provoca un efecte més elegant.</p>
+
+
+
+</section><!-- End section -->
 
 
     <!-- TO_MENU-->

@@ -4,19 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        li{
+            border:1px solid green;
+            list-style: square url('quadrat.gif') inside;
+        }
+        
+    </style>
 </head>
 <body>
-    <canvas id="llenç1" width="600" height="400">
-        <script type="text/javascript">
-            var canvas=document.getElementById("llenç1");
-            var context=canvas.getContext("2d");
-            context.lineWidth=2;
-            for(i=0;i<=600;i+=20){
-                context.moveTo(0,0);
-                context.lineTo(i,400)
-                context.stroke();
-            }
-        </script>
-    
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+    </ul>
 </body>
 </html>
