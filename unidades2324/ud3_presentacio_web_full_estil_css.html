@@ -1730,7 +1730,7 @@ imagina't en una web amb 100 pàgines…. Canviar el tipus de lletra seria molta
             <li><span class="negrita">underline</span>. Subratllat (línia per sota del text)</li>
     <li><span class="negrita">overline</span>. Línia per sobre del text.</li>
     <li><span class="negrita">line-through</span>. Ratat, línia que travessa el text.</li>
-    <li><span class="negrita">blink</span>. Parpelleig. No funciona a gairebé cap navegador (sí al Firefox).</li>
+    <li><span class="negrita">blink</span>. Parpelleig. No funciona a gairebé cap navegador (sí al Firefox). Aquest valor està obsolet en favor de les animacions</li>
         </ul>
     </p>
     
@@ -1875,6 +1875,11 @@ imagina't en una web amb 100 pàgines…. Canviar el tipus de lletra seria molta
     <li><span class="negrita">clip</span>. El text apareix retallat. Només es veu el text que cap a la capa, la resta no es mostra</li>
     <li><span class="negrita">ellipsi</span>. Com l'anterior, però es posen punts suspensius al final del text retallat.</li>    
 </ul>
+Ha d'anar acompanyat de la propietat
+<section><pre><code class="language-css">overflow: hidden;</code></pre>
+</section><br><br>
+
+<a class="enlace" target="_blank" href="https://www.w3schools.com/cssref/tryit.php?filename=trycss3_text-overflow">Exemple de text-overflow</a>
     </p>
           
     <p class="sub-section">text-shadow</p>
@@ -2891,7 +2896,7 @@ border-style : solid dashed dotted ;
    border : 15px solid transparent ;
    -webkit-border-image : url( borde2.png ) 18 19 round ; 	 
    /*per a Safari*/
-   -o-vorder-image : url( borde2.png ) 18 19 round ;
+   -o-border-image : url( borde2.png ) 18 19 round ;
    /* per a Opera*/
    border-image : url( borde2.png ) 18 19 round ; 
 }</code></pre>
@@ -2907,7 +2912,7 @@ border-style : solid dashed dotted ;
    border-width : 15px ;
    -webkit-border-image : url( borde2.png ) 18 19 stretch ;
    /*per a Safari*/
-   -o-vorder-image : url( borde2.png ) 18 19 stretch ;
+   -o-border-image : url( borde2.png ) 18 19 stretch ;
    /* per a Opera*/
    border-image : url( borde2.png )   18 19 stretch ;
 }</code></pre>
@@ -2988,7 +2993,7 @@ border-style : solid dashed dotted ;
             Exemples:
             <ul>
                 <li><span class="cursiva">45deg</span>. 45 graus d'inclinació</li>
-                <li><span class="cursiva">to top</span>. Degrau vertical</li>
+                <li><span class="cursiva">to top</span>. DEgradat vertical</li>
                 <li><span class="cursiva">to left</span>. Degradat horitzontal</li>
                 <li><span class="cursiva">to top left</span>. Degradat en direcció a la cantonada superior esquerra</li>
             </ul>
@@ -3070,12 +3075,11 @@ border-style : solid dashed dotted ;
 <p>La sintaxi estàndard de la funció que permet dibuixar gradients radials (degradats en forma circular) és:</p>
 
 
-<section><pre><code class="language-css">radial-gradient( forma at posició, color1 posició1,
-		color2 posicion2,… )</code></pre>
+<section><pre><code class="language-css">radial-gradient( forma at posició, color1 posició1, color2 posicion2,… )</code></pre>
 </section><br><br>
 
 <p>El primer paràmetre ( forma at posició ), és opcional. La forma pot ser <span class="negrita">circle</span> (circular), 
-   ellipse  (el·lipse) o un percentatge d'amplada per altura (per exemple 30% 50%) que indica la mida del radi horitzontal i el vertical de l'el·lipse. 
+   <span class="negrita">ellipse</span>  (el·lipse) o un percentatge d'amplada per altura (per exemple 30% 50%) que indica la mida del radi horitzontal i el vertical de l'el·lipse. 
    És opcional indicar la posició mitjançant la paraula <span class="negrita">at</span> , si ho fem indicarem la posició exacta del radi.</p>
 
 
@@ -3155,6 +3159,139 @@ border-style : solid dashed dotted ;
     l'element que actualment té el focus; és a dir, aquell element que rep les dades procedents del dispositiu dentrada de lusuari, normalment el teclat. 
     S'utilitzen també per a depuració i per donar format CSS a esdeveniments de tipus hover, 
     ja que la vora s'afegeix sense que es moguin els elements al seu voltant, cosa que provoca un efecte més elegant.</p>
+
+
+    <h3>Format de taules</h3>
+
+<p>La majoria de propietats d'ús habitual a CSS (vores, colors, tipus de lletra, alineacions,...) són perfectament aplicables a les taules. No obstant això, hi ha propietats CSS que, explícitament, serveixen per modificar la manera de visualitzar els elements d'una taula.</p>
+<p>No són gaires propietats, però sí que són extremadament útils i importants</p>
+
+<p class="sub-section">Espaiat i vora a les taules</p>
+
+<p>Les propietats CSS específiques per a taules són:
+    <ul>
+        <li><span class="negrita">border-collapse</span>. Permet indicar com manejar les vores adjacents entre elements. Possibles valors:</li>
+        <li><span class="negrita">collapse</span>. S'uneixen les vores adjacents per formar una única vora. És a dir, no hi ha espai entre vores adjacents.</li>
+        <li><span class="negrita">separate</span>. Les vores adjacents es mantenen separades. És el valor per defecte.</li>
+    </ul>
+</p>
+
+<p>Exemple:</p>
+
+<section><pre><code class="language-css">table{
+	width : 100% ;
+}
+td{
+	border : 2px solid black ;
+}</code></pre>
+</section><br>
+<figure><img src="UD3/images/ud3-2023-11-22-13-54-12.png" /><br><figcaption></figcaption></figure>
+<br>
+
+<p>La taula es mostra en mode <span class="r-word">separate</span> . No obstant això indicant mode <span class="r-word">collapse</span> a l'etiqueta <span class="negrita">table</span> :</p>
+
+<section><pre><code class="language-css">
+table{
+	width : 100% ;
+	border-collapse : collapse ;
+}
+td{
+	border : 2px solid black ;
+}</code></pre>
+</section><br>
+<p>Resultat:</p>
+<figure><img src="UD3/images/ud3-2023-11-22-13-54-56.png" /><br><figcaption></figcaption></figure>
+<br>
+
+<p>Cal fixar-se que és a l'element <span class="negrita">table</span> (el contenidor general de la taula) on s'indica aquesta propietat.
+<ul>
+    <li><span class="negrita">border-spacing</span>. Indiqueu l'espai entre vores. Admet dues mides, 
+        la primera s'utilitza per a la distància horitzontal i la segona per a la vertical. Si es fa servir una mesura es referirà a ambdues distàncies.
+        <p>Exemple:</p>
+        <section><pre><code class="language-css">border-spacing : 10px 5px ;</code></pre>
+        </section><br>
+    </li>
+    
+    <li><span class="negrita">caption-side</span>. Posició del títol de la taula (element <span class="negrita">caption</span>). 
+        Possibilitats: <span class="negrita">top</span> (a dalt, valor per defecte), <span class="negrita">bottom</span> (a baix).</li>
+    <li><span class="negrita">empty-cells</span>. Indica si volem mostrar les cel·les buides de la taula. 
+        Valors: <span class="negrita">show</span> (mostrar, valor per defecte) i <span class="negrita">hide</span> (amagar). 
+        No funciona ( hide ) amb les vores col·lapsades.</li>
+    <li><span class="negrita">table-layout</span>. Propietat present en els darrers navegadors (no a Internet Explorer ) 
+        permet indicar la manera com es calcula l'amplada de les cel·les. 
+        Per defecte pren el valor <span class="negrita">auto</span> , en què, encara que hàgim indicat una amplada fixa per a una cel·la, la mida depèn del contingut. <span class="negrita">fixed</span>
+        , però deixa la taula amb la mida fixada per les propietats d'amplada de columna ( <span class="negrita">width</span> ).
+    <p>El problema és quan un contingut ultrapassa la mida d'una cel·la (una imatge per exemple). En el primer cas la cel·la s'amplia per donar cabuda al contingut. Això significa que el navegador no pot renderitzar la taula fins no haver carregat tot el contingut.</p>
+    
+    
+    <p>En el segon cas, la taula es dibuixa a l'instant encara que els continguts no hagin arribat. Encara que en aquest cas aquests continguts sobresurtin de la taula. Només és interessant fixed si sabem segur la mida de la taula per avançat.</p>
+    
+    
+    <p>Exemple:</p>
+    
+    
+    <section><pre><code class="language-xml">&lt;!doctype html > 
+    &lt;html  lang =”ca” > 
+        &lt;head> 
+            &lt;meta  charset =”UTF-8” > 
+            &lt;title> Document &lt;/title> 
+            &lt;style>
+             table{ 
+                width : 100 %; 
+                border-spacing : 10px 25px ; 
+                border : 2px solid black ; 
+            } 
+            td{ 
+                border : 2px solid black ; 
+            } 
+            &lt;/style> 
+        &lt;/head>
+        &lt;body> 
+            &lt;table> 
+                &lt;tr> 
+                    &lt;td>   &lt;/td> 
+                    &lt;td>   &lt;/td> 
+                    &lt;td>   &lt;/td> 
+                    &lt;td>   &lt;/td> 
+                &lt;/tr> 
+                &lt;tr> 
+                    &lt;td>   &lt;/td> 
+                    &lt;td>   &lt;/td> 
+                    &lt;td>   &lt;/td> 
+                    &lt;td>   &lt;/td> 
+                &lt;/tr>
+                &lt;tr> 
+                    &lt;td>   &lt;/td> 
+                    &lt;td>   &lt;/td> 
+                    &lt;td>   &lt;/td> 
+                    &lt;td>   &lt;/td> 
+                &lt;/tr> 
+            &lt;/table> 
+    &lt;/html></code></pre>
+    </section><br>
+    
+    <figure><img src="UD3/images/ud3-2023-11-22-13-59-22.png" /><br><figcaption></figcaption></figure>
+    <br>
+    
+    </li>
+    <li><span class="negrita">caption-side</span>. Propietat utilitzada per a l'etiqueta caption que conté el títol de taula. 
+        Permet indicar si volem que el títol estigui per sobre de la taula (valor <span class="negrita">top</span> , 
+        valor per defecte) o per sota (valor <span class="negrita">bottom</span> )</li>
+    <li><span class="negrita">empty-cells</span>. Permet especificar si les vores i els ombrejats de la taula s'apliquen a les cel·les buides. Valors:
+    <ul>
+        <li><span class="negrita">show</span>. S'apliquen vores i ombrejades a aquestes cel·les (valor per defecte)</li>
+        <li><span class="negrita">hide</span>. No s'apliquen les vores i ombrejades a les cel·les buides.</li>
+    </ul></li>
+    
+    <li><span class="negrita">table-layout</span>. Indica la manera com es determina l'amplada de la taula i les cel·les. Possibles valors:
+    <ul>
+        <li><span class="negrita">auto</span>. Valor per defecte. Encara que haguem indicat amplada per a taula i/o cel·les, la seva mida es determina pel contingut de les mateixes (si el contingut requereix més amplada, així es farà.</li>
+        <li><span class="negrita">fixed</span>. Predomina l'amplada establerta per les propietats i no pel contingut</li>
+    </ul>
+    </li>
+</ul></p>
+
+
 
 
 
