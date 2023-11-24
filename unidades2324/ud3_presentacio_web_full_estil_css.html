@@ -28,6 +28,7 @@
         </div>
         <div class="fila">
             <a href="#sElementsdelformatdecaixa" title="7.- Elements del format de caixa">7.- Elements del format de caixa</a>
+            <a href="#sVitsualitzaciodElements" title="8.- Vitsualització d'Elements">8.- Vitsualització d'Elements</a>
 
         </div>
     </nav>
@@ -3231,9 +3232,9 @@ td{
     
     
     <section><pre><code class="language-xml">&lt;!doctype html > 
-    &lt;html  lang =”ca” > 
+    &lt;html  lang ="ca" > 
         &lt;head> 
-            &lt;meta  charset =”UTF-8” > 
+            &lt;meta  charset ="UTF-8" > 
             &lt;title> Document &lt;/title> 
             &lt;style>
              table{ 
@@ -3293,9 +3294,176 @@ td{
 
 
 
-
-
 </section><!-- End section -->
+
+<!--*********************************************************Vitsualització d'elements***********************************************************-->
+<section class="apartado">
+<a name="sVitsualitzaciodElements"></a>
+<h2>Vitsualització d'elements</h2>
+<h3>Propietat display</h3>
+<p>Maneres d'aparèixer un element en un navegador</p>
+
+<p>Els diferents elements HTML tenen una manera per defecte de presentar-se per pantalla. 
+    Així, per exemple, els elements <span class="negrita">p</span>  o <span class="negrita">h1</span>  utilitzen una àrea rectangular, 
+    mentre que els elements <span class="negrita">strong</span>  o <span class="negrita">em</span>  es mostren seguits a la pantalla.</p>
+
+<p>La propietat que se n'encarrega és <span class="r-word">display</span>, una propietat apareguda a <span class="cursiva">CSS2</span> 
+    que permet establir la forma en què es mostra per pantalla un element. 
+    Està especialment indicada per a documents diferents a <span class="cursiva">HTML</span> (<span class="cursiva">XML</span>  especialment) en què el seu contingut no 
+    té per defecte una manera de mostrar-se.</p>
+
+<p>En HTML permet modificar la manera com es mostra un element. 
+    Per exemple, en HTML els elements de tipus <span class="negrita">p</span> (paràgrafs) s'entén que es mostraran com a paràgrafs independents,
+     és a dir, amb cada etiqueta <span class="negrita">p</span>  comença un nou paràgraf o bloc. 
+     No aniran seguits dos elements de paràgraf consecutius.</p>
+
+<p>Gràcies a <span class="negrita">display</span> , el comportament d'un element es pot modificar. Per exemple en aquesta pàgina:</p>
+
+
+<section><pre><code class="language-xml">&lt;!doctype html> 
+&lt;html  lang ="ca" > 
+    &lt;head> 
+        &lt;meta charset ="UTF-8" > 
+            &lt;title> Document &lt;/title> 
+            &lt;style>
+					 p{ 
+						display : inline ; 
+					} 
+	&lt;/style> 
+    &lt;/head> 
+    &lt;body> 
+        &lt;p> Un &lt;/p> 
+        &lt;p> Dos &lt;/p> 
+        &lt;p> Tres &lt;/p> 
+        &lt;p> Quatre &lt;/p> 
+        &lt;p> Cinc &lt;/p> 
+        &lt;p> Sis &lt;/p> 
+    &lt;/body> 
+&lt;/html></code></pre>
+</section><br><br>
+Es mostrarà el contingut d'aquesta manera:
+
+<div class="muestra"><p>Un Dos Tres Quatre Cinc Sis</p></div>
+
+<p>Ja que s'ha modificat la propietat perquè els elements de tipus <span class="negrita">p</span> vagen seguits a la mateixa línia.</p>
+
+
+<p><span class="negrita"><span class="negrita">Principals valors de display</span>:</span> 
+    <ul>
+
+    </ul>
+</p>
+
+<li><span class="negrita">none</span>. <p>L'element queda ocult (també els elements fills) i l'espai que ocupava l'element es retira. 
+    Desapareixerà fins i tot de l'arbre d'elements del document, cosa que impedirà, per exemple, 
+    l'accés a aquest element des de JavaScript.</p>
+</li>
+<li><span class="negrita">inline</span>. <p>Els elements amb aquest display es mostren sense trencar la línia actual. 
+    Es mostren dins de la línia. Per tant podem col·locar dos elements inline seguits.</p>
+
+<p>Els elements <span class="cursiva">inline</span>  ignoren els marges superior i inferior, però sí que reconeixen els farcits i 
+    els marges esquerre i dret, així com les vores i els colors i imatges de farciment. No fan cas de les propietats 
+    <span class="negrita">width</span>, <span class="negrita">height</span>.</p>
+
+
+<p>Exemples d'elements que són per defecte d'aquest tipus serien: <span class="negrita">span</span>, <span class="negrita">small</span>,
+     <span class="negrita">strong</span>, <span class="negrita">em</span>, <span class="negrita">mark</span>, 
+     <span class="negrita">abbr</span>, <span class="negrita">kbd</span>, etc.</p>
+</li>
+
+<li><span class="negrita">block</span>. <p>Són elements que es mostren dins una caixa rectangular. Trenquen la línia actual i, per defecte, no admeten cap altre element al seu costat (independentment de la mida o l'alineació).</p>
+<p>Els elements de tipus block admeten manipular qualsevol propietat. Elements, per defecte, d'aquest tipus són: <span class="negrita">p</span>,
+ <span class="negrita">h1</span>, <span class="negrita">div</span>, <span class="negrita">section</span>, <span class="negrita">article</span>,
+  <span class="negrita">nav</span>, <span class="negrita">figure</span>, <span class="negrita">ul</span>, etc.</p></li>
+
+
+<li><span class="negrita">inline-block</span>. <p>L'element forma un bloc rectangular, però és interior al contenidor (no trenca la línia actual). Sí que admeten elements al seu costat. 
+    Admeten manipular les propietats width i height el que demostra la seva semblança amb el valor block.</p>
+
+<p>Exemples d'elements d'aquest tipus són: <span class="negrita">button</span>, <span class="negrita">image</span>,
+     <span class="negrita">input</span>, <span class="negrita">textarea</span>, <span class="negrita">select</span>, etc.</p>
+</li>
+
+<span class="negrita"><span class="subrayado">Altres valors de display:</span></span>
+<p>
+    <ul>
+        <li><span class="negrita">list-item</span>. L'element es considera un ítem d'una llista (igual que l'etiqueta <span class="negrita">li</span>). 
+            Per tant, els elements així marcats admeten les propietats: <span class="negrita">list-style-type, list-style-image, list-style-position i list-style</span> .</li>
+        <li><span class="negrita">run-in</span>. L'element es comporta com a <span class="negrita">block</span>  o com a <span class="negrita">inline</span>  depenent del context.</li>
+        <li><span class="negrita">table</span>. Considereu que l'element conté una taula (com l'element <span class="negrita">table</span>).</li>
+        <li><span class="negrita">table-caption</span>. Considereu a l'element un títol de taula (com passa amb <span class="negrita">caption</span>).</li>
+        <li><span class="negrita">table-cell</span>. Considereu a l'element una cel·la d'una taula (com <span class="negrita">th</span>  o <span class="negrita">td</span>  ).</li>
+        <li><span class="negrita">table-row</span>. Considereu que l'element conté una fila d'una taula (com a <span class="negrita">tr</span>).</li>
+        <li><span class="negrita">table-row-group</span>. Considereu a l'element un grup de files (com <span class="negrita">tbody</span>).</li>
+        <li><span class="negrita">table-column</span>. Considereu a l'element una columna (com col ).</li>
+        <li><span class="negrita">table-column-group</span>. Considereu a l'element un grup de columnes (com <span class="negrita">colgroup</span>).</li>
+        <li><span class="negrita">table-footer-group</span>. Considereu que l'element conté el peu d'una taula (com <span class="negrita">tfoot</span>)</li>
+        <li><span class="negrita">table-header-group</span>. Considereu a l'element una capçalera de taula (com <span class="negrita">theader</span>)</li>
+        <li><span class="negrita">inline-table</span>. Element inline interior a una taula.</li>
+    </ul>
+</p>
+
+<span class="negrita"><span class="subrayado">Valors de display per a maquetacions avançades.</span></span> 
+<p>
+    <ul>
+        <li><span class="negrita">flex</span>. Permet establir contenidors de tipus caixa flexible que faciliten el 
+            disseny adaptable d'una pàgina. Només ho reconeixen les darreres versions de navegadors</li>
+<li><span class="negrita">inline-flex</span>. Semblant a l'anterior, però l'element s'entén que es mostra a la mateixa línia que els seus elements adjacents.</li>
+<li><span class="negrita">grid</span>. Element que conté una estructura de tipus <span class="negrita">grid</span>.</li>
+<li><span class="negrita">inline-grid</span>. Element que conté una estructura <span class="negrita">grid</span> de fila.</li>
+<li><span class="negrita">subgrid</span>. Element interior a un grid que també es comportarà com un <span class="negrita">grid</span>.</li>
+    </ul>
+</p>
+<p>Tots aquests valors són molt moderns (alguns no funcionen a gairebé cap navegador dels existents a l'hora d'escriure aquestes línies).</p>
+
+<p>Se'n detallarà el funcionament més endavant.</p>
+
+
+<p class="sub-section">Modificació de la propietat display</p>
+
+<p>En el següent exemple s'ha modificat la presentació habitual de l'element span (que normalment és inline ) perquè sigui inline-block ia més se li ha col·locat vora i ombrejat per observar quina és la forma i posició de l'element.</p>
+<section><pre><code class="language-xml">&lt;!doctype html > 
+&lt;html  lang ="ca" > 
+&lt;head> 
+  &lt;meta charset ="UTF-8" > 
+  &lt;title> Document &lt;/title> 
+  &lt;style>
+     #marc{ 
+	background-color : lightgray; 
+	border : 2px  solid  black;
+	display : inline-block;
+	width : 50%; 
+    } 
+    p{ 
+	border : 1px solidgray; 
+    } 
+  &lt;/style> 
+&lt;body>
+  &lt;p>
+      Ningú no podia suposar que l'inspecte Albert anava a
+      consentir que s'escapés el lladre, per això tots
+      van mirar en la seva direcció absolutament consternats
+  &lt;span id= "marc" >
+      No havia passat mai una situació així. tots
+      consideraven Albert, esclau de la seva moralitat.
+      Era la primera vegada que incomplia la seva comesa
+  &lt;/span>
+     La resta de policies va iniciar la marxa cap a la
+      comissària capcots, amb la total seguretat de
+      que res no seria el mateix
+  &lt;/p>
+  &lt;p>
+      L'últim en arribar va ser Albert mateix, va dirigir als seus companys una mirada amb una estranya
+      somriure. Se li endevinava la resta d'una llàgrima
+      barrejada amb la pols de les galtes.
+  &lt;/p>
+&lt;/body>
+&lt;/html></code></pre>
+</section><br><br>
+<p>El resultat del codi és:</p>
+
+
+</section><!-- End section Vitsualització d'elements-->
 
 
     <!-- TO_MENU-->
