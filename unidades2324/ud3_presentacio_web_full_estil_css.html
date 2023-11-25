@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UD2.-Llenguatges de marques en entorns web</title>
+    <title>UD3.- Presentació web amb CSS</title>
     <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/prism.css">
     <link rel="stylesheet" href="../styles/styles.css">
@@ -29,8 +29,14 @@
         <div class="fila">
             <a href="#sElementsdelformatdecaixa" title="7.- Elements del format de caixa">7.- Elements del format de caixa</a>
             <a href="#sVitsualitzaciodElements" title="8.- Vitsualització d'Elements">8.- Vitsualització d'Elements</a>
-
+            <a href="#sPosicionamentCSS" title="9.- Posicionament CSS">9.- Posicionament CSS</a>
         </div>
+        <div class="fila">
+            <a href="#sTransformacions" title="10.- Transformacions">10.- Transformacions CSS</a>
+            <a href="#sAnimacions" title="11.- Animacions">11.- Animacions</a>
+            <a href="#sGeneracionCodigo" title="12.- Generación de código">12.- Generación de código</a>
+        </div>
+
     </nav>
     <!-- TO_MENU -->
 
@@ -49,7 +55,13 @@
         </div>
         <div class="fila">
             <a href="#sElementsdelformatdecaixa" title="7.- Elements del format de caixa">7.- Elements del format de caixa</a>
-
+            <a href="#sVitsualitzaciodElements" title="8.- Vitsualització d'Elements">8.- Vitsualització d'Elements</a>
+            <a href="#sPosicionamentCSS" title="9.- Posicionament CSS">9.- Posicionament CSS</a>
+        </div>
+        <div class="fila">
+            <a href="#sTransformacions" title="10.- Transformacions">10.- Transformacions</a>
+            <a href="#sAnimacions" title="11.- Animacions">11.- Animacions</a>
+            <a href="#sGeneracionCodigo" title="12.- Generación de código">12.- Generación de código</a>
         </div>
     </div>
 
@@ -1843,7 +1855,7 @@ imagina't en una web amb 100 pàgines…. Canviar el tipus de lletra seria molta
     <p class="sub-section">text-indent</p>
     
     <p>Sangria de la primera línia del paràgraf. Distància extra que es deixa a la primera línia respecte a la resta de línies. 
-        Per exemple, si indiquem, <span class="cursiva">text-indent:50px;</span> el resultat seria (per a un paràgraf a què s'apliqui aquest codi):</p>
+        Per exemple, si indiquem, <span class="cursiva">text-indent:50px;</span> el resultat seria (per a un paràgraf a què s'aplique aquest codi):</p>
     
     <figure><img src="UD3/images/ud3-2023-11-20-11-05-08.png" /><br><figcaption>text-indent:50px;</figcaption></figure>
     <br>
@@ -2011,7 +2023,7 @@ Ha d'anar acompanyat de la propietat
     
     <span class="r-word">text-align-last</span>
     <p>Indica quina és l'alineació de l'última línia d'un paràgraf. Possibles valors:
-        <li><span class="negrita">auto</span>. Agafa l'alineació que tingui la resta de línia del paràgraf (la que estableix la propietat text-align ).</li>
+        <li><span class="negrita">auto</span>. Agafa l'alineació que tinga la resta de línia del paràgraf (la que estableix la propietat text-align ).</li>
         <li><span class="negrita">left</span>. Esquerra.</li>
         <li><span class="negrita">right</span>. Dreta.</li>
         <li><span class="negrita">center</span>. Centre.</li>
@@ -2496,7 +2508,7 @@ La propietat <span class="negrita">list-style</span> permet a un sol cop configu
 
 
 <h3>Color de fons</h3>
-<p>La propietat <span class="r-word">background-color</span> permet establir un color de fons a l'element a què s'apliqui la propietat. 
+<p>La propietat <span class="r-word">background-color</span> permet establir un color de fons a l'element a què s'aplique la propietat. 
     Si s'aplica a l'element <span class="negrita">body</span>, tota la pàgina tindrà aquest color de fons; 
     aplicat a un altre element (com <span class="negrita">div</span> o <span class="negrita">p</span> per exemple), aquest element tindrà com a fons el color aplicat.</p>
 
@@ -2506,7 +2518,7 @@ La propietat <span class="negrita">list-style</span> permet a un sol cop configu
 
 <p>La propietat <span class="r-word">background-image</span> permet establir una imatge de fons. 
     Aquesta imatge se superposa al color de fons (si n'hi ha, de manera que si la imatge no es pot carregar (perquè la ruta no s'ha indicat), 
-    llavors apareix el color de fons.)</p>
+    aleshores apareix el color de fons.)</p>
 
 <p>Per defecte, la imatge de fons es repeteix les vegades necessàries (creant un mosaic), 
     tant horitzontalment com vertical, fins que s'omple l'element. Exemple de codi complet:</p>
@@ -2616,7 +2628,7 @@ La propietat <span class="negrita">list-style</span> permet a un sol cop configu
      es calcule automàticament.</p>
 
 
-<p>Més recentment (i per tant no reconegut per navegadors que no siguin prou moderns) a aquesta propietat li podem donar els valors:
+<p>Més recentment (i per tant no reconegut per navegadors que no siguen prou moderns) a aquesta propietat li podem donar els valors:
 <ul>
     <li><span class="negrita">cover</span>. Fa que la imatge ompli el contenidor on es troba de forma responsive , és a dir, 
         sense perdre la seva proporció d'alçada i alçada. Fa que la imatge siga el més gran possible sense perdre la proporció d'alçada per altura.</li>
@@ -3341,7 +3353,7 @@ td{
     &lt;/body> 
 &lt;/html></code></pre>
 </section><br><br>
-Es mostrarà el contingut d'aquesta manera:
+<p>Es mostrarà el contingut d'aquesta manera:</p>
 
 <div class="muestra"><p>Un Dos Tres Quatre Cinc Sis</p></div>
 
@@ -3350,39 +3362,39 @@ Es mostrarà el contingut d'aquesta manera:
 
 <p><span class="negrita"><span class="negrita">Principals valors de display</span>:</span> 
     <ul>
-
+        <li><span class="negrita">none</span>. <p>L'element queda ocult (també els elements fills) i l'espai que ocupava l'element es retira. 
+            Desapareixerà fins i tot de l'arbre d'elements del document, cosa que impedirà, per exemple, 
+            l'accés a aquest element des de JavaScript.</p>
+        </li>
+        <li><span class="negrita">inline</span>. <p>Els elements amb aquest display es mostren sense trencar la línia actual. 
+            Es mostren dins de la línia. Per tant podem col·locar dos elements inline seguits.</p>
+        
+        <p>Els elements <span class="cursiva">inline</span>  ignoren els marges superior i inferior, però sí que reconeixen els farcits i 
+            els marges esquerre i dret, així com les vores i els colors i imatges de farciment. No fan cas de les propietats 
+            <span class="negrita">width</span>, <span class="negrita">height</span>.</p>
+        
+        
+        <p>Exemples d'elements que són per defecte d'aquest tipus serien: <span class="negrita">span</span>, <span class="negrita">small</span>,
+             <span class="negrita">strong</span>, <span class="negrita">em</span>, <span class="negrita">mark</span>, 
+             <span class="negrita">abbr</span>, <span class="negrita">kbd</span>, etc.</p>
+        </li>
+        
+        <li><span class="negrita">block</span>. <p>Són elements que es mostren dins una caixa rectangular. Trenquen la línia actual i, per defecte, no admeten cap altre element al seu costat (independentment de la mida o l'alineació).</p>
+        <p>Els elements de tipus block admeten manipular qualsevol propietat. Elements, per defecte, d'aquest tipus són: <span class="negrita">p</span>,
+         <span class="negrita">h1</span>, <span class="negrita">div</span>, <span class="negrita">section</span>, <span class="negrita">article</span>,
+          <span class="negrita">nav</span>, <span class="negrita">figure</span>, <span class="negrita">ul</span>, etc.</p></li>
+        
+        
+        <li><span class="negrita">inline-block</span>. <p>L'element forma un bloc rectangular, però és interior al contenidor (no trenca la línia actual). Sí que admeten elements al seu costat. 
+            Admeten manipular les propietats width i height el que demostra la seva semblança amb el valor block.</p>
+        
+        <p>Exemples d'elements d'aquest tipus són: <span class="negrita">button</span>, <span class="negrita">image</span>,
+             <span class="negrita">input</span>, <span class="negrita">textarea</span>, <span class="negrita">select</span>, etc.</p>
+        </li>
     </ul>
 </p>
 
-<li><span class="negrita">none</span>. <p>L'element queda ocult (també els elements fills) i l'espai que ocupava l'element es retira. 
-    Desapareixerà fins i tot de l'arbre d'elements del document, cosa que impedirà, per exemple, 
-    l'accés a aquest element des de JavaScript.</p>
-</li>
-<li><span class="negrita">inline</span>. <p>Els elements amb aquest display es mostren sense trencar la línia actual. 
-    Es mostren dins de la línia. Per tant podem col·locar dos elements inline seguits.</p>
 
-<p>Els elements <span class="cursiva">inline</span>  ignoren els marges superior i inferior, però sí que reconeixen els farcits i 
-    els marges esquerre i dret, així com les vores i els colors i imatges de farciment. No fan cas de les propietats 
-    <span class="negrita">width</span>, <span class="negrita">height</span>.</p>
-
-
-<p>Exemples d'elements que són per defecte d'aquest tipus serien: <span class="negrita">span</span>, <span class="negrita">small</span>,
-     <span class="negrita">strong</span>, <span class="negrita">em</span>, <span class="negrita">mark</span>, 
-     <span class="negrita">abbr</span>, <span class="negrita">kbd</span>, etc.</p>
-</li>
-
-<li><span class="negrita">block</span>. <p>Són elements que es mostren dins una caixa rectangular. Trenquen la línia actual i, per defecte, no admeten cap altre element al seu costat (independentment de la mida o l'alineació).</p>
-<p>Els elements de tipus block admeten manipular qualsevol propietat. Elements, per defecte, d'aquest tipus són: <span class="negrita">p</span>,
- <span class="negrita">h1</span>, <span class="negrita">div</span>, <span class="negrita">section</span>, <span class="negrita">article</span>,
-  <span class="negrita">nav</span>, <span class="negrita">figure</span>, <span class="negrita">ul</span>, etc.</p></li>
-
-
-<li><span class="negrita">inline-block</span>. <p>L'element forma un bloc rectangular, però és interior al contenidor (no trenca la línia actual). Sí que admeten elements al seu costat. 
-    Admeten manipular les propietats width i height el que demostra la seva semblança amb el valor block.</p>
-
-<p>Exemples d'elements d'aquest tipus són: <span class="negrita">button</span>, <span class="negrita">image</span>,
-     <span class="negrita">input</span>, <span class="negrita">textarea</span>, <span class="negrita">select</span>, etc.</p>
-</li>
 
 <span class="negrita"><span class="subrayado">Altres valors de display:</span></span>
 <p>
@@ -3421,7 +3433,7 @@ Es mostrarà el contingut d'aquesta manera:
 
 <p class="sub-section">Modificació de la propietat display</p>
 
-<p>En el següent exemple s'ha modificat la presentació habitual de l'element span (que normalment és inline ) perquè sigui inline-block ia més se li ha col·locat vora i ombrejat per observar quina és la forma i posició de l'element.</p>
+<p>En el següent exemple s'ha modificat la presentació habitual de l'element span (que normalment és inline ) perquè siga inline-block ia més se li ha col·locat vora i ombrejat per observar quina és la forma i posició de l'element.</p>
 <section><pre><code class="language-xml">&lt;!doctype html > 
 &lt;html  lang ="ca" > 
 &lt;head> 
@@ -3462,8 +3474,808 @@ Es mostrarà el contingut d'aquesta manera:
 </section><br><br>
 <p>El resultat del codi és:</p>
 
+<figure><img src="UD3/images/ud3-2023-11-25-08-50-47.png" /><br><figcaption></figcaption></figure>
+<br>
+
+<p>Un altre exemple (creació de taules sense fer servir l'etiqueta table ):</p>
+
+<section><pre><code class="language-xml">&lt;!doctype  html>
+&lt;html lang= "es" >
+&lt;head>
+    &lt;meta charset= "UTF-8">
+    &lt;title> Exemple d'inline-block &lt;/title>
+    &lt;style>
+        #contenidor{
+            display: table;
+        }
+        #fila{
+            display: table-row;
+        }
+        p{
+            display: table-cell;
+            border: 1px solid black ;
+        }
+    &lt;/style>
+&lt;/head>
+&lt;body>
+  &lt;div id= "contenidor" >
+      &lt;div id= "fila" >
+          &lt;p>
+              Ningú no podia suposar que l'inspecte Albert
+              consentiria que s'escapés el lladre,
+              per això tots van mirar en la direcció
+              absolutament consternats
+          &lt;/p>
+          &lt;p>
+              No havia passat mai una situació així.
+				  tots consideraven Albert, esclau del seu
+				  moralitat. Era la primera vegada que incomplia
+				  la seva comesa
+          &lt;/p>
+          &lt;p>
+              La resta de policies va iniciar la marxa cap a
+				  la comissària capcots, amb la total
+				  seguretat que res no seria el mateix
+          &lt;/p>
+          &lt;p>
+              L'últim en arribar va ser el mateix Albert, al
+				  fer-ho va dirigir als seus companys una mirada
+				  amb un estrany somriure. Se li endevinava el
+				  resta d'una llàgrima barrejada amb la pols
+				  de les galtes.
+         &lt;/p>
+      &lt;/div>
+  &lt;/div>
+&lt;/body>
+&lt;/html></code></pre>
+</section><br><br>
+<p>Resultat:</p>
+
+<figure><img src="UD3/images/ud3-2023-11-25-08-53-23.png" /><br><figcaption></figcaption></figure>
+<br>
+<p>Al codi que es mostra a continuació s'aconsegueix que els elements de tipus <span class="negrita">p</span> es mostren 
+    com si fossen llistes i no paràgrafs normals:</p>
+
+<section><pre><code class="language-xml">&lt;!doctype  html >
+&lt;html lang= "es" >
+&lt;head>
+    &lt;meta charset= "UTF-8">
+    &lt;title> Exemple de list-item &lt;/title>
+    &lt;style>
+        p{
+            display: list-item ;
+            list-style-type:  disc ;
+            list-style-position:  inside ;
+        }
+    &lt;/style>
+&lt;/head>
+&lt;body>
+    &lt;h1>
+        Coneixements a adquirir a
+        el departament de disseny
+    &lt;/h1>
+    &lt;p> HTML &lt;/p>
+    &lt;p> CSS &lt;/p>
+    &lt;p> JavaScript &lt;/p>
+    &lt;p> jQuery &lt;/p>
+&lt;/body>
+&lt;/html></code></pre>
+</section><br><br>
+<p>Resultat:</p>
+<figure><img src="UD3/images/ud3-2023-11-25-08-56-04.png" /><br><figcaption></figcaption></figure>
+<br>
 
 </section><!-- End section Vitsualització d'elements-->
+
+<!--*********************************************************Posicionament CSS***********************************************************-->
+<section class="apartado">
+<a name="sPosicionamentCSS"></a>
+<h2>Posicionament CSS</h2>
+<h3>Introducció</h3>
+<p>Una de les grans i històriques peticions dels dissenyadors web ha estat la possibilitat de poder col·locar contingut en una posició concreta de la pàgina, 
+    fent que els continguts no es vagen mostrant en l'ordre en què apareixen al codi, sinó en què decidim lliurement.</p>
+<p>Va ser la principal aportació de CSS2 i ha provocat que, en lloc de fer servir taules per definir la maquetació de la pàgina, 
+    ara siguen les capes les encarregades de fer-ho. Les <span class="negrita">capes</span> són elements que permeten una distribució de continguts més lliure. 
+    L'etiqueta <span class="negrita">div</span> sol ser l'encarregada de crear capes, encara que amb HTML5 són altres elements els que també 
+    s'usen per a aquesta tasca com a <span class="negrita">section</span> o <span class="negrita">article</span> , ja que <span class="negrita">div</span>
+     no és una etiqueta semàntica (no diu quin tipus de contingut posseeix, si és un article, un títol, un menú,…).</p>
+<p>Cal tenir en compte que la posició d'un element també estarà influït pel valor de la propietat <span class="negrita">display</span>, 
+    com es va explicar al punt anterior.</p>
+
+<h3>Flotació</h3>
+<p>La propietat <span class="r-word">float</span> és molt útil per a continguts multimèdia com a imatges o taules. 
+    Permet indicar com es comporta el contingut dels elements adjacents sobre l'actual.</p>
+<p>Normalment tots els elements <span class="cursiva">no floten</span>. És a dir, quan col·loquem, per exemple, una imatge, 
+    el contingut que va a continuació apareix a la seva línia base, deixant un buit poc estètic.</p>
+<p>Podem fer que aquest contingut contorni la imatge a la seva dreta ( <span class="cursiva">float:left</span>) o a la seua esquerra 
+    ( <span class="cursiva">float:left</span> ). En definitiva, els possibles valors de la propietat <span class="negrita">float</span> són:
+    <ul>
+        <li><span class="negrita">left</span>. L'element flota a l'esquerra. El contingut immediatament següent el contorneja a la dreta, sempre que càpiga</li>
+        <li><span class="negrita">right</span>. L'element flota a la dreta. El contingut immediatament següent us contorneja a l'esquerra.</li>
+        <li><span class="negrita">none</span>. L'element no flota (valor per defecte). En el cas del text, la primera línia aniria seguida a l'element, la resta cauria per sota.</li>
+    </ul>
+</p>
+
+
+<p>Cal tenir en compte que aquesta propietat està pensada per a elements de bloc, que són aquells que tingan un <span class="cursiva">display</span> amb valor 
+    <span class="negrita">block</span> o <span class="negrita">inline-block</span> .</p>
+
+
+<p>Per exemple, si tenim aquest codi HTML:</p>
+
+<section><pre><code class="language-xml">&lt;p>
+    &lt;img  src= "friso.jpg" alt= "Fris Egipci" />
+    Lorem ipsum dolor sit amet, consectetur
+    adipisicing elit. Ad, aliquam, aliquid
+    aspernatur ducimus error harum illo in
+    libero modi mollitia nostrum odit omnis rem,
+    reprehenderit set soluta tempore
+    tenetur voluptatum.
+&lt;/p></code></pre>
+</section><br><br>
+<p></p>
+
+<section><pre><code class="language-css">img{
+	float: none ;
+    width: 300px ;
+}</code></pre>
+</section><br>
+<p>Dona com a resultat:</p>
+
+<figure><img src="UD3/images/ud3-2023-11-25-09-15-19.png" /><br><figcaption>float:none</figcaption></figure>
+<br>
+<p>El text següent a la imatge només enganxa la primera línia. Aquest és el comportament normal de flotació d'elements de tipus
+     <span class="negrita">inline block</span> (al qual pertany la imatge).</p>
+<p>En cas que la imatge estigués dins un contenidor de bloc (un element <span class="negrita">div</span> per exemple), ni la primera línia apareixeria seguida.</p>
+<p>No obstant això el mateix codi HTML usant <span class="negrita">float-left</span> , queda</p>
+
+<figure><img src="UD3/images/ud3-2023-11-25-09-17-06.png" /><br><figcaption>float:left</figcaption></figure>
+<br>
+<p>En el cas de flotació dreta ( float-right ):</p>
+<figure><img src="UD3/images/ud3-2023-11-25-09-17-38.png" /><br><figcaption></figcaption></figure>
+<br>
+
+<h3>Mida de l'element</h3>
+<p>Dues propietats permeten establir la mida d'un element:
+<ul>
+    <li><span class="negrita">width</span>. 
+        <p>Amplada de l'element. El seu valor per defecte és <span class="negrita">auto</span>, 
+        la qual cosa implica que l'element es farà prou ample perquè en càpiga el contingut. 
+        D'altra manera indicarem la seva mida utilitzant la unitat de mesura desitjada ( <span class="negrita">px , em , %</span> , etc.).</p>
+        <p>En el cas de les unitats relatives, es pren com a referència allò que mesura el contenidor; si indiquem un 50% 
+            a un element que està dins d'un element <span class="negrita">div</span> , prendrà la meitat de l'amplada d'aquest <span class="negrita">div</span>,
+            si el nostre element penja directament de <span class="negrita">body</span> , prendrà la meitat de l'amplada de la pàgina.</p>   
+    </li>
+    
+    <li><span class="negrita">height</span>. <p>Alçada de l'element. Teniu les mateixes possibilitats que l'element anterior.</p></li>
+    <li><span class="negrita">max-width</span>. 
+        <p>S'utilitza quan la mesura de l'amplada d'un element s'indica relativament, per exemple amb percentatges. 
+        Aquesta propietat indica una mida màxima per a l'element.</p>
+        <p>És a dir, si hem indicat <span class="cursiva">width: 50%;</span> i a més <span class="cursiva">max-width:750px;</span>
+            aleshores l'element mesurarà d'amplada la meitat del contenidor. Si per exemple el contenidor fa 2000 píxels, 
+            el nostre element mesuraria 1000 píxels aplicant el 50%; però com hem indicat la propietat max-width:750px , mesurarà exactament 750 píxels.</p>
+            <p>Aquesta propietat és molt interessant per aplicar dissenys de tipus adaptable.</p>
+        </li>
+    <li><span class="negrita">min-width</span>. <p>La idea és la mateixa que a la propietat anterior, 
+        però ara s'indica una mida mínima que tindrà prioritat sobre la mida relativa de la propietat <span class="negrita">width</span>.</p></li>
+    <li><span class="negrita">max-height</span>. <p>La mateixa idea s'aplica a l'alçada de l'element. Indiqueu l'alçada màxima que podreu prendre l'element.</p>
+    </li>
+    <li><span class="negrita">min-height</span>. <p>Alçada mínima de l'element.</p>
+    </li>
+</ul>
+</p>
+
+<h3>Posicionament</h3>
+<p>La propietat <span class="r-word">position</span> és la fonamental per establir el posicionament. 
+    Serveix per indicar de quina manera un element flueix per la pàgina. Gràcies a aquesta propietat podrem indicar si l'element al qual realment 
+    s'aplica es comportarà com una capa de continguts que es col·locarà lliurement a la pàgina. Es detallen els possibles valors que pot prendre position .</p>
+
+<p class="sub-section">Posicionament estàtic</p>
+
+<p>S'aconsegueix usant el valor <span class="r-word">static</span> a la propietat <span class="negrita">position</span>.</p>
+<p>El posicionament estàtic és el que s'aplica per defecte. Si s'estableix així, l'element a què s'aplique apareix a la pàgina a la posició que dicte 
+    el flux natural (d'esquerra a dreta i de dalt a baix) del codi. És a dir, ignorarà les propietats de posicionament
+     (<span class="negrita">left , top , right i bottom</span>).</p>
+
+<p class="sub-section">Posicionament relatiu</p>
+
+<p>S'aconsegueix amb el valor <span class="r-word">relative</span>. Funciona com a <span class="negrita">static</span> només que, 
+    en aquest cas, sí que permet modificar la seva posició inicial usant les propietats <span class="negrita">left , top , right i bottom</span>.</p>
+<p>En mode <span class="negrita">relative</span>, l'element marcat amb aquest posicionament sí que es mou amb les propietats de posicionament, 
+    però deixa el buit que li correspondria en mode <span class="negrita">static</span>. 
+    En definitiva, <span class="negrita">relative</span> provoca un desplaçament a l'element.</p>
+<p>Exemple de posicionament <span class="negrita">relative</span>:</p>
+
+<section><pre><code class="language-xml">&lt;!doctype html>
+&lt;html lang= "es" >
+&lt;head>
+    &lt;meta charset= "UTF-8" >
+    &lt;title> Estàtic &lt;/title>
+    &lt;style>
+        div{
+            width: 400px;
+            border: 2px solid gray;
+        }
+        #capa1{
+           position: relative;
+            left: 80px;
+            top: 40px;
+            background-color: lightgrey;
+        }
+    &lt;/style>
+&lt;/head>
+&lt;body>
+&lt;div id= "capa1" > Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae blanditiis consequatur debitis
+    deleniti ducimus ea in maiores, molèsties mollitia, nisi, quaerat. Consequatur eveniet fugit impedit incidunt odit
+    quas ullam?
+&lt;/div>
+&lt;div> Ab amet deserunt eaque, eveniet hic illo itaque magni reprehenderit soluta temporibus ut vel. Arxitecte at, facere
+    aneu laboriosam praesentium provident sint. Aliquam asperiors et molèsties, optio sit ullam.
+&lt;/div>
+&lt;div> Beatae culpa cupiditate rem similique ullam. Aliquid atque eaque eius error exexpedita harum id itaque iure
+    laboriosam nemo quasi quos repellendus rerum sapiente, tempora temporibus veniam voluptes voluptate voluptatem?
+&lt;/div>
+&lt;/body>&lt;/html></code></pre>
+</section><br>
+<p>El resultat és el que s'observa a l'imatge, el primer paràgraf es desplaça però deixa el buit que ocuparia la capa en el posicionament habitual,
+     <span class="negrita">static</span> .</p>
+<figure><img src="UD3/images/ud3-2023-11-25-10-25-22.png" /><br><figcaption></figcaption></figure>
+<br>
+
+<p class="sub-section">Posicionament fix</p>
+
+<p>El valor per a aquest posicionament és <span class="r-word">fixed</span>. Amb aquest posicionament, 
+    l'element flota lliurement per la finestra i abandona el buit que, pel seu ordre natural, li correspondria. 
+    De fet, aquest buit s'elimina i ocupa el següent element disponible. La posició de l'element es fixa en base a les coordenades de la finestra, 
+    independentment d'on estigui l'element situat o contingut. És a dir, pren com a referència la finestra del document de manera que el cantó superior 
+    esquerre serà la coordenada 0,0.</p>
+<p>La posició dels elements <span class="negrita">fixed</span>, a més, no varia quan l'usuari desplace (<span class="cursiva">scroll</span>) la finestra. 
+    La posició que ocupen els elements <span class="negrita">fixed</span> no es modifica amb l'<span class="cursiva">scroll</span>.</p>
+<p>Usant el mateix codi de l'apartat anterior, si el posicionament fos <span class="negrita">fixed</span>, passa el següent:</p>
+<figure><img src="UD3/images/ud3-2023-11-25-10-27-37.png" /><br><figcaption></figcaption></figure>
+<br>
+
+<p>Tot i que la posició de la capa és la mateixa que en el cas del posicionament relatiu, s'observa que el buit que ocupava aquesta està totalment 
+    ocupada per la capa següent. Amb el posicionament fix, la capa realment sura per sobre del document.</p>
+
+
+    <p class="sub-section">Posicionament absolut</p>
+    
+<p>El valor de la propietat <span class="negrita">position</span> relacionat amb aquest posicionament és <span class="negrita">absolute</span>.</p>
+<p>Com passava amb el valor <span class="negrita">fixed</span>, permet canviar la posició de l'element a voluntat, però pren com a referència 
+    la del contenidor (en lloc de la finestra); sempre que el contenidor no tinga posicionament <span class="negrita">fixed</span>. 
+    Si el contenidor és <span class="negrita">static</span>, s'usa al contenidor d'aquest contenidor (si no és static ) 
+    i així successivament fins a trobar un ancestre <span class="subrayado">que no siga static</span> o bé arribar a l'element <span class="negrita">body</span>,
+     cas en què es prendrà (com passa amb <span class="negrita">fixed</span>) a la finestra com a origen de coordenades.</p>
+<p>És a dir, si tenim un element (per exemple de tipus <span class="negrita">div</span>) identificat com a interior dins d'un altre <span class="negrita">div</span>
+     anomenat pare , si utilitzem la propietat <span class="cursiva">position:absolute;</span> dins del CSS de la capa interior, aleshores 
+     les coordenades de la capa interior prendran els límits de la capa pare com a referència. Posant a la capa interior: <span class="cursiva">left:30px;</span> 
+     separem aquesta capa trenta píxels del marge esquerre de la capa pare (en lloc de separar-nos de la vora de la finestra com fa fixed ).</p>
+<p>Ara bé si el pare és <span class="negrita">static</span>, aleshores hauríem de prendre les coordenades del pare d'aquest pare (avi) suposant que no siga <span class="negrita">static</span> .</p>
+<p>Hi ha una altra important diferència. Amb <span class="negrita">fixed</span> , els elements no varien la posició dins de la finestra, però amb absolut sí. 
+    Per això els elements de tipus absolut sí que són desplaçables.</p>
+<p>Exemple (posicionament absolut):</p>
+
+<section><pre><code class="language-xml">&lt;!doctype html > 
+&lt;html  lang ="ca" > 
+&lt;head> 
+  &lt;title> Absolute &lt;/title> 
+  &lt;style>
+     div{ 
+        position : fixed ; 
+        left : 50px ; 
+        top : 50px ; 
+        width : 600px ; 
+        height : 300px ; 
+        background-color : gray ;
+    } 
+    p{
+        position : absolute ;
+        background-color : lightgray ; 
+        width: 75%; 
+        left: 40px ; 
+    }
+  &lt;/style> 
+&lt;/head>
+&lt;body> 
+  &lt;div> 
+    &lt;p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur provident eum praesentium placeat aperiem enim non voluptatem ab que modi laboriosam error aquest dicta in impedit debitis vel veniam optio dolore facilis aquest dolorem ut officiis excepturi sint quasi fugit fugiat! Assumenda numquam amet porro sint nemo non perspiciatis veure laboriosam voluptate vel nihil deleniti ut consequuntur! In accusamus assumenda harum veniam blanditiis tenetur excepturi debitis sit est minima vel quia nihil?
+    &lt;/p> 
+&lt;/div> 
+&lt;/body> 
+&lt;/html></code></pre>
+</section><br><br>
+<p>Mostraria aquest resultat:</p>
+<figure><img src="UD3/images/ud3-2023-11-25-10-35-55.png" /><br><figcaption></figcaption></figure>
+<br>
+<p>Si modifiquem el CSS i canviem la línia remarcada a <span class="negrita">position:fixed :</span></p>
+<figure><img src="UD3/images/ud3-2023-11-25-10-36-48.png" /><br><figcaption></figcaption></figure>
+<br>
+<p>Ara el paràgraf surt del contenidor perquè les coordenades es refereixen a la finestra i no es calculen a partir de l'etiqueta <span class="negrita">div</span>
+     que conté el paràgraf.</p>
+
+     <h3>Establir coordenades de posicionament</h3>
+     <p>Quatre propietats s'encarreguen de mostrar un element en una posició exacta a la pàgina:
+<ul>
+    <li><span class="negrita">left</span>. Permet indicar la coordenada esquerra de l'element. Presa des del marge esquerre</li>
+     <li><span class="negrita">top</span>. Coordenada superior. Presa des de la vora superior.</li>
+     <li><span class="negrita">bottom</span>. Coordenada inferior. Distància a la vora inferior</li>
+     <li><span class="negrita">right</span>. Coordenada dreta. Distància a la vora dreta.</li>
+</ul>
+     </p>
+     
+    <p>Les coordenades es calculen des de la referència de coordenades establertes per la propietat <span class="negrita">position</span>. 
+        Si és <span class="negrita">fixed</span> es prenen les vores de la finestra. 
+        És incompatible usar <span class="negrita">bottom i right</span> i alhora, les mides amb <span class="negrita">width i height</span> .</p>
+    
+     
+     <p>Exemple:</p>
+     
+    
+     <section><pre><code class="language-xml">&lt;!doctype html > 
+&lt;html  lang ="ca" > 
+    &lt;head> 
+        &lt;meta charset ="UTF-8" > 
+            &lt;title> Document &lt;/title> 
+            &lt;style>
+                    div{ 
+                        position : fixed ;
+                        left : 50px ; 
+                        top : 50px ; 
+                        right : 80px ; 
+                        bottom :1 00px ;
+                        background-color : yellow ; 
+                    } 
+                &lt;/style>
+    &lt;/head> 
+    &lt;body> 
+        &lt;div> 
+            &lt;p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur provident eum praesentium placeat aperiem enim non voluptatem ab que modi laboriosam error aquest dicta in impedit debitis vel veniam optio dolore facilis aquest dolorem ut officiis excepturi sint quasi fugit fugiat! Assumenda numquam amet porro sint nemo non perspiciatis veure laboriosam voluptate vel nihil deleniti ut consequuntur! In accusamus assumenda harum veniam blanditiis tenetur excepturi debitis sit est minima vel quia nihil? Accusamus beatae quod hic
+optio nostrum quibusdam adipisci modi aspernatur àlies eaque laudantium dignissims set pariatur dolore obcaecati explicabo maxime possimus dolors non facilis deleniti placeat laborum recusandae !&lt;/p> 
+        &lt;/div> 
+    &lt;/body> 
+&lt;/html></code></pre>
+     </section><br><br>
+     <p>Resultat:</p>
+     
+<figure><img src="UD3/images/ud3-2023-11-25-10-43-20.png" /><br><figcaption></figcaption></figure>
+<br>
+
+<h3>Coordenada z</h3>
+<p>La pantalla és un mitjà en dues dimensions i, per tant, la posició dels elements s'indica amb les coordenades <span class="cursiva">x i y</span>.
+    No obstant això, es pot simular la tercera dimensió (la profunditat) mitjançant una coordenada fictícia, <span class="cursiva">z</span>.</p>
+<p>Realment, el que aporta és la possibilitat que els elements se solapen i puguem decidir quin element està per sobre, 
+    de manera que qui tinga la coordenada z més alta diríem que és més a prop de l'espectador i per tant té prioritat; és a dir, quedarà sobre els altres.</p>
+<p>És el mateix efecte que aconsegueixen els sistemes operatius gràfics com Windows o OS X quan tenim dues finestres solapades; 
+    una tapa l'altra entenent que està per davant .</p>
+<p>La propietat que permet controlar la coordenada z és <span class="r-word">z-index</span> a la qual se li atorga un número enter de manera que 
+    com més gran sigui, més quedarà per davant dels altres elements. 
+    El text normal (d'elements que no tingan marcat un <span class="negrita">z-index</span>) és al nivell zero; amb la qual cosa, 
+    si indiquem un nivell negatiu a la propietat <span class="negrita">z-index</span> d'un element, entendrem que darrere del contingut normal 
+    (no es veurà l'element, quedarà tapat).</p>
+<p>Cal tenir en compte que fins i tot a les capes se'ls puguin donar valors negatius, entenent que per sota del zero estem per sota del text normal de la pàgina.</p>
+<p>Per exemple, si tenim aquest codi CSS:</p>
+
+<section><pre><code class="language-css">#capa1 {
+	position : fixed ;
+	left : 50px;
+	top : 50px ;
+	width : 400px ;
+	height : 300px ;
+	background-color : brown ;
+	z-index: 1 ;
+}	
+#capa2 {
+	position : fixed ;
+	left : 100px ;
+	top : 100px ;
+	width : 400px ;
+	height : 300px ;
+	background-color : green ;
+	z-index : 1 ;
+}
+#capa3 {
+	position : fixed ;
+	left : 150px ;
+	top : 150px ;
+	width : 400px ;
+	height : 300px ;
+	background-color : blue ;
+	z-index : 1 ;
+}</code></pre>
+</section><br>
+<p>El resultat seria el següent:</p>
+<figure><img src="UD3/images/ud3-2023-11-25-10-50-40.png" /><br><figcaption></figcaption></figure>
+<br>
+
+<h3>Visibilitat dels continguts</h3>
+<p class="sub-section">Desbordament</p>
+
+<p>El contingut de les capes pot ocupar més que les dimensions que li hem donat. En aquest cas podem establir com comportar-nos respecte al contingut</p>
+
+
+<p class="sub-section">Overflow , desbordament</p>
+
+<p>Es tracta d'una propietat que permet decidir la política que ha d'adoptar el navegador quan un contingut supera la mida prevista del contenidor. 
+    Possibles valors:
+<ul>
+    <li><span class="negrita">visible</span>. El contingut es mostra encara que supere la mida prevista.</li>
+    <li><span class="negrita">hidden</span>. Oculta el contingut que depassa la mida prefixada per a la capa.</li>
+    <li><span class="negrita">scroll</span>. Es mostra barres de desplaçament per poder accedir al contingut que supera la mida establerta per a la capa.</li>
+    <li><span class="negrita">auto</span>. És igual que l'anterior, però les barres només es mostren si el contingut no cap a la mida fixada per a la capa; si és possible no es mostra cap barra de desplaçament.</li>
+</ul>
+</p>
+
+
+
+<p>Per exemple en aquest codi:</p>
+
+
+	<section><pre><code class="language-xml">#capa1{
+            posició: fixed ;
+            left: 50px ;
+            top: 50px ;
+            width: 500px ;
+            height: 100px ;
+            background-color:  orange ;
+			overflow: visible ;
+        }
+    &lt;/style>
+&lt;/head>
+&lt;body>
+  &lt;div id= "capa1" > Lorem ipsum dolor sit amet, consectetur adipisicing elit. Àlies arxitecte asperiors atque earum et, eveniet incidunt iure magnam maxime nesciunt nisi quas quibusdam rem repellat rerum sunt, temporada. Expedita ipsum laudantium modi mollitia voluptatem! Dolors earum eius iure suscipit voluptatibus. Autem, consectetur, praesentium. Com trien di fugiat itaque nihil, nisi praesentium quidem quod totam. Commodi deserunt earum laborum laudantium natus nisi, odi opti provident quas quia, quo sequi tempora tempore temporibus, tenetur! Aliquam cum cupiditate doloremque, ia laboriosam nobis odit praesentium similique? Adipisci amet asperiors beatae dignissims doloremque eaum eum fugiat ipsam laboriosam, allibero minima molestiae mollitia possimus quam repudiandae ut.
+  &lt;/div>
+&lt;/body>
+&lt;/html></code></pre>
+    </section><br><br>
+
+<p>S'ha establert <span class="negrita">overflow:visible</span>, cosa que provoca:</p>
+
+<figure><img src="UD3/images/ud3-2023-11-25-10-56-31.png" /><br><figcaption></figcaption></figure>
+<br>
+<p>Si haguérem triat <span class="negrita">overflow:hidden</span>, el resultat seria (dramatitzant allò ocult com a semitransparent):</p>
+<figure><img src="UD3/images/ud3-2023-11-25-10-58-33.png" /><br><figcaption></figcaption></figure>
+<br>
+<p>El text que supera la mida de la capa no es veu.</p>
+
+<p>Finalment, amb <span class="negrita">overflow:scroll</span> s'obté:</p>
+<figure><img src="UD3/images/ud3-2023-11-25-10-59-15.png" /><br><figcaption></figcaption></figure>
+<br>
+<p class="sub-section">Desbordament horitzontal i vertical</p>
+
+<p>Les propietat <span class="negrita">overflow</span> vista a l'apartat anterior tracta de la mateixa manera el desbordament horitzontal i el vertical. 
+    No obstant això, és possible tractar de manera diferent el desbordament en horitzontal 
+    ( <span class="r-word">overflow-x</span> ) i el vertical ( <span class="r-word">overflow-y</span> ).</p>
+
+<p>Així per exemple a l'últim exemple anterior, si en lloc d'establir
+<span class="cursiva">overflow:scroll</span> , establim <span class="cursiva">overflow-y:scroll</span>, aleshores es prendrà per al desbordament 
+horitzontal l'opció visible (es mostra el contingut i no es mostra cap barra de desplaçament), 
+mentre que sí que hi haurà barres per al desplaçament vertical:</p>
+
+<figure><img src="UD3/images/ud3-2023-11-25-11-01-47.png" /><br><figcaption></figcaption></figure>
+<br>
+
+<p>Només apareix la barra vertical (a més de mostrar una línia més gràcies a no haver de mostrar la barra de desplaçament horitzontal).</p>
+
+<p>Els possibles valors per a <span class="negrita">overflow-x</span> i <span class="negrita">overflow-y</span> 
+    són els mateixos que per a <span class="negrita">overflow</span> .</p>
+
+    <p class="sub-section">Propietat visibility</p>
+    
+<p>Anteriorment es va mostrar com l'ús de <span class="cursiva">display:none</span> ocultava un element HTML. 
+    La qüestió és que aquesta és una ocultació absoluta, en el sentit en què aquest element deixa de formar part dels continguts del document i 
+    no seria per tant accessible des de llenguatges com a JavaScript que intentin accedir a aquest element.</p>
+
+<p>Per això pot ser interessant utilitzar la propietat <span class="r-word">visibility</span> . Aquesta propietat pot prendre els valors:
+<ul>
+    <li><span class="negrita">visible</span>. Valor per defecte que estableix que l'element és visible a la pàgina</li>
+    <li><span class="negrita">hidden</span>. L'element és invisible, però ocupa l'espai que li correspondria.</li>
+</ul>
+</p>
+<p>Així, per exemple aquest codi:</p>
+
+
+<section><pre><code class="language-xml">&lt;p style= "visibility: hidden" >
+    Lorem ipsum dolor sit amet, consectetur adipisicing
+    elit. Atque corporis deserunt laboriosam
+    praesentium, soluta sunt tenetur! Accusantium
+    aliquam animi commodi culpa itaque labore odit
+    pariatur quae quod quos? Nulla, sequi.
+&lt;/p>
+&lt;p>
+    Arxitecte autem beatae corporis dicta, ducimus eius
+    eos error, ex excepturi explicabo harum illo in
+    ipsam iste itaque labore nisi nostrum nulla quae
+    quia quidem quis tenetur, vel. Cum, officiis.
+&lt;/p></code></pre>
+</section><br>
+
+<figure><img src="UD3/images/ud3-2023-11-25-11-04-38.png" /><br><figcaption>visibility:hidden</figcaption></figure>
+<br>
+
+<p>Amb aquest codi, el primer paràgraf queda amagat. 
+    Si aquests són els únics paràgrafs de la pàgina, s'observarà com el segon paràgraf deixa el buit que ocupa el primer paràgraf.</p>
+
+    <p class="sub-section">Opacitat</p>
+    
+<p>És sens dubte una de les característiques més atractives de l'ús de capes. Consisteix que l'element al qual s'aplique no es mostri al 100% de llum, 
+    sinó que es mostra amb un efecte de transparència que permet veure el que quedaria darrere seu (que seran els elements amb menor índex z a la mateixa posició ) .</p>
+<p>L'opacitat d'un element es controla amb la propietat <span class="r-word">opacity</span> a la qual s'indica un nombre decimal entre zero (transparència total) i un (opacitat total).</p>
+
+
+<p>Exemple:</p>
+
+<section><pre><code class="language-xml">&lt;!doctype html> 
+&lt;html  lang ="ca" > 
+  &lt;head> 
+    &lt;meta charset ="UTF-8" > 
+    &lt;title> Document &lt;/title> 
+    &lt;style>
+        div{
+            position: fixed ;
+            width: 300px ;
+            height: 150px ;
+            top: 0 ;
+        }
+        #c1 {
+            z-index:  1 ;
+            background-color: green ;
+            left: 0 ;
+        }
+        #c2{
+            z-index: 2 ;
+            background-color:  yellow ;
+            left: 200px ;
+            opacity: .5 ;
+        }
+    &lt;/style>
+&lt;/head>
+&lt;body>
+&lt;div id= "c1" >
+    Lorem ipsum dolor sit amet, consectetur
+    adipisicing lit. Distinctio, ex, qui. Cumque
+    eaque eos laboriosam minima placeat, porro
+    Animi, beatae cupiditate explicabo ipsam
+    neque nostrum.
+&lt;/div>
+&lt;div id= "c2" >
+    Deleniti, earum harum iste possimus quasi
+    voluptatibus. A atque cum distinctio harum
+    illo in inventore iste iure laudantium
+    mollitia officiis possimus quasi rem saepe
+    vel veritatis, vero, voluptes! Laborum, placeat.
+&lt;/div>
+&lt;/body>
+&lt;/html></code></pre>
+</section><br><br>
+<p>Provocarien aquest resultat:</p>
+<figure><img src="UD3/images/ud3-2023-11-25-11-45-18.png" /><br><figcaption></figcaption></figure>
+<br>
+<p>L'opacitat és molt interessant per fer efectes.</p>
+
+<p class="sub-section">Retallar continguts</p>
+
+<p>La propietat <span class="r-word">clip</span> permet dins d'un element fer que el contingut aparegui retallat segons les dimensions que s'establisquen.</p>
+
+<p>Com a possibles valors accepta el valor <span class="d-word">auto</span> (no hi ha retallada) o la funció <span class="d-word">rect</span>
+     que estableix un rectangle prenent com a base de coordenades <span class="cursiva">(0,0)</span> la cantonada superior esquerra de l'element. 
+     El rectangle es dibuixa usant quatre coordenades: <span class="negrita">top, right, bottom, left</span>, és a dir: distància superior, esquerra, 
+     avall i dreta. 
+     L'ordre és el mateix que a les propietats de caixa (com <span class="negrita">margin</span> per exemple), però a la funció <span class="negrita">clip</span>
+      totes les referències prenen el cantó superior esquerre com a origen de coordenades.</p>
+
+
+<p>Exemple:</p>
+
+
+   <section><pre><code class="language-css">#capa1 {
+    position: fixed ;
+    left:  50px ;
+    top: 50px ;
+    width: 400px ;
+    height: 250px ;
+    clip:  rect(20px, 170px, 70px, 50px) ;
+    background-color:  orange ;
+    z-index: 2 ;
+}</code></pre>
+</section><br>
+<p>Si hem creat una capa amb aquest identificador (<span class="cursiva">capa1</span>) amb text de prova obtindrem:</p>
+<figure><img src="UD3/images/ud3-2023-11-25-11-55-03.png" /><br><figcaption></figcaption></figure>
+<br>
+<section class="marco-t inf">
+    <span class="icono info"> </span> Només s'aplica en elements amb posicionament <span class="negrita">absolut</span>
+    </section>
+<section class="marco-b"> 
+</section>
+</section><!-- End section -->
+
+<!--*********************************************************Transformacions CSS***********************************************************-->
+<section class="apartado">
+<a name="sTransformacions"></a>
+<h2>Transformacions CSS</h2>
+<p>Per transformacions en CSS s'entén les operacions realitzades mitjançant la propietat <span class="r-word">transform</span>, 
+    la qual permet les operacions típiques vectorials sobre un element HTML. 
+    En realitat hi ha dos tipus de transformacions, les <span class="subrayado">transformacions 2D</span>, que només utilitzen els eixos horitzontal i vertical per transformar, 
+    cosa que implica que només realitza transformacions en el pla; 
+    i les <span class="subrayado">transformacions 3D</span> en què intervé l'eix Z causant la il·lusió que l'element tingui profunditat.</p>
+<p>Les transformacions 2D són:</p>
+<figure><img src="UD3/images/ud3-2023-11-25-12-05-24.png" /><br><figcaption>Transformacions 2D</figcaption></figure>
+<br>
+<p>Les transformacions 3D ens permeten simular profunditat en els elements:</p>
+<figure><img src="UD3/images/ud3-2023-11-25-12-06-05.png" /><br><figcaption>Transformacions 3D</figcaption></figure>
+<br>
+<h3>Transformacions 2D</h3>
+<p>A la propietat <span class="r-word">transform</span> se l'acompanya una funció que és la responsable de realment l'element. 
+    Aquesta funció pot ser:
+<ul>
+    <li><span class="negrita">scale( x , y </span>). Feu un escalat sobre l'element. El primer valor indica el factor d'escalat horitzontal 
+        (1 és el 100% i 5 escala al 50%) i el segon l'escalat vertical.</li>
+    <li><span class="negrita">scaleX ( x </span>). Escala només en horitzontal.</li>
+    <li><span class="negrita">scaleY ( i </span>). L'element escala només en vertical.</li>
+    <li><span class="negrita">rotate (angle</span>). Trenca l'element l'angle indicat (per exemple <span class="cursiva">45deg</span> )</li>
+    <li><span class="negrita">rotate( angle </span>). Trenca l'element el nombre de graus indicats</li>
+    <li><span class="negrita">skewX( angle </span>). Estira l'element a l'eix horitzontal</li>
+    <li><span class="negrita">skewY( angle </span>). Estira l'element a l'eix vertical</li>
+    <li><span class="negrita">skew( angleX, angleY ​​</span>). Estira l'element fent servir un angle en horitzontal i un altre en vertical.</li>
+</ul></p>
+
+<p>Els navegadors actuals suporten la propietat transform , però els de tipus webkit (Chrome i Safari) imposen la seva versió anomenada <span class="negrita">–webkit-transform</span>. 
+    També Internet Explorer fa servir la seva pròpia versió (encara que ara ja fa servir l'estàndard) i fins fa poc feia el mateix Firefox.</p>
+
+
+<section><pre><code class="language-xml">&lt;!doctype html >
+&lt;html  lang = "ca" >
+&lt;head>
+	&lt;meta  charset = "UTF-8" >
+	&lt;title> Document &lt;/title>
+	&lt;style>
+		div{
+			width : 100px ;
+			height : 100px ;
+			float :left;
+			margin : 5px ;
+			background-color : red ;
+			border : 1px solid black ;
+		}
+		#d2{
+			transform : scale( 1,.5 );
+		}
+		#d3{
+			transform :rotate( 45deg );
+		}
+		#d4{
+			transform :skewX( -45deg );
+		}
+		#d5{
+			transform :skewY( -45deg );
+		}
+	&lt;/style>
+&lt;/head>
+&lt;body>
+	&lt;div  id = "d1" > Text1 &lt;/div>
+	&lt;div id = "d2" > Text2 &lt;/div>
+	&lt;div id = "d3" > Text3 &lt;/div>
+	&lt;div id = "d4" > Text4 &lt;/div>
+	&lt;div id = "d5" > Text5 &lt;/div>
+&lt;/body>
+&lt;/html></code></pre>
+</section><br>
+<p>Resultat:</p>
+
+
+<h3>Transformacions 3D</h3>
+<p>En aquest cas, cal tenir en compte que permeten distingir l'eix sobre el qual s'apliquen. 
+    Les possibles funcions que podem utilitzar a la propietat <span class="r-word">transform</span> per aconseguir transformacions 3D són:
+<ul>
+    <li><span class="negrita">translate3D( x , y , x )</span>. Trasllada l'element poden indicar desplaçaments als 3 eixos alhora.</li>
+    <li><span class="negrita">translateX( x )</span>. Trasllada l'element a l'eix X.</li>
+    <li><span class="negrita">translateY( y )</span>. Trasllada l'element a l'eix Y.</li>
+    <li><span class="negrita">translateZ( y )</span>. Trasllada l'element a l'eix Z.</li>
+    <li><span class="negrita">scale3D( x , y , x )</span>. Escala l'element poden diferenciar escales en les tres dimensions de l'element</li>
+    <li><span class="negrita">escaleX( X )</span>. Escala l'element en horitzontal</li>
+    <li><span class="negrita">escaleY( Y )</span>. Escala l'element en vertical</li>
+    <li><span class="negrita">escaleZ( Z )</span>. Escala l'element a l'eix Z</li>
+    <li><span class="negrita">rotate3D( x , y , x )</span>. Trenca l'element poden indicar una rotació diferent a cada eix</li>
+    <li><span class="negrita">rotateX( X )</span>. Trenca l'element usant l'eix X de coordenades. Un element normal rotat més de 90 graus farà un efecte mirall. 
+        Rotant 90 graus exactes, l'element queda invisible en quedar absolutament horitzontal a la nostra vista.</li>
+    <li><span class="negrita">rotateY( Y )</span>. Trenca l'element usant l'eix I de coordenades. 
+        Com a la rotació anterior, un element normal rotat més de 90 graus, farà un efecte mirall. 
+        També just amb 90 graus l'element queda invisible en ser absolutament vertical a la nostra vista.</li>
+    <li><span class="negrita">escaleZ( Z )</span>. Escala l'element a l'eix Z, és la rotació 2D normal per tant.</li>
+    <li><span class="negrita">perspective(n)</span>. Defineix un punt de perspectiva per a les transformacions 3D. 
+        És equivalent a utilitzar la propietat <span class="negrita">perspective</span>: n.</li>
+</ul>
+</p>
+
+
+<p>Hi ha altres propietats relacionades amb les transformacions 3D:
+    <ul>
+        <li><span class="negrita">transform-style</span>. Si indiquem a aquesta propietat el valor <span class="negrita">preserve-3d</span>, 
+            si aquest objecte conté objectes transformats en 3D, aquestes transformacions es mantindran. 
+            L'altra opció és indicar el valor <span class="negrita">flat</span>.</li>
+        <li><span class="negrita">transform-origin</span>. Permet traslladar l'objecte transformat a una altra posició, indicant valors d'eix X i Y.
+            <br>
+            Exemple <span class="negrita">transform-origin: 200px 100px;</span>
+        </li>
+        <li><span class="negrita">perspective</span> . Posició de la perspectiva de la persona que observa aquesta escena.</li>
+        <li><span class="negrita">perspective-origin</span>. Permet indicar on és l'eix de coordenades X, Y. Per defecte val <span class="cursiva">50% 50%</span> ( just al centre). 
+            Admet indicar les paraules <span class="negrita">left , center</span> o <span class="negrita">right</span> per a l'eix horitzontal 
+            i <span class="negrita">top , center</span> o <span class="negrita">bottom</span> per al vertical</li>
+    </ul>
+</p>
+
+
+
+<p>A continuació es mostra un exemple amb transformacions 3D. Es tracta de quatre capes interiors a un contenidor. 
+    Les quatre capes es col·loquen omplint aquest contenidor (usant posicionament absolut), després es roten en perspectiva formant les tapes d'un cub 
+    tridimensional vist en perspectiva.</p>
+
+
+<section><pre><code class="language-xml">&lt;!doctype html >
+&lt;html lang= "es" >
+&lt;head>
+    &lt;meta charset= "UTF-8" > &lt;title> Exemples 3D &lt;/title>
+    &lt;style>
+        #contenidor{
+            position: fixed ;
+            left: 400px ;
+            top: 400px ;
+            width: 400px ;
+            height : 400px ;
+            border: 4px solid yellow ;
+            transform-style: preserve-3d ;
+            perspective-origin:  center center ;
+            perspective: 500px ;
+        }
+        #contenidor div {
+            position: absolute ;
+            width: 100% ;
+            height: 100% ;
+            left: 0 ;
+            top: 0 ;
+            font-size: 350px ;
+            text-align: center ;
+            color: white ;
+        }
+        #capa1{
+            background: linear-gradient( black , xarxa ) ;
+            transform: rotateX( 90deg ) translateZ( 200px ) ;
+        }
+        #capa2{
+            background:
+					linear-gradient( -90deg,black, blue ) ;
+				transform: rotateY( 90deg ) translateZ( 200px ) ;
+        }
+        #capa3{
+            background:
+					linear-gradient( 0deg,black, orange ) ;
+           transform: rotateX( -90deg ) translateZ( 200px ) ;
+        }        
+#capa4{
+            background:
+					linear-gradient( 90deg,black, green ) ;
+           transform: rotateY( -90deg ) translateZ( 200px ) ;
+        }
+    &lt;/style>
+&lt;/head>
+&lt;body>
+&lt;div id= "contenidor" >
+   &lt;div id= "capa1" >1 &lt;/div>
+   &lt;div id= "capa2" >2 &lt;/div>
+   &lt;div id= "capa3" >3 &lt;/div>
+   &lt;div id= "capa4" >4 &lt;/div>
+&lt;/div>
+&lt;/body>
+&lt;/html></code></pre>
+</section><br><br>
+<p>El resultat daquest codi és el següent:</p>
+<figure><img src="UD3/images/ud3-2023-11-25-12-19-55.png" /><br><figcaption></figcaption></figure>
+<br>
+
+
+<p>A la imatge queda pintat amb una vora groga la posició original de les capes interiors (en definitiva la forma del seu contenidor), abans de la transformació.</p>
+
+</section><!-- End section -->
 
 
     <!-- TO_MENU-->
