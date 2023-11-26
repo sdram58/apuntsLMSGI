@@ -34,7 +34,10 @@
         <div class="fila">
             <a href="#sTransformacions" title="10.- Transformacions">10.- Transformacions CSS</a>
             <a href="#sAnimacions" title="11.- Animacions">11.- Animacions</a>
-            <a href="#sGeneracionCodigo" title="12.- Generación de código">12.- Generación de código</a>
+            <a href="#sGeneracionCodigo" title="12.- Generació de codi">12.- Generació de codi</a>
+        </div>
+        <div class="fila">
+            <a href="#sWebgrafia" title="13.- Webgrafia">13.- Webgrafia</a>            
         </div>
 
     </nav>
@@ -59,9 +62,13 @@
             <a href="#sPosicionamentCSS" title="9.- Posicionament CSS">9.- Posicionament CSS</a>
         </div>
         <div class="fila">
-            <a href="#sTransformacions" title="10.- Transformacions">10.- Transformacions</a>
+            <a href="#sTransformacions" title="10.- Transformacions">10.- Transformacions CSS</a>
             <a href="#sAnimacions" title="11.- Animacions">11.- Animacions</a>
-            <a href="#sGeneracionCodigo" title="12.- Generación de código">12.- Generación de código</a>
+            <a href="#sGeneracionCodigo" title="12.- Generació de codi">12.- Generació de codi</a>
+        </div>
+        <div class="fila">
+            <a href="#sWebgrafia" title="13.- Webgrafia">13.- Webgrafia</a>            
+            <a href="" class="relleno"></a><a href="" class="relleno"></a>
         </div>
     </div>
 
@@ -4055,7 +4062,7 @@ mentre que sí que hi haurà barres per al desplaçament vertical:</p>
 
 <p class="sub-section">Retallar continguts</p>
 
-<p>La propietat <span class="r-word">clip</span> permet dins d'un element fer que el contingut aparegui retallat segons les dimensions que s'establisquen.</p>
+<p>La propietat <span class="r-word">clip</span> permet dins d'un element fer que el contingut aparega retallat segons les dimensions que s'establisquen.</p>
 
 <p>Com a possibles valors accepta el valor <span class="d-word">auto</span> (no hi ha retallada) o la funció <span class="d-word">rect</span>
      que estableix un rectangle prenent com a base de coordenades <span class="cursiva">(0,0)</span> la cantonada superior esquerra de l'element. 
@@ -4553,10 +4560,422 @@ div:hover {
 <p>Aquest codi mostra un quadrat roig que es desplaça contínuament cap a la dreta i torna a l'esquerra. 
     A més, canvia el color de roig a blau alhora que es mou.</p>
 
+<figure><img src="UD3/images/animation_example.gif" /><br><figcaption></figcaption></figure>
+<br>
 
 
 
 </section><!-- End section Animacions -->
+
+<!--*********************************************************Generació de contingut***********************************************************-->
+<section class="apartado">
+<a name="sGeneracionCodigo"></a>
+<h2>Generació de contingut</h2>
+<p>Amb CSS2 va aparèixer la possibilitat que el propi CSS establís contingut en els elements HTML. 
+    Això canvia l'òptica que es té de CSS quant a ser un llenguatge que simplement dóna format o millor, estén aquesta idea.</p>
+<p>Per descomptat aquests continguts són elements simples a la pàgina, delimitadors, vinyetes, números,... però faciliten el manteniment dels continguts.</p>
+
+<h3>Propietat <span class="cursiva">content</span></h3>
+<p>És la propietat relacionada amb la generació de contingut. És molt poderosa ja que permet nombroses opcions.</p>
+
+<p class="sub-section">Indicar un text automàtic en un element</p>
+
+<p>A la propietat <span class="r-word">content</span> se li pot aplicar un text (delimitat per cometes) que s'aplicarà a l'element indicat.</p>
+<p>Segons l'estàndard només es pot utilitzar mitjançant els selectors <span class="r-word">:before</span> i <span class="r-word">:after</span> que permeten establir contingut que es mostrarà abans i/o després de l'element a què s'aplica.</p>
+
+<p>Exemple:</p>
+
+<section><pre><code class="language-xml">&lt;!doctype html> 
+&lt;html  lang ="ca" > 
+    &lt;head> 
+        &lt;meta  charset ="UTF-8" > 
+           &lt;title> Cometes &lt;/title> 
+           &lt;style>
+		.cita:before { 
+			content : '"' ; 
+		} 
+		.cita:after { 
+			content : '"' ; 
+		} 
+		.cita { 
+			font-style : italic ; 
+		}
+	&lt;/style> 
+    &lt;/head>
+
+    &lt;body> 
+        &lt;p  class = "cita" > Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur provident eum praesentium placeat aperiem enim non voluptatem ab que modi laboriosam error aquest dicta in impedit debitis vel veniam optio dolore facilis aquest dolorem ut officiis excepturi sint quasi fugit fugiat! Assumenda numquam amet porro sint nemo non perspiciatis veure laboriosam voluptate vel nihil deleniti ut consequuntur! In accusamus assumenda harum veniam blanditiis tenetur excepturi debitis sit est minima vel quia nihil? Accusamus beatae quod hic optio nostrum quibusdam adipisci modi aspernatur àlies eaque laudantium dignissims set pariatur dolor obcaecati explica maxime possimus dolors non facilis deleniti placeat laborum recusandae! &lt;/p> 
+    &lt;/body> 
+&lt;/html></code></pre>
+</section><br>
+<p>A l'exemple s'estableix que per davant del text marcat amb classe cita es posin cometes, per darrere es fa el mateix. 
+    Per això qualsevol text de classe cita eixirà entrecometes i en cursiva:</p>
+
+
+<figure><img src="UD3/images/ud3-2023-11-26-09-32-13.png" /><br><figcaption></figcaption></figure>
+<br>
+
+<p>Un altre exemple (ja que les cometes es poden generar d'una altra manera):</p>
+
+<section><pre><code class="language-css">.copyright:before {
+	content: "Michael Jackson - 2023";
+}</code></pre>
+</section><br>
+<p>Si un paràgraf es marca així:</p>
+
+<section><pre><code class="language-xml">&lt;p class="copyright" >&lt;/p></code></pre>
+</section><br>
+<p>Encara sense contingut, es mostraria el text</p>
+
+<div class="muestra">
+    <p>Michael Jackson - 2023</p>
+</div>
+
+<h3>Entrecometes automàtic</h3>
+<p class="sub-section">Aplicar cometes automàtiques</p>
+
+<p>Per al cas que volem engrossir un text dins d'unes cometes, CSS3 va afegir la propietat <span class="negrita">quotes</span>. 
+    En aquesta propietat n'hi ha prou amb indicar el caràcter d'obertura i el de tancament.</p>
+
+
+<p>Exemples:</p>
+
+<table>
+    <colgroup>
+        <col>
+        <col>
+    </colgroup>
+    <thead>
+        <tr>
+            <td>
+                <p>Ús</p>
+            </td>
+            <td>
+                <p>resultado</p>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <pre><span>quotes</span><span>:</span>"'" "'"</pre>
+            </td>
+            <td>
+                <p>Text entrecometes amb cometa simple: </p>
+                <p><em class="cursiva">'Aquest es el text'</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <pre><span>quotes</span><span>:</span>'"' '"'</pre>
+            </td>
+            <td>
+                <p>Text entrecometes amb cometa doble: </p>
+                <p><em class="cursiva">"Aquest es el text"</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <pre><span>quotes: </span>'&gt;&gt;' '&lt;&lt;'</pre>
+            </td>
+            <td>
+                <p>Text entrecometes amb menor i major:</p>
+                <p><em class="cursiva">&gt;&gt;Aquest es el text&lt;&lt;</em></p>
+            </td>
+        </tr>
+        <tr >
+            <td>
+                <pre><span>quotes:</span><strong class="negrita" lang="en-US"> </strong><span lang="en-US">'</span>«<span lang="en-US">' '</span>»<span lang="en-US">'</span></pre>
+            </td>
+            <td>
+                <p>Text entrecometes amb cometa literària:</p>
+                <p><em class="cursiva">«</em><em class="cursiva">Aquest es el text</em><em class="cursiva">»</em></p>
+            </td>
+        </tr>
+        <tr >
+            <td>
+                <pre><span>quotes: </span><span lang="en-US">'</span>«<span lang="en-US">' '</span>»<span lang="en-US">' '"' '"'</span></pre>
+            </td>
+            <td>
+                <p>S'indiquen quatre cometes per al cas que dins del text entrecometes hi hagi un altre text entrecometes:</p>
+                <p><em class="cursiva">«</em><em class="cursiva">Aquest es el text amb "cometes" interiores</em><em class="cursiva">»</em></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+ <br>
+
+<p>La propietat <span class="r-word">quotes</span>, realment només indica com seran les cometes. 
+    Per entrecometes s'usa la propietat <span class="negrita">content</span> comentada al punt anterior, a la qual li passa el valor <span class="negrita">open-quote</span>
+     i <span class="negrita">close-quote</span> segons vulguem obrir o tancar cometes.</p>
+
+
+<p>Exemple dús:</p>
+
+
+<section><pre><code class="language-xml">&lt;style>
+	blockquote{
+        quotes : '"' '"' ; 
+    }
+	blockquote:before{
+		content : open-quote ;
+	}
+	blockquote:after{
+		content : close-quote ;
+	}
+&lt;/style>
+&lt;/head>
+&lt;body>
+	&lt;blockquote> Alea jacta est &lt;/blockquote>
+&lt;/body></code></pre>
+</section><br>
+<p>Com que hi ha símbols de cometes que no estan al teclat, podem utilitzar el seu codi. Els codis més habituals per posar cometes són:</p>
+
+<table>
+    <colgroup>
+        <col>
+        <col>
+    </colgroup>
+    <thead>
+        <tr>
+            <td>
+                <p>Carácter</p>
+            </td>
+            <td>
+                <p>Código ISO 10646</p>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <p><strong class="negrita">“</strong></p>
+            </td>
+            <td>
+                <p>0022</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><strong class="negrita">'</strong></p>
+            </td>
+            <td>
+                <p>0027</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><strong class="negrita">‹</strong></p>
+            </td>
+            <td>
+                <p>2039</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><strong class="negrita">›</strong></p>
+            </td>
+            <td>
+                <p>203A</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><strong class="negrita">«</strong></p>
+            </td>
+            <td>
+                <p>00AB</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><strong class="negrita">»</strong></p>
+            </td>
+            <td>
+                <p>00BB</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><strong class="negrita">'</strong></p>
+            </td>
+            <td>
+                <p>2018</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><strong class="negrita">’</strong></p>
+            </td>
+            <td>
+                <p>2019</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><strong class="negrita">“</strong></p>
+            </td>
+            <td>
+                <p>201C</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><strong class="negrita">”</strong></p>
+            </td>
+            <td>
+                <p>201D</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><strong class="negrita">„</strong></p>
+            </td>
+            <td>
+                <p>201E</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<p>Exemple d'ús:</p>
+
+
+<section><pre><code class="language-css">quotes: "\201D" "\201E";</code></pre>
+</section><br>
+
+<p class="sub-section">Retirar entrecometes</p>
+
+<p>Podem indicar en lloc d' <span class="negrita">open-quote</span> i <span class="negrita">close-quote</span>, els valors <span class="negrita">no-open-quote</span>
+     i <span class="negrita">no-close-quote</span> a la propietat content precisament per al contrari, per no posar cometes.</p>
+<p>Per exemple, normalment l'element q aplica entrecometes automàtic, si no volem aplicaríem aquest codi:</p>
+
+<section><pre><code class="language-css">q:before {
+	content: no-open-quote ;
+}
+q:after {
+	content: no-close-quote ;
+}</code></pre>
+</section><br><br>
+
+<h3>Numeració automàtica</h3>
+<p>CSS2 va portar també la possibilitat de numerar automàticament elements gràcies a lús de comptadors. 
+    Per això podem utilitzar una funció anomenada counter que ens permet utilitzar una variable de comptador. 
+    La variable comptadora es manipula amb aquestes propietats:
+    <ul>
+        <li><span class="negrita">counter-reset</span>. <p>Permet indicar un valor inicial per a una variable comptadora. Exemple:</p>
+            <section><pre><code class="language-css">counter-reset: cont  5;</code></pre>
+            </section><br>
+            <p>En aquest cas la variable comptadora cont es col·loca inicialment amb el valor 5 . Si aquesta propietat no s'usa, el comptador s'inicia a zero.</p>
+            </li>
+            
+            <li><span class="negrita">counter-increment</span>. <p>Indica com s'incrementi el comptador, el valor per defecte és 1. Però el podem canviar i donar-li el valor que desitgem:</p>
+                <section><pre><code class="language-css">counter-increment: cont  10;
+/* El comptador anirà comptant de 10 en 10 */</code></pre>
+                </section><br></li>
+    </ul>
+</p>
+
+
+<p>Exemple de numeració automàtica:</p>
+
+<section><pre><code class="language-xml">&lt;!doctype html> 
+&lt;html  lang ="ca" > 
+    &lt;head> 
+     &lt;meta  charset ="UTF-8" > 
+           &lt;title> Document &lt;/title> 
+     &lt;style>
+	     	body{ 
+	     		counter-reset : cont ; 
+	     	} 
+            .cita:before{ 
+                content : "Capítol " counter( cont ) ") " ; 
+                counter-increment: cont  2 ; 
+            }
+
+	&lt;/style> 
+    &lt;/head>
+    &lt;body> 
+        &lt;p  class = "cita" > Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit assumenda ratione repel·lat quaerat voluptate aperiam quis ipsum amet esse quia ullam eus quibusdam non maiores atque. Animi laborum repudiandae modi!maxime possimus dolors non facilis deleniti placeat laborum recusandae! &lt;/p> 
+        &lt;p  class = "cita" > Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati quasi delectus quia quo mollitia ex vero veniam nostrum ipsum minima tenetur ad animi non soluta amet rem assumenda? Molèsties officia .&lt;/p> 
+        &lt;p  class = "cita" > Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi repellat mollitia numquam minima àlies aneu debitis voluptes ut animi dolor! Distinctio laborum quasi quo soluta dignissims odit nam dolors quibusdam? &lt;/p>
+&lt;/body> 
+&lt;/html></code></pre>
+</section><br>
+<p>El resultat és:</p>
+
+<figure><img src="UD3/images/ud3-2023-11-26-10-44-24.png" /><br><figcaption></figcaption></figure>
+<br>
+
+
+<h3>Generar contingut a partir d'atributs</h3>
+<p>La propietat <span class="negrita">content</span> té la possibilitat de generar contingut utilitzant una funció anomenada
+     <span class="r-word">attr</span> a la què podem passar un atribut de l'element. 
+     Aleshores generarem automàticament el contingut de l'element a partir del contingut d'aquest element.</p>
+<p>Un exemple típic és aquest:</p>
+
+<section><pre><code class="language-css">a:before {
+	content: attr(href);
+}</code></pre>
+</section><br>
+<p>En cas d'indicar un enllaç d'aquesta manera:</p>
+
+<section><pre><code class="language-xml">&lt;a href= "https://sdram58.github.io/apuntsLMSGI/" > &lt;/a></code></pre>
+</section><br><br>
+<p>Apareixerà el text:</p>
+
+<div class="muestra">
+    <p style="color:blue;">https://sdram58.github.io/apuntsLMSGI/</p>
+</div>
+<p>Que aparega aquest text és perquè <span class="negrita">content</span> genera el contingut per a l'enllaç 
+    (ja que realment al codi de l'etiqueta no s'ha especificat) a partir del contingut de l'atribut <span class="negrita">href</span> .</p>
+
+
+<h3>Generar contingut a partir d'una URL</h3>
+
+<p>La possibilitat més espectacular de la propietat <span class="negrita">content</span> és que podeu utilitzar la funció 
+    <span class="negrita">url</span> per incorporar a l'element continguts procedents d'una URL. Exemple:</p>
+
+<section><pre><code class="language-xml">&lt;!doctype html>
+&lt;html lang="ca">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;title> URL&lt;/title>
+    &lt;style>
+        p:before {
+            content: url( arrow.png );
+        }
+    &lt;/style>
+&lt;/head>
+&lt;body>
+&lt;p> Lorem ipsum dolor sit amet, consectetur
+    adipisicing elit. Incidunt, volupta't! &lt;/p>
+&lt;p> Adipisci aliquid assumenda cupiditat
+    error eveniet explicabo facilis temporibus
+    voluptes. &lt;/p>
+&lt;p> Adipisci at atque qui?
+    Cupiditat ducimus libero nesciunt
+    suscipit veniam? &lt;/p>
+&lt;/body>
+&lt;/html></code></pre>
+</section><br>
+<p>Suposant que disposem de la imatge <span class="cursiva">arrow.png</span> al mateix directori on es troba la pàgina web, el resultat seria:</p>
+<figure><img src="UD3/images/ud3-2023-11-26-10-50-47.png" /><br><figcaption>Fletxa generada automàticament</figcaption></figure>
+<br>
+
+
+
+</section><!-- End section Generació de contingut -->
+
+<!--*********************************************************Webgrafia***********************************************************-->
+<section class="apartado">
+    <a name="sWebgrafia"></a>
+    <h2>Webgrafia</h2>
+    <p>Traducció i adaptació de  <a class="enlace" target="_blank" href="https://jorgesanchez.net/">Jorge Sánchez</a> </p>
+    <p>Apunts propis</p>
+    <p><a class="enlace" target="_blank" href="https://www.w3schools.com/css/">w3schools</a></p>
+    <p><a class="enlace" target="_blank" href="https://developer.mozilla.org/es/docs/Learn/CSS/First_steps">developer.mozilla.org</a></p>
+</section><!-- End section Webgrafia-->
 
 
     <!-- TO_MENU-->
