@@ -4,39 +4,18 @@
         <meta  charset ="UTF-8 "> 
         <title>Quadrat mòbil</title> 
         <style>
-            @keyframes ani1{ 
-                from { 
-                    left: 20px; 
-                    background-color: red; 						
-                } to { 
-                    left: 220px; 
-                    background-color: blue; 						
-                } 					
-            }
-
-            /* Versió per a Chrome i Safari */ 
-            @-webkit-keyframes ani1{ 
-                from { 
-                    left: 20px; 
-                    background-color: red; 						
-                } to { 
-                    left: 220px;
-                    background-color: blue; 						
-                } 					
-            }                                     
-
-            /*capa que aplica l'animació */
-            div{ 
-                position: fixed; 
-                background-color: red; 
-                left: 20px; 
-                width: 50px; 
-                height: 50px;
-                -webkit-animation :	ani1 2s ease-in-out 1s;									
-                animation :	ani1 2s ease-in-out 1s infinite alternate;
-            } 
+            p{
+   background-color: lightgray;
+   border-width: 15px;
+  /*per a Safari*/
+   -webkit-border-image: url( borde2.png ) 18 19 stretch round; 	
+  /* per a Opera*/
+   -o-border-image: url( borde2.png ) 18 19 stretch round;   
+   border-image: url( borde2.png ) 18 19 stretch round; 
+}
 	</style> 
     </head> 
     <body> 
-        <div>   </div> 
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus ipsum eaque ad aperiam nisi ipsa recusandae dolore fuga quasi, mollitia corrupti commodi laborum reprehenderit iste possimus asperiores illo provident deleniti?</p>
+        </body>
 </html>

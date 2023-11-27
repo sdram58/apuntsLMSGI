@@ -2466,7 +2466,7 @@ el problema és que el seu maneig no és gens senzill.</p>
         <li><span class="negrita">lower- latin</span>. Lletres minúscules llatines.</li>
         <li><span class="negrita">lower-roman</span>. Números romans en minúscules.</li>
         <li><span class="negrita">none</span>. Sense números.</li>
-        <li><span class="negrita">square</span>. Quadrats farcits.</li>
+        <li><span class="negrita">square</span>. Quadrats reompliments.</li>
         <li><span class="negrita">upper-alpha</span>. Lletres majúscules de l'alfabet actual.</li>
         <li><span class="negrita">upper- latin</span>. Lletres majúscules llatines.</li>
         <li><span class="negrita">upper-roman</span>. Números romans en majúscules.</li>
@@ -2896,8 +2896,8 @@ border-style: solid dashed dotted;
 <section><pre><code class="language-css">border-image: origenDeLaImatge  tamanyCantons modeEstirar;</code></pre>
 </section><br><br>
 <p>
-    <span class="cursiva">origenDeLaImagen</span>. És la ruta a la imatge
     <ul>
+        <li><span class="cursiva">origenDeLaImatge</span>. És la ruta a la imatge</li>
         <li><span class="cursiva">midaCantons</span>. És el que mesura cada cantonada començant per la superior esquerra i després anant cap a la dreta i cap avall. 
             Si medixen el mateix, només se n'indica un número (normalment no s'indica la unitat perquè sempre s'entén en píxels)</li>
         <li><span class="cursiva">modeEstirar</span>. Pot ser <span class="negrita">repeat</span> (repetir fins a omplir), 
@@ -2945,16 +2945,18 @@ border-style: solid dashed dotted;
 
 
 <section><pre><code class="language-css">p{
-   background-color: lightgray;
-   border-width: 15px;
-  /*per a Safari*/
-   -webkit-border-image: url( borde2.png ) 18 19 stretch round; 	
-  /* per a Opera*/
-   -o-border-image: url( borde2.png ) 18 19 stretch round;   
-   border-image: url( borde2.png ) 18 19 stretch round; 
+    background-color: lightgray;
+    width: 300px;
+    border: 18px solid transparent;
+    border-color: black;			
+    border-image: linear-gradient(red, blue) 27;
 }</code></pre>
 </section><br><br>
 <p>Resultat:</p>
+
+<figure><img src="UD3/images/ud3-2023-11-27-12-16-15.png" /><br><figcaption>Amb gradient</figcaption></figure>
+<br>
+
 
 <h3>Ombrejat de la caixa. box-shadow</h3>
 
@@ -3003,7 +3005,7 @@ border-style: solid dashed dotted;
 
 <p>Sintaxi de la funció (estàndard):</p>
 
-<section><pre><code class="language-css">linear-gradient( direccion,primerColor posicion1,segonColor posicion2,… )</code></pre>
+<section><pre><code class="language-css">linear-gradient( direcció,primerColor posicion1,segonColor posicion2,… )</code></pre>
 </section><br><br>
 
 <p>El significat dels paràmetres és el següent:
@@ -3239,7 +3241,7 @@ td{
         No funciona ( hide ) amb les vores col·lapsades.</li>
     <li><span class="negrita">table-layout</span>. Propietat present en els darrers navegadors (no a Internet Explorer ) 
         permet indicar la manera com es calcula l'amplada de les cel·les. 
-        Per defecte pren el valor <span class="negrita">auto</span> , en què, encara que hàgim indicat una amplada fixa per a una cel·la, la mida depèn del contingut. <span class="negrita">fixed</span>
+        Per defecte pren el valor <span class="negrita">auto</span> , en què, encara que hàgem indicat una amplada fixa per a una cel·la, la mida depèn del contingut. <span class="negrita">fixed</span>
         , però deixa la taula amb la mida fixada per les propietats d'amplada de columna ( <span class="negrita">width</span> ).
     <p>El problema és quan un contingut ultrapassa la mida d'una cel·la (una imatge per exemple). En el primer cas la cel·la s'amplia per donar cabuda al contingut. Això significa que el navegador no pot renderitzar la taula fins no haver carregat tot el contingut.</p>
     
@@ -3376,7 +3378,7 @@ td{
         <li><span class="negrita">inline</span>. <p>Els elements amb aquest display es mostren sense trencar la línia actual. 
             Es mostren dins de la línia. Per tant podem col·locar dos elements inline seguits.</p>
         
-        <p>Els elements <span class="cursiva">inline</span>  ignoren els marges superior i inferior, però sí que reconeixen els farcits i 
+        <p>Els elements <span class="cursiva">inline</span>  ignoren els marges superior i inferior, però sí que reconeixen els reompliments i 
             els marges esquerre i dret, així com les vores i els colors i imatges de farciment. No fan cas de les propietats 
             <span class="negrita">width</span>, <span class="negrita">height</span>.</p>
         
@@ -3393,7 +3395,8 @@ td{
         
         
         <li><span class="negrita">inline-block</span>. <p>L'element forma un bloc rectangular, però és interior al contenidor (no trenca la línia actual). Sí que admeten elements al seu costat. 
-            Admeten manipular les propietats width i height el que demostra la seua semblança amb el valor block.</p>
+            Admeten manipular les propietats <span class="negrita">width</span> i <span class="negrita">height</span> 
+            el que demostra la seua semblança amb el valor <span class="negrita">block</span>.</p>
         
         <p>Exemples d'elements d'aquest tipus són: <span class="negrita">button</span>, <span class="negrita">image</span>,
              <span class="negrita">input</span>, <span class="negrita">textarea</span>, <span class="negrita">select</span>, etc.</p>
@@ -3894,6 +3897,7 @@ optio nostrum quibusdam adipisci modi aspernatur àlies eaque laudantium digniss
 <p>El resultat seria el següent:</p>
 <figure><img src="UD3/images/ud3-2023-11-25-10-50-40.png" /><br><figcaption></figcaption></figure>
 <br>
+<p><a class="enlace" target="_blank" href="./UD3/exemples/estructura.html">Ací</a> tens un exemple de menú i estructura d'un document bàsic.</p>
 
 <h3>Visibilitat dels continguts</h3>
 <p class="sub-section">Desbordament</p>
