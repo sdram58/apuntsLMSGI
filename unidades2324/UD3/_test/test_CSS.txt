@@ -1,0 +1,209 @@
+Què significa CSS?{
+~%-33.333%Computer Style Sheets
+~%-33.333%Creative Style Sheets
+=Cascading Style Sheets
+~%-33.333%Colorful Style Sheets
+}
+
+Quina és la manera correcta d'aplicar un estil en línia en HTML usant CSS?{
+~%-33.333%&lt;style&gt;
+~%-33.333%&lt;css&gt;
+~%-33.333%&lt;inline-style&gt;
+=&lt;element style="..."&gt;
+}
+
+Com se selecciona un element amb la classe "exemple" a CSS?{
+~%-33.333%#exemple
+=.exemple
+~%-33.333%exemple
+~%-33.333%class exemple
+}
+
+Quin és el propòsit del model de caixa a CSS?{
+~%-33.333%Organitzar caixes en un disseny circular.
+=Especificar el contingut, el farciment, la vora i el marge d'un element.
+~%-33.333%Definir regles per a l'ombreig de caixes.
+~%-33.333%Establir l'alçada i l'amplada de les caixes.
+}
+
+Quina propietat s'utilitza per canviar el color del text a CSS?{
+=color
+~%-33.333%text-color
+~%-33.333%font-color
+~%-33.333%foreground-color
+}
+
+Quina és la funció de la propietat margin a CSS?{
+=Establir lespai entre les vores dun element.
+~%-33.333%Definir la mida del contingut dun element.
+~%-33.333%Controlar lespai entre les lletres del text.
+~%-33.333%Establir la mida de la font.
+}
+
+Com se selecciona el primer element fill d'un altre element a CSS?{
+=first-child
+~%-33.333%child:first
+~%-33.333%first-of-type
+~%-33.333%nthfirst(1)
+}
+
+Què fa la propietat display: none; a CSS?{
+~%-33.333%Mostra l'element.
+=Oculta l'element.
+~%-33.333%Redueix l'opacitat de l'element.
+~%-33.333%Col·lapsa l'element sense afectar-ne el disseny.
+}
+
+Com s'aplica un estil a un enllaç no visitat a CSS?{
+=a:link
+~%-33.333%a:visited
+~%-33.333%a:hover
+~%-33.333%a:active
+}
+
+Quina propietat es fa servir per centrar un bloc en CSS?{
+~%-33.333%center
+=margin: auto;
+~%-33.333%text-align: center;
+~%-33.333%align: center;
+}
+
+Quin és el propòsit de la propietat z-index a CSS?{
+~%-33.333%Controlar la mida de l'eix Z en un disseny 3D.
+=Especificar la posició a l'eix Z d'un element posicionat.
+~%-33.333%Definir l‟opacitat d‟un element.
+~%-33.333%Establir el nivell de zoom dun element.
+}
+
+Quina propietat es fa servir per canviar el tipus de lletra a CSS?{
+=font-family
+~%-33.333%text-family
+~%-33.333%font-type
+~%-33.333%typeface
+}
+
+Com se seleccionen tots els elements d'un tipus específic a CSS?{
+=*
+~%-33.333%element
+~%-33.333%all
+~%-33.333%type
+}
+
+Quina és la funció de la propietat position: relative; a CSS?{
+=Posicionar un element respecte a la seva posició normal.
+~%-33.333%Fixar un element a la part inferior de la pàgina.
+~%-33.333%Canviar la mida relativa d'un element.
+~%-33.333%Alinear un element a la dreta del contenidor.
+}
+
+Quina propietat es fa servir per canviar l'opacitat d'un element a CSS?{
+~%-33.333%transparency
+=opacity
+~%-33.333%visibility
+~%-33.333%alpha
+}
+
+Com se selecciona un element que està dins d'un altre element a CSS?{
+~%-33.333%element inside
+~%-33.333%parent &gt; child
+=parent child
+~%-33.333%element child
+}
+
+Quina és la funció de la propietat box-shadow a CSS?{
+~%-33.333%Establir l'ombreig de fons d'un element.
+=Crear una ombra sota un element.
+~%-33.333%Definir la vora duna caixa.
+~%-33.333%Pintar el contingut d'un element.
+}
+
+Com s'aplica un estil a tots els elements senars d'una llista a CSS?{
+~%-33.333%li:odd
+=li:nth-child(odd)
+~%-33.333%li:nth-child(even)
+~%-33.333%li:even
+}
+
+Quina propietat es fa servir per especificar l'espaiat entre les lletres a CSS?{
+~%-33.333%line-height
+~%-33.333%word-spacing
+=letter-spacing
+~%-33.333%text-spacing
+}
+
+Quina és la funció de la propietat transition a CSS?{
+~%-33.333%Crear animacions CSS.
+~%-33.333%Especificar la transició entre colors.
+=Definir la velocitat de canvi dun estil.
+~%-33.333%Establir la durada duna transformació.
+}
+
+Quina és la diferència entre padding i margin a CSS?{
+~%-33.333%Controlen lespai entre elements germans.
+=padding afecta el contingut intern, mentre que margin afecta l'espai exterior.
+~%-33.333%pàding afecta l'espai exterior, mentre que margin afecta el contingut intern.
+~%-33.333%Cap de les altres.
+}
+
+Què és un "pseudo-element" a CSS?{
+~%-33.333%Un element creat artificialment amb JavaScript.
+~%-33.333%Un element que està ocult per defecte.
+=Un selector que selecciona parts dun element.
+~%-33.333%Un element amb un estil diferent de la resta.
+}
+
+Quina és la funció de la propietat box-sizing a CSS?{
+~%-33.333%Totes són correctes.
+=Especificar el model de caixa a utilitzar definint com gestionar la mida.
+~%-33.333%Definir l'ombra de capsa.
+~%-33.333%Establir el color de fons duna caixa.
+}
+
+A CSS, què significa la propietat position: absolute;?{
+~%-33.333%L'element es posiciona de manera relativa al contenidor principal.
+~%-33.333%L'element es posiciona de manera relativa a la seva posició normal.
+=L'element es posiciona de manera absoluta en relació amb el contenidor principal.
+~%-33.333%L'element s'amaga del tot.
+}
+
+Què fa la propietat transform a CSS?{
+~%-33.333%Controla la transformació d'un element a l'eix Z.
+=Aplica una transformació visual a un element, com ara rotació o escala.
+~%-33.333%Defineix la transició entre diferents estils.
+~%-33.333%Canvia el tipus de lletra d‟un element.
+}
+
+A CSS, què significa la propietat overflow: hidden;?{
+=Oculta el contingut que sobresurt d'un contenidor.
+~%-33.333%Afegeix un efecte d'ombra al voltant d'un element.
+~%-33.333%Fa que el contingut sigui visible fora del contenidor.
+~%-33.333%Si el contingut és més gran que la mida del contenidor, oculta el contenidor.
+}
+
+Quina és la diferència entre display: inline-block; i display: block;?{
+~%-33.333%Tots dos són equivalents i es poden fer servir indistintament.
+=inline-block mostra elements en línia però permet establir alçada i amplada.
+~%-33.333%block només s'usa per a elements de bloc.
+~%-33.333%inline-block s'utilitza per a elements dins un bloc.
+}
+
+Com se selecciona l'últim element fill d'un altre element a CSS?{
+~%-33.333%:last
+~%-33.333%:nth-last-child(n-1)
+=:last-child
+~%-33.333%:nth-child(last)
+}
+
+A CSS, què significa la propietat opacity?{
+~%-33.333%Estableix la transparència del fons d'un element.
+~%-33.333%Controla la velocitat de les animacions.
+~%-33.333%Totes són correctes.
+=Canvia l'opacitat d'un element.
+}
+
+Quan és apropiat utilitzar !important en una regla d'estil a CSS?{
+~%-33.333%Sempre, per assegurar que la regla s'apliqui.
+=Mai, perquè és una mala pràctica.
+~%-33.333%Només quan es vol aplicar un estil temporalment.
+~%-33.333%Quan es vol donar prioritat a una regla específica.
+}

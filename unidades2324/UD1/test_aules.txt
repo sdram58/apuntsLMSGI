@@ -1,69 +1,69 @@
 $CATEGORY: LMSGI/UD1
 
 Els llenguatges de marques:{
-~Permeten representar informació
-~Es basen en marques o etiquetes
-~No són llenguatges de programació
+~%-33.333%Permeten representar informació
+~%-33.333%Es basen en marques o etiquetes
+~%-33.333%No són llenguatges de programació
 =Totes són vàlides
 }
 
 L'exemple més representatiu de llenguatges de marques orientat a la presentació d'informació és:{
-~GML
-~SGML
+~%-33.333%GML
+~%-33.333%SGML
 =HTML
-~XML
+~%-33.333%XML
 }
 
 HTML és un llenguatge de marques creat a partir de:{
 =SGML
-~XML
-~XHTML
-~SVG
+~%-33.333%XML
+~%-33.333%XHTML
+~%-33.333%SVG
 }
 
 Assenyala quina de les opcions següents és una de les característiques fonamentals dels llenguatges de marques:
 {
 =És independent de la plataforma
-~S'emmagatzemen en formats complexos codificats
-~Són rígids
-~Són difícils de processar
+~%-33.333%S'emmagatzemen en formats complexos codificats
+~%-33.333%Són rígids
+~%-33.333%Són difícils de processar
 }
 
 Una cançó mp3 és un fitxer:{
-    =de text
-    ~binari
+    ~%-33.333%de text
+    =binari
 }
 
 Una foto és un fitxer:{
-    ~de text
+    ~%-33.333%de text
     =binari
 }
 
 Un document de word és un fitxer:{
-~de text
-=binari
+    ~%-33.333%de text
+    =binari
 }
 
 UTF-8 és més senzill de manejar pels ordinadors però ocupa més que UTF-16{
-    ~Vertader
+    ~%-33.333%Vertader
     =Fals
 }
 
 A UTF-32 tots els caracters ocupen:{
-    ~1 byte
-    ~2 bytes
-    ~3 bytes
+    ~%-33.333%1 byte
+    ~%-33.333%2 bytes
+    ~%-33.333%3 bytes
     =4 bytes
 }
 
 El creador de HTML va ser{
     =Tim Berner Lee
-    ~Microsoft
-    ~Charlse Goldfarb
-    ~Michael Jackson
+    ~%-33.333%Microsoft
+    ~%-33.333%Charlse Goldfarb
+    ~%-33.333%Michael Jackson
 }
 
 JSON es una notación per a objectes de Java que està remplaçant XML{
-    ~Vertader
+    ~%-33.333%Vertader
     =Fals
 }

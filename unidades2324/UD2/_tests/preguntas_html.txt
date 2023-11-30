@@ -1,0 +1,244 @@
+Què significa HTML? {
+~%-33.333%HyperText Makeup Language
+=HyperText Markup Language
+~%-33.333%HyperText Model Language
+~%-33.333%HyperText Management Language
+}
+
+Quin és l'element principal per definir el contingut d'una pàgina web HTML? {
+=&lt;body&gt;
+~%-33.333%&lt;head&gt;
+~%-33.333%&lt;html&gt;
+~%-33.333%&lt;title&gt;
+}
+
+Quina és l'etiqueta correcta per inserir una línia horitzontal a HTML? {
+~%-33.333%&lt;line&gt;
+=&lt;hr&gt;
+~%-33.333%&lt;linebreak&gt;
+~%-33.333%&lt;horitzontal&gt;
+}
+
+Quin atribut es fa servir per establir un enllaç a una altra pàgina en HTML? {
+=href
+~%-33.333%link
+~%-33.333%src
+~%-33.333%target
+}
+
+Quina és la funció principal de l'etiqueta &lt;div&gt; a HTML? {
+~%-33.333%Crear llistes
+~%-33.333%Definir encapçalats
+=Agrupar i donar format a contingut
+~%-33.333%Inserir imatges
+}
+
+Quina etiqueta es fa servir per definir una llista no numerada en HTML? {
+=&lt;ul&gt;
+~%-33.333%&lt;ol&gt;
+~%-33.333%&lt;li&gt;
+~%-33.333%&lt;list&gt;
+}
+
+Quina és la manera correcta de comentar en HTML? {
+=&lt;!-- Comentari --&gt;
+~%-33.333%// Comentari //
+=/
+~%-33.333%-- Comentari --
+}
+
+Com es defineix un salt de línia en HTML? {
+~%-33.333%&lt;nl&gt;
+=&lt;br&gt;
+~%-33.333%&lt;lb&gt;
+~%-33.333%&lt;newline&gt;
+}
+
+Quina és l'etiqueta correcta per inserir una imatge a HTML? {
+=&lt;img&gt;
+~%-33.333%&lt;picture&gt;
+~%-33.333%&lt;figure&gt;
+~%-33.333%&lt;src&gt;
+}
+
+Quin atribut s'utilitza per especificar l'URL d'un enllaç HTML? {
+~%-33.333%link
+=href
+~%-33.333%url
+~%-33.333%src
+}
+
+Com es defineix el tipus de document HTML5 a la declaració del document? {
+~%-33.333%&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 5.0//EN"&gt;
+~%-33.333%&lt;!DOCTYPE HTML5&gt;
+=&lt;!DOCTYPE html&gt;
+~%-33.333%&lt;!DOCTYPE PUBLIC HTML&gt;
+}
+
+Quina és l'etiqueta correcta per crear un hiperenllaç en HTML? {
+=&lt;a&gt;
+~%-33.333%&lt;link&gt;
+~%-33.333%&lt;href&gt;
+~%-33.333%&lt;url&gt;
+}
+
+Quin element s'utilitza per afegir estils CSS en línia a HTML? {
+=&lt;style&gt;
+~%-33.333%&lt;css&gt;
+~%-33.333%&lt;link&gt;
+~%-33.333%&lt;script&gt;
+}
+
+Quina és l'etiqueta correcta per definir un paràgraf HTML? {
+=&lt;p&gt;
+~%-33.333%&lt;para&gt;
+~%-33.333%&lt;paragraph&gt;
+~%-33.333%&lt;line&gt;
+}
+
+Quin atribut s'utilitza per especificar el color de fons d'un element HTML? {
+~%-33.333%color
+~%-33.333%bgcolor
+=background
+~%-33.333%style
+}
+
+Quina és l'etiqueta correcta per crear una taula HTML? {
+=&lt;table&gt;
+~%-33.333%&lt;tr&gt;
+~%-33.333%&lt;td&gt;
+~%-33.333%&lt;th&gt;
+}
+
+Quina etiqueta es fa servir per crear una llista numerada en HTML? {
+=&lt;ol&gt;
+~%-33.333%&lt;ul&gt;
+~%-33.333%&lt;li&gt;
+~%-33.333%&lt;list&gt;
+}
+
+Quina és la funció principal de l'etiqueta &lt;head&gt; a HTML? {
+~%-33.333%Definir el cos de la pàgina
+=Contenir metadades i enllaços a arxius externs
+~%-33.333%Crear encapçalats
+~%-33.333%Inserir imatges
+}
+
+Quina és la diferència principal entre les etiquetes &lt;div&gt; i &lt;span&gt; en HTML? {
+~%-33.333%&lt;div&gt; és per a text en línia, &lt;span&gt; és per a blocs.
+=&lt;div&gt; és per a blocs, &lt;span&gt; és per a text en línia.
+~%-33.333%Totes dues són equivalents i es poden fer servir indistintament.
+~%-33.333%&lt;div&gt; és per a imatges, &lt;span&gt; és per a text.
+}
+
+Quin és el propòsit de l'etiqueta &lt;meta charset="UTF-8"&gt; a HTML? {
+~%-33.333%Defineix l'idioma de la pàgina.
+=Especifica la codificació de caràcters de la pàgina.
+~%-33.333%Defineix el conjunt de caràcters utilitzat per estilitzar la pàgina.
+~%-33.333%Estableix lestructura del document HTML.
+}
+
+Quina és la funció de l'etiqueta &lt;figure&gt; a HTML? {
+~%-33.333%Defineix una figura geomètrica.
+=Agrupa elements multimèdia amb les llegendes.
+~%-33.333%Estableix la mida duna imatge.
+~%-33.333%Crea un enllaç a una altra pàgina.
+}
+
+Què és l'atribut colspan a l'etiqueta &lt;td&gt; d'una taula HTML? {
+~%-33.333%Defineix el color de fons de la cel·la.
+=Especifica el nombre de columnes que ha d'ocupar la cel·la.
+~%-33.333%Estableix l'amplada de la cel·la en píxels.
+~%-33.333%Indica la mida de la lletra dins de la cel·la.
+}
+
+Quina és la funció principal de l'etiqueta &lt;nav&gt; a HTML5? {
+~%-33.333%Defineix la barra de navegació duna pàgina web.
+~%-33.333%Crea un menú d'opcions.
+~%-33.333%Estableix la ubicació geogràfica de la pàgina.
+=Agrupa elements de navegació.
+}
+
+Quina és la diferència entre les etiquetes &lt;em&gt; i &lt;strong&gt; a HTML5? {
+=&lt;em&gt; s'usa per ressaltar text, &lt;strong&gt; per a èmfasi forta.
+~%-33.333%&lt;em&gt; s'usa per èmfasi forta, &lt;strong&gt; per ressaltar text.
+~%-33.333%Totes dues són equivalents i es poden fer servir indistintament.
+~%-33.333%&lt;em&gt; s'usa per a text en cursiva, &lt;strong&gt; per a text en negreta.
+}
+
+Quina és la funció de l'element &lt;canvas&gt; a HTML5? {
+=Crea una regió de la pàgina on es poden dibuixar gràfics mitjançant JavaScript.
+~%-33.333%Defineix una àrea de la pàgina on es poden inserir imatges.
+~%-33.333%Estableix un contenidor per a fitxers d'àudio.
+~%-33.333%Cap de les altres
+}
+
+Com es fa referència a un fitxer de full d'estil extern en HTML? {
+~%-33.333%&lt;link src="estil.css"&gt;
+~%-33.333%&lt;style src="estil.css"&gt;
+=&lt;link rel="stylesheet" href="estil.css"&gt;
+~%-33.333%&lt;style href="estil.css"&gt;
+}
+
+Quina és la diferència entre les etiquetes &lt;section&gt; i &lt;article&gt; a HTML5? {
+=&lt;section&gt; s'utilitza per agrupar contingut temàtic relacionat, &lt;article&gt; per a contingut independent i autònom.
+~%-33.333%&lt;section&gt; s'utilitza per crear divisions en una pàgina, &lt;article&gt; per a contingut secundari.
+~%-33.333%Ambdues etiquetes són equivalents i es poden fer servir indistintament.
+~%-33.333%&lt;section&gt; s'utilitza per crear pàgines web completes, &lt;article&gt; per a seccions específiques.
+}
+
+Quin és el propòsit de l'etiqueta &lt;main&gt; a HTML5? {
+=Defineix la secció principal d'una pàgina web.
+~%-33.333%Especifica el contingut principal dun formulari.
+~%-33.333%No existeix a HTML5.
+~%-33.333%Estableix la mida principal de la font a la pàgina.
+}
+
+Com s'insereix un comentari condicional per a Internet Explorer a HTML? {
+~%-33.333%&lt;!--if IE]&gt; Comentari &lt;![endif]--&gt;
+=&lt;!--[if IE]&gt; Comentari &lt;![endif]--&gt;
+~%-33.333%&lt;!--[if !IE]&gt; Comentari &lt;![endif]--&gt;
+~%-33.333%&lt;!--if !IE]&gt; Comentari &lt;![endif]--&gt;
+}
+
+Quin és el propòsit de l'etiqueta &lt;datalist&gt; a HTML? {
+~%-33.333%Defineix una llista de dades per al seu ús en gràfics.
+=Crea una llista desplegable d'opcions per a un camp d'entrada.
+~%-33.333%Estableix un conjunt de dades per ser utilitzat per scripts a la pàgina.
+~%-33.333%Indica una llista d'enllaços a altres pàgines web.
+}
+
+Què fa l'atribut placeholder a un camp d'entrada (&lt;input&gt;) a HTML? {
+~%-33.333%Defineix el valor predeterminat del camp.
+=Mostra un missatge d'ajuda dins del camp abans que s'introduisca qualsevol text.
+~%-33.333%Estableix un text de marcador de posició per a un enllaç.
+~%-33.333%Controla el format de l'entrada de dades al camp.
+}
+
+Quina és la funció de l'etiqueta &lt;progress&gt; a HTML5? {
+=Mostra una barra de progrés per indicar l'avenç d'una tasca.
+~%-33.333%Defineix una llista d'elements ordenats.
+~%-33.333%Estableix una barra de desplaçament horitzontal.
+~%-33.333%Crea un gràfic circular.
+}
+
+Com es fa referència a un fragment específic d'una pàgina web utilitzant un enllaç (&lt;a&gt;) a HTML? {
+=&lt;a href="#secció"&gt;Enllaç&lt;/a&gt;
+~%-33.333%&lt;a link="#secció"&gt;Enllaç&lt;/a&gt;
+~%-33.333%Cap de les altres
+~%-33.333%&lt;a target="#seccion"&gt;Enllaç&lt;/a&gt;
+}
+
+Quina és la funció de l'etiqueta &lt;blockquote&gt; a HTML? {
+~%-33.333%Defineix una cita en línia.
+=Estableix un bloc de cites o text destacat.
+~%-33.333%Crea un quadre de text amb vores.
+~%-33.333%Indica una llista de blocs de codi.
+}
+
+Quin element s'utilitza per crear una àrea de text editable a HTML? {
+=&lt;textarea&gt;
+~%-33.333%&lt;textinput&gt;
+~%-33.333%&lt;input type="text"&gt;
+~%-33.333%&lt;editabletext&gt;
+}
