@@ -148,7 +148,7 @@ Quina és la diferència entre padding i margin a CSS?{
 Què és un "pseudo-element" a CSS?{
 ~%-33.333%Un element creat artificialment amb JavaScript.
 ~%-33.333%Un element que està ocult per defecte.
-=Un selector que selecciona parts dun element.
+=Un selector que selecciona parts d'un element.
 ~%-33.333%Un element amb un estil diferent de la resta.
 }
 
