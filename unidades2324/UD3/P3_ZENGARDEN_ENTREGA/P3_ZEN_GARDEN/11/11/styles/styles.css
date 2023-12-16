@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Work+Sans:ital@0;1&display=swap');
+
+
+@keyframes shiny{
+    from{
+        color: rgb(103, 53, 129);
+    }
+    
+    50%{
+        color: rgb(204, 108, 255);
+    }
+    to{
+        color: rgb(103, 53, 129);
+    }
+
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+
+header{
+    border-bottom: rgb(0, 0, 0) 4px solid;
+    width: 100%;        
+    color: rgb(103, 53, 129);  
+    background-color: rgb(255, 255, 255);
+}
+
+header h1{
+    font-family: 'Work Sans' , sans-serif;
+    padding-left: 40px;
+    float: left;
+}
+
+ul ul{
+    display: none;
+}
+
+li{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    height: 50px;
+    text-align: left;
+    padding-top: 15px;
+    padding-left: 5px;
+}
+
+li a{
+    text-decoration: none;
+    color: rgb(103, 53, 129);
+    font-family: 'Work Sans' , sans-serif;
+    font-weight: bolder;
+}
+
+nav{
+    padding-left: 30px;
+    padding-right: 10px;
+    width: 100%;
+}
+
+li:hover{
+    background-color: rgb(241, 241, 241);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+header nav> ul{
+    height: 60px;
+}
+
+header nav > ul>li{
+    width: 16%;
+    border: 1px solid rgba(0, 0, 0, 0.308);
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1.2em;
+    text-align: center;
+    height: 100%;
+    padding-top: 15px; 
+}
+
+header nav>ul>li:hover>ul{
+    display: block;
+    position: absolute;
+    width: 98%;
+    top: 99%;
+    left:0;
+}
+
+header nav>ul>li>ul>li{
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgb(216, 216, 216);
+}
+
+header  div img{
+    padding-left: 50px;
+}
+
+main section.banner{
+    font-size: larger;
+    color: rgb(103, 53, 129);
+    font-family: 'Work Sans' , sans-serif;
+    font-style: italic;
+    font-weight: bolder;
+    text-align: center;
+    animation: shiny 2s ease-in-out 1s infinite alternate ;
+}
+
+section.productos{
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    justify-content: space-between;
+    display: flex;
+    text-align: center;
+}
+
+.productos article{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.productos article img{
+    margin: auto;
+    width: 250px;
+    height: auto;
+    float: right;
+    transition: ease-in-out 0.15s;
+
+}
+.productos article img:hover{
+    transform: scale(1.1);
+}
+
+
+.productos article h2{
+    padding-top: 12px;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(103, 53, 129);
+}
+
+aside div.redes-sociales{
+    border: 1px solid rgb(103, 53, 129);
+    border-radius: 5px;
+    margin-left: 45%;
+    margin-right: 45%;
+    margin-top: 3%;
+    padding: 10px;
+    margin-bottom: 3%;
+    text-align: center;
+}
+aside div.redes-sociales img{
+    width: 30px;
+    height: auto;
+}
+
+aside div.redes-sociales img:hover{
+    transform: scale(1.1);
+}
+
+footer p {
+    font-family: 'Work Sans' , sans-serif;
+    font-style: italic;
+    color: rgb(103, 53, 129);
+}
+
+footer p span{
+    font-weight:bold ;
+}

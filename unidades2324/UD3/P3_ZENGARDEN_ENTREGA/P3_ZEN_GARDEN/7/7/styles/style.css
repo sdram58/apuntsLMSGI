@@ -1,0 +1,242 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+
+}
+header{
+    position: fixed;
+    width: 100%;
+    z-index: 50;
+}
+h1{
+    text-align: center;
+    height: 30px;
+    padding: 20px;
+    font-weight: 100;
+    background-color: white;
+}
+h1 span{
+    font-weight: 400;
+}
+header > div{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+/* Menu */
+header a:visited{
+    color: white
+}
+header a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    color: white
+}
+header nav{
+    background-color: black;
+    opacity: .5;
+    width: 100%;
+    color: white;
+}
+header nav > ul{
+    text-align: center;
+    height: 60px;
+    
+}
+header > nav > ul > li{
+    width:15%;
+    text-align: center;
+    font-size: 1.2em;
+    padding-top: 15px;
+}
+li{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    background-color: black;
+    height: 45px;
+}
+ul ul{
+    display: none;
+}
+li:hover{
+    background-color: gray;
+    color: black;
+    cursor: pointer;
+    
+}
+header nav > ul > li:hover > ul {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+}
+/* fin de menu */
+
+main{
+    padding-top: 150px;
+    overflow-x: hidden;
+}
+
+@keyframes promocion{
+	from {
+		background-color: red;
+        opacity: 0.8;
+	}
+	to {
+		background-color: rgb(248, 213, 58);
+        opacity: 0.8;
+	}
+}
+
+.banner{
+    display: block;
+    position: fixed;
+    z-index: 50;
+    right: 5px;
+    width: 200px;
+    height: 115px;
+    border-radius: 50%;
+    padding-top: 85px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.2em;
+    animation :	promocion 1s ease-out infinite alternate;
+}
+
+
+
+/* Carrusel */
+
+
+.productos {
+    width: 100%;
+
+}
+  
+article {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-top: 100px;
+    max-width: 100%;
+    width: 700px;
+    height: 800px;
+    vertical-align: top;
+    position: absolute;
+    text-align: center;
+    align-items: center;
+    opacity: 0;
+}
+
+h2{
+    padding: 50px;
+    text-transform: uppercase;
+    color: gray;
+
+}
+  article img{
+    height: 700px;
+  }
+
+  .banner + .productos > article:first-child {
+    animation: carrusel 4s ease-in-out;
+  }
+  .banner + .productos > article:nth-child(2) {
+    animation: carrusel 4s ease-in-out 4s;
+  }
+  .banner + .productos > article:last-child {
+    animation: carrusel 4s ease-in-out 8s;
+
+  }
+  .productos:last-of-type > article:first-child {
+    animation: carrusel 4s ease-in-out 12s;
+  }
+  .productos:last-of-type article:nth-child(2) {
+    animation: carrusel 4s ease-in-out 16s;
+  }
+  .productos:last-of-type article:last-of-type {
+    animation: carrusel 4s ease-in-out 20s;
+
+  }
+  .banner + .productos > article:last-child img {
+    margin-left: -30%;
+  }
+        
+  
+  @keyframes carrusel {
+    0% {
+      left: 70%;
+    }
+    50% {
+      left: 50%;
+    }
+    100% {
+      left: 30%;
+    }
+    0%, 100% {
+        opacity: 0;
+      }
+      20%, 80% {
+        opacity: 1;
+      }
+  }
+
+  .productos:last-child::after {
+    content: url('../images/productos.png');
+    display: block;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-position: center center;
+    background-attachment: fixed;
+    margin: 0 auto;
+    margin-top: 20px;
+    opacity: 1;
+    animation: ani-prod 27s linear;
+
+}
+  
+@keyframes ani-prod{
+	0% {
+		transform: scale(80%);
+        opacity: 0;
+	}
+    90% {
+		transform: scale(80%);
+        opacity: 0;
+	}
+    100% {
+		transform: scale(100%);
+        opacity: 1;
+	}
+}
+
+footer{
+    overflow-x: hidden;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 15px;
+    border-top: solid 1px gray;
+}
+
+/* Se agregan las imagenes en la carpeta principal ya que asi lo indica el html, se quisieran alojar en la carpeta images */
+.redes-sociales a > img{
+    height: 40px;
+    width: 40px;
+}
+.redes-sociales{
+    margin: 40px;
+}
+
+p span{
+    font-style: italic;
+    color: gray;
+}

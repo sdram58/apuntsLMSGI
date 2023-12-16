@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap');
+
+
+*{
+    margin: 0;
+    
+}
+header{
+    background-color: lightcyan;
+    margin-top: 0;
+}
+
+
+h1{
+    font-family: 'Rubik Bubbles';
+    text-align: center;
+    font-size: 60px;
+}
+
+div.logo {
+    float: right;
+    transform: translateY(-68px);
+}
+nav{
+    margin-top: 10px;
+    text-align: center;
+}
+
+ul{
+    list-style: none;
+    display: inline-flex;
+}
+li{
+    display: block;
+    padding: 10px;
+    font-size: 25px;
+    font-style: italic;
+}
+ul>li>ul{
+    display: none;
+}
+li>ul>li{
+    background-color: lightcyan;
+}
+li:hover{
+    background-color: lightgray;
+}
+li:hover>ul{
+    display: block;
+    position: absolute;
+    
+}
+
+
+@keyframes ani1{ 
+    from { 
+        left: 0px; 
+        background-color: red; 						
+    } to { 
+        left: 100%; 
+        background-color: blue; 						
+    } 					
+}
+
+/* Versió per a Chrome i Safari */ 
+@-webkit-keyframes ani1{ 
+    from { 
+        left: 20px; 
+        background-color: red; 						
+    } to { 
+        left: 220px;
+        background-color: blue; 						
+    } 					
+}                                     
+
+/*capa que aplica l'animació */
+div.animation{ 
+    position: fixed; 
+    background-color: red; 
+    left: 20px; 
+    width: 50px; 
+    height: 10px;
+    -webkit-animation :	ani1 2s ease-in-out 1s;									
+    animation :	ani1 2s ease-in-out 1s infinite alternate;
+} 
+
+main{
+    margin-top: 20px;
+}
+article>img{
+    width: 150px;
+    
+}
+section{
+    display: inline;
+}
+article{
+    display: inline-block;
+    padding: 20px
+}
+
+div.redes-sociales{
+    display:block;
+    text-align: center;
+}
+
+footer{
+    display: block;
+    text-align: center;
+}
+

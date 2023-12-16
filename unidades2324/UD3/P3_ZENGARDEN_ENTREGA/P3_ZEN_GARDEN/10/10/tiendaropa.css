@@ -1,0 +1,158 @@
+
+header{ /* va desde el titulo, hasta contacte */
+
+    padding-left: 100px;
+    padding-top: 10px;
+    background-size: 100% 100%; /* con esto hacemos que la imagen no se repita, es decir que una sola imagen ocupe todo el fondo*/
+    font-size: larger;
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:black;
+    text-shadow: 5px 5px 10px wheat;
+    background-image: url(../PracticaCSSTienda/images/bannerdefinitivo.png);
+}
+
+.banner{ /* aqui solamente va lo de descuento */
+
+    color: red;
+    font-size: larger;
+    background-color:antiquewhite;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    animation: parpadeo 0.5s infinite alternate;
+
+}
+
+@keyframes parpadeo { /* esto se usa para elegir los colores que queremos que cambie la animacion que hemos puesto en el banner*/
+    from {
+        color: red;
+    }
+
+    to {
+        color: purple;
+    }
+}
+
+div, img{ /* esto es para mover la imagen del logo del instituto */
+
+    padding-left: 500px;
+
+}
+
+nav, ul{ /* tamaño de la funte y tipo de fuente de los botones */
+
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+a {  /* cambiar el color de los botones */
+    text-decoration: none;
+    color: black;
+}
+
+ul ul {
+    display: none;
+}
+
+li { /* botones de la lista */
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    background-color:antiquewhite; /* color del fondo de los botones*/
+    height: 50px;
+    text-align: left;
+    color: white;
+    padding-top: 15px;
+    padding-left: 5px;
+}
+
+li:hover { /* esto es para definir el color del que se pone cuando pones el puntero encima*/
+    background-color:darkseagreen;
+    color: black;
+    cursor: pointer;
+}
+
+header nav>ul {
+    height: 60px;
+}
+
+/*li menú principal, botones*/
+
+header nav>ul>li {
+    width: 16%;
+    box-sizing: border-box;
+    font-size: 1.2em;
+    text-align: center;
+    height: 100%;
+    padding-top: 15px;
+
+}
+
+header nav>ul>li:hover>ul {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+}
+
+body { /* aqui ira todo lo general, es decir todo lo del documento entero*/
+	line-height: 1.88889; /* la separacion de linea de todo el documento */
+    background-size: 100% 100%;
+	background-image: url(../PracticaCSSTienda/images/fondomarron2.jpg); /* fondo */
+}
+
+/* cambiar tamaño letras */
+
+h2{
+    text-align: center;
+    font-weight: normal;
+    color: black;
+    background-color: antiquewhite;
+    text-shadow: 5px 5px 10px wheat;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 34px;
+}
+
+aside a:nth-child(2) {
+
+    padding-left: 90px;
+    padding-right: 90px;
+}
+
+aside img {
+    height: 90px;
+}
+
+article img {
+    width: 315px;
+}
+
+section article {
+
+    margin: 90px;
+    display: inline-block;
+}
+
+.redes-sociales { /* iconos de redes, asi aparecen a un lado */
+    text-align: center;
+
+}
+
+
+footer { /* para cambiar el " 2023 Botiga de Roba Serra Perenxisa." del final */
+    text-align: center;
+    color: white;
+    font-size: large;
+    font-style: italic;
+    padding-top: 35px;
+    padding-bottom: 35px;
+
+}
+
+a:link { /* le estamos dando el color al link */
+	font-weight: bold; 
+	text-decoration: none; 
+	color: white;
+	}

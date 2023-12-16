@@ -1,0 +1,199 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+header{
+    border-bottom: solid 1px #808080; /*Linea horizontal*/
+}
+
+/*Titulo de la pagina*/
+header h1{
+    position: relative;
+    float: right;
+    margin-top: 1%;
+}
+
+header div img{
+    transform :skewX( -30deg ); /*Transformación*/	
+}
+
+header div{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/*Buscador*/
+nav{
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+li {
+    display: inline-block; 
+    position: relative;
+    margin-top: 10px;
+}
+ul ul{
+    display: none;
+}
+li > ul{
+    display: none; /* Ocultar el submenu por defecto */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    z-index: 1;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+nav ul li:nth-child(4):focus-within > ul{
+    display: block; /* Mostrar el submenu cuando el enlace "Infantil" tiene el foco */
+    position: absolute;
+    width: 100%;
+    top:100%;
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+}
+/* Mostrar el submenu cuando el enlace "Infantil" tiene el foco */
+li:hover ul {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+header a{
+    display: block;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-decoration: none;
+    color: black;
+    line-height: 60px;
+    outline: none; /* Evitar el resaltado del navegador al hacer clic */
+}
+li:nth-child(4):focus-within > a {
+    background-color: lightgrey;
+}
+li a:first-of-type{
+    display: block;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-decoration: none;
+    color: black;
+    border: solid 1px #808080;
+    transition: background-color 0.3s;
+}
+li a:hover {
+    background-color:lightgrey;
+    cursor: pointer;
+    color: black;
+}
+/* Añadir espacio entre elementos del submenu */
+li > ul > li {
+    clear: both;
+    width: 100%;
+}
+
+/*Tipo de letra*/
+body{
+    font-family: 'Raleway', sans-serif; /*Fuente de Google Fonts*/
+}
+
+main {
+    max-width: 1200px; /* Limita el ancho del contenido principal */
+    margin: 0 auto; /* Centra el contenido principal */
+}
+
+/*Banner con moviemiento*/
+.banner{
+    float: right;
+    margin-right: 10%;
+    margin-top: 25px;
+    background-color: rgb(176, 1, 1);
+    color: white;
+    font-size:x-large;
+    transform :skewX( -30deg ); /*Transformación*/	
+    animation: movimientoBanner 1s infinite alternate; /* Animación */
+}
+@keyframes movimientoBanner {
+    from {
+        transform: translateX(30);
+    }
+    to {
+        transform: translateX(-30px); /*mueve 30px a la izquierda*/
+    }
+}
+
+/*Imagenes*/
+.productos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.productos article {
+    text-align: center;
+    margin: 10px;
+    max-width: 300px;
+}
+.productos article img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px #0000001a;
+}
+.productos article:first-child {
+    margin-top: 90px; /* Ajusta según sea necesario para dejar espacio al banner */
+}
+.productos article h2 {
+    margin-top: 10px;
+    color: #000000;
+}
+.productos article:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;/*Transformación*/
+}
+
+/*Redes sociales*/
+aside {
+    position: fixed;
+    top: 75px;
+    right: 0;
+    width: 200px;
+    height: 5%;
+    background-color: #f0f0f0;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+}
+.redes-sociales img {
+    width: 30px; /*Ajusta el ancho*/
+    height: auto;
+    margin-bottom: 10px; /* Añade un margen inferior para separar las imágenes */
+    margin-right: 33px;
+    display: inline-block;
+}
+.redes-sociales img:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+/*Footer*/
+footer {
+    margin-top: 7%;
+    text-align: center;
+    background-color: #000000;
+    color: white;
+    padding: 20px; /* Añade un relleno alrededor del contenido */
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3); /* Añade una sutil sombra */
+}
+
+footer span {
+    font-weight: bold;
+    color: #ff0000; /* Cambia el color del texto en negrita */
+}

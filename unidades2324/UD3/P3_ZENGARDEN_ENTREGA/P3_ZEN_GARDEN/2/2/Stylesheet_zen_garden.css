@@ -1,0 +1,187 @@
+@keyframes moverse {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(1300px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes cambiarColor {
+    0% { background-color: red; }
+    16.6% { background-color: orange; }
+    33.2% { background-color: yellow; }
+    49.8% { background-color: green; }
+    66.4% { background-color: blue; }
+    83% { background-color: violet; }
+    100% { background-color: darksalmon; }
+  }
+
+  @keyframes cambiarLetra {
+    0% { color: red; }
+    16.6% { color: orange; }
+    33.2% { color: yellow; }
+    49.8% { color: green; }
+    66.4% { color: blue; }
+    83% { color: violet; }
+    100% { color: #ff0051; }
+  }
+
+@font-face {
+    font-family: 'pacific';
+    src: url(../P03_Claudia_Hernández/Sources/fonts/Pacifico/Pacifico-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'caveat';
+    src: url(../P03_Claudia_Hernández/Sources/fonts/Caveat/Caveat-VariableFont_wght.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    margin: 0% 0% 0% 0%;
+    padding: 0; 
+}
+
+header{
+    background-color: darksalmon;
+    width: 100%;        
+    color: white;   
+    border-bottom: solid 2px darksalmon; 
+    font-family: 'pacific';
+}
+
+h1{
+    text-align: center;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+nav{
+    width: 100%;
+    margin: 0% 0% 0% 0.1%;
+}
+
+ul ul{
+    display: none;
+}
+
+li{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    background-color: darksalmon;
+    height: 50px;
+    text-align: left;
+    color:white;
+    padding-top: 15px;
+    padding-left: 5px;
+}
+
+li:hover{
+    background-color: lightcoral;
+    color:darksalmon;
+    cursor: pointer;
+}
+
+header nav>ul{
+    height: 60px;
+}
+
+/*li menú principal*/
+header nav>ul>li{
+    width: 16.4%;
+    border: 1px solid white;
+    box-sizing: border-box;
+    font-size: 1.2em;
+    text-align: center;
+    height: 100%;
+    padding-top: 15px;
+}
+
+header nav>ul>li{
+    width: 16.4%;
+    border: 1px solid white;
+    box-sizing: border-box;
+    font-size: 1.2em;
+    text-align: center;
+    height: 100%;
+    padding-top: 15px;
+}
+
+header nav>ul>li:hover>ul{
+    display: block;
+    position: absolute;
+    width: 100%;
+    top:100%;
+    left: 0;
+}
+
+ul ul>li:hover>ul{
+    display: block;
+    position: absolute;
+    width: 100%;
+    top:0px;
+    left: 100%;
+}
+
+.banner{
+    margin: 10% 25% 10% 25%;
+    text-align: center;
+    background-color: red;
+    font-family: 'caveat';
+    font-size: 3em;
+    animation :	cambiarColor 10s ease-in-out 2s infinite alternate;
+    color: white;
+}
+
+h2{
+    font-family: 'pacific'; 
+    background-color: darksalmon;
+    margin: 0% 30% 10% 30%;
+    color: white;
+}
+
+section.productos article{
+    text-align: center;
+    margin: 5% 0% 0% 0%;
+}
+
+section.productos article img{
+width: 40%;
+height: auto;
+}
+
+footer{
+    background-color: darksalmon;
+    text-align: center;
+    font-family: 'pacific';
+    font-size: 3em;
+    animation :	cambiarLetra 10s infinite alternate;
+    height: 20%;
+}
+
+header img{
+    animation : moverse 30s infinite alternate;
+    margin: 0% 1% 0% 1%;
+    transform :rotate( 45deg );
+}
+
+body{
+    background-image: url(./Sources/images/fondo5.avif);
+    background-repeat: initial;
+}
+
+aside a{
+    color: darksalmon;
+}
+
+aside img{
+    height: auto;
+    width: 3%;
+    margin: 0% 0% 0% 3%;
+    transform: rotate(45deg);
+}
