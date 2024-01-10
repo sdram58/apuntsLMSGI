@@ -1,56 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-
     <style>
-:root {
-  --main-bg-color: brown;
-}
-
-.un {
-  color: white;
-  background-color: var(--main-bg-color);
-  margin: 10px;
-  width: 50px;
-  height: 50px;
-  display: inline-block;
-}
-
-.dos {
-  color: white;
-  background-color: black;
-  margin: 10px;
-  width: 150px;
-  height: 70px;
-  display: inline-block;
-}
-.tres {
-  color: white;
-  background-color: var(--main-bg-color);
-  margin: 10px;
-  width: 75px;
-}
-.quatre {
-  color: white;
-  background-color: var(--main-bg-color);
-  margin: 10px;
-  width: 100px;
-}
-
-.cinc {
-  background-color: var(--main-bg-color);
-}
+        main{
+            display: grid;
+            width:500px;
+            grid-template-columns: 10% 20% 30% 40%;
+            grid-template-rows: 100vh;
+        }
+        #capa1{
+            background-color: yellow;
+        }
+        #capa2{
+            background-color: blue;
+        }
+        #capa3{
+            background-color: green;
+        }
+        #capa4{
+            background-color: pink;
+        }
+        footer{
+            background-color: black;
+            width:500px;
+            height:300px;
+        }
     </style>
 </head>
 <body>
-    <div>
-        <div class="un">1:</div>
-        <div class="dos">2: Text <span class="cinc">5 - més text</span></div>
-        <input class="tres" />
-        <textarea class="quatre">4: Lorem Ipsum</textarea>
-      </div>
+<main>
+    <div id="capa1"></div>
+    <div id="capa2"></div>
+    <div id="capa3"></div>
+    <div id="capa4"></div>
+</main>
+<footer></footer>
 </body>
 </html>

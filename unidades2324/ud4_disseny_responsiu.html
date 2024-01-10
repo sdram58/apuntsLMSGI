@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UD4.- CSS AVANÇAT - DISSENY RESPONSIU - BOOTSTRAP</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/prism.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <script src="../script/script.js"></script>
+</head>
+
+<body class="line-numbers">
+    <div class="logos"></div>
+
+    <nav id="menu-lateral" class="main-menu-lateral oculto">
+        <div class="fila">
+            <a href="#sVariablesenCSS">Variables en CSS</a>
+            <a href="#sCaixaflexible">Caixa flexible (flexbox)</a>
+        </div>
+        
+
+    </nav>
+    <!-- TO_MENU -->
+
+    <h1>UD4.- CSS AVANÇAT - DISSENY RESPONSIU - BOOTSTRAP</h1>
+
+    <div class="main-menu">
+        <div class="fila">
+            <a href="#sVariablesenCSS">Variables en CSS</a>
+            <a href="#sCaixaflexible">Caixa flexible (flexbox)</a>
+        </div>
+    </div>
+
+
+    <!--*********************************************************Variables en CSS***********************************************************-->
+    <section class="apartado">
+    <a name="sVariablesenCSS"></a>
+    <h2>Variables en CSS</h2>
+    
+    <p>A CSS, les <span class="negrita">propietats personalitzades</span> (també conegudes com a variables) són entitats definides per autors de CSS 
+        que contenen valors específics que es poden tornar a utilitzar en un document. 
+        S'estableixen mitjançant la notació de propietats personalitzades (per exemple, <span class="d-word">--main-color: black;</span>) 
+        i s'hi accedeixen mitjançant la funció <span class="r-word">var()</span> (per exemple, <span class="d-word">color: var (--main-color);</span>).</p>
+    <p>Llocs web complexos tenen quantitats molt grans de CSS, sovint amb una gran quantitat de valors repetits. 
+        Per exemple, el mateix color es pot utilitzar a centenars de llocs diferents, la qual cosa requereix buscar i 
+        reemplaçar globalment si necessitem canviar aquest color. Les variables CSS permeten que un valor s'emmagatzemi en un lloc i després es faci referència 
+        a diversos altres llocs.
+         Un benefici addicional són els identificadors semàntics. Per exemple <span class="negrita">--main-text-color</span> és més fàcil d'entendre que 
+         <span class="negrita">#00ff00</span>, especialment si aquest mateix color també es fa servir en un altre context.</p>
+    
+    <p>Les variables CSS estan subjectes a la cascada, i hereten el valor del pare.</p>
+         
+    <h3>Ús Bàsic</h3>
+    <p>Per declarar propietats personalitzades (variables) fem servir un nom que comenci amb dos guions (<span class="d-word">--</span>),
+        i un valor que pot ser qualsevol valor vàlid de CSS. Com qualsevol altra propietat, l'escrivim dins d'un set de regles d'estil, així:</p>
+    
+    <section><pre><code class="language-css">element {
+  --main-bg-color: brown;
+}
+</code></pre>
+    </section><br>
+    
+<p>Tingueu en compte que el selector que fem servir per a les regles d'estil defineix l'àmbit (scope) en què podrem fer servir la propietat personalitzada 
+    (variable). Una bona pràctica comuna és declarar variables a la pseudo-classe <span class="d-word">:root</span>, i així aplicar-les globalment al document HTML:</p>
+
+<section><pre><code class="language-css">:root {
+  --main-bg-color: brown;
+}</code></pre>
+</section><br>
+
+<p>Tanmateix, això no ha de ser sempre així: podrien haver-hi molt bones raons per voler limitar l'àmbit de les teues propietats personalitzades.</p>
+
+<section class="marco-t inf">
+    <span class="icono info"> </span> Els noms de propietats personalitzades són case sensitive (distingeixen entre majúscules i minúscules) — <span class="negrita">--my-color</span>
+     serà tractat com una propietat personalitzada diferent de <span class="negrita">--My-color</span>.
+    </section>
+<section class="marco-b">
+        
+</section>
+    
+<p>Com hem esmentat anteriorment, per accedir al valor d'una propietat personalitzada fem servir el nom de la propietat dins de la funció <span class="negrita">var()</span>,
+    en lloc de qualsevol altre valor normal:</p>
+<section><pre><code class="language-css">element {
+  background-color: var(--main-bg-color);
+}</code></pre>
+</section><br>
+
+
+<h3>Primers passos amb propietats personalitzades (variables)</h3>
+
+<p>Comencem amb aquest simple CSS que pinta elements de diferents classes amb el mateix color:</p>
+<section><pre><code class="language-css">.un {
+  color: white;
+  background-color: brown;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+}
+
+.dos {
+  color: white;
+  background-color: black;
+  margin: 10px;
+  width: 150px;
+  height: 70px;
+  display: inline-block;
+}
+.tres {
+  color: white;
+  background-color: brown;
+  margin: 10px;
+  width: 75px;
+}
+.quatre {
+  color: white;
+  background-color: brown;
+  margin: 10px;
+  width: 100px;
+}
+
+.cinc {
+  background-color: brown;
+}</code></pre>
+</section><br>
+<p>Ho aplicarem a aquest HTML:</p>
+<section><pre><code class="language-xml">&lt;div>
+  &lt;div class="un">1:&lt;/div>
+  &lt;div class="dos">2: Text &lt;span class="cinc">5 - més text&lt;/span>&lt;/div>
+  &lt;input class="tres" />
+  &lt;textarea class="quatre">4: Lorem Ipsum&lt;/textarea>
+&lt;/div></code></pre>
+</section><br>
+
+<p>la qual cosa quedaria així:</p>
+
+<figure><img src="UD4/images/ud4-2024-01-10-12-26-38.png" /><br><figcaption></figcaption></figure>
+<br>
+
+<p>Observa la repetició al CSS. El color de fons es posa a marró (<span class="negrita">brown</span>) a diversos llocs. 
+    Per a algunes declaracions CSS, és possible declarar això més alt a la cascada i deixar que l'herència CSS resolga aquest problema de manera natural. 
+    Per a projectes no trivials, això no sempre és possible. En declarar una variable a la pseudo-classe <span class="negrita">:root</span>, 
+    podem evitar repetició usant la variable.</p>
+
+    <section><pre><code class="language-css">:root {
+  --main-bg-color: brown;
+}
+
+.un {
+  color: white;
+  background-color: var(--main-bg-color);
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+}
+
+.dos {
+  color: white;
+  background-color: black;
+  margin: 10px;
+  width: 150px;
+  height: 70px;
+  display: inline-block;
+}
+.tres {
+  color: white;
+  background-color: var(--main-bg-color);
+  margin: 10px;
+  width: 75px;
+}
+.quatre {
+  color: white;
+  background-color: var(--main-bg-color);
+  margin: 10px;
+  width: 100px;
+}
+
+.cinc {
+  background-color: var(--main-bg-color);
+}</code></pre>
+    </section><br>
+
+<p>Això condueix al mateix resultat que l'exemple anterior, 
+    però permet una declaració canònica de la propietat desitjada; molt útil si volem canviar el valor a tota la pàgina més tard.</p>
+
+
+    <h3>Herència de propietats personalitzades</h3>
+
+    <p>Les propietats personalitzades hereten. Això vol dir que si no s'estableix cap valor per a una propietat personalitzada en un element donat, 
+        s'utilitza el valor del vostre element pare. Vegem el següent HTML:</p>
+
+    <section><pre><code class="language-xml">&lt;div class="un">
+  &lt;div class="dos">
+    &lt;div class="tres">&lt;/div>
+    &lt;div class="quatre">&lt;/div>
+  &lt;/div>
+&lt;/div></code></pre>
+    </section><br>
+    
+    <p>amb el següent CSS:</p>
+    
+<section><pre><code class="language-css">.dos {
+  --test: 10px;
+}
+
+.tres {
+  --test: 2em;
+}</code></pre>
+</section><br>
+
+<p>En aquest cas, els resultats de <span class="negrita">var(--test)</span> són:
+<ul>
+<li>Per a l'element <span class="d-word">class="dos": 10px</span></li>
+<li>Per a l'element <span class="d-word">class="tres": 2em</span></li>
+<li>Per a l'element <span class="d-word">class="quatre": 10px</span> (heretat del pare)</li>
+<li>Per a l'element <span class="d-word">class="un": valor no vàlid</span>, que és el valor per defecte de qualsevol propietat personalitzada.</li>
+</ul></p>
+
+
+<p>Tingueu en compte que aquestes són propietats personalitzades, 
+    <span class="negrita">no variables reals</span> com podem trobar en altres llenguatges de programació. 
+    El valor es calcula on siga necessari, no s'emmagatzema per utilitzar-lo en altres regles.
+    Per exemple, no es pot declarar una propietat per a un element i esperar recuperar-la a les regles del descendent d'un germà. 
+    La propietat només està configurada per al selector que coincidisca i els seus descendents, com qualsevol CSS normal.</p>
+
+<h3>Valors de substitució (fallback) de propietats personalitzades</h3>
+
+<p>Utilitzant <span class="r-word">var()</span> podem definir múltiples valors de substitució (<span class="negrita">fallback</span>) 
+  que es faran servir quan la variable donada no està definida encara; això pot ser útil quan es treballa amb <span class="cursiva">Custom Elements</span> i 
+  <span class="cursiva">Shadow DOM</span></p>
+
+  <section class="marco-t inf">
+    <span class="icono info"> </span> <span class="negrita">Els valors de substitució (fallback) no es fan servir per arreglar problemes de compatibilitat del navegador.</span>
+     Si el navegador no té suport per a Propietats Personalitzades de CSS, el valor de fallback no és d'ajuda. 
+     <span class="negrita">És simplement un suport perquè aquells navegadors que sí que suporten Propietats Personalitzades de CSS</span>
+      puguen triar un valor diferent en cas que la variable no s'haja definit o continga un valor no vàlid.
+    </section>
+  <section class="marco-b">
+
+      
+  </section>
+    
+  <p>El primer argument a la funció és el nom de la propietat personalitzada que se substituirà. 
+    El segon argument a la funció, si es proporciona, és un valor de reserva, que s'utilitza com a valor de substitució (default) 
+    quan la propietat personalitzada referenciada no és vàlida. 
+    La funció només accepta dos paràmetres, assignant tot allò que després de la primera coma com el segon paràmetre. 
+    Si aquest segon paràmetre és invàlid, per exemple una llista de valors separats per comes, el fallback fallarà. Per exemple:</p>
+  
+
+<section><pre><code class="language-css">.dos {
+  color: var(--my-var, red); /* Roig (red) si --my-var no està definida */
+}
+
+.tres {
+  background-color: var(
+    --my-var,
+    var(--my-background, pink)
+  ); /* Rosa (pink) si my-var i --my-background no estan definides */
+}
+
+.tres {
+  background-color: var(
+    --my-var,
+    --my-background,
+    pink
+  ); /* Invàlid: "--background, pink" */
+}</code></pre>
+</section><br>
+
+<p>Com veiem en el segon exemple de dalt, la manera correcta d'incloure més d'un fallback és fer servir una propietat personalitzada com a fallback 
+  (la qual té el seu propi fallback). Aquesta tècnica s'ha vist que pot causar problemes de rendiment en prendre més temps en analitzar les variables.</p>
+
+<section class="marco-t inf">
+  <span class="icono info"> </span> La sintaxi del fallback, com la de les propietats personalitzades, permet comes. Per exemple, <span class="d-word">var(--foo, red, blue)</span>
+   defineix un fallback de <span class="d-word">red, blue</span> — és a dir, qualsevol cosa entre la primera coma i el final de la funció es considera un valor de fallback.
+  </section>
+<section class="marco-b">
+    
+</section>
+  
+<h3>Validesa i valors</h3>
+
+<p>El concepte clàssic de validesa en CSS, vinculat a cada propietat, no és molt útil pel que fa a les propietats personalitzades. 
+  Quan s'analitzen els valors de les propietats personalitzades, el navegador no sap on s'utilitzaran, per la qual cosa ha de considerar quasi tots els 
+  valors com a vàlids.</p>
+<p>Malauradament, aquests valors vàlids es poden fer servir, a través de la notació funcional <span class="negrita">var()</span>, 
+  en un context en què potser no tinguen sentit. Propietats i variables personalitzades poden portar a declaracions CSS no vàlides, 
+  donant lloc al nou concepte de vàlid en temps calculat.</p>
+
+  <p class="sub-section">Què passa amb els valors invàlids?</p>
+  
+  <p>Quan el navegador troba una substitució invàlida amb <span class="negrita">var()</span>, es farà servir el valor inicial o heretat.
+
+Considera el fragment següent:</p>
+  <section><pre><code class="language-xml">&lt;p>This paragraph is initial black.&lt;/p></code></pre>
+  </section><br>
+
+  <section><pre><code class="language-css">:root {
+  --text-color: 16px;
+}
+p {
+  color: blue;
+}
+p {
+  color: var(--text-color);
+}</code></pre>
+  </section><br>
+
+  <p>Com esperaríem, el navegador substitueix <span class="d-word">var(--text-color)</span> amb el valor de <span class="negrita">--text-color</span>, 
+    però <span class="negrita">16px</span> no és un valor vàlid per a la propietat <span class="negrita">color</span>. 
+    Després de la substitució, la propietat no té sentit. El navegador maneja aquesta situació en dos passos:
+  <ol>
+    <li>Comprova si la propietat color és pot heretar. Sí, però l'element <p> no té un pare amb una propietat de color. Així que passem al següent pas.</li>
+<li>Pren el valor del <span class="negrita">valor inicial per defecte</span>.</li>
+  </ol>
+  </p>
+<p>
+  El resultat seria el seguent:
+</p>
+<figure><img src="UD4/images/ud4-2024-01-10-18-45-30.png" /><br><figcaption></figcaption></figure>
+<br>
+
+  <p>Es a dir, el color del paràgraf no serà blau (blue) perquè la substició invàlida es reemplaça amb el valor inicial, no el fallback. 
+    Si haguérem escrit <span class="negrita">color: 16px</span> sense cap substitució de variables, aleshores seria un error de sintaxi. 
+    La declaració anterior serà utilitzada.</p>
+  
+  
+
+    </section><!-- End section Variables en CSS-->
+    
+    <!--*********************************************************caixa flexible (flexbox)***********************************************************-->
+    <section class="apartado">
+    <a name="sCaixaflexible"></a>
+    <h2>Caixa flexible (flexbox)</h2>
+    <h3>display:flex</h3>
+
+<p>La propietat <span class="negrita">display</span> permet una visualització d'elements coneguda com a <span class="r-word">flex</span>, 
+  que permet distribuir els continguts <span class="subrayado">en forma de caixa flexible</span>. 
+  Es tracta de columnes adaptables, que admeten mides i alineacions variables.</p>
+<p>És molt interessant i potent, encara que és una forma de maquetar prou moderna, quasi tots els navegadors actuals la permeten.</p>
+<p>Quan a un element us indiquem <span class="r-word">display:flex</span>, aquest es converteix en un contenidor de caixa flexible. 
+  És a dir, es tractarà d'un contenidor d'elements la disposició dels quals admetrà propietats de tipus flex.</p>
+  <section><pre><code class="language-xml">&lt;!doctype html>
+&lt;html lang="ca">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;title>Document&lt;/title>
+    &lt;style>
+        main{
+            display: flex;
+        }
+        #capa1{
+            background-color: yellow;
+        }
+        #capa2{
+            background-color: blue;
+        }
+        #capa3{
+            background-color: green;
+        }
+    &lt;/style>&lt;/head>
+&lt;body>
+&lt;main>
+    &lt;div id="capa1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissims doloremque eius eum illoimpedit maiores molestiae natus! Animi deleniti enim, laudantium quasi quo sit voluptes? Ducimus nequeperferendis quia quos?
+    &lt;/div>
+    &lt;div id="capa2">A aperiam dicta dolorem excepturi harum, hic inventore ipsa laborum, maiores nihil odit optio, quis unde. Ab aspernatur cum dolor ducimus illo quia quidem velit! Aquesta officia sequi totam velit!
+    &lt;/div>
+    &lt;div id="capa3">Eveniet itaque iure officia quasi quos sit tempore. Accusantium consequuntur excepturi exercitationem fugiat fugit ipsam nobis que recusandae reiciendis repellat! Atque neque perspiciatis quae sunt
+ ut? Iste neque reiciendis unde.
+    &lt;/div>
+&lt;/main>
+&lt;/body>
+&lt;/html></code></pre>
+  </section><br>
+
+  <p>El resultat seria el següent:</p>
+
+  <figure><img src="UD4/images/ud4-2024-01-10-19-10-02.png" /><br><figcaption></figcaption></figure>
+  <br>
+  
+
+  <h3>Propietats flexbox per al contenidor</h3>
+    <p>Suposem que tenim aquest codi:</p>
+    
+<section><pre><code class="language-xml">&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;title>Exemple FlexBox&lt;/title>
+    &lt;style>
+        #contenidor{
+            display:flex;
+            width:400px;
+            height:200px;
+            border:1px solid black
+        }
+        .contingutCurt{
+            width:50px;
+            height:50px;
+        }
+        .contingutAlt{
+            width:50px;
+            height:100px;
+        }
+        .contingutAmplada{
+            width:100px;
+            height:50px;
+        }
+        .contingutGran {
+            width:100px;
+            height:100px;
+        }
+    &lt;/style>
+&lt;/head>
+&lt;body>
+&lt;div id="contenidor">
+  &lt;div id="capa1" style="background-color:red" class="contingutCurt" >&lt;/div>
+  &lt;div id="capa2" style="background-color:green" class="contingutAmplada" >&lt;/div>
+  &lt;div id="capa3" style="background-color:gray" class="contingutAlt" >&lt;/div>
+  &lt;div id="capa4" style="background-color:blue" class="contingutGran" >&lt;/div>
+  &lt;div id="capa5" style="background-color:pink" class="contingutCurt" >&lt;/div>
+  &lt;div id="capa6" style="background-color:orange" class="contingutAmplada" >&lt;/div>
+  &lt;div id="capa7" style="background-color:red" class="contingutGran" >&lt;/div>
+&lt;/div>
+&lt;/body>
+&lt;/html></code></pre>
+</section><br>
+
+<p>Donaria el següent resultat:</p>
+<figure><img src="UD4/images/ud4-2024-01-10-19-15-28.png" /><br><figcaption></figcaption></figure>
+<br>
+
+<p>Realment el contingut no cap a l'amplada (el contenidor té una amplada de 400 píxels i la suma de les amplades de les capes internes ens dóna 550 píxels), 
+  però per defecte les capes contingudes ajusten la seva mida automàticament al contenidor. 
+  L'amplada de cada capa interna es recalcula proporcionalment a l'amplada que s'hi indica.</p>
+<p>A la capa contenidora se li poden aplicar propietats que modifiquen aquest comportament per defecte. 
+  Totes només funcionen si s'ha indicat que tenim una distribució flexible (<span class="negrita">display:flex</span>) a la capa contenidora.</p>
+
+<p class="sub-section">La propietat <span class="r-word">flex-direction</span></p>
+<p>Indica en quina adreça es distribueixen els continguts de la capa. Pot ser:
+<ul>
+<li><span class="negrita">row</span>. En forma de fila d'esquerra a dreta. Es el valor por defecto.</li>
+<li><span class="negrita">row-reverse</span>. El fila, pero de derecha a izquierda</li>
+<li><span class="negrita">column</span>. En forma de columna de arriba a abajo</li>
+<li><span class="negrita">column-reverse</span>. En forma de columna de abajo a arriba</li>
+</ul></p>
+
+<figure><img src="UD4/images/ud4-2024-01-10-19-18-48.png" /><br><figcaption></figcaption></figure>
+<br>
+
+<p class="sub-section">flex-wrap.</p>
+
+<p>Per defecte, els continguts es distribueixen en una única línia (valor no-wrap). Aquesta propietat permet que es distribueixin en diverses línies si cal (valor wrap).</p>
+<figure><img src="UD4/images/ud4-2024-01-10-19-21-48.png" /><br><figcaption></figcaption></figure>
+<br>
+
+<p>A la imatge anterior, les capes estan configurades amb les propietats <span class="d-word">flex-direction:row</span> i <span class="d-word">flex-wrap:wrap</span>,
+  de manera que es distribueixen en forma de fila però ara es respecta la seva mida fent que ocupen les capes interiors dues files.</p>
+
+<p class="sub-section">flex-flow</p>
+
+  <p>Permet assignar mitjançant una sola propietat les dues anteriors. Exemple</p>
+  <section><pre><code class="language-css">flex-flow:row wrap;</code></pre>
+  </section><br>
+
+  <p class="sub-section">justify-content</p>
+  
+  <p>Indiquen com es distribueixen les capes interiors dins de la capa contenidora. 
+    Només té efecte quan s'ha triat flux de tipus envoltant (<span class="negrita">wrap</span>). Aquesta propietat té aquests valors:
+    <ul>
+      <li><span class="negreta">flex-start</span>. Les capes interiors es distribueixen alineades a l'esquerra</li>
+      <li><span class="negreta">flex-end</span>. Les capes interiors es distribueixen alineades a la dreta</li>
+      <li><span class="negreta">center</span>. Les capes interiors apareixen centrades a la capa contenedora</li>
+      <li><span class="negreta">space-between</span>. Les capes interiors apareixen distribuïdes de manera justificada a l'esquerra i la dreta deixen espais entre elles per aconseguir aquest efecte.</li>
+      <li><span class="negreta">space-around</span>. Semblant a l'anterior, només que en aquest cas l'espai es deixa entre les capes i també per fora.</li>
+    </ul>
+  </p>
+  
+<p>Gràficament (usant les capes anteriors com a exemple) aquestes són totes les possibilitats:</p>
+<figure><img src="UD4/images/ud4-2024-01-10-19-24-30.png" /><br><figcaption></figcaption></figure>
+<br>
+
+<p class="sub-section">align-items</p>
+<p>En aquest cas, s'indica com es distribueixen les capes interiors al llarg de l'eix vertical. Possibilitats:
+  <ul>
+    <li><span class="negrita">flex-start</span>. Les capes interiors es distribueixen de dalt a baix.</li>
+    <li><span class="negrita">flex-end</span>. Les capes interiors s'alineen a la vora inferior.</li>
+    <li><span class="negrita">center</span>. Les capes interiors se centren en vertical</li>
+    <li><span class="negrita">stretch</span>. Les capes estiren la mida perquè ocupin des de la vora superior fins a la vora inferior.</li>
+    <li><span class="negrita">baseline</span>. Les capes interiors es distribueixen des de la línia base del contingut (sense contingut, l'alineació no té efecte).</li>
+  </ul>
+</p>
+
+  <figure><img src="UD4/images/ud4-2024-01-10-19-25-49.png" /><br><figcaption></figcaption></figure>
+  <br>
+  <p>Aquestes són les alineacions aconseguides usant l'exemple de capes vist. Per al darrer resultat (<span class="cursiva">stretch</span>) s'ha retirat l'alçada (propietat height) 
+    de les capes interiors; altrament <span class="cursiva">stretch</span> no podria aconseguir aquest resultat.</p>
+  <figure><img src="UD4/images/ud4-2024-01-10-19-26-47.png" /><br><figcaption></figcaption></figure>
+  <br>
+
+
+  <p class="sub-section">align-content</p>
+  
+  <p>Propietat similar a <span class="negrita">justifiy-content</span>, però referida a l'eix vertical. 
+    Té més possibilitats que <span class="negrita">align-item</span>, per la qual cosa es fa servir més habitualment que ella. 
+    En realitat són diferents, els seus resultats difereixen prou. Possibles valors:
+  <ul>
+    <li><span class="negrita">flex-start</span>. Les capes interiors s'apilen de dalt a baix.</li>
+    <li><span class="negrita">flex-end</span>. Les capes interiors s'apilen a la vora inferior.</li>
+    <li><span class="negrita">center</span>. Les capes interiors s'apilen al centre del contenidor.</li>
+    <li><span class="negrita">stretch</span>. Les capes estiren la mida perquè ocupin des de la vora superior fins a la vora inferior.</li>
+    <li><span class="negrita">space-between</span>. Les capes s'alineen de dalt a baix i deixen un espai proporcional entre cada línia.</li>
+    <li><span class="negrita">space-around</span>. Les capes s'alineen de dalt a baix i deixen un espai proporcional entre cada línia.
+      A més, aquest mateix espai entre cada línia es deixa a dalt de la primera línia i sota l'última, per la qual cosa no queden situades just a les vores.</li>
+  </ul></p>
+  
+  <h3>Propietats per al contingut</h3>
+  <p>Es tracta de propietats que s'apliquen a les capes interiors per modificar la manera com s'ha de comportar una capa concreta.</p>
+  <p class="sub-section">flex-grow.</p>
+  <p>Indica la capacitat de créixer que té una capa concreta. 
+    Es marca amb un nombre enter que per defecte en val un. Si marquem 2, diem que la capa ocuparia el doble del normal (en horitzontal).</p>
+  
+<p>Si modifiquem el codi CSS de les capes interiors dels exemples posats als apartats anteriors, així:</p>
+
+<section><pre><code class="language-css">#contenidor{
+  display:flex;
+  width:400px; height:300px;
+  border:1px solid black;
+}
+.contingutCurt{
+  flex-grow:1;
+}
+.contingutAlt{
+  flex-grow:1;
+}
+.contingutAmplada{
+  flex-grow:2;
+}
+.contingutGran {
+  flex-grow:2;
+}</code></pre>
+</section><br>
+<p>El resultat seria:</p>
+  <figure><img src="UD4/images/ud4-2024-01-10-19-33-25.png" /><br><figcaption></figcaption></figure>
+  <br>
+  
+  <p>Si a mes afegim restricció d'altura</p>
+  <section><pre><code class="language-css">.contingutCurt{
+  flex-grow:1;
+  height:50px;
+}
+.contingutAlt{
+  flex-grow:1;
+   height:100px
+}
+.contingutAmplada{
+  flex-grow:2;
+  height:50px;
+}
+.contingutGran {
+  flex-grow:2;
+  height:100px:
+}</code></pre>
+  </section><br>
+
+  <p>Obtenim el següent resultat:</p>
+  <figure><img src="UD4/images/ud4-2024-01-10-19-35-57.png" /><br><figcaption></figcaption></figure>
+  <br>
+  
+<p class="sub-section">order</p>
+
+  <p>Permet indicar un nombre enter que altera lordre en què apareixen les capes interiors. Normalment les capes interiors apareixen a l'ordre en què apareixen al codi.</p>
+  
+  <p class="sub-section">align-self</p>
+  <p>Indica quina alineació segueix la capa interior. 
+    Si per exemple per al contenidor hem indicat <span class="negrita">align-item:flex-start</span>, 
+    totes les capes interiors s'enganxaran a la vora superior; si a una concreta us indiquem un <span class="negrita">align-self:flex-end</span>, 
+    aquesta capa concreta s'enganxa a la vora inferior.</p>
+  
+
+    <h3>display:grid</h3>
+
+    <section><pre><code class="language-xml">&lt;!doctype html>
+      &lt;html lang="en">
+      &lt;head>
+          &lt;meta charset="UTF-8">
+          &lt;meta name="viewport"
+                content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          &lt;meta http-equiv="X-UA-Compatible" content="ie=edge">
+          &lt;title>Document&lt;/title>
+          &lt;style>
+              main{
+                  display: grid;
+                  width:500px;
+                  grid-template-columns: 10% 20% 30% 40%;
+                  grid-template-rows: 100vh;
+              }
+              #capa1{
+                  background-color: yellow;
+              }
+              #capa2{
+                  background-color: blue;
+              }
+              #capa3{
+                  background-color: green;
+              }
+              #capa4{
+                  background-color: pink;
+              }
+              footer{
+                  background-color: black;
+                  width:500px;
+                  height:300px;
+              }
+          &lt;/style>
+      &lt;/head>
+      &lt;body>
+      &lt;main>
+          &lt;div id="capa1">&lt;/div>
+          &lt;div id="capa2">&lt;/div>
+          &lt;div id="capa3">&lt;/div>
+          &lt;div id="capa4">&lt;/div>
+      &lt;/main>
+      &lt;footer>&lt;/footer>
+      &lt;/body>
+      &lt;/html></code></pre>
+          </section><br>
+
+    <p>A aquest contenidor, a més, se li indiquen les propietats que especifiquen les característiques de la malla mitjançant propietats especials.</p>
+
+  <p>Així, hi ha dues propietats que permeten especificar a quantitat i mida de les files i columnes de la nostra malla.</p>
+    
+  <p class="sub-section">especificar columnes</p>
+  
+  <p>La propietat que permet especificar columnes és <span class="r-word">grid-template-columns</span>. 
+    El seu valor és la mida de cada columna. Les mides es poden indicar amb mides absolutes:</p>
+  
+
+<section><pre><code class="language-css">grid-template-columns:100px 300px 500px;</code></pre>
+</section><br>
+<p>El codi anterior indica que el contingut tindrà 3 columnes, la primera de 100 píxels, la segona de 300 i la tercera de 500.</p>
+
+<p>Es poden especificar mides relatives:</p>
+<section><pre><code class="language-css">grid-template-columns: 10% 20% 30%;</code></pre>
+</section><br><br>
+<p>Però els percentatges no fan referència a l'amplada del contenidor. La suma de les amplades de les columnes és del 60%, 
+  però realment ocuparan tot el contenidor. El que sí que aconseguirem és que la tercera columna ocupi tres vegades més que la primera.</p>
+
+
+        </section><!-- End section caixa flexible (flexbox)-->
+
+
+    <!-- TO_MENU-->
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <script src="../script/prism.js"></script>
+</body>
+
+</html>
