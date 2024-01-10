@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UD4.- CSS AVANÇAT - DISSENY RESPONSIU - FRAMEWORKS</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/prism.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <script src="../script/script.js"></script>
+</head>
+
+<body class="line-numbers">
+    <div class="logos"></div>
+
+    <nav id="menu-lateral" class="main-menu-lateral oculto">
+        <div class="fila">
+            <a href="#sVariablesenCSS">Variables en CSS</a>
+        </div>
+        
+
+    </nav>
+    <!-- TO_MENU -->
+
+    <h1>UD4.- CSS AVANÇAT - DISSENY RESPONSIU - FRAMEWORKS</h1>
+
+    <div class="main-menu">
+        
+    </div>
+
+
+    <!--*********************************************************Variables en CSS***********************************************************-->
+    <section class="apartado">
+    <a name="sVariablesenCSS"></a>
+    <h2>Variables en CSS</h2>
+    
+    <p>A CSS, les <span class="negrita">propietats personalitzades</span> (també conegudes com a variables) són entitats definides per autors de CSS 
+        que contenen valors específics que es poden tornar a utilitzar en un document. 
+        S'estableixen mitjançant la notació de propietats personalitzades (per exemple, <span class="d-word">--main-color: black;</span>) 
+        i s'hi accedeixen mitjançant la funció <span class="r-word">var()</span> (per exemple, <span class="d-word">color: var (--main-color);</span>).</p>
+    <p>Llocs web complexos tenen quantitats molt grans de CSS, sovint amb una gran quantitat de valors repetits. 
+        Per exemple, el mateix color es pot utilitzar a centenars de llocs diferents, la qual cosa requereix buscar i 
+        reemplaçar globalment si necessitem canviar aquest color. Les variables CSS permeten que un valor s'emmagatzemi en un lloc i després es faci referència 
+        a diversos altres llocs.
+         Un benefici addicional són els identificadors semàntics. Per exemple <span class="negrita">--main-text-color</span> és més fàcil d'entendre que 
+         <span class="negrita">#00ff00</span>, especialment si aquest mateix color també es fa servir en un altre context.</p>
+    
+    <p>Les variables CSS estan subjectes a la cascada, i hereten el valor del pare.</p>
+         
+    <h3>Ús Bàsic</h3>
+    <p>Per declarar propietats personalitzades (variables) fem servir un nom que comenci amb dos guions (<span class="d-word">--</span>),
+        i un valor que pot ser qualsevol valor vàlid de CSS. Com qualsevol altra propietat, l'escrivim dins d'un set de regles d'estil, així:</p>
+    
+    <section><pre><code class="language-css">element {
+  --main-bg-color: brown;
+}
+</code></pre>
+    </section><br>
+    
+<p>Tingueu en compte que el selector que fem servir per a les regles d'estil defineix l'àmbit (scope) en què podrem fer servir la propietat personalitzada 
+    (variable). Una bona pràctica comuna és declarar variables a la pseudo-classe <span class="d-word">:root</span>, i així aplicar-les globalment al document HTML:</p>
+
+<section><pre><code class="language-css">:root {
+  --main-bg-color: brown;
+}</code></pre>
+</section><br>
+
+<p>Tanmateix, això no ha de ser sempre així: podrien haver-hi molt bones raons per voler limitar l'àmbit de les teues propietats personalitzades.</p>
+
+<section class="marco-t inf">
+    <span class="icono info"> </span> Els noms de propietats personalitzades són case sensitive (distingeixen entre majúscules i minúscules) — <span class="negrita">--my-color</span>
+     serà tractat com una propietat personalitzada diferent de <span class="negrita">--My-color</span>.
+    </section>
+<section class="marco-b">
+        
+</section>
+    
+<p>Com hem esmentat anteriorment, per accedir al valor d'una propietat personalitzada fem servir el nom de la propietat dins de la funció <span class="negrita">var()</span>,
+    en lloc de qualsevol altre valor normal:</p>
+<section><pre><code class="language-css">element {
+  background-color: var(--main-bg-color);
+}</code></pre>
+</section><br>
+
+
+<h3>Primers passos amb propietats personalitzades (variables)</h3>
+
+<p>Comencem amb aquest simple CSS que pinta elements de diferents classes amb el mateix color:</p>
+<section><pre><code class="language-css">.un {
+  color: white;
+  background-color: brown;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+}
+
+.dos {
+  color: white;
+  background-color: black;
+  margin: 10px;
+  width: 150px;
+  height: 70px;
+  display: inline-block;
+}
+.tres {
+  color: white;
+  background-color: brown;
+  margin: 10px;
+  width: 75px;
+}
+.quatre {
+  color: white;
+  background-color: brown;
+  margin: 10px;
+  width: 100px;
+}
+
+.cinc {
+  background-color: brown;
+}</code></pre>
+</section><br>
+<p>Ho aplicarem a aquest HTML:</p>
+<section><pre><code class="language-xml">&lt;div>
+  &lt;div class="un">1:&lt;/div>
+  &lt;div class="dos">2: Text &lt;span class="cinc">5 - més text&lt;/span>&lt;/div>
+  &lt;input class="tres" />
+  &lt;textarea class="quatre">4: Lorem Ipsum&lt;/textarea>
+&lt;/div></code></pre>
+</section><br>
+
+<p>la qual cosa quedaria així:</p>
+
+<figure><img src="UD4/images/ud4-2024-01-10-12-26-38.png" /><br><figcaption></figcaption></figure>
+<br>
+
+<p>Observa la repetició al CSS. El color de fons es posa a marró (<span class="negrita">brown</span>) a diversos llocs. 
+    Per a algunes declaracions CSS, és possible declarar això més alt a la cascada i deixar que l'herència CSS resolga aquest problema de manera natural. 
+    Per a projectes no trivials, això no sempre és possible. En declarar una variable a la pseudo-classe <span class="negrita">:root</span>, 
+    podem evitar repetició usant la variable.</p>
+
+    <section><pre><code class="language-css">:root {
+  --main-bg-color: brown;
+}
+
+.un {
+  color: white;
+  background-color: var(--main-bg-color);
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+}
+
+.dos {
+  color: white;
+  background-color: black;
+  margin: 10px;
+  width: 150px;
+  height: 70px;
+  display: inline-block;
+}
+.tres {
+  color: white;
+  background-color: var(--main-bg-color);
+  margin: 10px;
+  width: 75px;
+}
+.quatre {
+  color: white;
+  background-color: var(--main-bg-color);
+  margin: 10px;
+  width: 100px;
+}
+
+.cinc {
+  background-color: var(--main-bg-color);
+}</code></pre>
+    </section><br>
+
+<p>Això condueix al mateix resultat que l'exemple anterior, 
+    però permet una declaració canònica de la propietat desitjada; molt útil si volem canviar el valor a tota la pàgina més tard.</p>
+
+
+    <h3>Herència de propietats personalitzades</h3>
+
+    <p>Les propietats personalitzades hereten. Això vol dir que si no s'estableix cap valor per a una propietat personalitzada en un element donat, 
+        s'utilitza el valor del vostre element pare. Vegem el següent HTML:</p>
+
+    <section><pre><code class="language-xml">&lt;div class="un">
+  &lt;div class="dos">
+    &lt;div class="tres">&lt;/div>
+    &lt;div class="quatre">&lt;/div>
+  &lt;/div>
+&lt;/div></code></pre>
+    </section><br>
+    
+    <p>amb el següent CSS:</p>
+    
+<section><pre><code class="language-css">.dos {
+  --test: 10px;
+}
+
+.tres {
+  --test: 2em;
+}</code></pre>
+</section><br>
+
+<p>En aquest cas, els resultats de <span class="negrita">var(--test)</span> són:
+<ul>
+<li>Per a l'element <span class="d-word">class="dos": 10px</span></li>
+<li>Per a l'element <span class="d-word">class="tres": 2em</span></li>
+<li>Per a l'element <span class="d-word">class="quatre": 10px</span> (heretat del pare)</li>
+<li>Per a l'element <span class="d-word">class="un": valor no vàlid</span>, que és el valor per defecte de qualsevol propietat personalitzada.</li>
+</ul></p>
+
+
+<p>Tingueu en compte que aquestes són propietats personalitzades, 
+    <span class="negrita">no variables reals</span> com podem trobar en altres llenguatges de programació. 
+    El valor es calcula on siga necessari, no s'emmagatzema per utilitzar-lo en altres regles.
+    Per exemple, no es pot declarar una propietat per a un element i esperar recuperar-la a les regles del descendent d'un germà. 
+    La propietat només està configurada per al selector que coincidisca i els seus descendents, com qualsevol CSS normal.</p>
+
+
+
+
+
+
+
+
+
+
+    </section><!-- End section Variables en CSS-->
+    
+
+
+    <!-- TO_MENU-->
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <script src="../script/prism.js"></script>
+</body>
+
+</html>
