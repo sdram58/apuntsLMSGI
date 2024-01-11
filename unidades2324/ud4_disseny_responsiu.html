@@ -17,9 +17,14 @@
 
     <nav id="menu-lateral" class="main-menu-lateral oculto">
         <div class="fila">
-            <a href="#sVariablesenCSS">Variables en CSS</a>
-            <a href="#sCaixaflexible">Caixa flexible (flexbox)</a>
+            <a href="#sVariablesenCSS" title="1.- Variables en CSS">1.- Variables en CSS</a>
+            <a href="#sCaixaflexible" title="2.- Caixa flexible (flexbox)">2.- Caixa flexible (flexbox)</a>
+            <a href="#sPaginesAdaptables" title="3.- Pàgines Adaptables">3.- Pàgines Adaptables</a>
         </div>
+        <div class="fila">
+          <a href="#sGridView" title="4.- Grid View">4.- Grid View</a>
+          <a href="#sBootstrap" title="5.- Bootstrap">5.- Bootstrap</a>
+      </div>
         
 
     </nav>
@@ -28,10 +33,16 @@
     <h1>UD4.- CSS AVANÇAT - DISSENY RESPONSIU - BOOTSTRAP</h1>
 
     <div class="main-menu">
-        <div class="fila">
-            <a href="#sVariablesenCSS">Variables en CSS</a>
-            <a href="#sCaixaflexible">Caixa flexible (flexbox)</a>
-        </div>
+      <div class="fila">
+        <a href="#sVariablesenCSS" title="1.- Variables en CSS">1.- Variables en CSS</a>
+        <a href="#sCaixaflexible" title="2.- Caixa flexible (flexbox)">2.- Caixa flexible (flexbox)</a>
+        <a href="#sPaginesAdaptables" title="3.- Pàgines Adaptables">3.- Pàgines Adaptables</a>
+    </div>
+    <div class="fila">
+      <a href="#sGridView" title="4.- Grid View">4.- Grid View</a>
+      <a href="#sBootstrap" title="5.- Bootstrap">5.- Bootstrap</a>
+      <a href="" class="relleno"></a>
+  </div>
     </div>
 
 
@@ -651,7 +662,733 @@ p {
 
         </section><!-- End section caixa flexible (flexbox)-->
 
+        <!--*********************************************************Pàgines Adaptables***********************************************************-->
+        <section class="apartado">
+        <a name="sPaginesAdaptables"></a>
+        <h2>Pàgines Adaptables</h2>
+        
+        <p>El disseny web adaptable o adaptatiu (en anglès, <span class="cursiva">Responsive Web Design</span>) és una filosofia de
+disseny i desenvolupament web que, mitjançant l'ús d'estructures i imatges fluides, així com de <span class="negrita">@media queries</span> al full d'estil CSS,
+aconsegueix adaptar el lloc web a l'entorn del usuari.</p>
+        
+        <p>El dissenyador i autor nord-americà Ethan Marcotte va crear i difondre aquesta tècnica a partir d'una sèrie d'articles a "A List Apart"
+(<a class="enlace" target="_blank" href="http://alistapart.com/article/responsive-web-design/">http://alistapart.com/article/responsive-web-design/</a>), una publicació en línia especialitzada en
+disseny i desenvolupament web, idea que després estendria al seu llibre Responsive Web Design.</p>
+        
+<h3>Origen</h3>
 
+<p>Tant la idea com el propòsit del disseny web adaptable van ser prèviament discutits i
+descrits pel consorci W3C al juliol de 2008 en la seva recomanació "<span class="cursiva">Mobile Web Best Practices</span>"
+sota el subtítol "<span class="negrita">One Web</span>".</p>
+
+<section class="marco-t inf">
+  <span class="icono info"> </span> El concepte de "<span class="negreta">One ​​Web</span>" fa referència a la idea de construir una Web per a tots (Web for
+All) i accessible des de qualsevol tipus de dispositiu (Web on Everything).
+  </section>
+<section class="marco-b">
+    
+</section>
+  
+
+<p>Aquesta recomanació, encara que específica per a dispositius mòbils, puntualitza que està feta a el context de "One Web", i que, per tant, 
+  no només engloba l'experiència de navegació a dispositius mòbils, sinó també en dispositius de més resolució de pantalla com dispositius de sobretaula.</p>
+
+<p>Avui dia, la varietat de dispositius existents al mercat ha provocat que la informació disponible no siga accessible des de tots els dispositius, 
+  o bé és accessible, però l'experiència de navegació és molt pobre.</p>
+
+  <h3>Avantatges</h3>
+<p>El principal avantatge que trobem amb el disseny web adaptable és que el web es visualitzarà  correctament a tots els dispositius que usem 
+  i s'adaptarà als girs en dispositius mòbils.</p>
+
+  <p>A més, Google té en compte les pàgines web que tenen dissenys sensibles o adaptables, gràcies al seu Googlebot-Mobile. 
+    El personal de Google recomana que utilitzeu el Responsive Design per crear pàgines web que s'adapten a tots els dispositius utilitzant <span class="negrita">@media-queries</span>. 
+    La alternativa seria utilitzar diferent codi segons l'agent del dispositiu, o fins i tot, diferents URLs.
+  Google ens incita a fer servir aquest mètode perquè, d'aquesta manera, Googlebot no necessita analitzar tant contingut de la mateixa web, 
+  cosa que us facilita la tasca d'assignar el tipus de contingut de la pàgina i daquesta manera millorarà el SEO de la web.</p>
+  
+  <p><quote><span class="negrita">“Google can discover your content more efficiently as we wouldn’t need to
+crawl a page with the different Googlebot user agents to retrieve and index
+all the content".</span></quote></p>
+
+<p>Un altre factor, que normalment no tenim en compte a l'hora de fer un disseny, és la accessibilitat del mateix, 
+  que dificulta algunes vegades l'ús duna web a un disminuït visual. Amb un disseny adaptable que aprofiti lespai de la pàgina podem oferir una pàgina de qualitat
+per a aquest col·lectiu.</p>
+
+<p>A continuació, veurem allò essencial per crear un disseny web adaptable: el <span class="negrita">meta-tag Viewport</span>,
+   les <span class="negrita">@media queries</span>, etc.</p>
+
+  <h3>Viewport</h3>
+  
+  <p>Aquesta meta-etiqueta va ser creada en principi per Apple per al mòbil predilecte, però s'ha
+convertit en tot un estàndard que és suportat per la majoria dels dispositius mòbils
+(smartphones, tablets i gran part de mòbils de gamma mitjana i baixa).</p>
+  
+<p>El seu ús és totalment necessari, ja que sinó el navegador estableix l'amplada amb què prefereix
+visualitzar una pàgina, en lloc d'usar l'amplada de què disposa, és a dir, si la pantalla de
+el nostre mòbil té 400px i el navegador detecta que allò òptim seria visualitzar-la amb 700px, així
+ho farà, llevat que usem aquesta meta.</p>
+
+<p>Com sempre, el meta l'afegirem al <span class="negrita">&lt;head></span> de la nostra pàgina:</p>
+<section><pre><code class="language-xml">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"></code></pre>
+</section><br>
+
+<p>Es poden utilitzar els paràmetres següents (separats per comes):
+  <ul>
+    <li><span class="negreta">width</span>: ample de la pàgina (es pot establir en píxels o com a device-width i utilitzarà l'amplada de què disposa el dispositiu).</li>
+    <li><span class="negreta">height</span>: alt de la pàgina, actua igual que el width.</li>
+    <li><span class="negreta">initial-scale</span>: escala o zoom inicial de la pàgina 
+      (aquest i els altres tipus d'escala s'estableixen amb valors com 1.0 per no tenir zoom o 2.5 per tenir un zoom de 2 augments i mig, per exemple).</li>
+    <li><span class="negreta">minimum-scale</span>: zoom mínim que podem fer a la pàgina.</li>
+    <li><span class="negreta">maximum-scale</span>: zoom màxim que podem fer a la pàgina.</li>
+    <li><span class="negreta">user-scalable</span>: estableix si està permès o no fer zoom (yes/no).</li>
+  </ul>
+</p>
+
+<h3>Preparar la nostra pàgina per al disseny adaptable</h3>
+<p>Per aconseguir que la nostra web s'adapti a les amplades de pantalla, hem de tenir en compte diverses coses importants:
+  <ul>
+    <li>La primera, i la més important, és <span class="negrita">deixar d'usar píxels a tot hora, al seu lloc,
+      farem servir percentatges (per exemple: width: 60%)</span>. Per saber quins percentatges devem de
+      posar, farem la següent operació: Suposem que tenim un element amb un
+      amplada de 960 píxels i, dins d'aquest, tenim un altre element de 300 píxels. A l'element
+      extern li posarem, per exemple, un width del 90% perquè s'adapte a la mida de la
+      finestra i perquè l'element intern mantinga la proporció respecte a l'extern
+      calcularem l'amplada que hauria de tenir així: 300/960, cosa que ens donarà 0,3125. Per això
+      tant, el width que posarem a l'element intern serà 31,25%.</li>
+
+      <li>Per limitar l'amplada (o alt si s'escau) hem d'usar el paràmetre <span class="negrita">max-width</span> (maxheight
+        en el cas de l'alt). Per establir el mínim faríem servir min-width i min-height,
+        encara que aquests sutilitzen menys. El valor d'aquestes propietats sobreescriurà el valor de les
+        propietats width i height. Per exemple, si indiquem width: 100% i max-width: 600px,
+        quan visualitzem la pàgina amb una resolució de 1200px, l'amplada serà de 600px, ja
+        que és el valor màxim que hem indicat per a l'amplada. En aquest exemple, tenim
+        quatre elements configurats amb diferents combinacions de width i max-width. Si
+        anem canviant l'amplada de la finestra del navegador, veurem com les amplades se'n van
+        adaptant fins arribar a les amplades màximes configurades, moment en el qual, l'amplada
+        romandrà invariable. A la següent imatge podem observar com es mostra el
+        exemple.
+        <figure><img src="UD4/images/ud4-2024-01-11-12-19-59.png" /><br><figcaption></figcaption></figure>
+      </li>
+      <li>No hem d'usar posicions absolutes ni fixes (llevat de comptades excepcions).</li>
+      <li>Mai no hem de permetre que una imatge de fons que està pensada per no repetir-se, arribi a repetir-se pel canvi de dimensions. 
+        Per evitar-ho, l'hem d'adaptar, normalment, usant <span class="cursiva">@media-queries</span>.</li>
+      <li>Tampoc no hem de permetre que les imatges i els vídeos isquen de l'estructura, sinó apareixerà un scroll lateral als dispositius mòbils 
+        que destrossarà totalment el disseny.</li>
+        
+  </ul>
+</p>
+
+<h3>@media queries</h3>
+<p>Des dels dies de CSS 2.1, els nostres fulls d'estils han gaudit "d'una consciència del dispositiu" a través dels <span class="negrita">media types</span>. 
+  Per exemple, quan creem un full d'estils per impressió, estem utilitzant aquest concepte:</p>
+
+<section><pre><code class="language-xml">&lt;link rel="stylesheet" type="text/css" href="core.css" media="screen" />
+&lt;link rel="stylesheet" type="text/css" href="print.css" media="print" /></code></pre>
+</section><br>
+<p>Per sort, el W3C va crear les <span class="negrita">media queries</span> com a part de l'especificació CSS3, millorant la
+promesa dels media types. Una <span class="cursiva">media query</span> ens permet apuntar, no només a certes classes de
+dispositius, sinó realment inspeccionar les característiques físiques del dispositiu que està
+renderitzant la nostra feina. Per exemple, seguint el recent creixement de WebKit mobile,
+les mitja volies s'han convertit en una popular tècnica del costat del client per lliurar una
+full destils a mida per a l'iPhone, els smartphones Android o els tablets. Per fer-ho,
+podem incorporar una query a l'atribut mitjà d'un full d'estils enllaçat:</p>
+
+<section><pre><code class="language-xml">&lt;link rel="stylesheet" type="text/css" media="screen and (max-device-width: 480px)" href="shetland.css" /></code></pre>
+</section><br>
+
+<p>La query conté <span class="subrayado">dos components</span>: Un <span class="negrita">media type (screen)</span>, 
+  i la consulta entre parèntesis, que conté una característica a inspeccionar <span class="negrita">(max-device-width)</span> 
+  seguida pel valor al qual apuntem (480px). En altres paraules, us estem preguntant al dispositiu, si la seva resolució horitzontal (max-device-width) 
+  és igual o menor que 480px. En el cas que visualitzem la pàgina en un dispositiu amb una pantalla petita com l'iPhone, llavors el dispositiu carregarà shetland.css. 
+  Si no, el link s'ignora.</p>
+
+<p>En el passat, aquest tipus de coses necessitaven solucions javascript, però l'especificació de
+media query proveeix una sèrie de característiques del medi que s'estenen molt més enllà de la
+resolució de la pantalla, ampliant l'abast del que podem testejar amb les nostres queries.
+A més, podem testejar múltiples valors de les propietats en una sola query, encadenant-los
+amb la paraula clau <span class="r-word">and</span>:</p>
+
+<section><pre><code class="language-xml">&lt;link rel="stylesheet" type="text/css" media="screen and (max-device-width: 480px) and (resolution: 163dpi)" href="shetland.css" /></code></pre>
+</section><br>
+
+<p>A més de l'ús de l'etiqueta <span class="negrita">&lt;link></span> per incloure media-queries, també tenim la possibilitat de
+incloure-les al nostre CSS com a part d'una regla <span class="negrita">@media</span>:</p>
+
+<section><pre><code class="language-css">@media all and (max-device-width: 480px) {
+  .column {
+    float: none;
+  }
+}</code></pre>
+</section><br>
+<p>O com a part d'una directiva <span class="negrita">@import</span>:</p>
+
+<section><pre><code class="language-css">@import url("shetland.css") all and (max-device-width: 480px);</code></pre>
+</section><br>
+
+<p>En cada cas, l'efecte és el mateix: si el dispositiu passa el test plantejat per la nostra mitjana
+query, el CSS que corresponga és aplicat al nostre codi. La paraula <span class="r-word">all</span> indica que la regla serà
+per a tots els tipus de mitjans i no per a un de específic.</p>
+
+<p>Amb això disposem de noves capacitats que ens permeten definir conjunts d'estils depenent de propietats comunes dels dispositius que accedeixen als nostres llocs.
+Propietats com l'alçada i l'amplada, la relació d'aspecte o el nombre de colors disponibles. Les regles <span class="negrita">@media</span>
+ poden ser utilitzades per adaptar les nostres pàgines, no només per a dispositius comuns, sinó per a tot tipus de dispositius que els nostres lectors usin per visitar-les.
+Tot i que les <span class="negrita">@media queries</span> ens permet conèixer moltes propietats diferents, les més importants són les següents:
+<ul>
+  <li><span class="negrita">aspect-ratio</span>: Fa referència a les dimensions relatives del dispositiu expressades com una relació daspecte: 16:9 per exemple.</li>
+  <li><span class="negrita">width i height</span>: fa referència a les dimensions de l'àrea de visualització. A més, poden ser expressades en valors mínims i màxims.</li>
+  <li><span class="negrita">orientation</span>: Detecta si el layout és panoràmic (l'amplada és més gran que l'alt) o vertical (el alt és més gran que l'amplada). 
+    Això ens permet ajustar els dissenys per a dispositius amb propietats de gir de la pantalla com l'iPhone i altres smartphones o les tauletes.</li>
+  <li><span class="negrita">resolution</span>: Indica la densitat dels píxels al dispositiu de sortida. 
+    Això és especialment útil quan volem aprofitar-nos dels avantatges dels dispositius que té una resolució més gran de 72 dpi.</li>
+  <li><span class="negrita">color, color-index i monochrome</span>: Detecten el nombre de colors o bits per color. 
+    Això ens permet crear dissenys específics per a dispositius monocromàtics.</li>
+</ul>
+</p>
+
+<h3>Posada en marxa</h3>
+<p>Ja hem vist el bàsic que necessitem conèixer sobre el Responsive Design, però, la majoria de de vegades, 
+  el més difícil és aplicar-lo de la manera que necessitem o mostrar el contingut d'una forma
+eficaç sense perdre en disseny ni usabilitat, i en això és el que ens centrarem ara, a
+estructurar correctament el contingut duna pàgina que sadapti a diferents tipus de pantalla.</p>
+
+<span class="negrita">Per començar veurem com fer fluir elements com imatges, blocs de text o qualsevol
+cosa en general, de manera que es reubiquin els elements en funció de la mida disponible a la
+pantalla. En primer lloc, ens oblidarem dels float i farem servir en el seu lloc la propietat
+<span class="r-word">display</span>.</span>
+<p>Com ja sabem, la propietat display de CSS ens permet establir com es comportarà un element respecte a
+els altres. Ens interessen, principalment, tres valors possibles:
+<ul>
+  <li><span class="negrita">block</span>: els elements s'ubiquen un baix l'altre.</li>
+  <li><span class="negrita">inline</span>: els elements s'ubiquen un al costat de l'altre, però sense respectar les propietats de marge.</li>
+  <li><span class="negrita">inline-block</span>: aquesta última forma de visualitzar-se un element és una barreja de les dues anteriors, 
+    comportant-se com un bloc, però posant-se en línia amb altres elements iguals.</li>
+</ul></p>
+
+
+
+<p>Una de les coses que es donen molt en els dissenys adaptatius és crear un conjunt de blocs amb imatges i text que, segons la mida de la finestra, es van recol·locant. 
+  Per exemple, a la web de la imatge es veuen sis blocs, tres a sobre i tres a sota, però si els visualitzéssim amb una amplada de pantalla més gran es veurien en línia.</p>
+  <figure><img src="UD4/images/ud4-2024-01-11-12-37-39.png" /><br><figcaption></figcaption></figure>
+  <br>
+<p>Vegem com podríem crear una estructura com aquesta:</p>
+
+<section><pre><code class="language-xml">&lt;div id="contenidor">
+  &lt;figure class="bloc">[Text/Imatges]&lt;/figure>
+  &lt;figure class="bloc">[Text/Imatges]&lt;/figure>
+  &lt;figure class="bloc">[Text/Imatges]&lt;/figure>
+  &lt;figure class="bloc">[Text/Imatges]&lt;/figure>
+  &lt;figure class="bloc">[Text/Imatges]&lt;/figure>
+  &lt;figure class="bloc">[Text/Imatges]&lt;/figure>
+&lt;/div></code></pre>
+</section><br>
+
+<p>Al full d'estils, simplement, establirem el mode de visualització <span class="negrita">display:inline-block</span> per a l'element figure,
+   i quan els elements no càpiguen al contenidor es reajustaran sense perdre la mida.</p>
+<section><pre><code class="language-css">#contenidor .bloc{
+  display: inline-block;
+  height:300px;
+  width: 300px;
+  border:1px solid #333;
+  background: #999;
+  margin:20px;
+}</code></pre>
+</section><br> 
+
+<figure><img src="UD4/images/ud4-2024-01-11-12-45-37.png" /><br><figcaption></figcaption></figure>
+<br>
+
+
+<p>Si proveu a ampliar i reduir la mida de la finestra del vostre navegador, veureu que els
+elements es van reubicant automàticament gràcies a la propietat display.</p>
+
+<p>Molt bé, <span class="negrita">però què passa si volem que els elements es comporten d'una manera diferent
+quan la mida de finestra disponible siga inferior a un valor determinat?</span> En aquest cas,
+utilitzarem les <span class="negrita">media-queries</span>. Per exemple, si volguéssim que a partir dels 800 píxels els
+blocs anteriors es mostraran uns sota els altres, centrats i ajustant la seva amplada a l'espai
+disponible, farem el següent:</p>
+
+<section><pre><code class="language-css">#contenidor .bloc{
+  display: inline-block;
+  height:300px;
+  width: 300px;
+  border:1px solid #333;
+  background: #999;
+  margin:20px;
+}
+
+@media all and (max-width: 800px){
+  #contenidor .bloc{
+    /* Quan l'amplada siga inferior a 800px l'element serà un bloc */
+    display: block;
+    width: auto;
+  }
+}</code></pre>
+</section><br>
+
+<section class="marco-t warn">
+  <span class="icono warning"> </span> Nota: Com que el selector és el mateix (display i block), hem de posar la media-query baix, així serà aquesta la que s'aplique.
+  Si la posarem d'alt no faria res perquè la de baix la sobreescriurà. Ho podriem solucionar amb <span class="d-word">!important,</span> pero ja sabeu que està desaconsellat.
+  </section>
+<section class="marco-b">
+    
+</section>
+
+<figure><img src="./UD4/images/mediaquery1.gif" /><br><figcaption></figcaption></figure>
+<br>
+
+<h3>Passar de columnes a cascada</h3>
+<p>Un dels mètodes que s'utilitza més sovint per canviar l'estructura d'una web adaptativa, que sol tindre una capçalera i dues o tres columnes (amb el menú, el
+contingut, enllaços, etc.) és el pas de la disposició en columnes a la disposició a cascada.</p>
+<figure><img src="UD4/images/ud4-2024-01-11-12-59-38.png" /><br><figcaption></figcaption></figure>
+<br>
+
+<p>A la imatge es pot veure com, en funció de l'amplada disponible es canvia la disposició.</p>
+
+<p>A continuació, veurem com fer-ne una estructura adaptable similar a la de la imatge, que estaria formada per un títol amb un menú, una capçalera i dues columnes,
+la primera amb una agenda amb esdeveniments i la segona columna amb els continguts.</p>
+
+<p>El que farem perquè siga totalment adaptatiu és fer xicotets canvis segons les necessitats, però per a l'exemple només tindrem dos estats: 
+  l'estructura ben maquetada i l'estructura en cascada, com es representa a la imatge anterior.</p>
+
+  <p>El nostre html serà el següent:</p>
+  
+  <section><pre><code class="language-xml">&lt;nav>[Menú]&lt;/nav>
+&lt;div class="pagina">
+  &lt;header>[Capçalera]&lt;/header>
+  &lt;aside>[Agenda]&lt;/aside>
+  &lt;main>[Contingut]&lt;/main>
+&lt;/div></code></pre>
+  </section><br>
+
+
+  <p>I aplicarem els estils següents:</p>
+  
+<section><pre><code class="language-css">nav{
+  background: #F99;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 30px;
+}
+.pagina{
+  /* la pàgina serà com a màxim de 1000px d'amplada */
+  max-width: 1000px;
+  margin:auto;
+}
+header{
+  background: #9F9;
+  margin-top: 30px;
+  height: 200px;
+}
+aside{
+  background: #99F;
+  float: left; /* surem l'element a l'esquerra */
+  width: 35%;
+  height: 600px;
+}
+main{
+  background: #AAA;
+  width: 65%;
+  margin-left: 35%;
+  height: 900px;
+}
+
+@media all and (max-width: 600px){
+  div, nav, header, aside, main{
+    /* Quan l'amplada sigui inferior a 600px l'element serà un bloc */
+    display: block;
+    /* S'ajustaran a l'amplada de la finestra */
+    width: 100%;
+    margin: auto;
+    /* La posició serà estàtica (flux normal del document) */
+    position: static;
+    /* els elements deixaran de ser flotants */
+    float: none;
+  }
+}</code></pre>
+</section><br>
+
+<p>Per provar l'exemple, simplement, heu de carregar la pàgina al navegador i reduir-la
+finestra fins que tinga una resolució inferior a 600 píxels.</p>
+
+<figure><img src="./UD4/images/mediaquery2.gif" /><br><figcaption></figcaption></figure>
+<br>
+
+<h3>Adaptar imatges i vídeos</h3>
+<p>Moltes vegades, per crear dissenys molt optimitzats pot ser important fer servir diverses imatges
+diferents, una amb una mida superior i una altra amb una de més xicoteta, però ens centrarem en el
+ús d'una mateixa imatge que, en la mesura del possible, hauria d'estar optimitzada i
+adaptarà com nosaltres vulguem.</p>
+
+<p>Podem fer que una imatge es comporte de les següents formes:
+  <ul>
+    <li>Ocupar l'amplada de la pàgina (o contenedor). Pot ser útil per a capçaleres o imatges principals i ho farem establint l'amplada al 100%. 
+      <section><pre><code class="language-css">img { width:100%; }</code></pre>
+      </section><br>
+    </li>
+    <li>Tenir una imatge amb una mida màxima. En aquest cas, la imatge tindrà una mida que no sobrepassarà, però quan es disminuïsca la mida del contenedor s'encongeix
+      adaptant-se a la pàgina.
+      <section><pre><code class="language-css">img { width:100%; màx-width:400px; }</code></pre>
+      </section><br></li>
+    <li>
+      Tenir les imatges amb la seva mida original com a màxim. Aquest cas és molt similar al
+    anterior, amb la diferència que posarem com a mida màxima l'amplada de la imatge. De
+    aquesta forma, la imatge no es deformarà en ser redimensionada a una mida superior a la
+    original.
+    <section><pre><code class="language-css">img { max-width:100%; }</code></pre>
+    </section><br>
+    </li>
+    <li>Per adaptar la mida dels vídeos farem servir les mateixes tècniques que utilitzem per a les imatges.</li>
+  </ul>
+</p>
+
+<p>Una cosa a tenir en compte, és que si hem posat un alt fix a un vídeo, i després, en una <span class="negrita">@media query</span>, 
+  posem, per exemple, una amplada relativa utilitzant percentatges, l'element
+<span class="negrita">&lt;video></span> es redimensionarà per mantenir les proporcions en redimensionar la finestra, però el
+espai reservat per a l'alt inicial es mantindrà reservat, de manera que els elements que es
+troben al voltant no es reubicaran. Per solucionar aquest problema, n'hi haurà prou amb indicar a la
+@media query que l'alt serà automàtic (<span class="cursiva">height:auto</span>).</p>
+
+<h3>Activitats</h3>
+
+<div class="tarea">
+  <p><span class="negrita">Exercici 1</span> <br>
+Crear una pàgina web amb dos paràgrafs. Crear un CSS associat i posar una regla perquè el fons
+de la pàgina sigui de color green i el text de color blanc. Afegir una query perquè en visualitzar-se
+la pàgina en un dispositiu de menys de 600px el color de fons canviï a xarxa i el color de la lletra
+a pink.</p>
+<p><span class="negrita">Exercici 2</span> <br>
+Utilitzar el mateix html de l'exercici anterior i vincular-lo amb una CSS on hi haja una query
+perquè en cas que el dispositiu prenga l'orientació landscape (orientation: landscape),
+canvieu a color blue.</p>
+
+<p><span class="negrita">Exercici 3.- Punts de ruptura</span> <br>
+Utilitzem un document html que continga un div, amb un identificador de classe
+class="elementodiv". Dins el div escriu un paràgraf. Crear un CSS associat que comprovi els
+punts de ruptura de les cinc mitja query indicades, canviant en cada cas el color de la
+class="elementodiv". La idea és comprovar els diferents punts de ruptura.
+<br><br>
+/* Extra small devices (phones, 600px and down) */ <br> 
+@media only screen and (max-width: 600px) {
+  <br><br>
+/* Small devices (portrait tauletes i grans telèfons, 600px and up) */ <br>
+@media only screen and (min-width: 600px) {
+  <br><br>
+/* Medium devices (landscape tablets, 768px and up) */ <br>
+@media only screen and (min-width: 768px) {
+  <br><br>
+/* Large devices (laptops/desktops, 992px and up) */ <br>
+@media only screen and (min-width: 992px) {
+  <br><br>
+/* Extra large devices (large portàtils and desktops, 1200px and up) */ <br>
+@media only screen and (min-width: 1200px) {
+  
+</p>
+<span class="negrita">Exercici 4.-</span> <br>
+Construïu un document HTML amb una imatge d'un paisatge. Modifica el CSS perquè la imatge
+sigui diferent en visualitzar-se en un dispositiu mòbil, selecciona per al dispositiu mòbil una
+imatge de dimensions apropiades
+
+  
+</div>
+
+        </section><!-- End section Pàgines Adaptables-->
+<!--*********************************************************Grid View***********************************************************-->
+<section class="apartado">
+<a name="sGridView"></a>
+<h2>Grid View</h2>
+
+<h3>Què és una Grid-View?</h3>
+<p>Moltes pàgines estan basades en una grid-view, això significa que la pàgina està dividida en columnes:</p>
+<figure><img src="UD4/images/ud4-2024-01-11-13-27-10.png" /><br><figcaption>Grid-view</figcaption></figure>
+<br>
+
+<p>Utilitzar una grid-view és molt útil quan es dissenyen llocs web. Això ens facilita la reubicació dels elements a la pàgina.</p>
+
+<p>Una grid-view responsiva ofereix <span class="negrita">12 columnes</span>, amb una amplada total del 100%, i es reduirà i expandirà a
+mesura que canvieu la mida de la finestra del navegador</p>
+
+<figure><img src="UD4/images/ud4-2024-01-11-13-28-25.png" /><br><figcaption></figcaption></figure>
+<br>
+
+<h3>Construir una Grid-View Responsiva</h3>
+
+<p>Començarem a construir GridView responsiva.</p>
+
+<p>Primer assegureu-vos que tots els elements HTML tinguen la propietat de mida de quadre establerta
+en quadre de vora. Això assegura que el reompliment i la vora s'incloguen a l'amplada i l'alçada totals dels
+elements.</p>
+
+<p>Afegiu el codi següent al CSS:</p>
+
+<section><pre><code class="language-css">* {
+  box-sizing: border-box;
+}</code></pre>
+</section><br>
+
+<p>El següent exemple mostra un senzill exemple de web responsiva amb dues columnes:</p>
+
+<figure><img src="UD4/images/ud4-2024-01-11-13-31-15.png" /><br><figcaption></figcaption></figure>
+<br>
+
+
+<section><pre><code class="language-css">.menu {
+  width: 25%;
+  float: left;
+}
+
+.main {
+  width: 75%;
+  float: left;
+}</code></pre>
+</section><br>
+
+<p>L'exemple anterior està bé si la pàgina web només conté dues columnes.</p>
+
+<p>No obstant això, farem servir una vista de quadrícula amb <span class="negrita">12 columns</span> per tindre més control sobre la pàgina web.</p>
+
+<p>Primer cal calcular el percentatge per a una columna: <span class="negrita">100% / 12 columns = 8.33%</span>.</p>
+
+<p>Després fem una classe per a cada una de les 12 columnes, class = "col-" i un nom que defineix quantes
+columns ocuparà la secció:</p>
+
+<section><pre><code class="language-css">.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}</code></pre>
+</section><br>
+
+<p>Totes les columnes han de surar a l'esquerra i tenen un padding de 15px.</p>
+<section><pre><code class="language-css">[class*="col-"] {
+  float: left;
+  padding: 15px;
+  border: 1px solid red;
+}</code></pre>
+</section><br>
+<p>Cada fila ha d'estar dins d'un <span class="negrita">&lt;div></span>. El número de columnes dins una fila <span class="negrita">sempre ha de sumar
+fins a 12</span>:</p>
+
+<p>Exemple:</p>
+<section><pre><code class="language-xml">&lt;div class="row">
+  &lt;div class="col-3">...&lt;/div> &lt;!-- 25% -->
+  &lt;div class="col-9">...&lt;/div> &lt;!-- 75% -->
+&lt;/div></code></pre>
+</section><br>
+
+<p>Les columnes dins d'una fila (row) estan flotant cap a l'esquerra i, per tant, s'eliminen del flux
+de la pàgina, i altres elements es col·locaran com si les columnes no existissin. Per evitar això,
+afegirem un estil que esborre el flux:</p>
+
+<section><pre><code class="language-css">.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}</code></pre>
+</section><br>
+<p>Si agreguem alguns estils i colors perquè es veja millor, podria quedar algo així:</p>
+<figure><img src="UD4/images/ud4-2024-01-11-13-39-23.png" /><br><figcaption></figcaption></figure>
+<br>
+
+<p>Aquesta pàgina web de l'exemple no es veu bé quan canvia la mida de la finestra del navegador a un
+ample molt xicotet. Veurem com resoldre'l.</p>
+
+<h3>Afegir punts de ruptura</h3>
+
+<p>Hem creat una pàgina web amb files i columnes, però no es veia bé en una petita pantalla.</p>
+
+<p>Podem afegir un punt d'interrupció on certes parts del disseny es comportaran de manera diferent a cada costat del punt dinterrupció.</p>
+<figure><img src="UD4/images/ud4-2024-01-11-13-40-59.png" /><br><figcaption></figcaption></figure>
+<br>
+
+<p>Use una <span class="negrita">media query</span> para agregar un punto de interrupción a 768px:</p>
+
+<section><pre><code class="language-css">/* For desktop: */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
+}</code></pre>
+</section><br>
+
+<p>Quan la pantalla (finestra del navegador) és més estreta que 768px, cada columna ha de tindre una amplada del 100%.</p>
+
+<h3>Sempre dissenyar per a Mobile First</h3>
+
+<p>Mobile First significa dissenyar per a dispositius mòbils abans de dissenyar per a equips d'escriptori o qualsevol altre dispositiu 
+  (això farà que la pàgina es mostre més ràpidament en dispositius més xicotets).</p>
+
+  <p>Això significa que hem de fer alguns canvis al nostre CSS.</p>
+  
+<p>En lloc de canviar els estils quan l'amplada és menor que 768px, hauríem de canviar el disseny quan
+l'amplada siga més gran que 768px. Això farà que el nostre disseny Mobile First:</p>
+
+<section><pre><code class="language-css">/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+/* For desktop: */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+}</code></pre>
+</section><br>
+
+<h3>Un altre punt d'interrupció</h3>
+<p>Podeu afegir tants punts d'interrupció com vulgueu. Plantegem un punt d'interrupció entre tauletes i telèfons mòbils</p>
+<figure><img src="UD4/images/ud4-2024-01-11-13-45-43.png" /><br><figcaption></figcaption></figure>
+<br>
+
+<p>Fem això afegint una consulta de mitjans més (a 600px), i un conjunt de noves classes per dispositius més grans que 600px (però més petits que 768px):</p>
+
+<p>Podem observar que els dos conjunts de classes són quasi idèntics, l'única diferència és el nom (<span class="negrita">col- i</span> <span class="negrita">col-s-</span>):</p>
+
+<section><pre><code class="language-css">/* For mobile phones: */
+[class*="col-"] {
+width: 100%;
+}
+@media only screen and (min-width: 600px) {
+/* For tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}</code></pre>
+</section><br>
+
+<p>Pot semblar estrany que tinguem dos conjunts de classes idèntiques, però ens dóna l'oportunitat a
+HTML, per decidir què passarà amb les columnes a cada punt d'interrupció:</p>
+
+<p class="sub-section">Per escriptori: (col-)</p>
+
+<p>La primera i la tercera secció ocuparan 3 columnes cadascuna. La secció central inclourà 6 columnes.</p>
+
+<p class="sub-section">Per a tauletes: (col-s-)</p>
+<p>La primera secció inclourà 3 columnes, la segona ocuparà 9, i la tercera secció es mostrarà sota de les dues primeres seccions, i ocuparà 12 columnes:</p>
+
+<section><pre><code class="language-xml">&lt;div class="row">
+  &lt;div class="col-3 col-s-3">...&lt;/div>
+  &lt;div class="col-6 col-s-9">...&lt;/div>
+  &lt;div class="col-3 col-s-12">...&lt;/div>
+&lt;/div></code></pre>
+</section><br>
+
+<h3>Punts típics d'interrupció del dispositiu</h3>
+<p>Hi ha milers de pantalles i dispositius amb diferents alçades i amples, per la qual cosa és difícil crear un punt de tall exacte per a cada dispositiu. 
+  Per mantindre les coses simples, podriem apuntar cinc grups:</p>
+
+  <section><pre><code class="language-css">/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {...}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {...}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {...}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {...}
+
+/* Extra large devices (large portàtils and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {...}</code></pre>
+  </section><br>
+
+<h3>Orientació: Portrait / Landscape</h3>
+
+<p>Les queries també es poden utilitzar per canviar el disseny d'una pàgina segons l'orientació del navegador.</p>
+
+<p>Podeu tenir un conjunt de propietats CSS que només s'aplicaran quan la finestra del navegador siga més ampla que la seva altura, 
+  el que s'anomena orientació "Landscape":</p>
+
+  <p>Exemple: <br>
+    En aquest exemple la pàgina tindrà color de fons <span class="cursiva">lightblue</span> si l'orientació és <span class="cursiva">landscape</span>:</p>
+
+    <section><pre><code class="language-css">@media only screen and (orientation: landscape) {
+  body {
+    background-color: lightblue;
+  }
+}</code></pre>
+    </section><br>
+
+    <h3>Oculta Elements amb Media Queries</h3>
+
+    <p>Un altre dels usos comuns de les media queries, és amagar elements en diferents mides de pantalla:</p>
+<p>Si vull amagar informació en pantalla xicotetes per exemple es pot fer algo així:</p>
+    <section><pre><code class="language-css">/* If the screen size is 600px wide or less, hide the element */
+@media only screen and (max-width: 600px) {
+  div.example {
+    display: none;
+  }
+}</code></pre>
+    </section><br><br>
+
+</section><!-- End section GridView-->
+
+<!--*********************************************************Bootstrap***********************************************************-->
+<section class="apartado">
+<a name="sBootstrap"></a>
+<h2>Bootstrap</h2>
+
+
+
+</section><!-- End section sBootstrap-->
     <!-- TO_MENU-->
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <script src="../script/prism.js"></script>
