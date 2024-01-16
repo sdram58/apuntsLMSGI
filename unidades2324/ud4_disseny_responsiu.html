@@ -706,7 +706,7 @@ All) i accessible des de qualsevol tipus de dispositiu (Web on Everything).
   Google ens incita a fer servir aquest mètode perquè, d'aquesta manera, Googlebot no necessita analitzar tant contingut de la mateixa web, 
   cosa que us facilita la tasca d'assignar el tipus de contingut de la pàgina i daquesta manera millorarà el SEO de la web.</p>
   
-  <p><quote><span class="negrita">“Google can discover your content more efficiently as we wouldn’t need to
+  <p><quote><span class="negrita">"Google can discover your content more efficiently as we wouldn’t need to
 crawl a page with the different Googlebot user agents to retrieve and index
 all the content".</span></quote></p>
 
@@ -1385,8 +1385,609 @@ HTML, per decidir què passarà amb les columnes a cada punt d'interrupció:</p>
 <section class="apartado">
 <a name="sBootstrap"></a>
 <h2>Bootstrap</h2>
+<h3>Frameworks responsive</h3>
+<p>Com se sol dir, per què reinventar la roda si podem fer servir alguns dels frameworks que existeixen al mercat per això? 
+  Estalviarem temps, farem servir codi que està molt provat i uns dissenys prou més bonics que els que podem trobar de forma nativa.</p>
+
+<p>Avui dia existeixen al mercat una àmplia varietat de frameworks responsive, alguns dels més utilitzats són:
+  <ul>
+<li><span class="negrita">Bootstrap</span> (<a class="enlace" target="_blank" href="http://getbootstrap.com/">http://getbootstrap.com/</a>): 
+  Aquest framework és un dels més populars del mercat, el qual va ser desenvolupat per l'<span class="negrita">equip de Twitter</span> (actualment X). 
+  Bootstrap ha estat creat per oferir la millor experiència d'usuari tant a usuaris de PC com a smartphones i tauletes. 
+  <span class="negrita">Utilitza el grid responsive de 12 columnes</span> i porta integrat desenes de <span class="negrita">complements, 
+  plugins de JavaScript, tipografia, controladors de formularis, etc</span>.
+A més, utilitza el preprocessador de CSS less.</li>
+
+<li><span class="negrita">Foundation</span> (<a class="enlace" target="_blank" href="http://foundation.zurb.com/">http://foundation.zurb.com/</a>): J
+  untament amb Bootstrap és un dels frameworks més avançats que existeixen actualment. 
+  Ha estat desenvolupat amb Sass, un potent preprocessador de CSS que fa de Foundation un framework personalitzable.</li>
+
+<li><span class="negrita">Skeleton</span> (<a class="enlace" target="_blank" href="http://getskeleton.com/">http://getskeleton.com/</a>): ofereix un grid responsive basat en una resolució
+de 960px que sajusta a la mida dels dispositius mòbils. Té poc pes i inclou
+una col·lecció de fitxers CSS i JS per facilitar-nos el disseny de la nostra web.</li>
+</li>
+<li><span class="negrita">HTML5 Boilerplate</span> (<a class="enlace" target="_blank" href="https://html5boilerplate.com/">https://html5boilerplate.com/</a>): Igual que els altres ens ofereix
+un set d'utilitats per construir la nostra web responsive de forma ràpida i senzilla, amb
+l'avantatge de ser un dels que ocupen menys.</li>
+  </ul>
+</p>
 
 
+<p>Es considera Bootstrap un dels més complets, utilitzats i que funciona millor.</p>
+
+
+<h3>Bootstrap</h3>
+
+<p>Com hem comentat, Bootstrap és un dels frameworks més populars del mercat per a la creació de pàgines responsive, 
+havent estat desenvolupat per l'equip de Twitter (X).
+Entre els navegadors suportats hi ha: Chrome, Firefox, Opera, Safari i Internet Explorer (a partir de la versió 8).</p>
+
+<p>Està preparat perquè funcione tant en navegadors de PC, portàtils, així com tablets i Smartphone, 
+  tot gràcies al sistema de reixeta dividit en columnes per al posicionament dels elements de la nostra web. 
+  A més, incorpora moltes altres utilitats i complements (formularis, botons, barres de navegació, etc.) per simplificar el desenvolupament d'un web responsive.</p>
+
+
+  <h3>Descàrrega i instal·lació</h3>
+<p>Per descarregar Bootstrap (no és un instal·lador), haurem de descarregar-nos el zip que es troba a la web oficial, descarregarem la darrera versió disponible. (V 5.3)
+<a class="enlace" target="_blank" href="https://github.com/twbs/bootstrap/releases/download/v5.3.2/bootstrap-5.3.2-dist.zip">https://github.com/twbs/bootstrap/releases/download/v5.3.2/bootstrap-5.3.2-dist.zip</a>
+Una vegada descarregat el fitxer, el descomprimim i el guardem al directori que vulguem i/o ens siga fàcil accedir-hi.</p>
+
+<p>Per poder accedir-hi des del nostre HTML, el que farem serà enllaçar el CSS, i si volem usar les funcionalitats de javascript, 
+també haurem d'enllaçar aquest, compte el bundle inclou la llibreria Popper, però en cap cas inclou jQuery, per tant jo us recomane descarregar-les.</p>
+ <p>Per exemple podriem fer-ho així:</p>
+
+ <section><pre><code class="language-xml">&lt;link rel="stylesheet" href="./bootstrap-5.3.2-dist/css/bootstrap.min.css" type="text/css">
+&lt;script src="./bootstrap-5.3.2-dist/js/bootstrap.bundlemin.js" type="text/javascript">&lt;/script></code></pre>
+ </section><br>
+ <section class="marco-t inf">
+  <span class="icono info"> </span> Podràs observar que hi han diferents versions, nosaltres agafarem les <span class="cursiva">min</span> per a CSS que son reduïdes i suficients per al nostre propòsit
+  i la bundle per a Javascript que ja inclou Propper i Jquery.
+  </section>
+ <section class="marco-b">
+    
+ </section>
+
+
+ <p>Si no volem tindre descarregat el fitxer, i preferim que la web es connecte al servidor de
+Bootstrap i el carregueu en memòria cau farem servir les etiquetes que l'enllaça i haurem de posar abans de
+els nostres CSS:</p>
+<p>CSS de Boostrap:</p>
+ 
+<section><pre><code class="language-xml">&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7Rxnatzjc2C " crossorigin=" anonymous"></code></pre>
+</section><br>
+  <p>Després incloem els JS abans de tancar el <span class="negrita">&lt;body></span>, i posem primer <span class="negrita">jQuery</span>, després Pooper.js i per
+últim Bootstrap:</p>
+  
+<section><pre><code class="language-xml">&lt;!--JQUERY--&gt;
+&lt;script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"&gt;&lt;/script&gt;
+&lt;!--POPPER--&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR +hVqc2pM8ODewa9r" crossorigin="anonymous"&gt;&lt;/script&gt;
+&lt;!--BOOTSTRAP--&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep ssorigin= "anonymous"&gt;&lt;/script&gt;</code></pre>
+</section><br>
+
+<p>Si volem veure a quins navegadors/plataformes està suportat Bootstrap, podem consultar-ho <a class="enlace" target="_blank" href="https://getbootstrap.com/docs/5.0/getting-started/browsers-devices/">ací</a>.</p>
+
+<h3>Pàgina bàsica</h3>
+<p>Bootstrap utilitza elements HTML i propietats CSS que requereixen l'ús del doctype d'HTML5 perquè funcionen, per tant, 
+  és important afegir-ho a <span class="negrita">TOTES</span> les nostres pàgines:</p>
+<section><pre><code class="language-xml">&lt;!DOCTYPE html>
+&lt;html>
+  ...
+&lt;/html></code></pre>
+</section><br>
+
+<p>A més, per assegurar-nos que tot s'està visualitzant correctament i que podem utilitzar el zoom als dispositius mòbils, 
+  hem d'afegir la següent etiqueta meta dins de la capçalera <span class="negrita">&lt;head></span>:</p>
+<section><pre><code class="language-xml">&lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></code></pre>
+</section><br>
+
+<p>Exemple de plantilla bàsica per treballar amb Bootstrap:</p>
+
+<section><pre><code class="language-xml">&lt;!doctype html>
+&lt;html lang="ca-ES">
+  &lt;head>
+    &lt;meta charset="utf-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1">
+    &lt;title>Bootstrap demo&lt;/title>
+    &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"&gt;
+  &lt;/head>
+  &lt;body>
+    &lt;h1>Hello, world!&lt;/h1>
+    &lt;!-- Contingut --&gt;
+    &lt;script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"&gt&lt;/script&gt;
+    &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">&lt;/script>
+  &lt;/body>
+&lt;/html></code></pre>
+</section><br>
+
+<p>Si volem deshabilitar el zoom per als mòbils, hauríem d'afegir l'etiqueta meta del <span class="cursiva">viewport</span>, amb el valor de <span class="negrita">user-scalable=no</span></p>
+<section><pre><code class="language-xml">&lt;meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"></code></pre>
+</section><br>
+
+<h3>Sistema de reixeta</h3>
+<p>El sistema de reixeta de Bootstrap es basa en reixetes flexibles, les quals s'escalen a la mida i 
+  posicions adequades depenent de la pantalla on s'estiga visualitzant la web.</p>
+
+<p class="sub-section">Element contenidor</p>
+<p>El sistema de reixeta ha de ser utilitzat dins un dels dos elements contenidors que té Bootstrap: <span class="r-word">.container</span> o <span class="r-word">.container-fluid</span>. 
+  <br>
+  És important tindre en compte que aquests elements s'utilitzen com a arrel de la reixeta i no es podran niar els uns dins els altres.
+Si el que volem és que el contingut de la nostra web aparega centrat i amb un ample fix,
+llavors utilitzem la classe <span class="negrita">.container</span>. En canvi, si volem que ocupe tota l'amplada
+disponible (width: 100%), fem servir la classe <span class="negrita">.container-fluid</span>.</p>
+
+<p>Exemples:</p>
+
+<section><pre><code class="language-xml">&lt;!doctype html>
+&lt;html lang="ca-ES">
+  &lt;head>
+    &lt;meta charset="utf-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1">
+    &lt;title>Reixeta 1&lt;/title>
+    &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    &lt;style>
+      .row>[class^="col-"]{
+         padding-top: .75rem;
+         padding-bottom: .75rem;
+         background-color: rgba(86,61,124,.15);
+         border: 1px solid rgba(86,61,124,.2);
+       }
+    &lt;/style>
+  &lt;/head>
+  &lt;body>
+    &lt;div class="container">
+      &lt;div class="row">
+        &lt;div class="col-sm">
+          One of three columns
+        &lt;/div>
+        &lt;div class="col-sm">
+          One of three columns
+        &lt;/div>
+        &lt;div class="col-sm">
+          One of three columns
+        &lt;/div>
+      &lt;/div>
+    &lt;/div>    
+    &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">&lt;/script>
+  &lt;/body>
+&lt;/html></code></pre>
+</section><br>
+<figure><img src="UD4/images/ud4-2024-01-12-13-39-26.png" /><br><figcaption></figcaption></figure>
+<br>
+
+<p>I si canviem per <span class="d-word">container-fluid</span></p>
+<figure><img src="UD4/images/ud4-2024-01-12-13-40-06.png" /><br><figcaption></figcaption></figure>
+<br>
+
+<h3>Funcionament del sistema de reixeta</h3>
+<p>El sistema de reixeta està pensat per ajudar-nos en la disposició del contingut de la nostra web i
+la seva adaptació a les diferents pantalles. Per això, hem de posar el contingut dins de
+cel·les o columnes que aniran dins de files. Cada fila es pot dividir fins a 12 columnes, som
+nosaltres els que definim les columnes per a cada mida de pantalla.</p>
+
+<p>El funcionament de les reixetes és:
+  <ul>
+    <li>Les columnes han d'anar agrupades dins de fils (<span class="d-word">.row</span>)</li>
+    <li>Les files (<span class="d-word">.row</span>) s'han de col·locar dins d'una etiqueta contenidora: 
+      <span class="negrita">.container</span> (per ample fix) o beg  (per poder ocupar tota l'amplada), 
+      això permetrà alinear les cel·les i assignar-los lespai correcte.</li>
+    <li>El contingut s'ha de disposar dins de columnes o cel·les, les quals han de ser l'únic fill possible de les files (.row), 
+      que alhora serà l'únic fill possible del contenidor (.container o .container-fluid)</li>
+    <li>En seguir aquest ordre el sistema de reixeta funcionarà creant l'espaiat interior i els marges apropiats depenent de les dimensions de la pantalla.</li>
+    <li>Cada fila es pot dividir fins a un màxim de 12 columnes, 
+      però som nosaltres els que haurem de definir el nombre de columnes en què volem dividir cada fila i la seva amplada per a cada mida de pantalla.</li>
+    <li>Si la mida total de les columnes d'una fila excedeix de 12, el sobrant es col·locarà a la següent fila.</li>
+    <li>La mida de les columnes s'especificarà amb classes CSS que defineix Bootstrap per cada mida de pantalla, per exemple <span class="negrita">.col-md-XX</span>
+       on XX és la mida de la columna, que podrà prendre valors entre 1 i 12. Si vols que totes les columnes tinguin la mateixa mida s'usaria: <span class="cursiva">.col-4</span>
+        per exemple.</li>
+  </ul>
+</p>
+
+<p>A la següent taula es recull un resum del funcionament de la reixeta de Bootstrap depenent de la mida de la pantalla i les classes CSS:</p>
+<figure><img src="UD4/images/ud4-2024-01-12-13-45-11.png" /><br><figcaption></figcaption></figure>
+<br>
+
+<p>Documentació versió 5.3, ací: <a class="enlace" target="_blank" href="https://getbootstrap.com/docs/5.3/layout/grid/">https://getbootstrap.com/docs/5.3/layout/grid/</a>. <br>
+  És important tindre en compte que, en definir aquestes classes, no només s'apliquen per a aquesta mida de
+pantalla, sinó que per a les superiors també. Per exemple, si no apliquem classe per a mides de
+pantalla mitjans i grans però sí per a petits (.col-sm-), s'usarà aquesta, si els defineixes es
+sobreescriuen i passen a utilitzar els definits per a aquestes mides.</p>
+
+<h3>Exemples</h3>
+<p class="sub-section">MATEIX AMPLE</p>
+<p>Per exemple aquest, són dues files amb un nombre diferent de cel·les, i en tots els dispositius es veu igual. <br>
+Codi:</p>
+
+<section><pre><code class="language-xml">&lt;!doctype html>
+&lt;html lang="ca-ES">
+  &lt;head>
+    &lt;meta charset="utf-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1">
+    &lt;title>Reixeta 3&lt;/title>
+    &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    &lt;style>   
+      .col{
+          padding-top: .75rem;
+          padding-bottom: .75rem;
+          background-color: rgba(86,61,124,.15);
+          border: 1px solid rgba(86,61,124,.2);
+        }     
+    &lt;/style>
+  &lt;/head>
+  &lt;body>
+    &lt;div class="container">
+      &lt;div class="row">
+        &lt;div class="col">
+          1 of 2
+        &lt;/div>
+        &lt;div class="col">
+          2 of 2
+        &lt;/div>
+      &lt;/div>
+      &lt;div class="row">
+        &lt;div class="col">
+          1 of 3
+        &lt;/div>
+        &lt;div class="col">
+          2 of 3
+        &lt;/div>
+        &lt;div class="col">
+          3 of 3
+        &lt;/div>
+      &lt;/div>
+    &lt;/div>   
+    &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">&lt;/script>
+  &lt;/body>
+&lt;/html></code></pre>
+</section><br>
+
+<figure><img src="UD4/images/ud4-2024-01-15-14-04-52.png" /><br><figcaption></figcaption></figure>
+<br>
+
+<p class="sub-section">MIDA DE COLUMNES NOMÉS PER PANTALLES D'ESCRIPTORI</p>
+
+<p>Exemple de 3 files, la primera de 2 columnes de mida desigual, la segona 3 columnes de la
+mateixa mida i la tercera fila 2 columnes de la mateixa mida. <br>
+Codi:</p>
+
+<section><pre><code class="language-xml">&lt;div class="container">
+  &lt;div class="row">
+    &lt;div class="col-md-8">.col-md-8&lt;/div>
+    &lt;div class="col-md-4">.col-md-4&lt;/div>
+  &lt;/div>
+  &lt;div class="row">
+    &lt;div class="col-md-4">.col-md-4&lt;/div>
+    &lt;div class="col-md-4">.col-md-4&lt;/div>
+    &lt;div class="col-md-4">.col-md-4&lt;/div>
+  &lt;/div>
+    &lt;div class="row">
+    &lt;div class="col-md-6">.col-md-6&lt;/div>
+    &lt;div class="col-md-6">.col-md-6&lt;/div>
+  &lt;/div>
+&lt;/div></code></pre>
+</section><br>
+
+<figure><img src="UD4/images/ud4-2024-01-15-14-13-36.png" /><br><figcaption></figcaption></figure>
+<br>
+<p>Com que les columnes s'han especificat únicament mitjançant les classes <span class="negrita">.col-md-*</span>, això s'aplicarà
+tant en pantalles d'escriptori mitjanes i grans, però no per les mides xicotetes (tablets i mòbils). En aquests dos darrers casos,
+les columnes s'ampliaran utilitzant tota l'amplada pel que es mostraran de la següent forma</p>
+
+<figure><img src="UD4/images/ud4-2024-01-15-14-15-16.png" /><br><figcaption></figcaption></figure>
+<br>
+
+<p class="sub-section">MIDA PER A MÒBIL I ESCRIPTORI:</p>
+
+<p>Si no volem que les columnes s'apilin en mides xicotetes, podem indicar també la
+disposició que volem per a aquests casos usant les classes: <span class="negrita">.col-xs-*</span>, a més de les que ja
+teníem amb <span class="negrita">.col-md-*</span>. <br>
+Codi:</p>
+
+<section><pre><code class="language-xml">&lt;div class="container">
+    &lt;!-- En pantalles petites apareixerà una columna que ocuparà tota l'amplada
+i una altra que ocuparà la meitat de la pantalla -->
+    &lt;div class="row">
+        &lt;div class="col-12 col-md-8">.col-12 .col-md-8&lt;/div>
+        &lt;div class="col-6 col-md-4">.col-6 .col-md-4&lt;/div>
+    &lt;/div>
+    &lt;!-- En pantalles petites s'indica que ocupi cada columna la meitat
+    de l'amplada disponible. En pantalles mitjanes ocuparan 1/3 -->
+    &lt;div class="row">
+        &lt;div class="col-6 col-md-4">.col-6 .col-md-4&lt;/div>
+        &lt;div class="col-6 col-md-4">.col-6 .col-md-4&lt;/div>
+        &lt;div class="col-6 col-md-4">.col-6 .col-md-4&lt;/div>
+    &lt;/div>
+    &lt;!-- Com que no s'indica la mida per a pantalles grans les columnes
+sempre ocuparan el 50% -->
+    &lt;div class="row">
+        &lt;div class="col-6">.col-6&lt;/div>
+        &lt;div class="col-6">.col-6&lt;/div>
+    &lt;/div>
+&lt;/div></code></pre>
+</section><br>
+
+<p>Resultat per a pantalles <span class="negrita">md</span> i <span class="negrita">lg</span> (mitjanes i grans respectivament).</p>
+
+<figure><img src="UD4/images/ud4-2024-01-15-14-18-34.png" /><br><figcaption></figcaption></figure>
+<br>
+
+<p>En el cas de pantalles xicotetes, les columnes es veurien així:</p>
+
+<figure><img src="UD4/images/ud4-2024-01-15-14-18-55.png" /><br><figcaption></figcaption></figure>
+<br>
+
+<p class="sub-section">MIDA PER A MÒBIL, TABLET I ESCRIPTORI</p>
+
+<p>Per tenir un major control, podem especificar la mida de les columnes per a les tablets, amb les classes: <span class="negrita">.col-sm-*</span>. <br>
+Codi:</p>
+
+<section><pre><code class="language-xml">&lt;div class="container">
+    &lt;div class="row">
+        &lt;div class="col-12 col-sm-6 col-md-8">.col-12 .col-sm-6 .col-md-8&lt;/div>
+        &lt;div class="col-6 col-md-4">.col-6 .col-md-4&lt;/div>
+    &lt;/div>
+    &lt;div class="row">
+        &lt;div class="col-6 col-sm-4">.col-6 .col-sm-4&lt;/div>
+        &lt;div class="col-6 col-sm-4">.col-6 .col-sm-4&lt;/div>
+        &lt;div class="col-6 col-sm-4">.col-6 .col-sm-4&lt;/div>
+    &lt;/div>
+&lt;/div></code></pre>
+</section><br>
+
+<figure><img src="./UD4/images/bootsrej6.gif" /><br><figcaption></figcaption></figure>
+<br>
+
+<h3>Com amagar cel·les o un altre element</h3>
+
+<p>Per tal de facilitar el desenvolupament d'aplicacions web on el contingut d'aquestes pàgines
+siga menor en funció de si s'estan visualitzant al mòbil o a l'ordinador, bootstrap té
+té la classe <span class="r-word">.d-none</span> per amagar-ho per a totes les pantalles o <span class="r-word">.d-{sm,md,lg,xl}-none</span> si volem
+que s'oculte en alguna d'aquestes resolucions en concret.</p>
+
+<p>Per mostrar els elements que siga només per a aquesta resolució i que es veja amb la resta caldrà
+especificar la classe <span class="r-word">.d-md-block</span> per exemple, on s'amagarien en totes menys a les mitjanes.</p>
+
+<p>Aquesta taula fa un resum de les distintes possibilitats.</p>
+<figure><img src="UD4/images/ud4-2024-01-15-14-26-35.png" /><br><figcaption></figcaption></figure>
+<br>
+
+<p>Més informació a <a class="enlace" target="_blank" href="https://getbootstrap.com/docs/5.3/utilities/display/#hiding-elements">https://getbootstrap.com/docs/5.3/utilities/display/#hiding-elements</a></p>
+<h3>Anidament de columnes (Nesting)</h3>
+<p>Una de les característiques que té Bootstrap també, és que ens permet niar columnes. Per
+exemple, si volguérem que en una columna de mida 9, crear una nova fila i dividir-la com
+vulguem (funciona igual, cada fila té 12 cel·les).
+<a class="enlace" target="_blank" href="https://getbootstrap.com/docs/5.3/layout/grid/#nesting">https://getbootstrap.com/docs/5.3/layout/grid/#nesting</a>.</p>
+
+<section><pre><code class="language-xml">&lt;div class="container text-center">
+  &lt;div class="row">
+    &lt;div class="col-sm-3">
+      Level 1: .col-sm-3
+    &lt;/div>
+    &lt;div class="col-sm-9">
+      &lt;div class="row">
+        &lt;div class="col-8 col-sm-6">
+          Level 2: .col-8 .col-sm-6
+        &lt;/div>
+        &lt;div class="col-4 col-sm-6">
+          Level 2: .col-4 .col-sm-6
+        &lt;/div>
+      &lt;/div>
+    &lt;/div>
+  &lt;/div>
+&lt;/div></code></pre>
+</section><br>
+
+<figure><img src="UD4/images/ud4-2024-01-15-14-31-53.png" /><br><figcaption></figcaption></figure>
+<br>
+
+<h3>Marges o espaiat entre columnes (margin utilities)</h3>
+<p>A partir de la versió 4 de Bootstrap, ja no es fa servir l'<span class="negrita">offset</span> que es feia servir en les versions
+anteriors, en lloc d'això utilitzem la classe <span class="r-word">.{m|p}{t|b|s|e|x|y|<span class="cursiva">blank</span>}-size-value</span>. On:
+<ul>
+  <li><span class="negrita">m</span> -> margin</li>
+  <li><span class="negrita">p</span> -> padding</li>
+</ul>
+i
+<ul>
+  <li><span class="negrita">t</span> -> top (dalt)</li>
+  <li><span class="negrita">b</span> -> bottom (baix)</li>
+  <li><span class="negrita">s</span> -> start (inici en sentit de lectura, normalment esquerra)</li>
+  <li><span class="negrita">e</span> -> end (fi en sentit de lectura, normalment dreta)</li>
+  <li><span class="negrita">x</span> -> eix X (esquerra i dreta)</li>
+  <li><span class="negrita">y</span> -> eix Y (dalt i baix)</li>
+  <li><span class="negrita">blanc</span> -> Sense res indica a les 4 vores</li>
+</ul>
+Per exemple per forçar les columnes a que tinguen un espai a la dreta. <span class="d-word">.me-auto</span>
+<a class="enlace" target="_blank" href="https://getbootstrap.com/docs/5.3/layout/grid/#margin-utilities">https://getbootstrap.com/docs/5.3/layout/grid/#margin-utilities</a>
+<br>Vegem-ne un exemple:</p>
+
+<section><pre><code class="language-xml">&lt;div class="container">
+  &lt;div class="row">
+    &lt;div class="col-md-4">.col-md-4&lt;/div>
+    &lt;div class="col-md-4 ms-auto">.col-md-4 .ms-auto&lt;/div>
+  &lt;/div>
+  &lt;div class="row">
+    &lt;div class="col-md-3 ms-md-auto">.col-md-3 .ms-md-auto&lt;/div>
+    &lt;div class="col-md-3 ms-md-auto">.col-md-3 .ms-md-auto&lt;/div>
+  &lt;/div>
+  &lt;div class="row">
+    &lt;div class="col-auto me-auto">.col-auto .me-auto&lt;/div>
+    &lt;div class="col-auto">.col-auto&lt;/div>
+  &lt;/div>
+&lt;/div></code></pre>
+</section><br>
+
+<figure><img src="UD4/images/ud4-2024-01-16-16-26-32.png" /><br><figcaption></figcaption></figure>
+<br>
+<figure><img src="UD4/images/ud4-2024-01-16-16-26-48.png" /><br><figcaption></figcaption></figure>
+<br>
+
+
+<h3>Ordenació de columnes (Reordering)</h3>
+<p>Podem fer servir la classe <span class="r-word">.order-</span> per controlar de forma visual l'ordre del nostre contingut. Aquestes
+classes són responsive, per tant, podem establir l'ordre tenint en compte que el grid té
+12 columnes. Si per exemple volem que en una resolució <span class="negrita">md</span> (o superior) aquesta columna estiga la
+segona farem servir la classe <span class="negrita">.order-md-2</span>, i també hi ha la possibilitat d'usar <span class="negrita">.order-first</span> i 
+<span class="negrita">.orderlast</span></p>
+
+<section><pre><code class="language-xml">&lt;div class="container">
+  &lt;div class="row">
+    &lt;div class="col order-3">
+      First, but last
+    &lt;/div>
+    &lt;div class="col order-1">
+      Second, but first
+    &lt;/div>
+    &lt;div class="col order-2">
+      Third, but middle
+    &lt;/div>
+  &lt;/div>
+&lt;/div></code></pre>
+</section><br>
+
+<figure><img src="UD4/images/ud4-2024-01-16-15-57-36.png" /><br><figcaption></figcaption></figure>
+<br>
+
+<p>Com trencar una columna (salt)</p>
+<p>Amb la classe <span class="r-word">.w-100</span>, el que aconseguim és trencar perquè la següent columna baixe a una línia
+nova. Normalment això s'aconsegueix inserint una nova <span class="negrita">.row</span>, però si per exemple volem
+que això passe en certes resolucions farem servir aquest element de width: 100% (<span class="negrita">.w-100</span>). <br>
+Codi:</p>
+<section><pre><code class="language-xml">&lt;div class="container">
+  &lt;div class="row">
+    &lt;div class="col-6 col-sm-3">.col-6 .col-sm-3&lt;/div>
+    &lt;div class="col-6 col-sm-3">.col-6 .col-sm-3&lt;/div>
+      &lt;!-- Força que la següent columna estigui en una nova línia -->
+    &lt;div class="w-100">&lt;/div>
+    &lt;div class="col-6 col-sm-3">.col-6 .col-sm-3&lt;/div>
+    &lt;div class="col-6 col-sm-3">.col-6 .col-sm-3&lt;/div>
+  &lt;/div>
+&lt;/div></code></pre>
+</section><br>
+
+<h3>Com moure columnes (offseting)</h3>
+<p>Podem desplaçar les columnes de dues formes a bootstrap: la que veurem aquí és usant les
+classes pròpies del grid <span class="negrita">.offset-</span>, l'altra és utilitzant les utilitats dels marges.
+Per moure les columnes a la dreta farem servir <span class="r-word">.offset-md-*</span>, amb això mourem la columna <span class="negrita">*</span>
+posicions quan la mida de la pantalla siga mitjana. Vegem-ne un exemple</p>
+
+<section><pre><code class="language-xml">&lt;div class="container">
+  &lt;div class="row">
+    &lt;div class="col-md-4">.col-md-4&lt;/div>
+    &lt;div class="col-md-4 offset-md-4">.col-md-4 .offset-md-4&lt;/div>
+  &lt;/div>
+  &lt;div class="row">
+    &lt;div class="col-md-3 offset-md-3">.col-md-3 .offset-md-3&lt;/div>
+    &lt;div class="col-md-3 offset-md-3">.col-md-3 .offset-md-3&lt;/div>
+  &lt;/div>
+  &lt;div class="row">
+    &lt;div class="col-md-6 offset-md-3">.col-md-6 .offset-md-3&lt;/div>
+  &lt;/div>
+&lt;/div></code></pre>
+</section><br>
+<figure><img src="UD4/images/ud4-2024-01-16-16-05-20.png" /><br><figcaption></figcaption></figure>
+<br>
+
+<h3>Media Queries</h3>
+<p>En la majoria dels casos amb les classes que venen a Bootstrap ens n'hi ha prou per dissenyar la nostra web, però, 
+  en algunes situacions de vegades volem modificar cert comportament com pot ser per aplicar colors, alineació, etc. que canvie depenent de la mida de la pantalla.
+  Serà en aquests casos quan utilitzem els <span class="negrita">media queries</span></p>
+
+<p>Una mitjana query es defineix de la manera següent</p>
+<section><pre><code class="language-css">@media (min-width: MIDA-EN-PIXELS) {
+  /* Aquests estils només s'aplicaran a partir de la mida indicada */
+}</code></pre>
+</section><br>
+
+<p>En aquest cas, els estils que estiguin dins d'aquesta media query s'aplicaran només a partir de la mida indicada, 
+  però també podem indicar el rang de mida a què aplicar-se</p>
+
+  <section><pre><code class="language-css">@media (max-width: MIDA-EN-PIXELS){
+  /* Aquests estils només s'aplicaran FINS a la mida indicada */
+}
+
+@media (min-width: MIDA-EN-PIXELS) and (max-width: MIDA-EN-PIXELS){
+  /* Només s'aplicaran ENTRE les mides indicades */
+}</code></pre>
+  </section><br>
+
+<p class="sub-section">Exemples d'ús</p>
+
+<p>Per pantalles extra xicotetes, aplicarem un color de fons anomenat (<span class="cursiva">myBackground</span>) que serà roig, i per a la resta de mides el fons serà verd</p>
+<section><pre><code class="language-css">.myBackground {
+  background-color: green;
+}
+@media (max-width: 768px) {
+  .myBackground { 
+    background-color: red;
+  } 
+}</code></pre>
+</section><br>
+
+<p>Un altre exemple podria ser l'alineació del text que se us aplicarà quan estiguem en pantalles d'escriptori:</p>
+
+<section><pre><code class="language-css">.meuestil {
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  .meuestil {
+    text-align: left;
+  }
+}</code></pre>
+</section><br>
+
+<p>Aquests estils són un exemple bàsic del que podem fer complementant el codi de Bootstrap, 
+  de manera que podem arribar a fer coses prou avançades i personalitzar la web depenent de la mida del dispositiu. Altres exemples comuns són:
+  <ul>
+    <li>Canviar la mida i la posició d'una imatge entre dispositius mòbils i d'escriptori</li>
+    <li>Canvieu la posició d'un element.</li>
+    <li>Canviar la mida de lletra, font o color depenent de la mida de la pantalla.</li>
+    <li>Aplicar combinacions d'estils perquè l'aparença s'ajuste als elements que continga.</li>
+    <li>etc.</li>
+  </ul>
+</p>
+
+<h3>Activitats</h3>
+<div class="tarea">
+  <p><span class="negrita">Activitat 1</span> <br>
+    En aquest exercici practicarem amb la llibreria Bootstrap i el seu sistema de reixeta. Partirem
+de la plantilla per a una pàgina web bàsica facilitada. A aquesta plantilla cal afegir-hi un contenidor de tipus container i anirem
+afegint files i columnes intentant aconseguir el disseny i colors de la figura següent:</p>
+<figure><img src="UD4/images/ud4-2024-01-16-16-36-53.png" /><br><figcaption></figcaption></figure>
+<br>
+<hr>
+<p><span class="negrita">Activitat 2</span> <br>
+  En aquest exercici practicarem amb algunes característiques més de Bootstrap: la possibilitat de
+afegir un espai inicial a les columnes, el canvi dordre dels elements duna fila i la
+visibilitat de les columnes segons la mida del dispositiu.
+Per això crearem una nova pàgina web partint de la plantilla bàsica i li afegirem un contenidor de tipus container com vam fer a l'exemple anterior, 
+i anirem afegint files i columnes fins a aconseguir l'esquema següent:</p>
+<figure><img src="UD4/images/ud4-2024-01-16-16-38-47.png" /><br><figcaption></figcaption></figure>
+<br>
+<hr>
+<p>
+  <span class="negrita">Activitat 3 (amb media queries)</span> <br>
+  En aquest exercici es demana que creeu una nova pàgina web usant la llibreria de Bootstrap.
+  El contingut apareixerà centrat a la pantalla i constarà de tres files amb el següent contingut i disposició quan la pantalla sigui de mida mitjana (md) i gran (lg):
+  <ul>
+    <li>Una fila a la part superior amb una única columna amb fons verd que ocuparà tot l'ample, 
+      en aquesta columna apareixerà el text Header alineat a l'esquerra i en gran.</li>
+    <li>Una segona fila amb tres columnes de color vermell amb la mateixa amplada i amb els números 1, 2 i 3 (respectivament) centrats i en lletres grans.</li>
+    <li>La tercera i última fina contindrà dues columnes d'igual amplada i de color groc, la primera columna tindrà el text "footer 1" alineat a la dreta i 
+      la segona el text "footer 2" alineat a l'esquerra (tots dos usant una mida de font gran).</li>
+  </ul>
+
+A la següent imatge es pot veure un esquema de la web a realitzar:
+</p>
+<figure><img src="UD4/images/ud4-2024-01-16-16-42-25.png" /><br><figcaption></figcaption></figure>
+<br>
+
+  
+</div>
 
 </section><!-- End section sBootstrap-->
     <!-- TO_MENU-->
