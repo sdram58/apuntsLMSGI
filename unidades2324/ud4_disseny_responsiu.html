@@ -1569,10 +1569,10 @@ nosaltres els que definim les columnes per a cada mida de pantalla.</p>
 
 <p>El funcionament de les reixetes és:
   <ul>
-    <li>Les columnes han d'anar agrupades dins de fils (<span class="d-word">.row</span>)</li>
+    <li>Les columnes han d'anar agrupades dins de files (<span class="d-word">.row</span>)</li>
     <li>Les files (<span class="d-word">.row</span>) s'han de col·locar dins d'una etiqueta contenidora: 
-      <span class="negrita">.container</span> (per ample fix) o beg  (per poder ocupar tota l'amplada), 
-      això permetrà alinear les cel·les i assignar-los lespai correcte.</li>
+      <span class="negrita">.container</span> (per ample fix) o <span class="negrita">.container-fluid</span>  (per poder ocupar tota l'amplada), 
+      això permetrà alinear les cel·les i assignar-los l'espai correcte.</li>
     <li>El contingut s'ha de disposar dins de columnes o cel·les, les quals han de ser l'únic fill possible de les files (.row), 
       que alhora serà l'únic fill possible del contenidor (.container o .container-fluid)</li>
     <li>En seguir aquest ordre el sistema de reixeta funcionarà creant l'espaiat interior i els marges apropiats depenent de les dimensions de la pantalla.</li>
@@ -1681,7 +1681,7 @@ les columnes s'ampliaran utilitzant tota l'amplada pel que es mostraran de la se
 
 <p class="sub-section">MIDA PER A MÒBIL I ESCRIPTORI:</p>
 
-<p>Si no volem que les columnes s'apilin en mides xicotetes, podem indicar també la
+<p>Si no volem que les columnes s'apilen en mides xicotetes, podem indicar també la
 disposició que volem per a aquests casos usant les classes: <span class="negrita">.col-xs-*</span>, a més de les que ja
 teníem amb <span class="negrita">.col-md-*</span>. <br>
 Codi:</p>
@@ -1743,7 +1743,7 @@ Codi:</p>
 <h3>Com amagar cel·les o un altre element</h3>
 
 <p>Per tal de facilitar el desenvolupament d'aplicacions web on el contingut d'aquestes pàgines
-siga menor en funció de si s'estan visualitzant al mòbil o a l'ordinador, bootstrap té
+siga menor en funció de si s'estan visualitzant al mòbil o a l'ordinador, bootstrap 
 té la classe <span class="r-word">.d-none</span> per amagar-ho per a totes les pantalles o <span class="r-word">.d-{sm,md,lg,xl}-none</span> si volem
 que s'oculte en alguna d'aquestes resolucions en concret.</p>
 
