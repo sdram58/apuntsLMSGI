@@ -1,0 +1,67 @@
+
+[class*="col"]:not(.body>div){    
+    padding: 3px;    
+    min-height: 50px;
+}
+
+
+.body>div:first-child{
+    border:2px solid gray;
+    padding: 1px;
+}
+
+.body>div:last-child{
+    border:2px solid gray;
+}
+
+[class*="col"]>div:not(.row){
+    height: 100%;
+    border:2px solid black;
+}
+
+.header div{
+    height: 100px;
+    border: 1px rgb(102, 95, 95) solid;
+}
+
+.footer div{
+    height: 50px;
+    border: 1px rgb(102, 95, 95) solid;
+}
+
+.bg-red{
+    background-color: red;
+}
+
+.bg-blue{
+    background-color: blue;
+}
+
+.bg-purple{
+    background-color: purple;
+}
+
+.bg-orange{
+    background-color: burlywood;
+}
+
+.bg-green{
+    background-color: chartreuse;
+}
+
+.blue>div{
+    height: 150px;
+}
+
+.orange>div{
+    height: 200px;
+}
+
+/*Columna esquerra*/
+.body>div:nth-child(1){
+    /*height: 100%;*/
+}
+
+.container>.row{
+    margin-bottom: 4px;
+}
